@@ -60,6 +60,10 @@ width: 100%;
     @include wh(50px);
     
   }
+  &__menu-link{
+    background: url("@img/icons/place-white.svg") no-repeat center / cover;
+    @include wh(50px);
+  }
   
 
 
