@@ -1,0 +1,53 @@
+.burger {
+  
+  height: 30px;
+ 
+  
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 15;
+  
+
+  &__inner {
+   
+    
+
+    span,
+    &::before
+    {
+      content: "";
+      transition: all 0.3s ease 0s;
+      right: 0px;
+      position: absolute;
+      height: 3px;
+      background-color: #7D6858;
+      width: 40px;
+    }
+    
+
+    &::before {
+     
+      top: 0px;
+    }
+
+  
+
+    span {
+      top: calc(50% - 1px);
+    }
+
+    .open & {
+      span {
+        transform: rotate(45deg);
+      }
+
+      &::before {
+        transform: rotate(-45deg);
+        top: calc(50% - 1px);
+      }
+
+     
+    }
+  }
+}

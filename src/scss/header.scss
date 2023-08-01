@@ -1,0 +1,65 @@
+.header {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  
+ 
+ 
+
+
+  // .header__menu
+  &__menu {
+    position: fixed;
+    left: -100%;
+width: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: all 0.2s ease;
+
+    @include media(min, lg) {
+      position: relative;
+      left: 0;
+      z-index: 10;
+    }
+    ul ul {
+      position: absolute;
+      top: 100%;
+      opacity: 0;
+      transform: scale(0%);
+      transform-origin: 50% 0%;
+      transition: all 0.5s ease;
+      left: 0;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      
+    }
+    ul li:hover ul {
+      top: 100%;
+      opacity: 1;
+      transform: scale(100%);
+      transition: all 0.05s ease;
+    }
+    
+  }
+
+  // .header__list
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+  }
+ 
+  // .header__link
+  &__link {
+    position: relative;
+   
+    background: url("@img/icons/phone.svg") no-repeat left center / auto 100% ;
+    
+  }
+  
+
+
+}

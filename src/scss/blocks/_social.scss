@@ -1,0 +1,19 @@
+.social {
+ 
+  
+  
+ 
+  &__link {
+   
+    &--vk {
+      background: url("@img/icons/vk.svg") no-repeat 0 center / auto;
+    }
+    &--insta {
+      background: url("@img/icons/insta.svg") no-repeat 0 center/ auto;
+    }
+    &--whatsapp {
+      background: url("../img/icons/whatsapp.svg") no-repeat 0 center / auto;
+    }
+  }
+  
+}

@@ -1,0 +1,68 @@
+.swiper-button-next,
+.swiper-button-prev {
+  z-index: 100;
+  position: relative;
+  background-color: #faed19;
+  margin: 0;
+  right: inherit;
+  left: inherit;
+
+  @include wh(30px);
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    background-color: #fff;
+  }
+  &::after {
+    @include pseudo;
+
+    @include wh(15px);
+    @include background(url("@img/icons/arrow.svg"));
+  }
+}
+.swiper-slide {
+  height: auto;
+}
+
+.swiper-button-next {
+  right: -9%;
+  
+  @include media(max, sm) {
+  }
+  &::after {
+    transform: rotate(180deg);
+  }
+}
+.swiper-button-prev {
+  left: -9%;
+  
+  @include media(max, sm) {
+  }
+  &::after {
+    
+  }
+}
+
+
+
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
+  @include wh(10px);
+  background: #fff;
+  border-radius: 0;
+  opacity: 0.8;
+  &:hover {
+    background: #faed19;
+  }
+}
+
+
+
+.swiper-pagination-bullet {
+  &-active {
+    background: #faed19;
+  }
+}
+
+.swiper-control {
+  top: 50%;
+}
