@@ -54,9 +54,10 @@ width: 100%;
  
   // .header__link
   &__link {
-    position: relative;
+ 
    
-    background: url("@img/icons/phone.svg") no-repeat left center / auto 100% ;
+    background: url("@img/icons/phone.svg") no-repeat center / cover;
+    @include wh(50px);
     
   }
   

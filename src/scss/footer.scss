@@ -1,29 +1,7 @@
 .footer {
-  &__box {
-    &::before,
-    &::after {
-      @include pseudo;
-      position: absolute;
-    }
-    &::before {
-      background: url("@img/portrait.png") no-repeat center / 100% auto;
-      @include wh(94%, 141%);
-
-      z-index: 1;
-
-      top: -32%;
-      left: 43%;
-    }
-    &::after {
-      background: url("@img/icons/lightning.svg") no-repeat center / 100% auto;
-      @include wh(75%, 130%);
-      top: -30%;
-      right: -40%;
-    }
-  }
-  &__box-content{
-   position: relative;
-   z-index: 2;
+  &__link{
+    background: url("@img/icons/place.svg") no-repeat center / cover;
+    @include wh(50px);
   }
 
 }

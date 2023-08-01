@@ -2,15 +2,12 @@
 <html lang="ru">
   @@include('html/_head.htm',{ "title":"Главная" })
 
-  <body class="">
+  <body class="home">
     <div class="wrapper">
       @@include('html/_header.htm',{})
 
-      <main>
-        <!-- @@include('html/section/_promo.html') -->
-       
-      </main>
-      <!-- @@include('html/_footer.htm',{}) -->
+      <main>@@include('html/section/_promo.html')</main>
+      @@include('html/_footer.htm',{})
     </div>
     @@include('html/_popup.htm',{})
   </body>

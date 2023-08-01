@@ -1,8 +1,6 @@
 .burger {
   
-  height: 30px;
  
-  
   border: none;
   cursor: pointer;
   position: relative;
@@ -10,9 +8,9 @@
   
 
   &__inner {
+   width: 40px;
+   height: 10px;
    
-    
-
     span,
     &::before
     {
@@ -20,7 +18,7 @@
       transition: all 0.3s ease 0s;
       right: 0px;
       position: absolute;
-      height: 3px;
+      height: 1px;
       background-color: #7D6858;
       width: 40px;
     }
@@ -34,12 +32,13 @@
   
 
     span {
-      top: calc(50% - 1px);
+      top: calc(100% - 1px);
     }
 
     .open & {
       span {
         transform: rotate(45deg);
+        top: calc(50% - 1px);
       }
 
       &::before {

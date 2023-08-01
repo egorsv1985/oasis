@@ -1,0 +1,57 @@
+.promo {
+  padding-top: 160px;
+  &__box-img {
+    background: url("@img/foto-trener.png") no-repeat center / cover;
+    height: 116%;
+    width: 46%;
+    right: 17%;
+    bottom: -17%;
+  }
+  // .promo__box
+  &__box {
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 4px 50px 0px rgba(38, 39, 34, 0.25);
+    backdrop-filter: blur(15px);
+  }
+  // .promo__box-btn
+  &__box-btn {
+    max-width: 290px;
+  }
+  // .promo__box-text
+  &__box-text {
+    &::before {
+      content: "oasis";
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px #cfc8be;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+
+      text-align: center;
+      font-family: IBM Plex Sans;
+      font-size: 260px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: -7.8px;
+      text-transform: uppercase;
+    }
+    color: rgba(246, 243, 238, 0.1);
+    text-align: center;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 260px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -7.8px;
+    text-transform: uppercase;
+
+    position: relative;
+  }
+  // .promo__svg
+  &__svg {
+  }
+}
