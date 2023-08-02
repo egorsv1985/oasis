@@ -1,7 +1,9 @@
 .promo {
-  padding-top: 160px;
+  // padding-top: 160px;
+  height: 100vh;
+  background: url("@img/fon green-leaves-close.png") no-repeat center 0 / 60% 100%;
   &__box-img {
-    background: url("@img/foto-trener.png") no-repeat center / cover;
+    // background: url("@img/foto-trener.png") no-repeat center / cover;
     height: 116%;
     width: 46%;
     right: 17%;

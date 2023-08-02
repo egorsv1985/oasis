@@ -12,7 +12,7 @@
     top: 0;
     bottom: 0;
     z-index: 20;
-    transform: translateX(-50vw);
+    transform: translateX(-100vw);
     transition: all 0.2s ease-out;
     &::before {
       content: "";
@@ -85,14 +85,24 @@
       position: absolute;
       top: 0;
       bottom: 0;
-      left: -100vw;
+      left: -150vw;
       background: #0B3A32;
       max-width: 100vw;
-      width: 52rem;
-      z-index: -1;
+      width: 30rem;
+      z-index: 1;
       transition: all 0.5s ease-out;
+      @include media (min, md) {
+        z-index: -1;
+      }
       &.open{
+        left: 30%;
+        @include media (min, md) {
+          left: 50%;
+          z-index: 1;
+        }
+        @include media (min, lg) {
         left: 100%;
+        }
       }
  
     &-menu {
@@ -117,6 +127,36 @@
           width: 50px;
           z-index: 5;
         }
+      }
+    }
+  }
+  &__btn{
+    span{
+      position: relative;
+      &::before{
+        @include pseudo;
+        
+        height: 1px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -10px;
+        background-color: #fff;
+
+      }
+    }
+    &:hover{
+      span{
+        &::before{
+          background-color: #262722;
+        }
+      }
+    }
+  }
+  &__menu-bottom{
+    .btn{
+      &:hover{
+        background-color: #262722;
       }
     }
   }
