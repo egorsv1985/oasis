@@ -289,50 +289,85 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  // Обработчик клика на элемент с классом "header__burger"
-  function handleBurgerClick() {
-    // Получаем элемент с классом "burger" через document.querySelector
-    const burger = document.querySelector(".burger");
-    const headerServices = document.querySelector(".header__services");
+// Обработчик клика на элемент с классом "burger"
+function handleBurgerClick() {
+  // Получаем элемент с классом "burger" через document.querySelector
+  const burger = document.querySelector(".burger");
+  const headerServices = document.querySelector(".header__services");
 
-    // Проверяем, существует ли элемент с классом "burger"
-    if (burger) {
-      // Добавляем обработчик события клика на элемент "burger"
-      burger.addEventListener("click", function (event) {
-        // Проверяем, заблокирован ли скролл
-        if (scrollLocked) {
-          // Вызываем функцию разблокировки скролла
-          unlockScroll();
-          // Выводим сообщение в консоль
-          console.log("Скролл разблокирован");
-        } else {
-          // Вызываем функцию блокировки скролла
-          lockScroll();
-          // Выводим сообщение в консоль
-          console.log("Скролл заблокирован");
-        }
+  // Проверяем, существует ли элемент с классом "burger"
+  if (burger) {
+    // Добавляем обработчик события клика на элемент "burger"
+    burger.addEventListener("click", function (event) {
+      // Проверяем, заблокирован ли скролл
+      if (scrollLocked) {
+        // Вызываем функцию разблокировки скролла
+        unlockScroll();
+        // Выводим сообщение в консоль
+        console.log("Скролл разблокирован");
+      } else {
+        // Вызываем функцию блокировки скролла
+        lockScroll();
+        // Выводим сообщение в консоль
+        console.log("Скролл заблокирован");
+      }
 
-        // Переключаем класс "open" у элемента "documentElement"
-        document.documentElement.classList.toggle("open");
-      });
-    }
+      // Переключаем класс "open" у элемента "documentElement"
+      document.documentElement.classList.toggle("open");
 
-    if (headerServices) {
-      const servicesLink = document.querySelector(".service-item");
-
-      // Добавляем обработчики событий наведения мыши на элемент "service-item"
-      servicesLink.addEventListener("mouseover", function () {
-        headerServices.classList.add("open");
-      });
-
-      servicesLink.addEventListener("mouseout", function () {
+      // Если класс "open" у элемента html был удален, удаляем его также у элемента с классом "header__services"
+      if (!document.documentElement.classList.contains("open")) {
         headerServices.classList.remove("open");
-      });
-    }
+      }
+    });
   }
 
-  // Вызываем функцию для обработки клика на "burger"
-  handleBurgerClick();
+  // Проверяем, существует ли элемент с классом "header__services"
+  if (headerServices) {
+    // Получаем элемент с классом "service-item" через document.querySelector
+    const serviceItem = document.querySelector(".service-item");
+
+    // Добавляем обработчик события наведения на элемент "service-item"
+    serviceItem.addEventListener("mouseover", function () {
+      // Добавляем класс "open" к элементу "header__services"
+      headerServices.classList.add("open");
+    });
+
+    // Добавляем обработчик события ухода курсора с элемента "service-item"
+    serviceItem.addEventListener("mouseout", function () {
+      // Проверяем, находится ли курсор над элементом "header__services"
+      const isHeaderServicesHovering = headerServices.contains(event.relatedTarget);
+
+      // Если курсор не находится в области элемента "header__services", удаляем класс "open"
+      if (!isHeaderServicesHovering) {
+        headerServices.classList.remove("open");
+      }
+    });
+
+    // Добавляем обработчик события наведения на элемент "header__services"
+    headerServices.addEventListener("mouseover", function () {
+      // Добавляем класс "open" к элементу "header__services"
+      headerServices.classList.add("open");
+    });
+
+    // Добавляем обработчик события ухода курсора с элемента "header__services"
+    headerServices.addEventListener("mouseout", function () {
+      // Проверяем, находится ли курсор над элементом "service-item"
+      const isServiceItemHovering = serviceItem.contains(event.relatedTarget);
+
+      // Если курсор не находится в области элемента "service-item", удаляем класс "open"
+      if (!isServiceItemHovering) {
+        headerServices.classList.remove("open");
+      }
+    });
+  }
+}
+
+// Вызываем функцию handleBurgerClick для обработки кликов на элемент "burger"
+handleBurgerClick();
+
+
+
 
   // Определение поддержки формата WebP и добавление класса "webp" или "no-webp" в зависимости от поддержки
   ((callback) => {
