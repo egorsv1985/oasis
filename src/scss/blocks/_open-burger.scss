@@ -1,8 +1,31 @@
 .open {
   .header {
     &__menu {
-      left: 0;
+      transform: translateX(0);
       
     }
+    &__box-work{
+      display: block;
+      position: relative;
+      z-index: 50;
+      color: #fff;
+    }
+    &__box-btn{
+      display: none;
+    }
+  }
+  .burger{
+    span{
+      color: #fff;
+
+    }
+    &__inner
+    {
+      span,
+      &::before{
+        background-color: #fff;
+       
+      }
+    } 
   }
 }

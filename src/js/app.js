@@ -217,8 +217,9 @@ import "../scss/style.scss";
 ("use strict");
 // Обработчик события DOMContentLoaded для выполнения кода после полной загрузки DOM
 document.addEventListener("DOMContentLoaded", function () {
-  let scrollLocked = false;
-  // Определение функции unlockScroll с параметром delay по умолчанию равным 500 миллисекундам.
+  let scrollLocked = false; // Флаг, определяющий, заблокирован ли скролл страницы
+
+  // Функция разблокировки скролла с параметром delay по умолчанию равным 500 миллисекундам.
   const unlockScroll = (delay = 500) => {
     // Поиск элемента тега "body" на странице.
     const body = document.querySelector("body");
@@ -242,81 +243,98 @@ document.addEventListener("DOMContentLoaded", function () {
       // Установить флаг "scrollLocked" на "false".
       scrollLocked = false;
 
-      // Установить таймер на повторное блокирование скролла.
+      // Установить таймер на повторное блокирование скролла через указанное время задержки.
       setTimeout(function () {
-        // Установить флаг "scrollLocked" на "true".
+        // Установить флаг "scrollLocked" на "true" для возможности повторной блокировки.
         scrollLocked = true;
         // Вывести сообщение о разблокировке скролла в консоль.
         console.log("Скролл разблокирован");
       }, delay);
     }
   };
-  // объявление функции lockScroll, которая принимает параметр delay со значением по умолчанию равным 500
+
+  // Функция блокировки скролла с параметром delay по умолчанию равным 500 миллисекундам.
   const lockScroll = (delay = 500) => {
-    // получаем элемент body через document.querySelector
+    // Получаем элемент "body" через document.querySelector
     const body = document.querySelector("body");
 
-    // если флаг scrollLocked равен false, то выполняем следующий код
+    // Если флаг scrollLocked равен false, то выполняем следующий код
     if (!scrollLocked) {
-      // получаем все элементы с атрибутом data-lp
+      // Получаем все элементы с атрибутом "data-lp"
       const elements = document.querySelectorAll("[data-lp]");
 
-      // проходимся по всем элементам и устанавливаем отступ слева равный разнице между шириной окна и шириной содержимого элемента
+      // Проходимся по всем элементам и устанавливаем отступ слева равный разнице между шириной окна и шириной содержимого элемента
       for (let i = 0; i < elements.length; i++) {
         elements[i].style.paddingRight = `${
           window.innerWidth - document.documentElement.clientWidth
         }px`;
       }
 
-      // устанавливаем отступ у элемента body
+      // Устанавливаем отступ у элемента "body"
       body.style.paddingRight = `${
         window.innerWidth - document.documentElement.clientWidth
       }px`;
 
-      // добавляем класс lock к элементу documentElement
+      // Добавляем класс "lock" к элементу "documentElement"
       document.documentElement.classList.add("lock");
 
-      // устанавливаем флаг scrollLocked в true
+      // Устанавливаем флаг scrollLocked в true
       scrollLocked = true;
 
-      // через указанное время задержки снова устанавливаем флаг scrollLocked в false для разблокировки скролла
+      // Через указанное время задержки снова устанавливаем флаг scrollLocked в false для разблокировки скролла
       setTimeout(function () {
         scrollLocked = false;
         console.log("Скролл заблокирован");
       }, delay);
     }
   };
-  // объявление функции handleBurgerClick
-  function handleBurgerClick() {
-    // получаем элемент с классом "burger" через document.querySelector
-    const burger = document.querySelector(".burger");
 
-    // проверяем, существует ли элемент с классом "burger"
+  // Обработчик клика на элемент с классом "header__burger"
+  function handleBurgerClick() {
+    // Получаем элемент с классом "burger" через document.querySelector
+    const burger = document.querySelector(".burger");
+    const headerServices = document.querySelector(".header__services");
+
+    // Проверяем, существует ли элемент с классом "burger"
     if (burger) {
-      // добавляем обработчик события клика на элемент "burger"
+      // Добавляем обработчик события клика на элемент "burger"
       burger.addEventListener("click", function (event) {
-        // проверяем, заблокирован ли скролл
+        // Проверяем, заблокирован ли скролл
         if (scrollLocked) {
-          // вызываем функцию разблокировки скролла
-          unlockScroll(); // выводим сообщение в консоль
+          // Вызываем функцию разблокировки скролла
+          unlockScroll();
+          // Выводим сообщение в консоль
           console.log("Скролл разблокирован");
         } else {
-          // вызываем функцию блокировки скролла
-          lockScroll(); // выводим сообщение в консоль
+          // Вызываем функцию блокировки скролла
+          lockScroll();
+          // Выводим сообщение в консоль
           console.log("Скролл заблокирован");
         }
 
-        // переключаем класс "open" у элемента "documentElement"
+        // Переключаем класс "open" у элемента "documentElement"
         document.documentElement.classList.toggle("open");
+      });
+    }
+
+    if (headerServices) {
+      const servicesLink = document.querySelector(".service-item");
+
+      // Добавляем обработчики событий наведения мыши на элемент "service-item"
+      servicesLink.addEventListener("mouseover", function () {
+        headerServices.classList.add("open");
+      });
+
+      servicesLink.addEventListener("mouseout", function () {
+        headerServices.classList.remove("open");
       });
     }
   }
 
+  // Вызываем функцию для обработки клика на "burger"
   handleBurgerClick();
 
- 
-
-  // Определяем функцию callback
+  // Определение поддержки формата WebP и добавление класса "webp" или "no-webp" в зависимости от поддержки
   ((callback) => {
     // Создаем новый объект Image
     const image = new Image();
@@ -324,11 +342,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // Добавляем обработчики событий загрузки и ошибки
     image.onload = image.onerror = () => callback(image.height === 2);
 
-    // Задаем источник изображения
+    // Задаем источник изображения в формате WebP
     image.src =
       "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
 
     // Коллбэк функция для добавления класса 'webp' или 'no-webp' в зависимости от поддержки формата WebP
-  })((supported) => document.documentElement.classList.add(supported ? "webp" : "no-webp"));
-
+  })((supported) =>
+    document.documentElement.classList.add(supported ? "webp" : "no-webp")
+  );
 });
