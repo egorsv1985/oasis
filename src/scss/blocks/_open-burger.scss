@@ -13,7 +13,11 @@
     &__box-btn{
       display: none;
     }
+    &__box-logo{
+      z-index: 50;
+    }
   }
+
   .burger{
     span{
       color: #fff;

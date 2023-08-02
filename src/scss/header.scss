@@ -58,8 +58,12 @@
     }
   }
 &__box-logo{
-  position: relative;
-  z-index: 50;
+  position: absolute;
+  left: 50%;
+ transform: translateX(-50%);
+ width: 141px;
+ height: 58px;
+ 
 }
   &__box-work {
     display: none;
