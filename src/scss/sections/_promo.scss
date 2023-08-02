@@ -95,12 +95,12 @@
     &::after {
       @include pseudo;
       position: absolute;
-      background: url("@img/icons/oasis1.svg") no-repeat center / cover;
+      background: url("@img/icons/oasis-border.svg") no-repeat center / cover;
       left: 0;
       top: 0;
       width: 100%;
       height: 100%;
-      z-index: 2;
+      z-index: 4;
     }
     &::before {
       @include pseudo;

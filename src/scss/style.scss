@@ -142,10 +142,12 @@ $grid_breakpoints: (
 
 // pages
 @import "./pages/_home";
+@import "./pages/_about";
 
 
 // sections
 @import "./sections/_promo";
+@import "./sections/_about";
 
 
 // @import "./components/social";
