@@ -5,10 +5,13 @@
       
     }
     &__box-work{
-      display: block;
+      
       position: relative;
       z-index: 50;
       color: #fff;
+      @include media (min, lg) {
+        display: block;
+      }
     }
     &__box-btn{
       display: none;
