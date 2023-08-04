@@ -1,38 +1,38 @@
-.open {
-  .header {
-    &__menu {
-      transform: translateX(0);
+// .open {
+//   .header {
+//     &__menu {
+//       transform: translateX(0);
       
-    }
-    &__box-work{
+//     }
+//     &__box-work{
       
-      position: relative;
-      z-index: 50;
-      color: #fff;
-      @include media (min, lg) {
-        display: block;
-      }
-    }
-    &__box-btn{
-      display: none;
-    }
-    &__box-logo{
-      z-index: 50;
-    }
-  }
+//       position: relative;
+//       z-index: 50;
+//       color: #fff;
+//       @include media (min, lg) {
+//         display: block;
+//       }
+//     }
+//     &__box-btn{
+//       display: none;
+//     }
+//     &__box-logo{
+//       z-index: 50;
+//     }
+//   }
 
-  .burger{
-    span{
-      color: #fff;
+//   .burger{
+//     span{
+//       color: #fff;
 
-    }
-    &__inner
-    {
-      span,
-      &::before{
-        background-color: #fff;
+//     }
+//     &__inner
+//     {
+//       span,
+//       &::before{
+//         background-color: #fff;
        
-      }
-    } 
-  }
-}
+//       }
+//     } 
+//   }
+// }

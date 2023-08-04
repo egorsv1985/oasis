@@ -332,7 +332,7 @@ function handleBurgerClick() {
   }
 
   // Получаем элемент с классом "service-item" через document.querySelector
-  const serviceItem = document.querySelector(".service-item");
+  const serviceItem = document.querySelector(".header__service-item");
 
   // Проверяем, существует ли элемент с классом "header__services"
   if (headerServices && serviceItem) {
