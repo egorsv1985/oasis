@@ -293,15 +293,44 @@
   }
   // .header__btn
   &__btn {
+    &--pseudo {
+      span {
+        position: relative;
+        &::before {
+          @include pseudo;
+
+          height: 1px;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -10px;
+          background-color: #fff;
+        }
+      }
+      &:hover {
+        span {
+          &::before {
+            background-color: #262722;
+          }
+        }
+      }
+    }
   }
-  // .header__btn--pseudo
-  &__btn--pseudo {
-  }
+
   // .header__menu-bottom
   &__menu-bottom {
+    .btn {
+      &:hover {
+        background-color: #262722;
+      }
+    }
   }
   // .header__menu-link
   &__menu-link {
+    &--map {
+      background: url("@img/icons/place-white.svg") no-repeat center / cover;
+      @include wh(50px);
+    }
   }
   // .header__services
   &__services {
@@ -316,9 +345,6 @@
     width: 30rem;
     z-index: 1;
     transition: all 0.5s ease-out;
-    // @include media(min, md) {
-    //   z-index: -1;
-    // }
   }
   // .header__services-menu
   &__services-menu {
