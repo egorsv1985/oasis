@@ -524,7 +524,7 @@
       return t;
     }
   }
-  function b(e, t, s) {
+  function S(e, t, s) {
     const i = l();
     return s
       ? e["width" === t ? "offsetWidth" : "offsetHeight"] +
@@ -542,11 +542,11 @@
           )
       : e.offsetWidth;
   }
-  let S, T, y;
+  let b, T, y;
   function x() {
     return (
-      S ||
-        (S = (function () {
+      b ||
+        (b = (function () {
           const e = l(),
             t = o();
           return {
@@ -560,7 +560,7 @@
             ),
           };
         })()),
-      S
+      b
     );
   }
   function E(e = {}) {
@@ -838,14 +838,14 @@
       let h = [];
       const f = [],
         w = [];
-      let S = i.slidesOffsetBefore;
-      "function" == typeof S && (S = i.slidesOffsetBefore.call(e));
+      let b = i.slidesOffsetBefore;
+      "function" == typeof b && (b = i.slidesOffsetBefore.call(e));
       let T = i.slidesOffsetAfter;
       "function" == typeof T && (T = i.slidesOffsetAfter.call(e));
       const y = e.snapGrid.length,
         x = e.slidesGrid.length;
       let E = i.spaceBetween,
-        C = -S,
+        C = -b,
         M = 0,
         P = 0;
       if (void 0 === o) return;
@@ -889,7 +889,7 @@
               l && (n.style.webkitTransform = "none"),
               i.roundLengths)
             )
-              L = e.isHorizontal() ? b(n, "width", !0) : b(n, "height", !0);
+              L = e.isHorizontal() ? S(n, "width", !0) : S(n, "height", !0);
             else {
               const e = s(o, "width"),
                 t = s(o, "padding-left"),
@@ -985,7 +985,7 @@
         }),
           (e -= E);
         const t = e - o;
-        h = h.map((e) => (e <= 0 ? -S : e > t ? t + T : e));
+        h = h.map((e) => (e <= 0 ? -b : e > t ? t + T : e));
       }
       if (i.centerInsufficientSlides) {
         let e = 0;
@@ -1473,11 +1473,11 @@
         )
           return !1;
       }
-      let b;
+      let S;
       if (
         (o !== (c || 0) && s && n.emit("beforeSlideChangeStart"),
         n.updateProgress(w),
-        (b = o > p ? "next" : o < p ? "prev" : "reset"),
+        (S = o > p ? "next" : o < p ? "prev" : "reset"),
         (u && -w === n.translate) || (!u && w === n.translate))
       )
         return (
@@ -1485,7 +1485,7 @@
           a.autoHeight && n.updateAutoHeight(),
           n.updateSlidesClasses(),
           "slide" !== a.effect && n.setTranslate(w),
-          "reset" !== b && (n.transitionStart(s, b), n.transitionEnd(s, b)),
+          "reset" !== S && (n.transitionStart(s, S), n.transitionEnd(s, S)),
           !1
         );
       if (a.cssMode) {
@@ -1522,9 +1522,9 @@
         n.updateActiveIndex(o),
         n.updateSlidesClasses(),
         n.emit("beforeTransitionStart", t, i),
-        n.transitionStart(s, b),
+        n.transitionStart(s, S),
         0 === t
-          ? n.transitionEnd(s, b)
+          ? n.transitionEnd(s, S)
           : n.animating ||
             ((n.animating = !0),
             n.onSlideToWrapperTransitionEnd ||
@@ -1538,7 +1538,7 @@
                   ),
                   (n.onSlideToWrapperTransitionEnd = null),
                   delete n.onSlideToWrapperTransitionEnd,
-                  n.transitionEnd(s, b));
+                  n.transitionEnd(s, S));
               }),
             n.wrapperEl.addEventListener(
               "transitionend",
@@ -1758,11 +1758,11 @@
           ))
         : (v = r);
       const w = "next" === s || !s,
-        b = "prev" === s || !s;
-      let S = 0,
+        S = "prev" === s || !s;
+      let b = 0,
         T = 0;
       if (r < m) {
-        S = Math.max(m - r, u.slidesPerGroup);
+        b = Math.max(m - r, u.slidesPerGroup);
         for (let e = 0; e < m - r; e += 1) {
           const t = e - Math.floor(e / l.length) * l.length;
           f.push(l.length - t - 1);
@@ -1775,7 +1775,7 @@
         }
       }
       if (
-        (b &&
+        (S &&
           f.forEach((e) => {
             (a.slides[e].swiperLoopMoveDOM = !0),
               p.prepend(a.slides[e]),
@@ -1792,13 +1792,13 @@
         u.watchSlidesProgress && a.updateSlidesOffset(),
         t)
       )
-        if (f.length > 0 && b)
+        if (f.length > 0 && S)
           if (void 0 === e) {
             const e = a.slidesGrid[v],
-              t = a.slidesGrid[v + S] - e;
+              t = a.slidesGrid[v + b] - e;
             o
               ? a.setTranslate(a.translate - t)
-              : (a.slideTo(v + S, 0, !1, !0),
+              : (a.slideTo(v + b, 0, !1, !0),
                 i && (a.touches[a.isHorizontal() ? "startX" : "startY"] += t));
           } else i && a.slideToLoop(e, 0, !1, !0);
         else if (g.length > 0 && w)
@@ -1899,10 +1899,10 @@
     (a.currentX = p.pageX), (a.currentY = p.pageY);
     const v = a.currentX,
       w = a.currentY,
-      b = n.edgeSwipeDetection || n.iOSEdgeSwipeDetection,
-      S = n.edgeSwipeThreshold || n.iOSEdgeSwipeThreshold;
-    if (b && (v <= S || v >= i.innerWidth - S)) {
-      if ("prevent" !== b) return;
+      S = n.edgeSwipeDetection || n.iOSEdgeSwipeDetection,
+      b = n.edgeSwipeThreshold || n.iOSEdgeSwipeThreshold;
+    if (S && (v <= b || v >= i.innerWidth - b)) {
+      if ("prevent" !== S) return;
       e.preventDefault();
     }
     Object.assign(r, {
@@ -2038,13 +2038,13 @@
       (n.diff = v),
       (v *= r.touchRatio),
       a && ((v = -v), (w = -w));
-    const b = s.touchesDirection;
+    const S = s.touchesDirection;
     (s.swipeDirection = v > 0 ? "prev" : "next"),
       (s.touchesDirection = w > 0 ? "prev" : "next");
-    const S = s.params.loop && !r.cssMode;
+    const b = s.params.loop && !r.cssMode;
     if (!i.isMoved) {
       if (
-        (S && s.loopFix({ direction: s.swipeDirection }),
+        (b && s.loopFix({ direction: s.swipeDirection }),
         (i.startTranslate = s.getTranslate()),
         s.setTransition(0),
         s.animating)
@@ -2063,8 +2063,8 @@
     }
     let T;
     i.isMoved &&
-      b !== s.touchesDirection &&
-      S &&
+      S !== s.touchesDirection &&
+      b &&
       Math.abs(v) >= 1 &&
       (s.loopFix({ direction: s.swipeDirection, setTranslate: !0 }), (T = !0)),
       s.emit("sliderMove", d),
@@ -2075,7 +2075,7 @@
     if (
       (r.touchReleaseOnEdges && (x = 0),
       v > 0
-        ? (S &&
+        ? (b &&
             !T &&
             i.currentTranslate >
               (r.centeredSlides
@@ -2094,7 +2094,7 @@
                 1 +
                 (-s.minTranslate() + i.startTranslate + v) ** x)))
         : v < 0 &&
-          (S &&
+          (b &&
             !T &&
             i.currentTranslate <
               (r.centeredSlides
@@ -2255,18 +2255,18 @@
               ? t.virtual.slides.length - 1
               : t.slides.length - 1)
         : t.isEnd && (v = 0));
-    const b = (m - a[f]) / g,
-      S = f < r.slidesPerGroupSkip - 1 ? 1 : r.slidesPerGroup;
+    const S = (m - a[f]) / g,
+      b = f < r.slidesPerGroupSkip - 1 ? 1 : r.slidesPerGroup;
     if (h > r.longSwipesMs) {
       if (!r.longSwipes) return void t.slideTo(t.activeIndex);
       "next" === t.swipeDirection &&
-        (b >= r.longSwipesRatio
-          ? t.slideTo(r.rewind && t.isEnd ? v : f + S)
+        (S >= r.longSwipesRatio
+          ? t.slideTo(r.rewind && t.isEnd ? v : f + b)
           : t.slideTo(f)),
         "prev" === t.swipeDirection &&
-          (b > 1 - r.longSwipesRatio
-            ? t.slideTo(f + S)
-            : null !== w && b < 0 && Math.abs(b) > r.longSwipesRatio
+          (S > 1 - r.longSwipesRatio
+            ? t.slideTo(f + b)
+            : null !== w && S < 0 && Math.abs(S) > r.longSwipesRatio
             ? t.slideTo(w)
             : t.slideTo(f));
     } else {
@@ -2274,9 +2274,9 @@
       t.navigation &&
       (p.target === t.navigation.nextEl || p.target === t.navigation.prevEl)
         ? p.target === t.navigation.nextEl
-          ? t.slideTo(f + S)
+          ? t.slideTo(f + b)
           : t.slideTo(f)
-        : ("next" === t.swipeDirection && t.slideTo(null !== v ? v : f + S),
+        : ("next" === t.swipeDirection && t.slideTo(null !== v ? v : f + b),
           "prev" === t.swipeDirection && t.slideTo(null !== w ? w : f));
     }
   }
@@ -3230,58 +3230,58 @@
     !(function () {
       const t = document.querySelector(".burger"),
         s = document.querySelector(".header__services");
-      if (
-        (t &&
-          t.addEventListener("click", function (t) {
-            e
-              ? (((t = 500) => {
-                  const s = document.querySelector("body");
-                  if (e) {
-                    const i = document.querySelectorAll("[data-lp]");
-                    for (let e = 0; e < i.length; e++)
-                      i[e].style.paddingRight = "0px";
-                    (s.style.paddingRight = "0px"),
-                      document.documentElement.classList.remove("lock"),
-                      (e = !1),
-                      setTimeout(function () {
-                        (e = !0), console.log("Скролл разблокирован");
-                      }, t);
-                  }
-                })(),
-                console.log("Скролл разблокирован"))
-              : (((t = 500) => {
-                  const s = document.querySelector("body");
-                  if (!e) {
-                    const i = document.querySelectorAll("[data-lp]");
-                    for (let e = 0; e < i.length; e++)
-                      i[e].style.paddingRight =
-                        window.innerWidth -
-                        document.documentElement.clientWidth +
-                        "px";
-                    (s.style.paddingRight =
+      let i = !1;
+      t &&
+        t.addEventListener("click", function () {
+          e
+            ? (((t = 500) => {
+                const s = document.querySelector("body");
+                if (e) {
+                  const i = document.querySelectorAll("[data-lp]");
+                  for (let e = 0; e < i.length; e++)
+                    i[e].style.paddingRight = "0px";
+                  (s.style.paddingRight = "0px"),
+                    document.documentElement.classList.remove("lock"),
+                    (e = !1),
+                    setTimeout(function () {
+                      (e = !0), console.log("Скролл разблокирован");
+                    }, t);
+                }
+              })(),
+              console.log("Скролл разблокирован"))
+            : (((t = 500) => {
+                const s = document.querySelector("body");
+                if (!e) {
+                  const i = document.querySelectorAll("[data-lp]");
+                  for (let e = 0; e < i.length; e++)
+                    i[e].style.paddingRight =
                       window.innerWidth -
                       document.documentElement.clientWidth +
-                      "px"),
-                      document.documentElement.classList.add("lock"),
-                      (e = !0),
-                      setTimeout(function () {
-                        (e = !1), console.log("Скролл заблокирован");
-                      }, t);
-                  }
-                })(),
-                console.log("Скролл заблокирован")),
-              document.documentElement.classList.toggle("open");
-          }),
-        s)
-      ) {
-        const e = document.querySelector(".service-item");
-        e.addEventListener("mouseover", function () {
-          s.classList.add("open");
-        }),
-          e.addEventListener("mouseout", function () {
-            s.classList.remove("open");
-          });
-      }
+                      "px";
+                  (s.style.paddingRight =
+                    window.innerWidth -
+                    document.documentElement.clientWidth +
+                    "px"),
+                    document.documentElement.classList.add("lock"),
+                    (e = !0),
+                    setTimeout(function () {
+                      (e = !1), console.log("Скролл заблокирован");
+                    }, t);
+                }
+              })(),
+              console.log("Скролл заблокирован")),
+            document.documentElement.classList.toggle("open"),
+            document.documentElement.classList.contains("open") ||
+              (s.classList.remove("open"), (i = !1));
+        });
+      const r = document.querySelector(".header__service-item");
+      s &&
+        r &&
+        r.addEventListener("click", function () {
+          (i = !i),
+            console.log("isHeaderServicesOpen" + i),
+            s.classList.toggle("open", i);
+        });
     })(),
       ((e) => {
         const t = new Image();
