@@ -1,208 +1,236 @@
+// .promo {
+//   // padding-top: 160px;
+
+//   // background: url("@img/fon green-leaves-close.png") no-repeat center center /
+
+//   &__box-img {
+//     // background: url("@img/foto-trener.png") no-repeat center/100% auto;
+//     height: 100vh;
+//   }
+//   // .promo__box
+//   &__box {
+//     border-radius: 50px;
+//     background: rgba(255, 255, 255, 0.4);
+//     box-shadow: 0px 4px 50px 0px rgba(38, 39, 34, 0.25);
+//     backdrop-filter: blur(15px);
+//   }
+//   // .promo__box-btn
+//   &__box-btn {
+//     max-width: 290px;
+//   }
+//   // .promo__box-text
+//   &__box-text {
+//     // &::before {
+//     //   content: "oasis";
+//     //   -webkit-text-fill-color: transparent;
+//     //   -webkit-text-stroke: 1px #cfc8be;
+//     //   position: absolute;
+//     //   left: 0;
+//     //   right: 0;
+//     //   top: 0;
+//     //   bottom: 0;
+
+//     //   text-align: center;
+//     //   font-family: IBM Plex Sans;
+//     //   font-size: 260px;
+//     //   font-style: normal;
+//     //   font-weight: 700;
+//     //   line-height: normal;
+//     //   letter-spacing: -7.8px;
+//     //   text-transform: uppercase;
+//     // }
+//     // color: rgba(246, 243, 238, 0.1);
+//     // text-align: center;
+//     // font-family: "IBM Plex Sans", sans-serif;
+//     // font-size: 260px;
+//     // font-style: normal;
+//     // font-weight: 700;
+//     // line-height: normal;
+//     // letter-spacing: -7.8px;
+//     // text-transform: uppercase;
+
+//     // position: relative;
+//   }
+//   // .promo__svg
+//   &__svg {
+//   }
+//   &__box-img {
+//     width: 100%;
+//     height: 100vh;
+//     &::before {
+//       @include pseudo;
+//       position: absolute;
+
+//       top: 8%;
+//       transform: translateX(-50%);
+//       left: 57%;
+
+//       width: 100%;
+
+//       height: 91%;
+//       background: url("@img/foto-trener.png") no-repeat center / cover;
+//       z-index: 1;
+//       @include media(min, lg) {
+//         width: 45%;
+//       }
+//     }
+//     &::after {
+//       @include pseudo;
+//       position: absolute;
+//       left: 50%;
+//       top: 0;
+//       transform: translateX(-50%);
+//       width: 100%;
+//       height: 100%;
+//       background: url("@img/fon-green-leaves-close.png") no-repeat center /
+//         cover;
+//       @include media(min, lg) {
+//         width: 54%;
+//       }
+//     }
+//   }
+//   &__text {
+//     width: 100%;
+//     height: 338px;
+//     &::after {
+//       @include pseudo;
+//       position: absolute;
+//       background: url("@img/icons/oasis-border.svg") no-repeat center / cover;
+//       left: 0;
+//       top: 0;
+//       width: 100%;
+//       height: 100%;
+//       z-index: 4;
+//     }
+//     &::before {
+//       @include pseudo;
+//       position: absolute;
+//       background: url("@img/icons/oasis2.svg") no-repeat center / cover;
+//       left: 0;
+//       top: 0;
+//       width: 100%;
+//       height: 100%;
+//       z-index: 3;
+//     }
+//   }
+//   .promo {
+//     // .promo__img-trener
+//     &__img-trener {
+//       width: 100%;
+//       height: 100vh;
+//       &::before {
+//         @include pseudo;
+//         position: absolute;
+//         left: 0;
+//         top: 0;
+//         width: 100%;
+//         height: 100%;
+//         background: url("@img/foto-trener.png") no-repeat center / 100% auto;
+//       }
+//     }
+//     // .promo__img-bg
+//     &__img-bg {
+//       width: 100%;
+//       height: 100vh;
+//       &::before {
+//         @include pseudo;
+//         position: absolute;
+//         left: 0;
+//         top: 0;
+//         width: 100%;
+//         height: 100%;
+//         background: url("@img/fon-green-leaves-close.png") no-repeat center /
+//           100% auto;
+//       }
+//     }
+//     // .promo__text
+//     &__text {
+//     }
+//   }
+// }
+// .promo {
+//   // .promo__box-trener
+//   &__box-trener {
+//     left: 56%;
+//     top: 0%;
+//     height: 100vh;
+//     transform: translateX(-50%);
+//     min-width: 825px;
+//     width: max-content;
+//     max-width: 100%;
+//     img {
+//       height: 100vh;
+//       width: 100%;
+//     }
+//   }
+//   // .promo__box-fon
+//   &__box-fon {
+//     left: 50%;
+//     top: 0%;
+//     transform: translateX(-50%);
+//     height: 100vh;
+//     min-width: 1020px;
+//     width: max-content;
+//     max-width: 100%;
+//     z-index: -1;
+//     img {
+//       height: 100vh;
+//       width: 100%;
+//     }
+//   }
+//   // .promo__box-text
+//   &__box-text {
+//     left: 50%;
+//     top: 63%;
+//     transform: translateX(-50%);
+//     height: 338px;
+//     max-width: 100%;
+//     z-index: -2;
+
+//     img {
+//       height: auto;
+//       width: 100%;
+//     }
+//   }
+//   // .promo__box-text2
+//   &__box-text2 {
+//     left: 50%;
+//     top: 63%;
+//     transform: translateX(-50%);
+//     height: 338px;
+//     // width: 825px;
+//     max-width: 100%;
+//     img {
+//       height: auto;
+//       width: 100%;
+//     }
+//   }
+// }
 .promo {
-  // padding-top: 160px;
-
-  // background: url("@img/fon green-leaves-close.png") no-repeat center center /
-
-  &__box-img {
-    // background: url("@img/foto-trener.png") no-repeat center/100% auto;
-    height: 100vh;
-  }
-  // .promo__box
-  &__box {
-    border-radius: 50px;
-    background: rgba(255, 255, 255, 0.4);
-    box-shadow: 0px 4px 50px 0px rgba(38, 39, 34, 0.25);
-    backdrop-filter: blur(15px);
-  }
-  // .promo__box-btn
-  &__box-btn {
-    max-width: 290px;
-  }
-  // .promo__box-text
-  &__box-text {
-    // &::before {
-    //   content: "oasis";
-    //   -webkit-text-fill-color: transparent;
-    //   -webkit-text-stroke: 1px #cfc8be;
-    //   position: absolute;
-    //   left: 0;
-    //   right: 0;
-    //   top: 0;
-    //   bottom: 0;
-
-    //   text-align: center;
-    //   font-family: IBM Plex Sans;
-    //   font-size: 260px;
-    //   font-style: normal;
-    //   font-weight: 700;
-    //   line-height: normal;
-    //   letter-spacing: -7.8px;
-    //   text-transform: uppercase;
-    // }
-    // color: rgba(246, 243, 238, 0.1);
-    // text-align: center;
-    // font-family: "IBM Plex Sans", sans-serif;
-    // font-size: 260px;
-    // font-style: normal;
-    // font-weight: 700;
-    // line-height: normal;
-    // letter-spacing: -7.8px;
-    // text-transform: uppercase;
-
-    // position: relative;
-  }
-  // .promo__svg
-  &__svg {
-  }
-  &__box-img {
-    width: 100%;
-    height: 100vh;
-    &::before {
-      @include pseudo;
-      position: absolute;
-
-      top: 8%;
-      transform: translateX(-50%);
-      left: 57%;
-
-      width: 100%;
-
-      height: 91%;
-      background: url("@img/foto-trener.png") no-repeat center / cover;
-      z-index: 1;
-      @include media(min, lg) {
-        width: 45%;
-      }
-    }
-    &::after {
-      @include pseudo;
-      position: absolute;
-      left: 50%;
-      top: 0;
-      transform: translateX(-50%);
-      width: 100%;
-      height: 100%;
-      background: url("@img/fon-green-leaves-close.png") no-repeat center /
-        cover;
-      @include media(min, lg) {
-        width: 54%;
-      }
-    }
-  }
-  &__text {
-    width: 100%;
-    height: 338px;
-    &::after {
-      @include pseudo;
-      position: absolute;
-      background: url("@img/icons/oasis-border.svg") no-repeat center / cover;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 4;
-    }
-    &::before {
-      @include pseudo;
-      position: absolute;
-      background: url("@img/icons/oasis2.svg") no-repeat center / cover;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 3;
-    }
-  }
-  .promo {
-    // .promo__img-trener
-    &__img-trener {
-      width: 100%;
-      height: 100vh;
-      &::before {
-        @include pseudo;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: url("@img/foto-trener.png") no-repeat center / 100% auto;
-      }
-    }
-    // .promo__img-bg
-    &__img-bg {
-      width: 100%;
-      height: 100vh;
-      &::before {
-        @include pseudo;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: url("@img/fon-green-leaves-close.png") no-repeat center /
-          100% auto;
-      }
-    }
-    // .promo__text
-    &__text {
-    }
-  }
-}
-.promo {
+ 
   // .promo__box-trener
   &__box-trener {
-    left: 56%;
-    top: 0%;
-    height: 100vh;
-    transform: translateX(-50%);
-    min-width: 825px;
-    width: max-content;
-    max-width: 100%;
-    img {
-      height: 100vh;
-      width: 100%;
-    }
+    
+    
+    
+    background: url("@img/foto-trener2.png") no-repeat;
+    background-size: 80% auto;
+    background-position: 50% -15%;
+
   }
   // .promo__box-fon
   &__box-fon {
-    left: 50%;
-    top: 0%;
-    transform: translateX(-50%);
-    height: 100vh;
-    min-width: 1020px;
-    width: max-content;
-    max-width: 100%;
-    z-index: -1;
-    img {
-      height: 100vh;
-      width: 100%;
-    }
+    // height: 100%;
+    
+    // margin: 0 auto;
+    // background: url("@img/fon.png") no-repeat center / contain;
+    
   }
   // .promo__box-text
-  &__box-text {
-    left: 50%;
-    top: 63%;
-    transform: translateX(-50%);
-    height: 338px;
-    max-width: 100%;
-    z-index: -2;
-
-    img {
-      height: auto;
-      width: 100%;
-    }
-  }
-  // .promo__box-text2
-  &__box-text2 {
-    left: 50%;
-    top: 63%;
-    transform: translateX(-50%);
-    height: 338px;
-    // width: 825px;
-    max-width: 100%;
-    img {
-      height: auto;
-      width: 100%;
-    }
-  }
+  &__box-text {}
+  // .promo__box
+  &__box {}
+  // .promo__box-btn
+  &__box-btn {}
 }
+
