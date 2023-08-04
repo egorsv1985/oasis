@@ -3,8 +3,9 @@
   
   
  
-  &__item {
+  &__link {
     @include wh(60px);
+    display: block;
    
     &--vk {
       background: url("@img/icons/vk.svg") no-repeat 0 center / auto;
