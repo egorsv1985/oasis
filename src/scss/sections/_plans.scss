@@ -1,0 +1,87 @@
+.plans {
+  &::before {
+    content: "";
+    display: block;
+    background-color: #b8ada0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    height: 19%;
+    top: -9%;
+    border-radius: 100% 100% 0% 0%;
+    z-index: -1;
+  }
+  // .plans__img
+  &__img {
+  }
+  // .plans__marker
+  &__marker {
+    width: 3.9%;
+
+    aspect-ratio: 1 / 1;
+    &:hover {
+      .plans__inform {
+        display: block;
+      }
+    }
+  }
+  // .plans__ico
+  &__ico {
+    height: 70%;
+    width: 70%;
+    margin: 15%;
+  }
+  // .plans__inform
+  &__inform {
+    display: none;
+
+    max-width: 1300px;
+
+    z-index: 10;
+
+    transform: translateX(-50%);
+
+    fill: rgba(255, 255, 255, 0.15);
+    stroke-width: 1px;
+    stroke: #b8ada0;
+    filter: drop-shadow(0px 4px 14px rgba(0, 0, 0, 0.25));
+    backdrop-filter: blur(7.5px);
+
+    bottom: 100%;
+    border: 1px solid #b8ada0;
+    &::after {
+      transform: translateX(-50%);
+      z-index: 10;
+      content: "";
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      border: 10px solid #b8ada0;
+      border-width: 0.75rem 0.75rem;
+      border-color: rgba(255, 255, 255, 0.15) transparent transparent
+        transparent;
+    }
+  }
+  &__content {
+    top: 66%;
+    left: 0;
+  }
+  &__numbered-list {
+    counter-reset: plan-counter; /* Сброс счетчика перед списком */
+  }
+  &__list {
+    list-style-type: none; /* Скрытие стандартных маркеров */
+    li {
+      counter-increment: plan-counter; /* Увеличение счетчика для каждого элемента */
+      margin-bottom: 36px;
+      padding-left: 50px;
+      position: relative;
+      &::before {
+        content: "(" counter(plan-counter, decimal-leading-zero) ") "; /* Формат номера с нулем и скобками */
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+}
