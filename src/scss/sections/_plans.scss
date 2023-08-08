@@ -1,15 +1,23 @@
 .plans {
-  &::before {
-    content: "";
-    display: block;
-    background-color: #b8ada0;
-    left: 0;
-    right: 0;
-    position: absolute;
-    height: 19%;
-    top: -9%;
-    border-radius: 100% 100% 0% 0%;
+	&::after, &::before{
+		content: "";
+		display: block;
+		background-color: #b8ada0;
+		left: 0;
+		right: 0;
+		position: absolute;
+		height: 19%;
+		
     z-index: -1;
+	}
+  &::before {
+	border-radius: 100% 100% 0% 0%;
+   
+    top: -9%;
+    
+  }
+  &::after{
+bottom: -9%;border-radius: 0% 0% 100% 100%;
   }
   // .plans__img
   &__img {
