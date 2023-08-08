@@ -207,30 +207,53 @@
 //   }
 // }
 .promo {
- 
   // .promo__box-trener
   &__box-trener {
-    
-    
-    
     background: url("@img/foto-trener2.png") no-repeat;
     background-size: 80% auto;
     background-position: 50% -15%;
-
   }
   // .promo__box-fon
   &__box-fon {
     // height: 100%;
-    
+
     // margin: 0 auto;
     // background: url("@img/fon.png") no-repeat center / contain;
-    
   }
   // .promo__box-text
-  &__box-text {}
-  // .promo__box
-  &__box {}
-  // .promo__box-btn
-  &__box-btn {}
-}
+  &__box-text {
+    background: url("@img/icons/oasis-fon.svg") no-repeat center / cover;
+  }
+  // .promo__box-text-fon
+  &__box-text-fon {
+    bottom: 12%;
+    transform: translate(-50%);
+    width: 64%;
 
+    max-height: 338px;
+    z-index: -1;
+  }
+  // .promo__box-text-border
+  &__box-text-border {
+    bottom: 12%;
+    transform: translate(-50%);
+    width: 64%;
+
+    max-height: 338px;
+  }
+  // .promo__box
+  &__box {
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 4px 50px 0px rgba(38, 39, 34, 0.25);
+    backdrop-filter: blur(15px);
+    top: 22%;
+  }
+  // .promo__box-btn
+  &__box-btn {
+  }
+  // .promo__btn
+  &__btn {
+    max-width: 290px;
+  }
+}
