@@ -362,3 +362,4 @@ handleBurgerClick();
     document.documentElement.classList.add(supported ? "webp" : "no-webp")
   );
 });
+
