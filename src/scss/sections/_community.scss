@@ -1,0 +1,41 @@
+.community {
+	padding-block: 180px;
+	// .community__title
+	&__title {
+		max-width: 220px;
+
+	}
+	.swiper {
+		&-slide{
+			background-color: rgba(255, 255, 255, 0.50);
+backdrop-filter: blur(20px);
+padding: 30px;
+		}
+		// .swiper__box-img
+		&__box-img {}
+		// .swiper__link
+		&__link {}
+		// .swiper__control
+		&__control {}
+		// .swiper__buttons
+		&__buttons {}
+		
+	}
+	.swiper-slide {
+	}
+}
+
+
+
+.swiper-wrapper {
+}
+
+
+.swiper-pagination {
+}
+.swiper-scrollbar {
+}
+.swiper-button-prev {
+}
+.swiper-button-next {
+}
