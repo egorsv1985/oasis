@@ -64,7 +64,7 @@
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 33, 37, 41;
-  --bs-body-bg-rgb: 255, 255, 255;
+  --bs-body-bg-rgb: 246, 243, 238;
   --bs-font-sans-serif: IBM Plex Sans;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
@@ -186,31 +186,6 @@
   list-style: none;
   background-color: var(--bs-breadcrumb-bg);
   border-radius: var(--bs-breadcrumb-border-radius);
-}
-
-.breadcrumb-item.active::before {
-  float: left;
-  padding-right: var(--bs-breadcrumb-item-padding-x);
-  color: var(--bs-breadcrumb-divider-color);
-  content: "";
-  display: block;
-  background-color: #b8ada0;
-  height: 1px;
-  width: 10px;
-  position: absolute;
-  top: 40%;
-  right: 15%;
-}
-
-.breadcrumb-item.active::after {
-  display: block;
-  background-color: #b8ada0;
-  height: 1px;
-  width: 62%;
-  content: "";
-  position: absolute;
-  top: 40%;
-  right: 32%;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
@@ -644,9 +619,27 @@ body.popup-show::after {
   width: 50px;
   height: 50px;
 }
+.about__box-breadcrumb {
+  height: 390px;
+  margin-bottom: 60px;
+}
 .about__breadcrumb {
-  transform: rotate(270deg);
-  transform-origin: left top;
+  transform: rotate(270deg) translateX(-100%);
+  transform-origin: top left;
+  width: 390px;
+  overflow: hidden;
+}
+.about__breadcrumb::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #b8ada0;
+  position: absolute;
+  right: 14%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
 }
 .about__box-content {
   border-radius: 10px;
@@ -654,8 +647,6 @@ body.popup-show::after {
   padding: 100px 30px 30px;
   max-width: 255px;
   max-height: 210px;
-  top: 10%;
-  left: 25%;
   background: rgba(255, 255, 255, 0.4) url("../img/icons/arrow-about.svg") no-repeat 85% 18%/23px 23px;
 }
 
@@ -664,10 +655,6 @@ body.popup-show::after {
   height: 50px;
   background: url("../img/icons/home2.svg") no-repeat center/24px 24px;
 }
-.breadcrumb {
-  gap: 20px;
-}
-
 .plans {
   background: url("../img/icons/Vector.svg") no-repeat center/100% auto;
 }
@@ -736,8 +723,7 @@ body.popup-show::after {
   border-color: rgba(255, 255, 255, 0.15) transparent transparent transparent;
 }
 .plans__content {
-  top: 66%;
-  left: 0;
+  margin-top: -22%;
 }
 .plans__numbered-list {
   counter-reset: plan-counter; /* Сброс счетчика перед списком */
