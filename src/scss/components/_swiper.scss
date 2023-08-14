@@ -66,3 +66,50 @@
 // .swiper-control {
 //   top: 50%;
 // }
+
+
+.swiper-button-next,
+.swiper-button-prev {
+  z-index: 100;
+  position: relative;
+ 
+  margin: 0;
+  right: inherit;
+  left: inherit;
+
+  @include wh(50px);
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    background-color: #B8ADA0;
+  }
+  &::after {
+    @include pseudo;
+
+    @include wh(15px);
+    @include background(url("@img/icons/double_arrow.svg"));
+  }
+}
+.swiper-button-next {
+ 
+  &::after {
+    transform: rotate(180deg);
+  }
+}
+.swiper{
+	&__buttons{
+		
+	}
+}
+.swiper-pagination-bullet
+{
+	opacity: 0;
+    width: 0;
+    
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 120%;
+    color: #262722;
+}
+.swiper-pagination-bullet-active{
+	opacity: 1;
+}
