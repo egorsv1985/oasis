@@ -1,23 +1,38 @@
 .plans {
-	&::after, &::before{
-		content: "";
-		display: block;
-		background-color: #b8ada0;
-		left: 0;
-		right: 0;
-		position: absolute;
-		height: 12%;
-		
-    z-index: -1;
-	}
+  background: url("@img/icons/Vector.svg") no-repeat center / 100% auto;
+  &::after,
   &::before {
-	border-radius: 100% 100% 0% 0%;
-   
-    top: -9%;
-    
+    content: "";
+    display: block;
+    background-color: #b8ada0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    height: 12%;
+
+    z-index: -1;
   }
-  &::after{
-bottom: -9%;border-radius: 0% 0% 100% 100%;
+  &::before {
+    border-radius: 100% 100% 0% 0%;
+
+    top: -9%;
+  }
+  &::after {
+    bottom: -9%;
+    border-radius: 0% 0% 100% 100%;
+  }
+  &__title{
+    &::before{
+      
+        content: "";
+        display: block;
+        background: url("@img/icons/Star1.svg") no-repeat center / 50px 50px;
+        position: absolute;
+        left: -7%;
+        top: -28%;
+        width: 50px;
+        height: 50px;
+    }
   }
   // .plans__img
   &__img {

@@ -2,77 +2,71 @@
   <div class="container">
     <div class="row">
       <div class="col-4">
-        <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
+        <ul class="nav nav-tabs flex-column" id="planTab" role="tablist">
           <li class="nav-item" role="presentation">
-            <button
+            <a
               class="nav-link"
               id="one-tab"
-              data-bs-toggle="tab"
-              data-bs-target="#one"
-              type="button"
+              data-toggle="tab"
+              href="#one"
               role="tab"
               aria-controls="one"
               aria-selected="false"
-              tabindex="-1"
             >
-              Аквапарк
-            </button>
+              Аквапарк</a
+            >
           </li>
           <li class="nav-item" role="presentation">
-            <button
+            <a
               class="nav-link active"
-              id="two"
-              data-bs-toggle="tab"
-              data-bs-target="#two"
-              type="button"
+              id="two-tab"
+              data-toggle="tab"
+              href="#two"
               role="tab"
               aria-controls="two"
               aria-selected="true"
             >
-              3-ий этаж
-            </button>
+              3-ий этаж</a
+            >
           </li>
+
           <li class="nav-item" role="presentation">
-            <button
+            <a
               class="nav-link"
               id="three-tab"
-              data-bs-toggle="tab"
-              data-bs-target="#three"
-              type="button"
+              data-toggle="tab"
+              href="#three"
               role="tab"
               aria-controls="three"
               aria-selected="false"
-              tabindex="-1"
+              >4-ий этаж</a
             >
-              4-ый этаж
-            </button>
           </li>
           <li class="nav-item" role="presentation">
-            <button
+            <a
               class="nav-link"
               id="for-tab"
-              data-bs-toggle="tab"
-              data-bs-target="#for"
-              type="button"
+              data-toggle="tab"
+              href="#for"
               role="tab"
               aria-controls="for"
               aria-selected="false"
-              tabindex="-1"
+              >5-ий этаж</a
             >
-              5-ый этаж
-            </button>
           </li>
         </ul>
       </div>
       <div class="col-5">
-        <h2 class="fs-36 fw-700 lh-12 text-white">
+        <div
+          class="fs-36 fw-700 lh-12 text-white position-relative plans__title"
+        >
           В среднем наш клиент проходит 20 000 шагов в клубе:
-        </h2>
+        </div>
       </div>
     </div>
-    <div class="tab-content plants my-5" id="myTabContent">
+    <div class="tab-content plants my-5" id="planTabContent">
       <div
-        class="tab-pane fade"
+        class="tab-pane fade position-relative"
         id="one"
         role="tabpanel"
         aria-labelledby="one-tab"
@@ -411,13 +405,13 @@
           <div class="plans__content position-absolute">
             <div class="row">
               <div class="col-6 offset-lg-2">
-				<div class="fs-24 fw-700 text-white lh-15 mb-4">
-					<h2>
-						Тут можно что-нибудь написать интересное о клубе, но это не
-						обязательно
-					  </h2>
-				</div>
-                
+                <div class="fs-24 fw-700 text-white lh-15 mb-4">
+                  <h2>
+                    Тут можно что-нибудь написать интересное о клубе, но это не
+                    обязательно
+                  </h2>
+                </div>
+
                 <div class="plans__numbered-list fs-16 fst-italic text-white">
                   <ol class="plans__list ps-0">
                     <li class="fs-16 lh-13 text-white">
@@ -438,8 +432,9 @@
           </div>
         </div>
       </div>
+
       <div
-        class="tab-pane fade"
+        class="tab-pane fade position-relative"
         id="three"
         role="tabpanel"
         aria-labelledby="three-tab"
@@ -449,7 +444,7 @@
         </div>
       </div>
       <div
-        class="tab-pane fade"
+        class="tab-pane fade position-relative"
         id="for"
         role="tabpanel"
         aria-labelledby="for-tab"
