@@ -158,8 +158,8 @@
         </div>
       </div>
       <div class="swiper__control d-flex align-items-center gap-4">
-       <span class="swiper__span fs-20 fw-700 lh-12">01</span>
-        <div class="swiper-scrollbar position-relative"></div>
+        <span class="swiper__span fs-20 fw-700 lh-12">01</span>
+        <div class="swiper-pagination position-relative"></div>
         <span class="swiper__span fs-20 fw-700 lh-12">05</span>
         <div class="swiper__buttons d-flex gap-1">
           <div
@@ -196,15 +196,15 @@
       enabled: true,
     },
     loop: true,
-    // включаем полосу прокрутки и выбираем элемент, в котором она будет находиться
-    scrollbar: {
-      el: ".community .swiper-scrollbar",
+    pagination: {
+      el: ".community .swiper-pagination",
+      type: "bullets",
+      clickable: true,
     },
     // включаем кнопки "вперед" и "назад" для навигации по слайдам
     navigation: {
       nextEl: ".community .swiper-button-next",
       prevEl: ".community .swiper-button-prev",
     },
-   
   });
 </script>
