@@ -7,26 +7,26 @@
 	<meta name="format-detection" content="telephone=no">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap&_v=20230814122700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap&_v=20230814122700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap&_v=20230814152808" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap&_v=20230814152808" rel="stylesheet">
 
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css?_v=20230814122700">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.css?_v=20230814122700" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.css?_v=20230814122700">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css?_v=20230814152808">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.css?_v=20230814152808" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css?_v=20230814152808">
 
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js?_v=20230814122700"></script>
-	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js?_v=20230814122700"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js?_v=20230814152808"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js?_v=20230814152808"></script>
 
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js?_v=20230814122700"></script>
-
-
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js?_v=20230814152808"></script>
 
 
 
-	<script src="js/app.min.js?_v=20230814122700"></script>
+
+
+	<script src="js/app.min.js?_v=20230814152808"></script>
 
 
 </head>
@@ -223,25 +223,36 @@
 			<section class="about position-relative" id="about">
 				<div class="container">
 					<div class="row">
-						<div class="col-4 position-relative">
-							<div class="d-flex flex-column justify-content-end h-100 pb-5">
-								<div class="about__breadcrumb">
-									<nav aria-label="breadcrumb" class="">
-										<ol class="breadcrumb align-items-center justify-content-end">
-											<li class="breadcrumb-item active ff-inter fs-14" aria-current="page">О нас</li>
-											<li class="breadcrumb-item position-relative"><a href="#" class="bg-success rounded-circle d-block"></a></li>
+						<div class="col-4">
+							<div class="row">
+								<div class="col-3 about__box-breadcrumb">
 
+									<nav aria-label="breadcrumb" class="about__breadcrumb position-relative ">
+										<ol class="breadcrumb flex-row-reverse align-items-center m-0 gap-4">
+											<li class="breadcrumb-item">
+												<a href="/" class="bg-success rounded-circle d-block"></a>
+											</li>
+											<li class="breadcrumb-item active ff-inter fs-14 bg-body px-1" aria-current="page">
+												О нас
+											</li>
 										</ol>
 									</nav>
+
 								</div>
-								<div class="fs-40 fw-700 lh-12">О клубе</div>
+								<div class="col-9">
+									<div class="about__box-content">
+										<div class="fs-20 text-info">
+											Меняем карту вашего клуба на
+											<span class="text-uppercase">Oasis Sity</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="fs-40 fw-700 lh-12 mb-3">О клубе</div>
 								<div class="fs-20">Узнай нас еще лучше!</div>
 							</div>
-							<div class="about__box-content position-absolute">
-								<div class="fs-20 text-info">Меняем карту вашего клуба на <span class="text-uppercase">Oasis Sity</span></div>
-							</div>
-
 						</div>
+
 						<div class="col-8">
 							<h2 class="fs-36 fw-700 lh-12 mb-5">
 								Специально для <br />тебя у нас есть:
@@ -339,12 +350,12 @@
 								<img src="" class="w-100" />
 							</div>
 						</div>
-						<div class="tab-pane fade show active position-relative" id="two" role="tabpanel" aria-labelledby="two-tab">
-							<div class="plans__img" style="
-            padding-top: 60%;
+						<div class="tab-pane fade show active " id="two" role="tabpanel" aria-labelledby="two-tab">
+							<div class="plans__img position-relative" style="
+            padding-top: 70%;
             background: url(img/icons/plan.svg) no-repeat center / 100% 100%;
           ">
-								<div class="plans__marker position-absolute rounded-circle" style="background-color: #debbc2; top: 28.5%; left: 8.9%">
+								<div class="plans__marker position-absolute rounded-circle" style="background-color: #debbc2; top: 28.5%; left: 10%">
 									<div class="plans__ico" style="
                 background: url(img/icons/woman_changing_room.svg) no-repeat
                   center / contain;
@@ -356,8 +367,11 @@
 										</div>
 									</div>
 								</div>
-								<div class="plans__marker position-absolute rounded-circle" style="background-color: #a9b0c3; top: 28.5%; left: 16.9%">
-									<div class="plans__ico"></div>
+								<div class="plans__marker position-absolute rounded-circle" style="background-color: #a9b0c3; top: 28.5%; left: 18%">
+									<div class="plans__ico" style="
+                background: url(img/icons/men_changing_room.svg) no-repeat
+                  center / contain;
+              "></div>
 									<div class="plans__inform text-center text-nowrap position-absolute start-50 fs-16 fw-700 px-5 py-4 rounded-4">
 										Мужская раздевалка
 										<div>
@@ -365,7 +379,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="plans__marker position-absolute rounded-circle" style="background-color: #bfd3b8; top: 3.1%; left: 32.1%">
+								<div class="plans__marker position-absolute rounded-circle" style="background-color: #bfd3b8; top: 3.1%; left: 28%">
 									<div class="plans__ico" style="
                 background: url(img/icons/salers.svg) no-repeat center /
                   contain;
@@ -389,7 +403,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="plans__marker position-absolute rounded-circle" style="background-color: #d0cdde; top: 44.1%; left: 32.5%">
+								<div class="plans__marker position-absolute rounded-circle" style="background-color: #d0cdde; top: 44.6%; left: 30%">
 									<div class="plans__ico" style="
                 background: url(img/icons/functionaltest.svg) no-repeat center /
                   contain;
@@ -412,7 +426,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="plans__marker position-absolute rounded-circle" style="background-color: #c9d0a4; top: 23.9%; left: 43.2%">
+								<div class="plans__marker position-absolute rounded-circle" style="background-color: #c9d0a4; top: 25%; left: 42%">
 									<div class="plans__ico" style="
                 background: url(img/icons/bar.svg) no-repeat center / contain;
               "></div>
@@ -435,7 +449,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="plans__marker position-absolute rounded-circle" style="background-color: #f4c28f; top: 30.2%; left: 68.2%">
+								<div class="plans__marker position-absolute rounded-circle" style="background-color: #f4c28f; top: 31.2%; left: 71.4%">
 									<div class="plans__ico" style="
                 background: url(img/icons/fight2.svg) no-repeat center /
                   contain;
@@ -447,7 +461,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="plans__marker position-absolute rounded-circle" style="background-color: #e3ced5; top: 6%; left: 74.4%">
+								<div class="plans__marker position-absolute rounded-circle" style="background-color: #e3ced5; top: 6%; left: 77.4%">
 									<div class="plans__ico" style="
                 background: url(img/icons/yoga2.svg) no-repeat center / contain;
               "></div>
@@ -458,7 +472,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="plans__marker position-absolute rounded-circle" style="background-color: #c9b7b5; top: 33.4%; left: 80.3%">
+								<div class="plans__marker position-absolute rounded-circle" style="background-color: #c9b7b5; top: 32.6%; left: 84.5%">
 									<div class="plans__ico" style="
                 background: url(img/icons/woman.svg) no-repeat center / contain;
               "></div>
@@ -470,7 +484,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="plans__marker position-absolute rounded-circle" style="background-color: #adcebd; top: 57.5%; left: 85.3%">
+								<div class="plans__marker position-absolute rounded-circle" style="background-color: #adcebd; top: 58%; left: 91%">
 									<div class="plans__ico" style="
                 background: url(img/icons/cycle.svg) no-repeat center / contain;
               "></div>
@@ -481,7 +495,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="plans__marker position-absolute rounded-circle" style="background-color: #ebd0b5; top: 80.5%; left: 79.2%">
+								<div class="plans__marker position-absolute rounded-circle" style="background-color: #ebd0b5; top: 77%; left: 83%">
 									<div class="plans__ico" style="
                 background: url(img/icons/zal2.svg) no-repeat center / contain;
               "></div>
@@ -492,9 +506,9 @@
 										</div>
 									</div>
 								</div>
-								<div class="plans__content position-absolute">
+								<div class="plans__content position-relative">
 									<div class="row">
-										<div class="col-6 offset-lg-2">
+										<div class="col-6">
 											<div class="fs-24 fw-700 text-white lh-15 mb-4">
 												<h2>
 													Тут можно что-нибудь написать интересное о клубе, но это не
