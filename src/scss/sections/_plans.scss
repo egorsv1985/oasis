@@ -12,6 +12,18 @@
 
     z-index: -1;
   }
+  .container{
+    &::before{
+        content: "";
+        display: block;
+         background: url("@img/icons/Star3.svg") no-repeat center / 50px 50px;
+        position: absolute;
+        right: -7%;
+        top: 9%;
+        width: 50px;
+        height: 50px;
+    }
+  }
   &::before {
     border-radius: 100% 100% 0% 0%;
 
