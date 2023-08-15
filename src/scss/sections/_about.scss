@@ -8,20 +8,26 @@
     position: absolute;
 
     z-index: -1;
-
-    width: 100%;
-    height: 88%;
-    right: -25%;
-    top: 11%;
+    width: 170%;
+    height: 80%;
+    right: -80%;
+    top: 20%;
+    opacity: 0.5;
 
     @include media(min, md) {
       display: block;
     }
     @include media(min, lg) {
+      width: 80%;
+    height: 80%;
+    right: -25%;
+    }
+    @include media(min, xxl) {
+      opacity: 1;
       width: 64%;
     }
   }
- 
+
   &__box-img {
     width: 50px;
     height: 50px;
@@ -68,4 +74,3 @@
   &.active {
   }
 }
-
