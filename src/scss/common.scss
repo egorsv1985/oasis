@@ -1,6 +1,5 @@
 // Заголовки, общие БЄМ блоки и проче...
 
-
 .fs-16 {
   font-size: 16px;
 }
@@ -22,13 +21,16 @@
 .fs-48 {
   font-size: 48px;
 }
-.lh-12{
+.fs-80 {
+  font-size: 80px;
+}
+.lh-12 {
   line-height: 120%;
 }
-.lh-13{
+.lh-13 {
   line-height: 130%;
 }
-.lh-15{
+.lh-15 {
   line-height: 150%;
 }
 .fw-500 {
@@ -40,10 +42,20 @@
 .fw-700 {
   font-weight: 700;
 }
-.ff-inter{
+.ff-inter {
   font-family: "Inter";
 }
 
+.inter {
+  color: #f6f3ee;
+  opacity: 0.5;
+  text-transform: uppercase;
 
+  display: block;
 
-
+  text-shadow:
+    -1px -1px 0 #cfc8be,
+    1px -1px 0 #cfc8be,
+    -1px 1px 0 #cfc8be,
+    1px 1px 0 #cfc8be;
+}
