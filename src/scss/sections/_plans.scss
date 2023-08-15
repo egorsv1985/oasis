@@ -36,6 +36,10 @@
   }
   // .plans__img
   &__img {
+    &::before{
+        content: "";
+        display: block;
+    }
   }
   // .plans__marker
   &__marker {
