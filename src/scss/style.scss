@@ -139,6 +139,7 @@ $grid_breakpoints: (
 
 @import "./components/burger";
 @import "./components/swiper";
+@import "./components/breadcrumb";
 
 // pages
 @import "./pages/_home";
@@ -150,6 +151,7 @@ $grid_breakpoints: (
 @import "./sections/_about";
 @import "./sections/_plans";
 @import "./sections/_community";
+@import "./sections/gallery";
 
 
 // @import "./components/social";
