@@ -1,0 +1,53 @@
+.btn {
+  &--pseudo {
+    span {
+      position: relative;
+      &::before {
+        @include pseudo;
+
+        height: 1px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -10px;
+        background-color: #fff;
+      }
+    }
+    &:hover {
+      span {
+        &::before {
+          background-color: #262722;
+        }
+      }
+    }
+  }
+}
+.cards {
+  .btn {
+	
+    &--pseudo {
+      span {
+        position: relative;
+		color: #7d6858;
+        &::before {
+          @include pseudo;
+
+          height: 1px;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -10px;
+          background-color: #7d6858;
+        }
+      }
+      &:hover {
+        span {
+          color: #262722;
+          &::before {
+            background-color: #262722;
+          }
+        }
+      }
+    }
+  }
+}
