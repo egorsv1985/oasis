@@ -1,0 +1,77 @@
+.contacts {
+  padding-block: 80px;
+  // .contacts__map
+  &__map {
+  }
+  // .contacts__box-content
+  &__box-content {
+    border-radius: 10px;
+
+    backdrop-filter: blur(15px);
+    padding: 70px 30px 30px;
+    max-width: 255px;
+    max-height: 152px;
+
+    background: rgba(255, 255, 255, 0.4) url("@img/icons/arrow-about.svg")
+      no-repeat 85% 18% / 23px 23px;
+  }
+  // .contacts__link
+  &__link {
+    &--map {
+      background: url("@img/icons/place.svg") no-repeat center / cover;
+      @include wh(50px);
+    }
+    &--phone {
+      background: url("@img/icons/phone.svg") no-repeat center / cover;
+      @include wh(50px);
+    }
+    &--work {
+      background: url("@img/icons/time.svg") no-repeat center / cover;
+      @include wh(50px);
+    }
+  }
+
+  // .contacts__list
+  &__list {
+	padding-left: 0;
+    li {
+      margin-bottom: 12px;
+      a {
+        color: #8e8d88;
+
+        font-size: 16px;
+
+        line-height: 120%;
+        position: relative;
+		text-wrap: nowrap;
+        &:hover {
+          font-weight: 500;
+          color: #262722;
+		  padding-left: 30px;
+          &::before {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #7d6858 url("@img/icons/arrow-tabs.svg") no-repeat
+              center / 5px 8px;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+  }
+}
+
+.breadcrumb {
+  // .breadcrumb__box
+  &__box {
+  }
+  // .breadcrumb__nav
+  &__nav {
+  }
+}
