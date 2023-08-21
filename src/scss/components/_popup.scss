@@ -1,5 +1,4 @@
 .popup {
-  
   // .popup__content
   &__content {
     // background-color: $accentColor;
@@ -25,7 +24,6 @@
       border-color: #fff;
       width: 100%;
 
-     
       &:focus ~ .form__label,
       &:valid ~ .form__label {
         top: 50%;
@@ -39,10 +37,12 @@
         color: #fff;
       }
     }
-   
+
     // .form__btn
     &__btn {
       width: 100%;
     }
   }
 }
+
+

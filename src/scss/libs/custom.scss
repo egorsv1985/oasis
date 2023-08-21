@@ -84,7 +84,7 @@
   --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
   --bs-border-radius: 0.3125rem;
   --bs-border-radius-sm: 0.25rem;
-  --bs-border-radius-lg: 0.5rem;
+  --bs-border-radius-lg: 0.625rem;
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
@@ -255,28 +255,27 @@
   font-weight: 500;
   position: relative;
   padding-left: 45px;
-  &::before{
-    
-      content: "";
-      display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #fff url("@img/icons/arrow-tabs.svg") no-repeat center / 5px 8px;
-      position: absolute;
-      left: 15px;
-      top: 50%;
-      transform: translateY(-50%);
+  &::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff url("@img/icons/arrow-tabs.svg") no-repeat center / 5px 8px;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
-.teams{
+.teams {
   .nav-link {
     display: block;
-   
+
     font-size: var(--bs-nav-link-font-size);
     font-weight: var(--bs-nav-link-font-weight);
     line-height: 120%;
-    color: #8E8D88;
+    color: #8e8d88;
     text-decoration: none;
     padding-block: 0;
     padding-left: 0;
@@ -293,37 +292,43 @@
     font-weight: 500;
     position: relative;
     padding-left: 24px;
-    &::before{
-      
-        content: "";
-        display: block;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background: #7D6858 url("@img/icons/arrow-tabs.svg") no-repeat center / 5px 8px;
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-  }
-  .nav-link:hover, .nav-link:focus{
-    color: #262722;
-    position: relative;
-    padding-left: 24px;
-    &::before{
-      
+    &::before {
       content: "";
       display: block;
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      background: #7D6858 url("@img/icons/arrow-tabs.svg") no-repeat center / 5px 8px;
+      background: #7d6858 url("@img/icons/arrow-tabs.svg") no-repeat center /
+        5px 8px;
       position: absolute;
       left: 0;
       top: 50%;
       transform: translateY(-50%);
+    }
   }
+  .nav-link:hover,
+  .nav-link:focus {
+    color: #262722;
+    position: relative;
+    padding-left: 24px;
+    &::before {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #7d6858 url("@img/icons/arrow-tabs.svg") no-repeat center /
+        5px 8px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 }
 
+a:-webkit-any-link:focus-visible {
+  outline-offset: 0px;
+}
+:focus-visible {
+  outline: -webkit-focus-ring-color auto 0px;}
