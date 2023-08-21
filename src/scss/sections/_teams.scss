@@ -1,4 +1,53 @@
 .teams {
+  &::before {
+    content: "";
+    display: block;
+    background: url("@img/icons/oasis-teams.svg") no-repeat center / 100% auto;
+    width: 80%;
+    height: 32%;
+    position: absolute;
+    left: 10%;
+    top: 12%;
+	@include media (min, lg){
+		width: 40%;
+    
+	left: 40%;
+	}
+  }
+  &__nav-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    @include media(min, lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .breadcrumb {
+    // .breadcrumb__box
+    &__box {
+      padding-top: 115px;
+    }
+  }
+  .swiper {
+    // .swiper__box-img
+    &__box-img {
+    }
+    // .swiper__box-content
+    &__box-content {
+      transform: rotate(270deg);
+      transform-origin: left top;
+      z-index: 1;
+    }
+    // .swiper__control
+    &__control {
+    }
+    // .swiper__span
+    &__span {
+    }
+    // .swiper__buttons
+    &__buttons {
+    }
+  }
 }
 .container {
 }
@@ -7,10 +56,12 @@
 .col-1 {
 }
 .breadcrumb {
-		// .breadcrumb__box
-		&__box {}
-		// .breadcrumb__nav
-		&__nav {}
+  // .breadcrumb__box
+  &__box {
+  }
+  // .breadcrumb__nav
+  &__nav {
+  }
 }
 .position-relative {
 }
@@ -52,17 +103,26 @@
 }
 .show {
 }
+.team-content {
+}
+.tab1 {
+}
 .swiper {
-		// .swiper__box-img
-		&__box-img {}
-		// .swiper__box-content
-		&__box-content {}
-		// .swiper__control
-		&__control {}
-		// .swiper__span
-		&__span {}
-		// .swiper__buttons
-		&__buttons {}
+  // .swiper__box-img
+  &__box-img {
+  }
+  // .swiper__box-content
+  &__box-content {
+  }
+  // .swiper__control
+  &__control {
+  }
+  // .swiper__span
+  &__span {
+  }
+  // .swiper__buttons
+  &__buttons {
+  }
 }
 .teamSwiper {
 }
@@ -83,6 +143,16 @@
 .lh-12 {
 }
 .text-primary {
+}
+.tab2 {
+}
+.tab3 {
+}
+.tab4 {
+}
+.tab5 {
+}
+.tab6 {
 }
 .col-3 {
 }
@@ -113,4 +183,6 @@
 .nav-item {
 }
 .nav-link {
+}
+.team-tab {
 }
