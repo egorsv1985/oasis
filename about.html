@@ -2,31 +2,31 @@
 <html lang="ru">
 
 <head>
-	<title>Главная</title>
+	<title>О клубе</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap&_v=20230814152808" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap&_v=20230814152808" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap&_v=20230821095607" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap&_v=20230821095607" rel="stylesheet">
 
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css?_v=20230814152808">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.css?_v=20230814152808" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.css?_v=20230814152808">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css?_v=20230821095607">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.css?_v=20230821095607" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css?_v=20230821095607">
 
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js?_v=20230814152808"></script>
-	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js?_v=20230814152808"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js?_v=20230821095607"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js?_v=20230821095607"></script>
 
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js?_v=20230814152808"></script>
-
-
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js?_v=20230821095607"></script>
 
 
 
-	<script src="js/app.min.js?_v=20230814152808"></script>
+
+
+	<script src="js/app.min.js?_v=20230821095607"></script>
 
 
 </head>
@@ -86,13 +86,13 @@
 											</button>
 										</li>
 										<li>
-											<a href="#">Галерея</a>
+											<a href="gallery.html">Галерея</a>
 										</li>
 										<li>
-											<a href="#">Наша команда</a>
+											<a href="teams.html">Наша команда</a>
 										</li>
 										<li>
-											<a href="#">Клубные карты</a>
+											<a href="cards.html">Клубные карты</a>
 										</li>
 										<li>
 											<a href="#">Мероприятия</a>
@@ -108,9 +108,9 @@
 										</li>
 									</ul>
 								</nav>
-								<div class="header__btns row mt-5 gy-3">
+								<div class="header__btns row mt-5 gy-3 px-3 px-lg-0">
 									<a data-popup="#callback" href="#callback" role="button" class="btn btn-light py-3 d-block fw-600 fs-16 col-12 col-lg-6"><span>Гостевой визит</span></a>
-									<a data-popup="#callback" href="#callback" role="button" class="btn btn-transparent header__btn header__btn--pseudo position-relative py-3 d-block fw-600 fs-16 col-12 col-lg-6 text-start text-md-center"><span>Заморозить карту</span></a>
+									<a data-popup="#callback" href="#callback" role="button" class="btn btn-transparent header__btn btn--pseudo position-relative py-3 d-block fw-600 fs-16 col-12 col-lg-6 text-start text-md-center"><span>Заморозить карту</span></a>
 								</div>
 							</div>
 							<div class="header__menu-bottom pb-4 mt-4">
@@ -218,16 +218,16 @@
 		</header>
 
 
-		<main>
+		<main class="pt-5">
 
 			<section class="about position-relative" id="about">
 				<div class="container">
 					<div class="row">
-						<div class="col-4">
+						<div class="col-12 col-lg-4 pt-5">
 							<div class="row">
-								<div class="col-3 about__box-breadcrumb">
+								<div class="col-3 breadcrumb__box">
 
-									<nav aria-label="breadcrumb" class="about__breadcrumb position-relative ">
+									<nav aria-label="breadcrumb" class="breadcrumb__nav position-relative ">
 										<ol class="breadcrumb flex-row-reverse align-items-center m-0 gap-4">
 											<li class="breadcrumb-item">
 												<a href="/" class="bg-success rounded-circle d-block"></a>
@@ -240,12 +240,12 @@
 
 								</div>
 								<div class="col-9">
-									<div class="about__box-content">
+									<a href="#" class="about__box-content d-block">
 										<div class="fs-20 text-info">
 											Меняем карту вашего клуба на
 											<span class="text-uppercase">Oasis Sity</span>
 										</div>
-									</div>
+									</a>
 								</div>
 
 								<div class="fs-40 fw-700 lh-12 mb-3">О клубе</div>
@@ -253,7 +253,7 @@
 							</div>
 						</div>
 
-						<div class="col-8">
+						<div class="col-12 col-lg-8 pt-5">
 							<h2 class="fs-36 fw-700 lh-12 mb-5">
 								Специально для <br />тебя у нас есть:
 							</h2>
@@ -267,7 +267,7 @@
 								<div class="col-md-6">
 									<div class="d-flex flex-column gap-3">
 										<div class="about__box-img" style="background: url(img/icons/sun.svg) no-repeat 0 0"></div>
-										<div class="fs-20 item">Круглосуточный режим работы</div>
+										<div class="fs-20 item">Круглосуточный<br> режим работы</div>
 									</div>
 								</div>
 								<div class="col-md-6">
@@ -300,7 +300,7 @@
                   background: url(img/icons/orientations.svg) no-repeat 0 0;
                 "></div>
 										<div class="fs-20 item">
-											Более 50 направлений групповых программ
+											Более 50 направлений<br> групповых программ
 										</div>
 									</div>
 								</div>
@@ -317,9 +317,9 @@
 			</section>
 
 			<section class="plans bg-success py-4 position-relative" id="plans">
-				<div class="container">
-					<div class="row">
-						<div class="col-4">
+				<div class="container position-relative">
+					<div class="row gy-5">
+						<div class="col-12 col-sm-4">
 							<ul class="nav nav-tabs flex-column" id="planTab" role="tablist">
 								<li class="nav-item" role="presentation">
 									<a class="nav-link" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="one" aria-selected="false">
@@ -338,19 +338,19 @@
 								</li>
 							</ul>
 						</div>
-						<div class="col-5">
+						<div class="col-12 col-sm-5">
 							<div class="fs-36 fw-700 lh-12 text-white position-relative plans__title">
 								В среднем наш клиент проходит 20 000 шагов в клубе:
 							</div>
 						</div>
 					</div>
-					<div class="tab-content plants my-5" id="planTabContent">
+					<div class="tab-content my-5" id="planTabContent">
 						<div class="tab-pane fade position-relative" id="one" role="tabpanel" aria-labelledby="one-tab">
 							<div class="plans__img">
-								<img src="" class="w-100" />
+								<picture><source srcset="img/plan2.webp" type="image/webp"><img src="img/plan2.png" class="w-100" /></picture>
 							</div>
 						</div>
-						<div class="tab-pane fade show active " id="two" role="tabpanel" aria-labelledby="two-tab">
+						<div class="tab-pane fade show active" id="two" role="tabpanel" aria-labelledby="two-tab">
 							<div class="plans__img position-relative" style="
             padding-top: 70%;
             background: url(img/icons/plan.svg) no-repeat center / 100% 100%;
@@ -506,31 +506,30 @@
 										</div>
 									</div>
 								</div>
-								<div class="plans__content position-relative">
-									<div class="row">
-										<div class="col-6">
-											<div class="fs-24 fw-700 text-white lh-15 mb-4">
-												<h2>
-													Тут можно что-нибудь написать интересное о клубе, но это не
-													обязательно
-												</h2>
-											</div>
+							</div>
+							<div class="plans__content position-relative">
+								<div class="row">
+									<div class="col-8 col-sm-6">
+										<div class="fs-24 fw-700 text-white lh-15 mb-4">
+											<h2>
+												Тут можно что-нибудь написать интересное о клубе, но это не
+												обязательно
+											</h2>
+										</div>
 
-											<div class="plans__numbered-list fs-16 fst-italic text-white">
-												<ol class="plans__list ps-0">
-													<li class="fs-16 lh-13 text-white">
-														Развитие функциональных и скоростно-силовых способностей,
-														коррекция осанки, улучшение гибкости и подвижности
-														суставов, развитие координационных способностей,
-														динамическое вытяжение позвоночника за счет хореографии
-														рук.
-													</li>
-													<li class="fs-16 lh-13 text-white">
-														Коррекция веса, увеличение силовых показателей и мышечной
-														массы, детский и подростковый тренинг.
-													</li>
-												</ol>
-											</div>
+										<div class="plans__numbered-list fs-16 fst-italic text-white">
+											<ol class="plans__list ps-0">
+												<li class="fs-16 lh-13 text-white">
+													Развитие функциональных и скоростно-силовых способностей,
+													коррекция осанки, улучшение гибкости и подвижности суставов,
+													развитие координационных способностей, динамическое
+													вытяжение позвоночника за счет хореографии рук.
+												</li>
+												<li class="fs-16 lh-13 text-white">
+													Коррекция веса, увеличение силовых показателей и мышечной
+													массы, детский и подростковый тренинг.
+												</li>
+											</ol>
 										</div>
 									</div>
 								</div>
@@ -538,13 +537,76 @@
 						</div>
 
 						<div class="tab-pane fade position-relative" id="three" role="tabpanel" aria-labelledby="three-tab">
-							<div class="plans__img">
-								<img src="" class="w-100" />
+							<div class="plans__img position-relative" style="
+            padding-top: 70%;
+            background: url(img/icons/plan4.svg) no-repeat center / 100% 100%;
+          ">
+								<div class="plans__marker position-absolute rounded-circle" style="background-color: #a9b0c3; top: 50%; left: 17%">
+									<div class="plans__ico" style="
+                background: url(img/icons/casher2.svg) no-repeat center /
+                  contain;
+              "></div>
+									<div class="plans__inform text-center text-nowrap position-absolute start-50 fs-16 fw-700 px-5 py-4 rounded-4">
+										Октагон
+										<div>
+											<a href="#" class="btn btn-primary mt-2 fw-500 fs-14" target="_blank">В галерею</a>
+										</div>
+									</div>
+								</div>
+								<div class="plans__marker position-absolute rounded-circle" style="background-color: #da9c91; top: 50%; left: 60%">
+									<div class="plans__ico" style="
+                background: url(img/icons/casher3.svg) no-repeat center /
+                  contain;
+              "></div>
+									<div class="plans__inform text-center text-nowrap position-absolute start-50 fs-16 fw-700 px-5 py-4 rounded-4">
+										Мужская раздевалка
+										<div>
+											<a href="#" class="btn btn-primary mt-2 fw-500 fs-14" target="_blank">В галерею</a>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div class="tab-pane fade position-relative" id="for" role="tabpanel" aria-labelledby="for-tab">
-							<div class="plans__img">
-								<img src="" class="w-100" />
+							<div class="plans__img position-relative" style="
+            padding-top: 70%;
+            background: url(img/icons/plan5.svg) no-repeat center / 100% 100%;
+          ">
+								<div class="plans__marker position-absolute rounded-circle" style="background-color: #f4c28f; top: 50%; left: 16%">
+									<div class="plans__ico" style="
+                background: url(img/icons/fight2.svg) no-repeat center /
+                  contain;
+              "></div>
+									<div class="plans__inform text-center text-nowrap position-absolute start-50 fs-16 fw-700 px-5 py-4 rounded-4">
+										Бойцовский клуб
+										<div>
+											<a href="#" class="btn btn-primary mt-2 fw-500 fs-14" target="_blank">В галерею</a>
+										</div>
+									</div>
+								</div>
+								<div class="plans__marker position-absolute rounded-circle" style="background-color: #b8ada0; top: 23%; left: 32%">
+									<div class="plans__ico" style="
+                background: url(img/icons/ring.svg) no-repeat center / contain;
+              "></div>
+									<div class="plans__inform text-center text-nowrap position-absolute start-50 fs-16 fw-700 px-5 py-4 rounded-4">
+										Зона кроссфитнес
+										<div>
+											<a href="#" class="btn btn-primary mt-2 fw-500 fs-14" target="_blank">В галерею</a>
+										</div>
+									</div>
+								</div>
+								<div class="plans__marker position-absolute rounded-circle" style="background-color: #60919f; top: 50%; left: 60%">
+									<div class="plans__ico" style="
+                background: url(img/icons/krossfitness.svg) no-repeat center /
+                  contain;
+              "></div>
+									<div class="plans__inform text-center text-nowrap position-absolute start-50 fs-16 fw-700 px-5 py-4 rounded-4">
+										Зона кроссфитнес
+										<div>
+											<a href="#" class="btn btn-primary mt-2 fw-500 fs-14" target="_blank">В галерею</a>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -692,7 +754,7 @@
 						</div>
 						<div class="swiper__control d-flex align-items-center gap-4">
 							<span class="swiper__span fs-20 fw-700 lh-12">01</span>
-							<div class="swiper-scrollbar position-relative"></div>
+							<div class="swiper-pagination position-relative d-flex align-items-center"></div>
 							<span class="swiper__span fs-20 fw-700 lh-12">05</span>
 							<div class="swiper__buttons d-flex gap-1">
 								<div class="swiper-button-prev rounded-circle border-success border"></div>
@@ -725,16 +787,16 @@
 						enabled: true,
 					},
 					loop: true,
-					// включаем полосу прокрутки и выбираем элемент, в котором она будет находиться
-					scrollbar: {
-						el: ".community .swiper-scrollbar",
+					pagination: {
+						el: ".community .swiper-pagination",
+						type: "bullets",
+						clickable: true,
 					},
 					// включаем кнопки "вперед" и "назад" для навигации по слайдам
 					navigation: {
 						nextEl: ".community .swiper-button-next",
 						prevEl: ".community .swiper-button-prev",
 					},
-
 				});
 			</script>
 
