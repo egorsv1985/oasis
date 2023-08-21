@@ -616,8 +616,42 @@
 </section>
 <!-- Initialize Swiper -->
 <script>
+	// Получаем ссылки на вкладки и соответствующие контенты
+	const tabLinks = document.querySelectorAll('.team-tab');
+	const teamContentTabs = document.querySelectorAll('.team-content');
+	const controlContentTabs = document.querySelectorAll('.tab-content.my-5');
+
+	// Обработчик кликов по вкладкам
+	tabLinks.forEach((tabLink) => {
+		tabLink.addEventListener('click', (event) => {
+			event.preventDefault();
+
+			// Получаем data-target для текущей вкладки
+			const targetSelector = tabLink.getAttribute('data-target');
+
+			// Удаляем классы show и active у всех вкладок и контентов
+			tabLinks.forEach((tl) => tl.classList.remove('active'));
+			teamContentTabs.forEach((tc) => tc.classList.remove('show', 'active'));
+			controlContentTabs.forEach((cc) =>
+				cc.classList.remove('show', 'active')
+			);
+
+			// Добавляем классы show и active для соответствующей вкладки и контента
+			tabLink.classList.add('active');
+
+			// Обновляем контент в обоих группах вкладок
+			const targetTeamContentTabs = document.querySelectorAll(targetSelector);
+			targetTeamContentTabs.forEach((ttct) =>
+				ttct.classList.add('show', 'active')
+			);
+		});
+	});
+
+
+
+
 	// выбираем элемент с классом "primeSwiper" и создаем новый Swiper объект
-	var swiper = new Swiper(".tab1 .teamSwiper", {
+	var swiper = new Swiper(".team-content.tab1 .teamSwiper", {
 		// задаем количество слайдов, которые будут показываться одновременно
 		slidesPerView: 1,
 		// Responsive breakpoints
