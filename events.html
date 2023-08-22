@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-	<title>Главная</title>
+	<title>Галерея</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +32,7 @@
 </head>
 
 
-<body class="home">
+<body>
 	<div class="wrapper">
 		<header class="header py-3 position-fixed w-100">
 			<div class="container">
@@ -218,42 +218,42 @@
 		</header>
 
 
-		<main>
-			<section class="promo position-fixed w-100 top-0 start-0 h-100" id="promo">
-				<div class="container h-100">
-					<div class="row h-100 position-relative">
-						<div class="col-11 offset-1 h-100">
-							<div class="promo__box-fon text-center position-relative h-100">
-								<div class="promo__box-trener position-absolute w-100 h-100"></div>
-								<div class="promo__box-fon-1 d-inline-block h-100">
-									<picture><source srcset="img/fon.webp" type="image/webp"><img src="img/fon.png" alt="" class="h-100" /></picture>
-								</div>
-								<div class="promo__box-text-fon d-inline-block h-100 position-absolute start-50">
-									<img src="img/icons/oasis-fon.svg" alt="" class="w-100 h-100" />
-								</div>
-								<div class="promo__box-text-border d-inline-block h-100 position-absolute start-50">
-									<img src="img/icons/oasis-border.svg" alt="" class="w-100 h-100" />
-								</div>
-							</div>
-						</div>
-						<div class="col-6">
-							<div class="promo__box d-flex flex-column p-5 position-absolute start-0">
-								<div class="fs-48 h1 fw-700 lh-12">
-									<h1>Стань лучшей<br />версией себя!</h1>
-								</div>
-								<div class="fs-24 mb-5">Присоединяйся к нам в фитнес зале!</div>
-								<div class="promo__box-btn">
-									<a data-popup="#callback" href="#callback" role="button" class="promo__btn btn btn-primary py-3 d-block fw-500 fs-18"><span>Купить клубную карту</span></a>
-								</div>
-							</div>
-						</div>
-					</div>
+		<main class="pt-5">
 
+			<section class="events" id="events">
+				<div class="container">
 					<div class="row">
-
+						<div class="col-12 col-lg-4">
+							<div class="row">
+								<div class="col-3">
+									<div class="breadcrumb__box">
+										<nav aria-label="breadcrumb" class="breadcrumb__nav position-relative">
+											<ol class="breadcrumb flex-row-reverse align-items-center m-0 gap-4">
+												<li class="breadcrumb-item">
+													<a href="/" class="bg-success rounded-circle d-block"></a>
+												</li>
+												<li class="breadcrumb-item active ff-inter fs-14 bg-body px-1" aria-current="page">
+													Мероприятия
+												</li>
+											</ol>
+										</nav>
+									</div>
+								</div>
+								<div class="col-9">
+									<div class="events__fon">
+										<div class="events__fon-text"><span></span></div>
+									</div>
+								</div>
+							</div>
+							<div class="fs-40 fw-700 lh-12 mb-4">Мероприятия</div>
+							<div class="fs-20">Мы всегда на связи!</div>
+						</div>
+						<div class="col-12 col-lg-8"></div>
 					</div>
 				</div>
 			</section>
+
+
 		</main>
 		<footer class="footer py-5">
 			<div class="container">
@@ -375,6 +375,7 @@
 			</div>
 		</div>
 	</div>
+
 
 </body>
 
