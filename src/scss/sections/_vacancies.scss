@@ -1,0 +1,85 @@
+.vacancies {
+  padding-block: 170px;
+  // .vacansies__form
+  &__form {
+    background: url("@img/form-fon.png") no-repeat center bottom / 75% auto;
+  }
+  // .vacancies__box-circle
+  &__box-circle {
+    width: 50px;
+    height: 50px;
+    &::before {
+      content: "";
+      display: block;
+      background: url("@img/icons/close.svg") no-repeat center / cover;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  .card {
+    // .card__list
+    &__list {
+      li {
+        margin-bottom: 12px;
+        padding-left: 24px;
+        position: relative;
+        &::before {
+          content: "";
+          display: block;
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background-color: #cfc8be;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+    // .card__btn
+    &__btn {
+      &[aria-expanded="true"] {
+        .vacancies__box-circle {
+          &::before {
+            transform: translate(-50%, -50%) rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+  .form {
+    &::before {
+      content: "";
+      display: block;
+      background: url("@img/icons/Star3.svg") no-repeat center / cover;
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      top: -25px;
+      right: 2%;
+    }
+
+    // .form__label
+    &__label {
+      &--bg {
+        width: 50px;
+        height: 50px;
+        display: block;
+        background: url("@img/icons/download.svg") no-repeat center / 15px;
+      }
+      &--textarea {
+        top: 25%;
+      }
+    }
+
+    &__btn {
+      margin-bottom: 130px;
+    }
+  }
+}

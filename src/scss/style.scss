@@ -144,19 +144,20 @@ $grid_breakpoints: (
 @import "./components/buttons";
 
 // pages
-@import "./pages/_home";
-@import "./pages/_about";
+@import "./pages/home";
+
 
 
 // sections
-@import "./sections/_promo";
-@import "./sections/_about";
-@import "./sections/_plans";
-@import "./sections/_community";
+@import "./sections/promo";
+@import "./sections/about";
+@import "./sections/plans";
+@import "./sections/community";
 @import "./sections/gallery";
 @import "./sections/cards";
 @import "./sections/teams";
 @import "./sections/contacts";
+@import "./sections/vacancies";
 
 
 // @import "./components/social";

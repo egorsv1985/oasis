@@ -24,6 +24,9 @@ body.popup-show::after {
   transition: visibility 0.8s ease 0s;
   visibility: hidden;
   pointer-events: none;
+  &__form{
+    max-width: 255px;
+  }
 }
 .popup_show {
   z-index: 9999;
@@ -46,9 +49,40 @@ body.popup-show::after {
   transform: scale(0);
   transition: transform 0.3s ease 0s;
 
-  padding: 45px 20px;
+ padding-top: 75px;
+ padding-bottom: 60px;
   width: 100%;
-  max-width: 640px;
+  max-width: 450px;
+  &::after,
+  &::before{
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: -1;
+
+  }
+  &::after{
+    background: url("@img/popup-fon1.png") no-repeat center / 100% auto;
+    width: 45%;
+    height: 50%;
+    top: 0%;
+    right: 0%;
+    @include media (min, sm) {
+      height: 70%;
+    }
+  }
+  &::before{
+    background: url("@img/popup-fon2.png") no-repeat center / 100% auto;
+    width: 40%;
+    height: 14%;
+    bottom: 0%;
+    left: 0%;
+    @include media (min, sm) {
+      height: 20%;
+    }
+
+
+  }
 
   .lock & {
     visibility: visible;
