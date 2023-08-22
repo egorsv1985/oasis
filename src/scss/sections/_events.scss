@@ -2,9 +2,10 @@
   padding-top: 150px;
   &__fon {
     text-align: center;
-    padding: 120px 0;
+    height: 87%;
     background: url("@img/events-fon.png") top center;
     position: relative;
+	
     &::before {
       content: "";
       display: block;
@@ -32,5 +33,12 @@
   // -webkit-text-fill-color: transparent;
   // }
   // }
+  svg {
+    background:#F6F3EE;
+    position:absolute;
+    top:0; left:0; 
+   
+}
+text { font-family:Verdana; font-size:160pt; font-weight:bold; stroke:#000 }
 }
 
