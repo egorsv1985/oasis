@@ -1,0 +1,36 @@
+.events {
+  padding-top: 150px;
+  &__fon {
+    text-align: center;
+    padding: 120px 0;
+    background: url("@img/events-fon.png") top center;
+    position: relative;
+    &::before {
+      content: "";
+      display: block;
+      background: url("@img/icons/year_2023.svg") no-repeat center top/ 100% auto;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+    }
+  }
+  // &__fon-text{
+  // 	   width: 100%;
+  // background: #F6F3EE;
+  // display: inline-block;
+  // & span{
+  // 	    font-family: Tahoma, sans-serif;
+  // font-weight: bold;
+  // font-size: 80px;
+  // line-height: 80px;
+  // text-transform: uppercase;
+  // background: url("@img/icons/year_2023.svg") top -130px center;
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+  // }
+  // }
+}
+
