@@ -29,7 +29,7 @@
             <div class="events__fon">
               <div class="events__fon-text position-relative">
                 <span>
-					<!-- <svg
+                  <!-- <svg
                     xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink"
                   >
@@ -52,13 +52,133 @@
                 </span>
               </div>
             </div>
-			
           </div>
         </div>
         <div class="fs-40 fw-700 lh-12 mb-4">Мероприятия</div>
         <div class="fs-20">Мы всегда на связи!</div>
       </div>
-      <div class="col-12 col-lg-8"></div>
+      <div class="col-12 col-lg-8">
+        <div class="calendar-container">
+          <div class="calendar-header">
+            <button id="prevMonthBtn">←</button>
+            <h2 id="currentMonthYear"></h2>
+            <button id="nextMonthBtn">→</button>
+          </div>
+          <div class="calendar" id="calendar"></div>
+          <div class="legend">
+            <div class="legend-item">
+              <span class="event"></span> Мероприятие
+            </div>
+            <div class="legend-item">
+              <span class="current-day"></span> Текущая дата
+            </div>
+            <div class="legend-item">
+              <span class="current-month"></span> Текущий месяц
+            </div>
+            <div class="legend-item">
+              <span class="previous-month"></span> Предыдущий месяц
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+<script>
+  // JavaScript код для генерации календаря и управления им
+
+  const calendarContainer = document.getElementById("calendar");
+  const prevMonthBtn = document.getElementById("prevMonthBtn");
+  const nextMonthBtn = document.getElementById("nextMonthBtn");
+  const currentMonthYear = document.getElementById("currentMonthYear");
+
+  let currentDate = new Date();
+  let currentMonth = currentDate.getMonth();
+  let currentYear = currentDate.getFullYear();
+
+  prevMonthBtn.addEventListener("click", showPreviousMonth);
+  nextMonthBtn.addEventListener("click", showNextMonth);
+
+  function showCalendar(month, year) {
+    const firstDay = new Date(year, month, 1);
+    const lastDay = new Date(year, month + 1, 0);
+    const daysInMonth = lastDay.getDate();
+
+    calendarContainer.innerHTML = "";
+    currentMonthYear.textContent = `${getMonthName(month)} ${year}`;
+
+    let dayOfWeek = firstDay.getDay();
+    let dayCounter = 1;
+
+    for (let i = 0; i < 6; i++) {
+      const weekRow = document.createElement("div");
+      weekRow.classList.add("week");
+
+      for (let j = 0; j < 7; j++) {
+        const dayCell = document.createElement("div");
+        dayCell.classList.add("day");
+
+        if ((i === 0 && j < dayOfWeek) || dayCounter > daysInMonth) {
+          dayCell.classList.add("previous-month");
+        } else if (
+          dayCounter === currentDate.getDate() &&
+          currentMonth === month &&
+          currentYear === year
+        ) {
+          dayCell.classList.add("current-day");
+        } else if (dayCounter <= daysInMonth) {
+          dayCell.classList.add("current-month");
+        }
+
+        dayCell.textContent = dayCounter;
+        weekRow.appendChild(dayCell);
+
+        dayCounter++;
+      }
+
+      calendarContainer.appendChild(weekRow);
+
+      if (dayCounter > daysInMonth) {
+        break;
+      }
+    }
+  }
+
+  function showPreviousMonth() {
+    currentMonth--;
+    if (currentMonth < 0) {
+      currentMonth = 11;
+      currentYear--;
+    }
+    showCalendar(currentMonth, currentYear);
+  }
+
+  function showNextMonth() {
+    currentMonth++;
+    if (currentMonth > 11) {
+      currentMonth = 0;
+      currentYear++;
+    }
+    showCalendar(currentMonth, currentYear);
+  }
+
+  function getMonthName(month) {
+    const monthNames = [
+      "Январь",
+      "Февраль",
+      "Март",
+      "Апрель",
+      "Май",
+      "Июнь",
+      "Июль",
+      "Август",
+      "Сентябрь",
+      "Октябрь",
+      "Ноябрь",
+      "Декабрь",
+    ];
+    return monthNames[month];
+  }
+
+  showCalendar(currentMonth, currentYear);
+</script>
