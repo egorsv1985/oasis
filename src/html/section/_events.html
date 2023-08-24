@@ -58,127 +58,112 @@
         <div class="fs-20">Мы всегда на связи!</div>
       </div>
       <div class="col-12 col-lg-8">
-        <div class="calendar-container">
-          <div class="calendar-header">
-            <button id="prevMonthBtn">←</button>
-            <h2 id="currentMonthYear"></h2>
-            <button id="nextMonthBtn">→</button>
-          </div>
-          <div class="calendar" id="calendar"></div>
-          <div class="legend">
-            <div class="legend-item">
-              <span class="event"></span> Мероприятие
+        <div class="row">
+          <div class="col-12 col-md-10">
+            <div class="d-flex justify-content-between">
+              <div class="fs-24 fw-700">Июль</div>
+              <div class="fs-20 text-info">27/07/2023</div>
             </div>
-            <div class="legend-item">
-              <span class="current-day"></span> Текущая дата
-            </div>
-            <div class="legend-item">
-              <span class="current-month"></span> Текущий месяц
-            </div>
-            <div class="legend-item">
-              <span class="previous-month"></span> Предыдущий месяц
+            <div class="events__calendar">
+              <div
+                class="events__calendar-top bg-success text-white fs-16 fw-700 d-flex justify-content-between mb-3 px-3 py-1"
+              >
+                <div class="events__calendar-day">Пн.</div>
+                <div class="events__calendar-day">Вт.</div>
+                <div class="events__calendar-day">Ср.</div>
+                <div class="events__calendar-day">Чт.</div>
+                <div class="events__calendar-day">Пт.</div>
+                <div class="events__calendar-day">Сб.</div>
+                <div class="events__calendar-day">Вс.</div>
+              </div>
+
+              <div class="events__calendar-bottom">
+                <div
+                  class="events__week d-flex justify-content-between text-info fs-16 mb-2"
+                >
+                  <div class="events__day border border-success prev-month">
+                    26
+                  </div>
+                  <div class="events__day border border-success prev-month">
+                    27
+                  </div>
+                  <div class="events__day border border-success prev-month">
+                    28
+                  </div>
+                  <div class="events__day border border-success prev-month">
+                    29
+                  </div>
+                  <div class="events__day border border-success prev-month">
+                    30
+                  </div>
+                  <div class="events__day border border-success">01</div>
+                  <div class="events__day border border-success">02</div>
+                </div>
+                <div
+                  class="events__week d-flex justify-content-between text-info fs-16 mb-2"
+                >
+                  <div class="events__day border border-success">03</div>
+                  <div class="events__day border border-success event">04</div>
+                  <div class="events__day border border-success">05</div>
+                  <div class="events__day border border-success">06</div>
+                  <div class="events__day border border-success">07</div>
+                  <div class="events__day border border-success">08</div>
+                  <div class="events__day border border-success">09</div>
+                </div>
+                <div
+                  class="events__week d-flex justify-content-between text-info fs-16 mb-2"
+                >
+                  <div class="events__day border border-success">10</div>
+                  <div class="events__day border border-success">11</div>
+                  <div class="events__day border border-success">12</div>
+                  <div class="events__day border border-success">13</div>
+                  <div class="events__day border border-success event">14</div>
+                  <div class="events__day border border-success">15</div>
+                  <div class="events__day border border-success">16</div>
+                </div>
+                <div
+                  class="events__week d-flex justify-content-between text-info fs-16 mb-2"
+                >
+                  <div class="events__day border border-success">17</div>
+                  <div class="events__day border border-success">18</div>
+                  <div class="events__day border border-success">19</div>
+                  <div class="events__day border border-success">20</div>
+                  <div class="events__day border border-success">21</div>
+                  <div class="events__day border border-success">22</div>
+                  <div class="events__day border border-success">23</div>
+                </div>
+                <div
+                  class="events__week d-flex justify-content-between text-info fs-16 mb-2"
+                >
+                  <div class="events__day border border-success">24</div>
+                  <div class="events__day border border-success">25</div>
+                  <div class="events__day border border-success">26</div>
+                  <div class="events__day border border-success current">27</div>
+                  <div class="events__day border border-success">28</div>
+                  <div class="events__day border border-success">29</div>
+                  <div class="events__day border border-success event">30</div>
+                </div>
+                <div
+                  class="events__week d-flex justify-content-between text-info fs-16 mb-2"
+                >
+                  <div class="events__day border border-success">31</div>
+                  <div class="events__day border border-success next-month">01</div>
+                  <div class="events__day border border-success next-month">02</div>
+                  <div class="events__day border border-success next-month">03</div>
+                  <div class="events__day border border-success next-month">04</div>
+                  <div class="events__day border border-success next-month">05</div>
+                  <div class="events__day border border-success next-month">06</div>
+                </div>
+                
+                
+                
+              </div>
             </div>
           </div>
         </div>
+        <div class="col-2"></div>
       </div>
     </div>
   </div>
 </section>
-<script>
-  // JavaScript код для генерации календаря и управления им
-
-  const calendarContainer = document.getElementById("calendar");
-  const prevMonthBtn = document.getElementById("prevMonthBtn");
-  const nextMonthBtn = document.getElementById("nextMonthBtn");
-  const currentMonthYear = document.getElementById("currentMonthYear");
-
-  let currentDate = new Date();
-  let currentMonth = currentDate.getMonth();
-  let currentYear = currentDate.getFullYear();
-
-  prevMonthBtn.addEventListener("click", showPreviousMonth);
-  nextMonthBtn.addEventListener("click", showNextMonth);
-
-  function showCalendar(month, year) {
-    const firstDay = new Date(year, month, 1);
-    const lastDay = new Date(year, month + 1, 0);
-    const daysInMonth = lastDay.getDate();
-
-    calendarContainer.innerHTML = "";
-    currentMonthYear.textContent = `${getMonthName(month)} ${year}`;
-
-    let dayOfWeek = firstDay.getDay();
-    let dayCounter = 1;
-
-    for (let i = 0; i < 6; i++) {
-      const weekRow = document.createElement("div");
-      weekRow.classList.add("week");
-
-      for (let j = 0; j < 7; j++) {
-        const dayCell = document.createElement("div");
-        dayCell.classList.add("day");
-
-        if ((i === 0 && j < dayOfWeek) || dayCounter > daysInMonth) {
-          dayCell.classList.add("previous-month");
-        } else if (
-          dayCounter === currentDate.getDate() &&
-          currentMonth === month &&
-          currentYear === year
-        ) {
-          dayCell.classList.add("current-day");
-        } else if (dayCounter <= daysInMonth) {
-          dayCell.classList.add("current-month");
-        }
-
-        dayCell.textContent = dayCounter;
-        weekRow.appendChild(dayCell);
-
-        dayCounter++;
-      }
-
-      calendarContainer.appendChild(weekRow);
-
-      if (dayCounter > daysInMonth) {
-        break;
-      }
-    }
-  }
-
-  function showPreviousMonth() {
-    currentMonth--;
-    if (currentMonth < 0) {
-      currentMonth = 11;
-      currentYear--;
-    }
-    showCalendar(currentMonth, currentYear);
-  }
-
-  function showNextMonth() {
-    currentMonth++;
-    if (currentMonth > 11) {
-      currentMonth = 0;
-      currentYear++;
-    }
-    showCalendar(currentMonth, currentYear);
-  }
-
-  function getMonthName(month) {
-    const monthNames = [
-      "Январь",
-      "Февраль",
-      "Март",
-      "Апрель",
-      "Май",
-      "Июнь",
-      "Июль",
-      "Август",
-      "Сентябрь",
-      "Октябрь",
-      "Ноябрь",
-      "Декабрь",
-    ];
-    return monthNames[month];
-  }
-
-  showCalendar(currentMonth, currentYear);
-</script>
+<script></script>

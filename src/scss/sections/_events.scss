@@ -19,6 +19,15 @@
       right: 0;
     }
   }
+  &__day{
+    padding: 10px 5px 5px 10px;
+    @include media (min, sm) {
+      padding-left: 40px;
+      padding-top: 20px;
+    }
+   
+    
+  }
   // &__fon-text{
   // 	   width: 100%;
   // background: #F6F3EE;
@@ -46,4 +55,28 @@
     font-weight: bold;
     stroke: #000;
   }
+  .event {
+    position: relative;
+    &::before{
+        content: "";
+        display: block;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background-color: #7D6858;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+    }
+  }
+  .prev-month,
+  .next-month {
+    opacity: 0.5;
+  }
+  .current {
+    background-color: #b8ada0;
+    color: #fff;
+  }
+
+
 }
