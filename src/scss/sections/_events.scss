@@ -1,8 +1,14 @@
 .events {
   padding-top: 150px;
+  .breadcrumb__box {
+    margin-bottom: 0;
+  }
+  &__left {
+    margin-bottom: 60px;
+  }
   &__fon {
     text-align: center;
-    height: 87%;
+    height: 100%;
     background: url("@img/events-fon.png") top center;
     position: relative;
 
@@ -19,14 +25,23 @@
       right: 0;
     }
   }
-  &__day{
+  &__description-box {
+    height: 28%;
+  }
+  &__description {
+    transform: rotate(270deg) translateX(-100%);
+    transform-origin: top left;
+    width: 415px;
+    overflow: hidden;
+    row-gap: 20px;
+    height: 100%;
+  }
+  &__day {
     padding: 10px 5px 5px 10px;
-    @include media (min, sm) {
+    @include media(min, sm) {
       padding-left: 40px;
       padding-top: 20px;
     }
-   
-    
   }
   // &__fon-text{
   // 	   width: 100%;
@@ -57,16 +72,16 @@
   }
   .event {
     position: relative;
-    &::before{
-        content: "";
-        display: block;
-        width: 9px;
-        height: 9px;
-        border-radius: 50%;
-        background-color: #7D6858;
-        position: absolute;
-        top: 4px;
-        left: 4px;
+    &::before {
+      content: "";
+      display: block;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background-color: #7d6858;
+      position: absolute;
+      top: 4px;
+      left: 4px;
     }
   }
   .prev-month,
@@ -77,6 +92,67 @@
     background-color: #b8ada0;
     color: #fff;
   }
+  // .events__lines-box
+  &__lines-box {
+    height: 1px;
+    background-color:#b8ada0;
+    width: 500%;
+  }
+  // .events__line
+  &__line {
+    height: 3px;
+    background-color:#b8ada0;
+    width: 50%;
+  }
+  // .events__links-box
+  &__links-box {
+  }
+  // .events__prev
+  &__prev,
+  &__next {
+    position: relative;
 
+    display: block;
 
+    @include wh(50px);
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      background-color: #b8ada0;
+    }
+    &::after {
+      @include pseudo;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      @include wh(15px);
+      @include background(url("@img/icons/double_arrow.svg"));
+    }
+  }
+  &__next {
+    &::after {
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+  }
+
+  &__item{
+    
+    &:nth-child(odd){
+      margin-top: 80px;
+    }
+  }
+  &__content{
+    &::before{
+      content: "";
+      display: block;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid #b8ada0;
+      background: url("@img/icons/events-arrow.svg") no-repeat center / 12px 13px;
+      position: absolute; top: 0%;
+      right: 16%;
+  }
+  }
 }
