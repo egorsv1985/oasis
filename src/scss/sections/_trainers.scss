@@ -1,0 +1,28 @@
+.trainers {
+	padding-top: 185px;
+	&::before {
+		content: "";
+		display: block;
+		background: url("@img/icons/oasis-teams.svg") no-repeat center / 100% auto;
+		width: 80%;
+		height: 32%;
+		position: absolute;
+		left: 10%;
+		top: 30%;
+		@include media(min, lg) {
+		  width: 40%;
+	
+		  left: 40%;
+		}
+	  }
+	.swiper {
+		
+		// .swiper__box-content
+		&__box-content {
+		  transform: rotate(270deg);
+		  transform-origin: left top;
+		  z-index: 1;
+		}
+	  }
+}
+
