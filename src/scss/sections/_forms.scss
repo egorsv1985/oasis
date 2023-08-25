@@ -1,0 +1,147 @@
+.forms {
+  &::before {
+    content: "";
+    display: block;
+    background: url("@img/forms-fon.png") no-repeat center / cover;
+    width: 12%;
+    height: 72%;
+    position: absolute;
+    left: 12%;
+    top: -2%;
+  }
+  // .forms__form
+  &__form {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+	&::before{
+		  content: "";
+		  display: block; 
+		  background: url("@img/forms-fon2.png") no-repeat center / cover;
+		  width: 34%;
+		  height: 127%;
+		  position: absolute;
+		  right: -6%;
+		  bottom: -8%;
+	  
+		  z-index: -1;
+	}
+  }
+  .form-control {
+    border: 1px solid #cfc8be;
+  }
+  .text {
+    bottom: -25px;
+  }
+  .text--pseudo {
+	top: -11px;
+    left: 10%;
+	&::before{
+		right: 53%;
+	}
+  }
+}
+.pb-5 {
+}
+.container {
+}
+.fs-80 {
+}
+.fw-700 {
+}
+.text-uppercase {
+}
+.text-center {
+}
+.text {
+}
+.form {
+  // .form__input
+  &__input {
+  }
+  // .form__label
+  &__label {
+  }
+  // .form__btn
+  &__btn {
+  }
+}
+.position-relative {
+}
+.py-5 {
+}
+.px-4 {
+}
+.row {
+}
+.gy-4 {
+}
+.mb-3 {
+}
+.col-12 {
+}
+.col-sm-6 {
+}
+.col-lg-4 {
+}
+.fs-24 {
+}
+.col-lg-3 {
+}
+.fs-16 {
+}
+.lh-13 {
+}
+.text-info {
+}
+.align-items-center {
+}
+.form-group {
+}
+.form-control {
+}
+.bg-light {
+}
+.rounded-2 {
+}
+.p-3 {
+}
+.h-100 {
+}
+.form-label {
+}
+.position-absolute {
+}
+.top-50 {
+}
+.form-check {
+}
+.form-check-inline {
+}
+.me-0 {
+}
+.ps-3 {
+}
+.form-check-input {
+}
+.m-0 {
+}
+.form-check-label {
+}
+.fs-14 {
+}
+.d-block {
+}
+.ms-5 {
+}
+.btn {
+}
+.fw-600 {
+}
+.px-3 {
+}
+.py-3 {
+}
+.btn-primary {
+}
+.border-0 {
+}
