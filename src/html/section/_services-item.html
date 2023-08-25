@@ -1,0 +1,179 @@
+<section class="services-item" id="services-item">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-1 pt-5">
+        <div class="breadcrumb__box">
+          <nav
+            aria-label="breadcrumb"
+            class="breadcrumb__nav position-relative"
+          >
+            <ol
+              class="breadcrumb flex-row-reverse align-items-center m-0 gap-4"
+            >
+              <li class="breadcrumb-item">
+                <a href="/" class="bg-success rounded-circle d-block"></a>
+              </li>
+
+              <li
+                class="breadcrumb-item active ff-inter fs-14 bg-body px-1"
+                aria-current="page"
+              >
+                Услуги
+              </li>
+              <li
+                class="breadcrumb-item active ff-inter fs-14 bg-body px-1"
+                aria-current="page"
+              >
+                Тренажерный зал
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <div class="col-11">
+        <div class="swiper servicesSwiper2">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img class="rounded-2 w-100" src="@img/services1.png" />
+            </div>
+            <div class="swiper-slide">
+              <img class="rounded-2 w-100" src="@img/services2.png" />
+            </div>
+            <div class="swiper-slide">
+              <img class="rounded-2 w-100" src="@img/services3.png" />
+            </div>
+            <div class="swiper-slide">
+              <img class="rounded-2 w-100" src="@img/services1.png" />
+            </div>
+            <div class="swiper-slide">
+              <img class="rounded-2 w-100" src="@img/services2.png" />
+            </div>
+            <div class="swiper-slide">
+              <img class="rounded-2 w-100" src="@img/services3.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-10 col-lg-4">
+        <div class="fs-40 fw-700 lh-12">Тренажерный зал</div>
+      </div>
+      <div class="col-2">
+        <a href="#" class="services-item__video-box">
+          <img
+            src="@img/icons/video-btn.svg"
+            alt=""
+            class="services-item__video-btn"
+          />
+        </a>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div thumbsSlider="" class="swiper servicesSwiper">
+          <div class="swiper-wrapper mb-5">
+            <div class="swiper-slide">
+              <img class="rounded-2 w-100" src="@img/services1.png" />
+            </div>
+            <div class="swiper-slide">
+              <img class="rounded-2 w-100" src="@img/services2.png" />
+            </div>
+            <div class="swiper-slide">
+              <img class="rounded-2 w-100" src="@img/services3.png" />
+            </div>
+            <div class="swiper-slide">
+              <img class="rounded-2 w-100" src="@img/services1.png" />
+            </div>
+            <div class="swiper-slide">
+              <img class="rounded-2 w-100" src="@img/services2.png" />
+            </div>
+            <div class="swiper-slide">
+              <img class="rounded-2 w-100" src="@img/services3.png" />
+            </div>
+          </div>
+          <div class="swiper__control d-flex align-items-center gap-4">
+            <span class="swiper__span fs-20 fw-700 lh-12">01</span>
+            <div
+              class="swiper-pagination position-relative d-flex align-items-center"
+            ></div>
+            <span class="swiper__span fs-20 fw-700 lh-12">10</span>
+            <div class="swiper__buttons d-flex gap-1">
+              <div
+                class="swiper-button-prev rounded-circle border-success border"
+              ></div>
+              <div
+                class="swiper-button-next rounded-circle border-success border"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-3">
+        <a href="#" class="services-item__box-content d-block">
+          <div class="fs-20 text-info">Мероприятия</div>
+        </a>
+      </div>
+      <div class="col-12 col-lg-8 offset-lg-1">
+        <div class="fs-16 lh-13 text-info mb-5">
+          <span class="fst-italic fw-600 text-primary"
+            >Тренажерный и кардио-зал занимает площадь 700 кв метров, </span
+          >для более удобного и комфортного ее использования в ней применена
+          система зонирования с эксклюзивной для России планировкой по концепции
+          Journey c оборудованием Life Fitness и Hammer Strength.
+        </div>
+        <div class="fs-24 fw-700">
+          Концепция Journey это эволюция тренажерного зала!
+        </div>
+        <div class="fs-16 text-info">
+          Концепция Journey предполагает разделение территории силового тренинга
+          на "зоны", в зависимости от вида тренировки. Каждая из "зон"
+          обособлена от общих программ, каждая имеет соответствующее название и
+          оснащена подробными комментариями, поясняющими ее предназначение.
+        </div>
+        <div class="fs-16 text-info">
+          Прогрессивная система расстановки оборудования создает чувство
+          комфорта во время занятий и стимулирует желание продолжать тренировки.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  var swiper = new Swiper(".servicesSwiper", {
+    loop: true,
+    spaceBetween: 30,
+    slidesPerView: 1,
+    // Responsive breakpoints
+    breakpoints: {
+      // when window width is >= 992px
+      992: {
+        slidesPerView: 2,
+      },
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    freeMode: true,
+    watchSlidesProgress: true,
+  });
+
+  var swiper2 = new Swiper(".servicesSwiper2", {
+    loop: true,
+    spaceBetween: 30,
+
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    thumbs: {
+      swiper: swiper,
+    },
+  });
+</script>

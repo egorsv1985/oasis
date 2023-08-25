@@ -1,0 +1,32 @@
+.services-item {
+	padding-block: 110px;
+  // .services-item__video-box
+  &__video-box {
+  }
+  // .services-item__video-btn
+  &__video-btn {
+  }
+  // .services-item__box-content
+  &__box-content {
+    border-radius: 10px;
+position: relative;
+    backdrop-filter: blur(15px);
+    padding: 100px 30px 30px;
+    max-width: 255px;
+    max-height: 210px;
+
+    background:
+      rgba(255, 255, 255, 0.4) url("@img/icons/arrow-about.svg") no-repeat 85%
+        18% / 23px 23px;
+		&::before{
+			  content: "";
+			  display: block;
+			  background: url("@img/icons/calendar.svg") no-repeat center / cover;
+			  width: 23px;
+			  height: 23px;
+			  position: absolute;
+			  left: 10%;
+			  top: 15%;
+		}
+  }
+}
