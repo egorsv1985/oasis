@@ -18,8 +18,10 @@
 		"tmp": "gulp -f gulpfile.tmp.js"
 	},
 	"devDependencies": {
+		"autoprefixer": "^10.4.15",
 		"copy-webpack-plugin": "latest",
 		"css-loader": "latest",
+		"cssnano": "^6.0.1",
 		"del": "^6.0.0",
 		"file-include-webpack-plugin-replace": "latest",
 		"gulp": "latest",
@@ -49,6 +51,11 @@
 		"load-plugins": "latest",
 		"mini-css-extract-plugin": "latest",
 		"nouislider": "latest",
+		"postcss-custom-media": "^10.0.0",
+		"postcss-flexbugs-fixes": "^5.0.2",
+		"postcss-nested": "^6.0.1",
+		"postcss-preset-env": "^9.1.2",
+		"postcss-rgba-hex": "^0.3.7",
 		"pug": "latest",
 		"pug-loader": "latest",
 		"sass": "latest",

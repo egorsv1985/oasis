@@ -1,5 +1,6 @@
 // Импорт основного модуля
 import gulp from "gulp";
+import merge from 'merge-stream';
 // Импорт общих плагинов
 import { plugins } from "./config/gulp-plugins.js";
 // Импорт путей
