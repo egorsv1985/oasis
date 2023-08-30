@@ -81,10 +81,13 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 						</div>
 						<div class="col-6 col-xl-5 position-relative header__box-logo">
 							<div class="text-center">
+
 								<a href="/" class="d-block mw-100 text-center">
 									<picture>
-										<source srcset="<?= SITE_TEMPLATE_PATH ?>/img/logo.webp" type="image/webp"><img src="<?= SITE_TEMPLATE_PATH ?>/img/logo.png" alt="logo" class="mw-100" width="141" height="58">
+										<source srcset="<?= PAGE === "TEXT" ? SITE_TEMPLATE_PATH . '/img/logo_oasis.webp' : SITE_TEMPLATE_PATH . '/img/logo_oasis-black.webp' ?>" type="image/webp">
+										<img src="<?= PAGE === "TEXT" ? SITE_TEMPLATE_PATH . '/img/logo_oasis.png' : SITE_TEMPLATE_PATH . '/img/logo_oasis-black.png' ?>" alt="oasis" title="oasis" class="mw-100" width="141" height="58">
 									</picture>
+
 
 								</a>
 							</div>
@@ -119,28 +122,29 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 										),
 										false
 									); ?>
+									<div class="header__btns row mt-5 gy-3 px-3 px-lg-0">
+										<a data-popup="#callback" href="#callback" role="button" class="btn btn-light py-3 d-block fw-600 fs-16 col-12 col-lg-6"><span>Гостевой визит</span></a>
+										<a data-popup="#callback" href="#callback" role="button" class="btn btn-transparent header__btn btn--pseudo position-relative py-3 d-block fw-600 fs-16 col-12 col-lg-6 text-start text-md-center"><span>Заморозить карту</span></a>
+									</div>
 								</div>
-								<div class="header__btns row mt-5 gy-3 px-3 px-lg-0">
-									<a data-popup="#callback" href="#callback" role="button" class="btn btn-light py-3 d-block fw-600 fs-16 col-12 col-lg-6"><span>Гостевой визит</span></a>
-									<a data-popup="#callback" href="#callback" role="button" class="btn btn-transparent header__btn btn--pseudo position-relative py-3 d-block fw-600 fs-16 col-12 col-lg-6 text-start text-md-center"><span>Заморозить карту</span></a>
-								</div>
+
 								<div class="header__menu-bottom pb-4 mt-4">
 									<div class="row align-items-center gy-3 px-3">
 										<div class="col-12 col-lg-6">
 											<a class="btn border-white py-2 rounded-2 d-block text-center">
-												<img src="img/icons/app-store.svg" class="mw-100" />
+												<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/app-store.svg" class="mw-100">
 											</a>
 										</div>
 										<div class="col-12 col-lg-6">
 											<a class="btn border-white py-2 rounded-2 d-block text-center">
-												<img src="img/icons/google-play.svg" class="mw-100" />
+												<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/google-play.svg" class="mw-100">
 											</a>
 										</div>
 										<a href="#" class="d-flex gap-2 mt-4">
 											<div class="header__menu-link header__menu-link--map"></div>
 											<div class="fs-20 fw-700">
 												<div>
-													г. Сургут,<br />
+													г. Сургут,<br>
 													ул.Профсоюзов, 53/2
 												</div>
 											</div>
@@ -152,21 +156,22 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 								<div class="menu-title fs-36 fw-700 lh-12 mb-4 text-start">
 									Услуги
 								</div>
+
 								<div class="header__services-menu py-3">
 									<ul>
 										<?
 										CModule::IncludeModule("iblock");
-										$arSelect = array("ID", "NAME", "PROPERTY_ICO", "PROPERTY_GRADIENT", 'DETAIL_PAGE_URL');
-										$arFilter = array("IBLOCK_ID" => 1, "ACTIVE" => "Y");
+										$arSelect = array("ID", "NAME", "PROPERTY_ICO", "PROPERTY_COLOR", 'DETAIL_PAGE_URL');
+										$arFilter = array("IBLOCK_ID" => 11, "ACTIVE" => "Y");
 										$rsElements = CIBlockElement::GetList(array('SORT' => 'ASC'), $arFilter, false, false, $arSelect);
 										while ($arElement = $rsElements->GetNext()) : ?>
 											<li>
 												<a href="<?= $arElement['DETAIL_PAGE_URL']; ?>">
 													<?= $arElement['NAME']; ?>
-													<span class="gradient" style="background:<?= $arElement['PROPERTY_GRADIENT_VALUE']; ?>"></span>
-													<span class="ico" style="background-image: url(<?= CFile::GetPath($arElement['PROPERTY_ICO_VALUE']); ?>)"></span>
+													<span class="header__ico rounded-circle position-absolute top-0 bottom-0 start-0" style="background: <?= $arElement['PROPERTY_COLOR_VALUE']; ?> url(<?= CFile::GetPath($arElement['PROPERTY_ICO_VALUE']); ?>) no-repeat 50% 50%;"></span>
 												</a>
 											</li>
+
 										<? endwhile; ?>
 									</ul>
 								</div>
@@ -175,131 +180,3 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 					</div>
 				</div>
 			</header>
-
-
-
-
-
-			<!-- <main>
-				<section class="promo position-fixed w-100 top-0 start-0 h-100" id="promo">
-					<div class="container h-100">
-						<div class="row h-100 position-relative">
-							<div class="col-11 offset-1 h-100">
-								<div class="promo__box-fon text-center position-relative h-100">
-									<div class="promo__box-trener position-absolute w-100 h-100"></div>
-									<div class="promo__box-fon-1 d-inline-block h-100">
-										<picture>
-											<source srcset="img/fon.webp" type="image/webp"><img src="img/fon.png" alt="" class="h-100" />
-										</picture>
-									</div>
-									<div class="promo__box-text-fon d-inline-block h-100 position-absolute start-50">
-										<img src="img/icons/oasis-fon.svg" alt="" class="w-100 h-100" />
-									</div>
-									<div class="promo__box-text-border d-inline-block h-100 position-absolute start-50">
-										<img src="img/icons/oasis-border.svg" alt="" class="w-100 h-100" />
-									</div>
-								</div>
-							</div>
-							<div class="col-6">
-								<div class="promo__box d-flex flex-column p-5 position-absolute start-0">
-									<div class="fs-48 h1 fw-700 lh-12">
-										<h1>Стань лучшей<br />версией себя!</h1>
-									</div>
-									<div class="fs-24 mb-5">Присоединяйся к нам в фитнес зале!</div>
-									<div class="promo__box-btn">
-										<a data-popup="#callback" href="#callback" role="button" class="promo__btn btn btn-primary py-3 d-block fw-500 fs-18"><span>Купить клубную карту</span></a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="row">
-
-						</div>
-					</div>
-				</section>
-			</main> -->
-
-
-
-			<!-- 
-
-	</body>
-
-	<body <? if (PAGE == 'FENCES') : ?> style="background-color: #e0edc1;" <? endif; ?> <?= ($USER->IsAdmin() ? ' class="admin"' : '') ?>>
-
-
-		<div class="wrapper">
-			
-			<main>
-				<div class="container">
-					<? if (PAGE == 'TEXT') : ?>
-						<? $APPLICATION->IncludeComponent(
-							"bitrix:breadcrumb",
-							"",
-							array()
-						); ?>
-						<div class="row pt-4 mb-3 mb-5">
-							<div class="col">
-								<h1 class="fs-48 fw-700 ff-roboto"><? $APPLICATION->ShowTitle(true); ?></h1>
-							</div>
-							<div class="col-4 offset-3">
-								<div class="fs-18 lh-11">
-									<p>
-										Более 20 разных цветов. Возможно изготовление индивидуальных цветов
-										по спецзаказу!
-									</p>
-								</div>
-
-							</div>
-						</div>
-
-
-					<? endif; ?>
-				</div>
-
-
-
-
-
-
-				<body>
-
-
-					<section class="main-content">
-						<? if (TYPE_PAGE == 'MAIN') : ?>
-							<div class="main-page">
-								<div class="container position-relative">
-									<div class="man">
-
-									</div>
-									<div class="offer fs-28 px-5 py-4 rounded-5">
-										Привет, братан,<br>
-										не вижу тебя в зале!<br>
-										<a href="#" class="btn btn-green mt-3 fw-normal">
-											<strong>Хочу клубную карту</strong>
-										</a>
-									</div>
-								</div>
-							</div>
-						<? elseif (TYPE_PAGE == 'TEXT') : ?>
-
-							<div class="container pt-4 mt-2">
-								<? $APPLICATION->IncludeComponent(
-									"bitrix:breadcrumb",
-									".default",
-									array(
-										"PATH" => "",	// Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)
-										"SITE_ID" => "s1",	// Cайт (устанавливается в случае многосайтовой версии, когда DOCUMENT_ROOT у сайтов разный)
-										"START_FROM" => "0",	// Номер пункта, начиная с которого будет построена навигационная цепочка
-									),
-									false,
-									array(
-										'HIDE_ICONS' => 'Y'
-									)
-								); ?>
-								<div class="page-title mb-4">
-									<h1><? $APPLICATION->ShowTitle(true); ?></h1>
-									<span class="title-shadow text-nowrap"><? $APPLICATION->ShowTitle(true); ?></span>
-								</div>
-							<? endif; ?> -->

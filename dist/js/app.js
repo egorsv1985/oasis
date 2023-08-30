@@ -131,7 +131,7 @@
             return (
               e.preventDefault(),
               (this._dataValue = t.getAttribute(
-                this.options.attributeOpenButton
+                this.options.attributeOpenButton,
               )
                 ? t.getAttribute(this.options.attributeOpenButton)
                 : "error"),
@@ -141,7 +141,7 @@
                   (this._selectorOpen = !0),
                   void this.open())
                 : void this.popupLogging(
-                    `Ой ой, не заполнен атрибут у ${t.classList}`
+                    `Ой ой, не заполнен атрибут у ${t.classList}`,
                   )
             );
           return e.target.closest(`[${this.options.attributeCloseButton}]`) ||
@@ -149,7 +149,7 @@
               this.isOpen)
             ? (e.preventDefault(), void this.close())
             : void 0;
-        }.bind(this)
+        }.bind(this),
       ),
         document.addEventListener(
           "keydown",
@@ -165,7 +165,7 @@
               9 == e.which &&
               this.isOpen &&
               this._focusCatch(e);
-          }.bind(this)
+          }.bind(this),
         ),
         this.options.hashSettings.goHash &&
           (window.addEventListener(
@@ -174,13 +174,13 @@
               window.location.hash
                 ? this._openToHash()
                 : this.close(this.targetOpen.selector);
-            }.bind(this)
+            }.bind(this),
           ),
           window.addEventListener(
             "load",
             function () {
               window.location.hash && this._openToHash();
-            }.bind(this)
+            }.bind(this),
           ));
     }
     open(e) {
@@ -194,7 +194,7 @@
           (this.targetOpen.selector = this.lastClosed.selector),
         this._reopen || (this.previousActiveElement = document.activeElement),
         (this.targetOpen.element = document.querySelector(
-          this.targetOpen.selector
+          this.targetOpen.selector,
         )),
         this.targetOpen.element)
       ) {
@@ -202,7 +202,7 @@
           this.targetOpen.element.hasAttribute(this.options.youtubeAttribute)
         ) {
           const e = `https://www.youtube.com/embed/${this.targetOpen.element.getAttribute(
-              this.options.youtubeAttribute
+              this.options.youtubeAttribute,
             )}?rel=0&showinfo=0&autoplay=1`,
             t = document.createElement("iframe");
           t.setAttribute("allowfullscreen", "");
@@ -210,7 +210,7 @@
           t.setAttribute("allow", `${s}; encrypted-media`),
             t.setAttribute("src", e),
             this.targetOpen.element.querySelector(
-              `[${this.options.youtubePlaceAttribute}]`
+              `[${this.options.youtubePlaceAttribute}]`,
             ) &&
               this.targetOpen.element
                 .querySelector(`[${this.options.youtubePlaceAttribute}]`)
@@ -220,7 +220,7 @@
           (this._getHash(), this._setHash()),
           this.options.on.beforeOpen(this),
           this.targetOpen.element.classList.add(
-            this.options.classes.popupActive
+            this.options.classes.popupActive,
           ),
           document.body.classList.add(this.options.classes.bodyActive),
           this.targetOpen.element.setAttribute("aria-hidden", "false"),
@@ -232,12 +232,12 @@
             this._focusTrap();
           }, 50),
           document.dispatchEvent(
-            new CustomEvent("afterPopupOpen", { detail: { popup: this } })
+            new CustomEvent("afterPopupOpen", { detail: { popup: this } }),
           ),
           this.popupLogging("Открыл попап");
       } else
         this.popupLogging(
-          "Ой ой, такого попапа нет. Проверьте корректность ввода. "
+          "Ой ой, такого попапа нет. Проверьте корректность ввода. ",
         );
     }
     close(e) {
@@ -248,13 +248,13 @@
         this.options.on.beforeClose(this),
         this.targetOpen.element.hasAttribute(this.options.youtubeAttribute) &&
           this.targetOpen.element.querySelector(
-            `[${this.options.youtubePlaceAttribute}]`
+            `[${this.options.youtubePlaceAttribute}]`,
           ) &&
           (this.targetOpen.element.querySelector(
-            `[${this.options.youtubePlaceAttribute}]`
+            `[${this.options.youtubePlaceAttribute}]`,
           ).innerHTML = ""),
         this.previousOpen.element.classList.remove(
-          this.options.classes.popupActive
+          this.options.classes.popupActive,
         ),
         this.previousOpen.element.setAttribute("aria-hidden", "true"),
         this._reopen ||
@@ -278,7 +278,7 @@
     }
     _openToHash() {
       let e = document.querySelector(
-        `.${window.location.hash.replace("#", "")}`
+        `.${window.location.hash.replace("#", "")}`,
       )
         ? `.${window.location.hash.replace("#", "")}`
         : document.querySelector(`${window.location.hash}`)
@@ -531,12 +531,14 @@
           parseFloat(
             i
               .getComputedStyle(e, null)
-              .getPropertyValue("width" === t ? "margin-right" : "margin-top")
+              .getPropertyValue("width" === t ? "margin-right" : "margin-top"),
           ) +
           parseFloat(
             i
               .getComputedStyle(e, null)
-              .getPropertyValue("width" === t ? "margin-left" : "margin-bottom")
+              .getPropertyValue(
+                "width" === t ? "margin-left" : "margin-bottom",
+              ),
           )
       : e.offsetWidth;
   }
@@ -636,7 +638,7 @@
             isSafari: t || s(),
             needPerspectiveFix: t,
             isWebView: /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(
-              e.navigator.userAgent
+              e.navigator.userAgent,
             ),
           };
         })()),
@@ -728,7 +730,7 @@
   const P = (e, t) => {
       if (!e || e.destroyed || !e.params) return;
       const s = t.closest(
-        e.isElement ? "swiper-slide" : `.${e.params.slideClass}`
+        e.isElement ? "swiper-slide" : `.${e.params.slideClass}`,
       );
       if (s) {
         const t = s.querySelector(`.${e.params.lazyPreloaderClass}`);
@@ -867,7 +869,7 @@
         "auto" === i.slidesPerView &&
         i.breakpoints &&
         Object.keys(i.breakpoints).filter(
-          (e) => void 0 !== i.breakpoints[e].slidesPerView
+          (e) => void 0 !== i.breakpoints[e].slidesPerView,
         ).length > 0;
       for (let r = 0; r < u; r += 1) {
         let n;
@@ -954,7 +956,7 @@
         if (i.slidesPerGroup > 1) {
           const s = Math.ceil(
               (e.virtual.slidesBefore + e.virtual.slidesAfter) /
-                i.slidesPerGroup
+                i.slidesPerGroup,
             ),
             r = t * i.slidesPerGroup;
           for (let e = 0; e < s; e += 1) h.push(h[h.length - 1] + r);
@@ -971,7 +973,7 @@
       if ((0 === h.length && (h = [0]), 0 !== E)) {
         const s = e.isHorizontal() && a ? "marginLeft" : t("marginRight");
         p.filter(
-          (e, t) => !(i.cssMode && !i.loop) || t !== p.length - 1
+          (e, t) => !(i.cssMode && !i.loop) || t !== p.length - 1,
         ).forEach((e) => {
           e.style[s] = `${E}px`;
         });
@@ -1016,7 +1018,7 @@
           m(
             r,
             "--swiper-centered-offset-after",
-            e.size / 2 - w[w.length - 1] / 2 + "px"
+            e.size / 2 - w[w.length - 1] / 2 + "px",
           );
         const t = -e.snapGrid[0],
           s = -e.slidesGrid[0];
@@ -1172,7 +1174,7 @@
           e.classList.remove(
             s.slideActiveClass,
             s.slideNextClass,
-            s.slidePrevClass
+            s.slidePrevClass,
           );
         }),
         n)
@@ -1268,7 +1270,7 @@
           : t.slides[d]
           ? parseInt(
               t.slides[d].getAttribute("data-swiper-slide-index") || d,
-              10
+              10,
             )
           : d),
         Object.assign(t, {
@@ -1303,7 +1305,7 @@
         t.virtual && t.params.virtual.enabled
           ? (t.clickedIndex = parseInt(
               i.getAttribute("data-swiper-slide-index"),
-              10
+              10,
             ))
           : (t.clickedIndex = r),
         s.slideToClickedSlide &&
@@ -1393,7 +1395,7 @@
                     e.target === this &&
                     (n.wrapperEl.removeEventListener(
                       "transitionend",
-                      n.onTranslateToWrapperTransitionEnd
+                      n.onTranslateToWrapperTransitionEnd,
                     ),
                     (n.onTranslateToWrapperTransitionEnd = null),
                     delete n.onTranslateToWrapperTransitionEnd,
@@ -1401,7 +1403,7 @@
                 }),
               n.wrapperEl.addEventListener(
                 "transitionend",
-                n.onTranslateToWrapperTransitionEnd
+                n.onTranslateToWrapperTransitionEnd,
               ))),
         !0
       );
@@ -1532,7 +1534,7 @@
                   e.target === this &&
                   (n.wrapperEl.removeEventListener(
                     "transitionend",
-                    n.onSlideToWrapperTransitionEnd
+                    n.onSlideToWrapperTransitionEnd,
                   ),
                   (n.onSlideToWrapperTransitionEnd = null),
                   delete n.onSlideToWrapperTransitionEnd,
@@ -1540,7 +1542,7 @@
               }),
             n.wrapperEl.addEventListener(
               "transitionend",
-              n.onSlideToWrapperTransitionEnd
+              n.onSlideToWrapperTransitionEnd,
             )),
         !0
       );
@@ -1665,14 +1667,14 @@
         if (e.animating) return;
         (r = parseInt(
           e.clickedSlide.getAttribute("data-swiper-slide-index"),
-          10
+          10,
         )),
           t.centeredSlides
             ? n < e.loopedSlides - i / 2 ||
               n > e.slides.length - e.loopedSlides + i / 2
               ? (e.loopFix(),
                 (n = e.getSlideIndex(
-                  g(s, `${o}[data-swiper-slide-index="${r}"]`)[0]
+                  g(s, `${o}[data-swiper-slide-index="${r}"]`)[0],
                 )),
                 d(() => {
                   e.slideTo(n);
@@ -1681,7 +1683,7 @@
             : n > e.slides.length - i
             ? (e.loopFix(),
               (n = e.getSlideIndex(
-                g(s, `${o}[data-swiper-slide-index="${r}"]`)[0]
+                g(s, `${o}[data-swiper-slide-index="${r}"]`)[0],
               )),
               d(() => {
                 e.slideTo(n);
@@ -1752,7 +1754,7 @@
       let v = a.activeIndex;
       void 0 === r
         ? (r = a.getSlideIndex(
-            a.slides.filter((e) => e.classList.contains(u.slideActiveClass))[0]
+            a.slides.filter((e) => e.classList.contains(u.slideActiveClass))[0],
           ))
         : (v = r);
       const w = "next" === s || !s,
@@ -2370,7 +2372,7 @@
               ? "resize orientationchange observerUpdate"
               : "resize observerUpdate",
             V,
-            !0
+            !0,
           )
         : e[c]("observerUpdate", V, !0),
       r[d]("load", e.onLoad, { capture: !0 });
@@ -2575,7 +2577,7 @@
           l && !d
             ? (r.classList.remove(
                 `${i.containerModifierClass}grid`,
-                `${i.containerModifierClass}grid-column`
+                `${i.containerModifierClass}grid-column`,
               ),
               e.emitContainerClasses())
             : !l &&
@@ -2678,7 +2680,7 @@
                 { centered: s.cssMode && s.centeredSlides },
                 { "watch-progress": s.watchSlidesProgress },
               ],
-              s.containerModifierClass
+              s.containerModifierClass,
             );
           t.push(...o), r.classList.add(...t), e.emitContainerClasses();
         },
@@ -2807,8 +2809,8 @@
     getSlideIndexByData(e) {
       return this.getSlideIndex(
         this.slides.filter(
-          (t) => 1 * t.getAttribute("data-swiper-slide-index") === e
-        )[0]
+          (t) => 1 * t.getAttribute("data-swiper-slide-index") === e,
+        )[0],
       );
     }
     recalcSlides() {
@@ -2846,7 +2848,7 @@
         .filter(
           (t) =>
             0 === t.indexOf("swiper") ||
-            0 === t.indexOf(e.params.containerModifierClass)
+            0 === t.indexOf(e.params.containerModifierClass),
         );
       e.emit("_containerClasses", t.join(" "));
     }
@@ -2859,7 +2861,7 @@
             .filter(
               (e) =>
                 0 === e.indexOf("swiper-slide") ||
-                0 === e.indexOf(t.params.slideClass)
+                0 === e.indexOf(t.params.slideClass),
             )
             .join(" ");
     }
@@ -3031,14 +3033,14 @@
                 0,
                 t.params.runCallbacksOnInit,
                 !1,
-                !0
+                !0,
               )
             : t.slideTo(
                 t.params.initialSlide,
                 0,
                 t.params.runCallbacksOnInit,
                 !1,
-                !0
+                !0,
               ),
           t.params.loop && t.loopCreate(),
           t.attachEvents(),
@@ -3078,7 +3080,7 @@
                   i.slideVisibleClass,
                   i.slideActiveClass,
                   i.slideNextClass,
-                  i.slidePrevClass
+                  i.slidePrevClass,
                 ),
                   e.removeAttribute("style"),
                   e.removeAttribute("data-swiper-slide-index");
@@ -3158,7 +3160,7 @@
                       (i && i !== e.el) ||
                         ((r = s ? s.width : (t[0] || t).inlineSize),
                         (n = s ? s.height : (t[0] || t).blockSize));
-                    }
+                    },
                   ),
                     (r === s && n === i) || o();
                 });
@@ -3188,7 +3190,7 @@
                 n.requestAnimationFrame
                   ? n.requestAnimationFrame(s)
                   : n.setTimeout(s, 0);
-              }
+              },
             );
             o.observe(t, {
               attributes: void 0 === s.attributes || s.attributes,

@@ -1,21 +1,21 @@
-
 .text {
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 1px #cfc8be;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #cfc8be;
 
-    &--pseudo {
-      margin-top: -12px;
-      &::before {
-        content: "&";
-        display: block;
-        position: absolute;
-        font-size: 80px;
-        color: #b8ada0;
-        top: -44%;
-        right: 32%;
+  &--pseudo {
+    margin-top: -12px;
+    &::before {
+      content: "&";
+      display: block;
+      position: absolute;
+      font-size: 80px;
+      color: #b8ada0;
+      top: -44%;
+      right: 32%;
 
-        -webkit-text-fill-color: initial;
-        -webkit-text-stroke: initial;
-      }
+      -webkit-text-fill-color: initial;
+      -webkit-text-stroke: initial;
+      color: #c9d0a4;
     }
   }
+}
