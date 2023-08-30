@@ -125,5 +125,37 @@
 
     // Вызов функции для проверки поддержки WebP
     checkWebpSupport();
+
+    // выбираем элемент с классом "primeSwiper" и создаем новый Swiper объект
+    var swiper = new Swiper(".communitySwiper", {
+      // задаем количество слайдов, которые будут показываться одновременно
+      slidesPerView: 1,
+      // Responsive breakpoints
+      breakpoints: {
+        // when window width is >= 992px
+        992: {
+          slidesPerView: 3,
+          spaceBetween: 50,
+        },
+      },
+      centeredSlides: true,
+      // включаем курсор в виде "руки" при наведении на слайды
+      grabCursor: true,
+      // включаем использование клавиатуры для навигации по слайдам
+      keyboard: {
+        enabled: true,
+      },
+      loop: true,
+      pagination: {
+        el: ".community .swiper-pagination",
+        type: "bullets",
+        clickable: true,
+      },
+      // включаем кнопки "вперед" и "назад" для навигации по слайдам
+      navigation: {
+        nextEl: ".community .swiper-button-next",
+        prevEl: ".community .swiper-button-prev",
+      },
+    });
   });
 })();
