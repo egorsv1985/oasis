@@ -132,12 +132,12 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 									<div class="row align-items-center gy-3 px-3">
 										<div class="col-12 col-lg-6">
 											<a class="btn border-white py-2 rounded-2 d-block text-center">
-												<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/app-store.svg" class="mw-100">
+												<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/app-store-white.svg" class="mw-100">
 											</a>
 										</div>
 										<div class="col-12 col-lg-6">
 											<a class="btn border-white py-2 rounded-2 d-block text-center">
-												<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/google-play.svg" class="mw-100">
+												<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/google-play-white.svg" class="mw-100">
 											</a>
 										</div>
 										<a href="#" class="d-flex gap-2 mt-4">

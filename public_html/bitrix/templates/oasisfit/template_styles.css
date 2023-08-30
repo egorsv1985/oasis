@@ -1394,17 +1394,17 @@ body.popup-show::after {
     no-repeat 85% 18%/23px 23px;
 }
 .contacts__link--map {
-  background: url("img/icons/place.svg") no-repeat center/cover;
+  background: url("img/icons/place-dark.svg") no-repeat center/cover;
   width: 50px;
   height: 50px;
 }
 .contacts__link--phone {
-  background: url("img/icons/phone.svg") no-repeat center/cover;
+  background: url("img/icons/phone-dark.svg") no-repeat center/cover;
   width: 50px;
   height: 50px;
 }
 .contacts__link--work {
-  background: url("img/icons/time.svg") no-repeat center/cover;
+  background: url("img/icons/time-dark.svg") no-repeat center/cover;
   width: 50px;
   height: 50px;
 }
@@ -1870,7 +1870,7 @@ body.popup-show::after {
   height: 50px;
 }
 .header__link--phone {
-  background: url("img/icons/phone.svg") no-repeat center/cover;
+  background: url("img/icons/phone-dark.svg") no-repeat center/cover;
   width: 50px;
   height: 50px;
 }
@@ -1993,7 +1993,7 @@ body.popup-show::after {
   }
 }
 .footer__link {
-  background: url("img/icons/place.svg") no-repeat center/cover;
+  background: url("img/icons/place-dark.svg") no-repeat center/cover;
   width: 50px;
   height: 50px;
 }

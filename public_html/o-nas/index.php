@@ -22,17 +22,18 @@ $APPLICATION->SetTitle("О нас"); ?>
 								'HIDE_ICONS' => 'Y'
 							)
 						); ?>
+						<div class="col-9">
+							<a href="#" class="about__box-content d-block">
+								<div class="fs-20 text-info">
+									Меняем карту вашего клуба на
+									<span class="text-uppercase">Oasis Sity</span>
+								</div>
+							</a>
+						</div>
+						<h1 class="fs-40 fw-700 lh-12 mb-3"><? $APPLICATION->ShowTitle(true); ?></h1>
+						<div class="fs-20">Узнай нас еще лучше!</div>
 					</div>
-					<div class="col-9">
-						<a href="#" class="about__box-content d-block">
-							<div class="fs-20 text-info">
-								Меняем карту вашего клуба на
-								<span class="text-uppercase">Oasis Sity</span>
-							</div>
-						</a>
-					</div>
-					<h1 class="fs-40 fw-700 lh-12 mb-3"><? $APPLICATION->ShowTitle(true); ?></h1>
-					<div class="fs-20">Узнай нас еще лучше!</div>
+
 				</div>
 				<div class="col-12 col-lg-8 pt-5">
 					<?
@@ -140,7 +141,7 @@ $APPLICATION->SetTitle("О нас"); ?>
 			<div class="tab-content my-5" id="planTabContent">
 				<div class="tab-pane fade show active" id="one" role="tabpanel" aria-labelledby="one-tab">
 					<div class="plan rounded-5 position-relative" style="padding-top: 43.44%; background: rgba(255, 255, 255, 0.3) url('plan_1.png' ) 50% 50% no-repeat; background-size: 100% 100%;">
-						<!--<img src="/o-nas/plan_1.png" class="w-100">-->
+
 
 					</div>
 				</div>
