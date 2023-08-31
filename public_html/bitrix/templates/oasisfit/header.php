@@ -54,7 +54,8 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 		<? $APPLICATION->ShowPanel(); ?>
 	</div>
 
-	<body class="home">
+	<body class="<?= PAGE === "MAIN" ? 'home' : '' ?>">
+
 		<div class="wrapper">
 			<header class="header py-3 position-fixed w-100">
 				<div class="container">
