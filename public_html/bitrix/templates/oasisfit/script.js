@@ -101,32 +101,7 @@
       // Запрещаем скролл
       isScrollBlocked = true;
     };
-
-    // Вызов функции для снятия/установки блокировки скролла
-    toggleScrollLock();
-
-    // Функция для определения поддержки формата WebP
-    const checkWebpSupport = () => {
-      const image = new Image();
-      image.onload = image.onerror = () => {
-        // Проверяем, поддерживается ли формат WebP
-        const isWebpSupported = image.height === 2;
-
-        // Добавляем класс "webp" или "no-webp" к <html> в зависимости от поддержки
-        document.documentElement.classList.add(
-          isWebpSupported ? "webp" : "no-webp"
-        );
-      };
-
-      // Загружаем тестовое изображение в формате WebP
-      image.src =
-        "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
-    };
-
-    // Вызов функции для проверки поддержки WebP
-    checkWebpSupport();
-
-    // выбираем элемент с классом "primeSwiper" и создаем новый Swiper объект
+    // выбираем элемент с классом "communitySwiper" и создаем новый Swiper объект
     var swiper = new Swiper(".communitySwiper", {
       // задаем количество слайдов, которые будут показываться одновременно
       slidesPerView: 1,
@@ -157,5 +132,28 @@
         prevEl: ".community .swiper-button-prev",
       },
     });
+    // Вызов функции для снятия/установки блокировки скролла
+    toggleScrollLock();
+
+    // Функция для определения поддержки формата WebP
+    const checkWebpSupport = () => {
+      const image = new Image();
+      image.onload = image.onerror = () => {
+        // Проверяем, поддерживается ли формат WebP
+        const isWebpSupported = image.height === 2;
+
+        // Добавляем класс "webp" или "no-webp" к <html> в зависимости от поддержки
+        document.documentElement.classList.add(
+          isWebpSupported ? "webp" : "no-webp"
+        );
+      };
+
+      // Загружаем тестовое изображение в формате WebP
+      image.src =
+        "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
+    };
+
+    // Вызов функции для проверки поддержки WebP
+    checkWebpSupport();
   });
 })();

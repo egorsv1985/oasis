@@ -167,7 +167,7 @@ $APPLICATION->SetTitle("О нас"); ?>
 
 
 			<div class="tab-content my-5" id="planTabContent">
-				
+
 				<div class="tab-pane fade position-relative" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
 					<div class="plans__img">
 						<picture>
@@ -237,7 +237,7 @@ $APPLICATION->SetTitle("О нас"); ?>
 
 						$arSelect = array("ID", "NAME", "PROPERTY_ICO", "PROPERTY_TOP", "PROPERTY_LEFT", "PROPERTY_LINK", "PROPERTY_COLOR");
 						$arFilter = array(
-							"IBLOCK_ID" => 11,
+							"IBLOCK_ID" => 4,
 							"ACTIVE" => "Y",
 							'SECTION_ID' => 2,
 						);
@@ -295,7 +295,7 @@ center / contain;;"></div>
 
 						$arSelect = array("ID", "NAME", "PROPERTY_ICO", "PROPERTY_TOP", "PROPERTY_LEFT", "PROPERTY_LINK", "PROPERTY_COLOR");
 						$arFilter = array(
-							"IBLOCK_ID" => 11,
+							"IBLOCK_ID" => 4,
 							"ACTIVE" => "Y",
 							'SECTION_ID' => 3,
 						);
