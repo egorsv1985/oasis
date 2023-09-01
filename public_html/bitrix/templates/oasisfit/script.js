@@ -163,6 +163,44 @@
       });
     });
 
+    // выбираем элемент с классом "teamSwiper" и создаем новый Swiper объект
+    var swiper = new Swiper(".teamSwiper", {
+      // задаем количество слайдов, которые будут показываться одновременно
+      slidesPerView: 1,
+      centeredSlides: true,
+      // Responsive breakpoints
+      breakpoints: {
+        // when window width is >= 992px
+        992: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        // when window width is >= 1200px
+        1200: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+      },
+
+      // включаем курсор в виде "руки" при наведении на слайды
+      grabCursor: true,
+      // включаем использование клавиатуры для навигации по слайдам
+      keyboard: {
+        enabled: true,
+      },
+      centeredSlides: true,
+      loop: true,
+      pagination: {
+        el: ".teams .swiper-pagination",
+        type: "bullets",
+        clickable: true,
+      },
+      // включаем кнопки "вперед" и "назад" для навигации по слайдам
+      navigation: {
+        nextEl: ".teams .swiper-button-next",
+        prevEl: ".teams .swiper-button-prev",
+      },
+    });
     // выбираем элемент с классом "primeSwiper" и создаем новый Swiper объект
     var swiper = new Swiper(".team-content.tab1 .teamSwiper", {
       // задаем количество слайдов, которые будут показываться одновременно

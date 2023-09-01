@@ -13,15 +13,9 @@
 $this->setFrameMode(true);
 
 $arFilter = array(
-	'IBLOCK_ID' => 1
+	'IBLOCK_ID' => 11
 );
-$arSelect = array(
-	'ID',
-	'NAME',
-	'PROPERTY_ICO',
-	'PROPERTY_GRADIENT',
-	'PROPERTY_COMMANDS'
-);
+
 $ICONS = array();
 $rsElements = CIBlockElement::GetList(false, $arFilter, false, false, $arSelect);
 while ($arElements = $rsElements->GetNext()) {
@@ -32,64 +26,34 @@ while ($arElements = $rsElements->GetNext()) {
 $strSectionEdit = CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_EDIT");
 $strSectionDelete = CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_DELETE");
 ?>
-<!--
-<div class="service-menu service-scroll">
-	<ul class="flex-nowrap">
-<? foreach ($arResult['SECTIONS'] as &$arSection) :
-	$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
-	$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete);
-?>
-		<li id="<? echo $this->GetEditAreaId($arSection['ID']); ?>">
-			<a href="<?= $arSection['SECTION_PAGE_URL'] ?>"<?= ($APPLICATION->GetCurPage() == $arSection['SECTION_PAGE_URL'] ? ' class="active"' : '') ?>>
-				<?= $arSection['NAME']; ?>
-
-				<span class="gradient" style="background:<?= $ICONS[$arSection['ID']]['~PROPERTY_GRADIENT_VALUE'] ?>"></span>
-				<span class="ico" style="background-image: url(<?= CFile::GetPath($ICONS[$arSection['ID']]['PROPERTY_ICO_VALUE']) ?>)"></span>
-			</a>
-		</li>
-<? endforeach; ?>
-	</ul>
-</div>
--->
-
-<div class="service-menu scroll-horizontal">
-	<ul class="flex-nowrap">
-		<? foreach ($arResult['SECTIONS'] as &$arSection) :
-			$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
-			$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete);
+<div class="swiper teamSwiper mb-5">
+	<div class="swiper-wrapper">
+		<?
+		// Инициализируем переменную для подсчета слайдов
+		$slideCount = 0;
+		foreach ($arResult["ITEMS"] as $arItem) :
+			$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+			$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+			$slideCount++; // Увеличиваем счетчик слайдов
 		?>
-			<li id="<? echo $this->GetEditAreaId($arSection['ID']); ?>">
-				<a href="<?= $arSection['SECTION_PAGE_URL'] ?>" <?= ($APPLICATION->GetCurPage() == $arSection['SECTION_PAGE_URL'] ? ' class="active"' : '') ?>>
-					<?= $arSection['NAME']; ?>
 
-					<span class="gradient" style="background:<?= $ICONS[$arSection['ID']]['~PROPERTY_GRADIENT_VALUE'] ?>"></span>
-					<span class="ico" style="background-image: url(<?= CFile::GetPath($ICONS[$arSection['ID']]['PROPERTY_ICO_VALUE']) ?>)"></span>
+			<div class="swiper-slide">
+				<a href="#team" class="d-block text-center position-relative" data-popup="#team">
+					<div class="swiper__box-img">
+						<picture>
+							<source srcset="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" type="image/webp">
+							<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" title="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" class="w-100" width="350" height="460">
+						</picture>
+					</div>
+					<div class="d-flex flex-column">
+						<div class="swiper__box-content position-absolute">
+							<div class="fs-24 fw-700"><?= $arItem["NAME"]; ?></div>
+							<div class="fs-16 lh-12 text-primary"><?= $arItem['PROPERTIES']['POST']['VALUE']; ?></div>
+						</div>
+					</div>
 				</a>
-			</li>
-		<? endforeach; ?>
-	</ul>
-</div>
-<!-- 
-<ul class="teams__nav-tabs nav nav-tabs" id="teamTab" role="tablist">
-	<li class="nav-item" role="presentation">
-		<a class="nav-link active team-tab" data-toggle="tab" data-target=".team-content.tab1" role="tab" aria-controls="tab1" aria-selected="true">
-			Тренажерный зал</a>
-	</li>
-	<li class="nav-item" role="presentation">
-		<a class="nav-link team-tab" data-toggle="tab" data-target=".team-content.tab2" role="tab" aria-controls="tab2" aria-selected="false">
-			Бойцовский клуб</a>
-	</li>
+			</div>
 
-	<li class="nav-item" role="presentation">
-		<a class="nav-link team-tab" data-toggle="tab" data-target=".team-content.tab3" role="tab" aria-controls="tab3" aria-selected="false">Фитнес-консультанты</a>
-	</li>
-	<li class="nav-item" role="presentation">
-		<a class="nav-link team-tab" data-toggle="tab" data-target=".team-content.tab4" role="tab" aria-controls="tab4" aria-selected="false">Групповые программы</a>
-	</li>
-	<li class="nav-item" role="presentation">
-		<a class="nav-link team-tab" data-toggle="tab" data-target=".team-content.tab5" role="tab" aria-controls="tab5" aria-selected="false">Детский клуб</a>
-	</li>
-	<li class="nav-item" role="presentation">
-		<a class="nav-link team-tab" data-toggle="tab" data-target=".team-content.tab6" role="tab" aria-controls="tab6" aria-selected="false">Отдел продаж</a>
-	</li>
-</ul> -->
+		<? endforeach; ?>
+	</div>
+</div>

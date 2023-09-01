@@ -11,147 +11,54 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-?>
-<div class="commands-gallery pt-5" id="commands-gallery">
-	<? foreach ($arResult["ITEMS"] as $arItem) :
-		$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
-		$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
-		if (CModule::IncludeModule("millcom.phpthumb") && $arItem["PREVIEW_PICTURE"]["SRC"])
-			$arItem["PREVIEW_PICTURE"]["SRC"] = CMillcomPhpThumb::generateImg($arItem["PREVIEW_PICTURE"]["SRC"], 5);
 
-	?>
-		<div class="commands-item mt-5 pt-5" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
-			<div class="row">
-				<div class="col-md-5">
-					<div class="w-100 h-100 position-relative">
-						<? if ($arItem["PREVIEW_PICTURE"]) : ?>
-							<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" class="w-100 position-absolute d-none d-md-inline start-0 bottom-0">
-							<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" class="w-100 position-relative d-md-none start-0 bottom-0">
-						<? endif; ?>
+?>
+<div class="swiper teamSwiper mb-5">
+	<div class="swiper-wrapper">
+		<?
+		// Инициализируем переменную для подсчета слайдов
+		$slideCount = 0;
+		foreach ($arResult["ITEMS"] as $arItem) :
+			$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+			$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+			$slideCount++; // Увеличиваем счетчик слайдов
+		?>
+
+			<div class="swiper-slide">
+				<a href="#team" class="d-block text-center position-relative" data-popup="#team">
+					<div class="swiper__box-img">
+						<picture>
+							<source srcset="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" type="image/webp">
+							<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" title="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" class="w-100" width="350" height="460">
+						</picture>
 					</div>
-				</div>
-				<div class="col-md-6 offset-md-1 pb-5 pt-4">
-					<div class="name fs-40 fw-600 mb-3 pt-3"><?= str_replace(' ', '<br>', $arItem["NAME"]); ?></div>
-					<div class="description mb-4 command-info">
-						<p class="fs-12 mb-4"><?= $arItem['PROPERTIES']['POST']['VALUE']; ?></p>
-						<div class="pb-md-5">
-							<?= $arItem["PREVIEW_TEXT"]; ?>
+					<div class="d-flex flex-column">
+						<div class="swiper__box-content position-absolute">
+							<div class="fs-24 fw-700"><?= $arItem["NAME"]; ?></div>
+							<div class="fs-16 lh-12 text-primary"><?= $arItem['PROPERTIES']['POST']['VALUE']; ?></div>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-	<? endforeach; ?>
-</div>
-
-<div class="slider-ctrl scroll-horizontal commands-ctrl d-none d-md-block mb-4" data-slider="commands-gallery">
-	<div class="d-flex gap-4 flex-nowrap">
-		<? foreach ($arResult["ITEMS"] as $key => $arItem) :
-			if (CModule::IncludeModule("millcom.phpthumb"))
-				$arItem["PREVIEW_PICTURE"]["SRC"] = CMillcomPhpThumb::generateImg($arItem["PREVIEW_PICTURE"]["SRC"], 6);
-		?>
-			<div class="item">
-				<a href="#" class="rounded-5<?= !$key ? ' active' : '' ?>">
-					<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"]; ?>" alt="">
 				</a>
 			</div>
-		<? endforeach; ?>
 
+		<? endforeach; ?>
 	</div>
 </div>
-
-
-<!-- <div class="swiper teamSwiper">
-	<div class="swiper-wrapper">
-		<div class="swiper-slide">
-			<a href="#team" class="d-block text-center position-relative" data-popup="#team">
-				<div class="swiper__box-img">
-					<picture>
-						<source srcset="img/team1.webp" type="image/webp"><img src="img/team1.png" alt="" class="" />
-					</picture>
-				</div>
-				<div class="d-flex flex-column">
-					<div class="swiper__box-content position-absolute">
-						<div class="fs-24 fw-700">Фамилия Имя</div>
-						<div class="fs-16 lh-12 text-primary">Должность</div>
-					</div>
-				</div>
-			</a>
-		</div>
-		<div class="swiper-slide">
-			<a href="#team" class="d-block text-center position-relative" data-popup="#team">
-				<div class="swiper__box-img">
-					<picture>
-						<source srcset="img/team2.webp" type="image/webp"><img src="img/team2.png" alt="" class="" />
-					</picture>
-				</div>
-				<div class="d-flex flex-column">
-					<div class="swiper__box-content position-absolute">
-						<div class="fs-24 fw-700">Фамилия Имя</div>
-						<div class="fs-16 lh-12 text-primary">Должность</div>
-					</div>
-				</div>
-			</a>
-		</div>
-		<div class="swiper-slide">
-			<a href="#team" class="d-block text-center position-relative" data-popup="#team">
-				<div class="swiper__box-img">
-					<picture>
-						<source srcset="img/team3.webp" type="image/webp"><img src="img/team3.png" alt="" class="" />
-					</picture>
-				</div>
-				<div class="d-flex flex-column">
-					<div class="swiper__box-content position-absolute">
-						<div class="fs-24 fw-700">Фамилия Имя</div>
-						<div class="fs-16 lh-12 text-primary">Должность</div>
-					</div>
-				</div>
-			</a>
-		</div>
-		<div class="swiper-slide">
-			<a href="#team" class="d-block text-center position-relative" data-popup="#team">
-				<div class="swiper__box-img">
-					<picture>
-						<source srcset="img/team1.webp" type="image/webp"><img src="img/team1.png" alt="" class="" />
-					</picture>
-				</div>
-				<div class="d-flex flex-column">
-					<div class="swiper__box-content position-absolute">
-						<div class="fs-24 fw-700">Фамилия Имя</div>
-						<div class="fs-16 lh-12 text-primary">Должность</div>
-					</div>
-				</div>
-			</a>
-		</div>
-		<div class="swiper-slide">
-			<a href="#team" class="d-block text-center position-relative" data-popup="#team">
-				<div class="swiper__box-img">
-					<picture>
-						<source srcset="img/team2.webp" type="image/webp"><img src="img/team2.png" alt="" class="" />
-					</picture>
-				</div>
-				<div class="d-flex flex-column">
-					<div class="swiper__box-content position-absolute">
-						<div class="fs-24 fw-700">Фамилия Имя</div>
-						<div class="fs-16 lh-12 text-primary">Должность</div>
-					</div>
-				</div>
-			</a>
-		</div>
-		<div class="swiper-slide">
-			<a href="#team" class="d-block text-center position-relative" data-popup="#team">
-				<div class="swiper__box-img">
-					<picture>
-						<source srcset="img/team3.webp" type="image/webp"><img src="img/team3.png" alt="" class="" />
-					</picture>
-				</div>
-				<div class="d-flex flex-column">
-					<div class="swiper__box-content position-absolute">
-						<div class="fs-24 fw-700">Фамилия Имя</div>
-						<div class="fs-16 lh-12 text-primary">Должность</div>
-					</div>
-				</div>
-			</a>
+</div>
+</div>
+<div class="row">
+	<div class="col-12 col-md-3">
+		<div class="fs-40 fw-700 lh-12 mb-4"><? $APPLICATION->ShowTitle(true); ?></div>
+	</div>
+	<div class="col-12 col-md-9">
+		<div class="swiper__control d-flex align-items-center gap-4">
+			<span class="swiper__span fs-20 fw-700 lh-12">01</span>
+			<div class="swiper-pagination position-relative d-flex align-items-center"></div>
+			<span class="swiper__span fs-20 fw-700 lh-12"><? echo ($slideCount < 10) ? str_pad($slideCount, 2, '0', STR_PAD_LEFT) : $slideCount; ?></span>
+			<div class="swiper__buttons d-flex gap-1">
+				<div class="swiper-button-prev rounded-circle border-success border"></div>
+				<div class="swiper-button-next rounded-circle border-success border"></div>
+			</div>
 		</div>
 	</div>
-</div> -->
+</div>
