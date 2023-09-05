@@ -53,6 +53,7 @@ Array(
 			0 => "",
 			1 => "IMAGES",
 			2 => "ICON",
+			3 => "",
 		),
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
@@ -123,7 +124,7 @@ Array(
 			</div>
 		</div>
 		<div class="col-12 col-lg-6 offset-lg-2">
-			 <? $APPLICATION->ShowViewContent('gallerySwiper'); ?>
+			 <? $APPLICATION->ShowViewContent('gallery-swiper'); ?>
 		</div>
 	</div>
 </div>
