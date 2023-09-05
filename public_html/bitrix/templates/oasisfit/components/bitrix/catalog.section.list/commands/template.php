@@ -16,44 +16,24 @@ $arFilter = array(
 	'IBLOCK_ID' => 11
 );
 
-$ICONS = array();
-$rsElements = CIBlockElement::GetList(false, $arFilter, false, false, $arSelect);
-while ($arElements = $rsElements->GetNext()) {
-	$ICONS[$arElements['PROPERTY_COMMANDS_VALUE']] = $arElements;
-}
-
-
 $strSectionEdit = CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_EDIT");
 $strSectionDelete = CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_DELETE");
 ?>
-<div class="swiper teamSwiper mb-5">
-	<div class="swiper-wrapper">
-		<?
-		// Инициализируем переменную для подсчета слайдов
-		$slideCount = 0;
-		foreach ($arResult["ITEMS"] as $arItem) :
-			$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
-			$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
-			$slideCount++; // Увеличиваем счетчик слайдов
-		?>
 
-			<div class="swiper-slide">
-				<a href="#team" class="d-block text-center position-relative" data-popup="#team">
-					<div class="swiper__box-img">
-						<picture>
-							<source srcset="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" type="image/webp">
-							<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" title="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" class="w-100" width="350" height="460">
-						</picture>
-					</div>
-					<div class="d-flex flex-column">
-						<div class="swiper__box-content position-absolute">
-							<div class="fs-24 fw-700"><?= $arItem["NAME"]; ?></div>
-							<div class="fs-16 lh-12 text-primary"><?= $arItem['PROPERTIES']['POST']['VALUE']; ?></div>
-						</div>
-					</div>
-				</a>
-			</div>
+<ul class="teams__nav-tabs nav nav-tabs">
+	<? foreach ($arResult['SECTIONS'] as &$arSection) :
+		$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
+		$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete);
+	?>
 
-		<? endforeach; ?>
-	</div>
-</div>
+		<li class="nav-item" id="<? echo $this->GetEditAreaId($arSection['ID']); ?>">
+			<a href="<?= $arSection['SECTION_PAGE_URL'] ?>" class="nav-link team-tab" <?= ($APPLICATION->GetCurPage() == $arSection['SECTION_PAGE_URL'] ? ' class="active"' : '') ?>>
+				<?= $arSection['NAME']; ?>
+
+
+			</a>
+		</li>
+		
+
+	<? endforeach; ?>
+</ul>

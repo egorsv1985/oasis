@@ -44,13 +44,9 @@ $this->setFrameMode(true);
 		<? endforeach; ?>
 	</div>
 </div>
-</div>
-</div>
-<div class="row">
-	<div class="col-12 col-md-3">
-		<div class="fs-40 fw-700 lh-12 mb-4"><? $APPLICATION->ShowTitle(true); ?></div>
-	</div>
-	<div class="col-12 col-md-9">
+
+
+<?$this->SetViewTarget('swiper__control');?>
 		<div class="swiper__control d-flex align-items-center gap-4">
 			<span class="swiper__span fs-20 fw-700 lh-12">01</span>
 			<div class="swiper-pagination position-relative d-flex align-items-center"></div>
@@ -60,5 +56,4 @@ $this->setFrameMode(true);
 				<div class="swiper-button-next rounded-circle border-success border"></div>
 			</div>
 		</div>
-	</div>
-</div>
+<?$this->EndViewTarget();?>

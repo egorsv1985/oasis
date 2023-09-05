@@ -1,11 +1,11 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetPageProperty("title", "Наша команда");
-$APPLICATION->SetTitle("Наша команда");
-?><main class="pt-5">
+$APPLICATION->SetPageProperty("title", "Команда");
+$APPLICATION->SetTitle("Команда"); ?>
+<main class="pt-5">
 	<section class="teams py-5 position-relative" id="teams">
 		<div class="container">
-			<div class="row">
+			<div class="row mb-5">
 				<div class="col-1">
 					<? $APPLICATION->IncludeComponent(
 						"bitrix:breadcrumb",
@@ -21,6 +21,7 @@ $APPLICATION->SetTitle("Наша команда");
 						)
 					); ?>
 				</div>
+
 				<div class="col-11">
 					<? $APPLICATION->IncludeComponent(
 						"bitrix:news",
@@ -96,11 +97,18 @@ $APPLICATION->SetTitle("Наша команда");
 					); ?>
 				</div>
 			</div>
+
+			<div class="row mb-3">
+				<div class="col-12 col-md-3">
+					<h2 class="fs-40 fw-700 lh-12 mb-4"><? $APPLICATION->ShowTitle(true); ?></h2>
+				</div>
+				<div class="col-12 col-md-9">
+					<? $APPLICATION->ShowViewContent('swiper__control'); ?>
+				</div>
+			</div>
 			<div class="row">
 				<div class="col-12 col-md-3">
-					<div class="fs-20">
-						Выбери своего тренера
-					</div>
+					<div class="fs-20">Выбери своего тренера</div>
 				</div>
 				<div class="col-12 col-md-9">
 					<? $APPLICATION->IncludeComponent(
@@ -120,10 +128,10 @@ $APPLICATION->SetTitle("Наша команда");
 							"IBLOCK_ID" => "6",
 							"IBLOCK_TYPE" => "CONTENT",
 							"SECTION_CODE" => "",
-							"SECTION_FIELDS" => array("NAME", ""),
+							"SECTION_FIELDS" => array(0 => "NAME", 1 => "",),
 							"SECTION_ID" => "0",
 							"SECTION_URL" => "",
-							"SECTION_USER_FIELDS" => array("", ""),
+							"SECTION_USER_FIELDS" => array(0 => "", 1 => "",),
 							"SHOW_PARENT_NAME" => "Y",
 							"TOP_DEPTH" => "2",
 							"VIEW_MODE" => "LINE"
@@ -133,4 +141,5 @@ $APPLICATION->SetTitle("Наша команда");
 			</div>
 		</div>
 	</section>
-</main><? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+</main>
+<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

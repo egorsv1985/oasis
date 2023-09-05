@@ -201,232 +201,43 @@
         prevEl: ".teams .swiper-button-prev",
       },
     });
-    // выбираем элемент с классом "primeSwiper" и создаем новый Swiper объект
-    var swiper = new Swiper(".team-content.tab1 .teamSwiper", {
-      // задаем количество слайдов, которые будут показываться одновременно
+  	var swiper = new Swiper(".gallerySwiper", {
+      loop: true,
+      spaceBetween: 30,
       slidesPerView: 1,
-      centeredSlides: true,
       // Responsive breakpoints
       breakpoints: {
         // when window width is >= 992px
         992: {
           slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        // when window width is >= 1200px
-        1200: {
-          slidesPerView: 3,
-          spaceBetween: 30,
         },
       },
-
-      // включаем курсор в виде "руки" при наведении на слайды
-      grabCursor: true,
-      // включаем использование клавиатуры для навигации по слайдам
-      keyboard: {
-        enabled: true,
-      },
-      centeredSlides: true,
-      loop: true,
       pagination: {
-        el: ".team-content.tab1 .swiper-pagination",
-        type: "bullets",
+        el: ".swiper-pagination",
         clickable: true,
       },
-      // включаем кнопки "вперед" и "назад" для навигации по слайдам
       navigation: {
-        nextEl: ".team-content.tab1 .swiper-button-next",
-        prevEl: ".team-content.tab1 .swiper-button-prev",
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
       },
+      freeMode: true,
+      watchSlidesProgress: true,
     });
-    // выбираем элемент с классом "primeSwiper" и создаем новый Swiper объект
-    var swiper = new Swiper(".tab2 .teamSwiper", {
-      // задаем количество слайдов, которые будут показываться одновременно
-      slidesPerView: 1,
-      centeredSlides: true,
-      // Responsive breakpoints
-      breakpoints: {
-        // when window width is >= 992px
-        992: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        // when window width is >= 1200px
-        1200: {
-          slidesPerView: 3,
-          spaceBetween: 30,
-        },
-      },
 
-      // включаем курсор в виде "руки" при наведении на слайды
-      grabCursor: true,
-      // включаем использование клавиатуры для навигации по слайдам
-      keyboard: {
-        enabled: true,
-      },
-      centeredSlides: true,
+    var swiper2 = new Swiper(".gallerySwiper2", {
       loop: true,
+      spaceBetween: 30,
+
       pagination: {
-        el: ".team-content.tab2 .swiper-pagination",
-        type: "bullets",
+        el: ".swiper-pagination",
         clickable: true,
       },
-      // включаем кнопки "вперед" и "назад" для навигации по слайдам
       navigation: {
-        nextEl: ".team-content.tab2 .swiper-button-next",
-        prevEl: ".team-content.tab2 .swiper-button-prev",
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
       },
-    });
-    // выбираем элемент с классом "primeSwiper" и создаем новый Swiper объект
-    var swiper = new Swiper(".team-content.tab3 .teamSwiper", {
-      // задаем количество слайдов, которые будут показываться одновременно
-      slidesPerView: 1,
-      centeredSlides: true,
-      // Responsive breakpoints
-      breakpoints: {
-        // when window width is >= 992px
-        992: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        // when window width is >= 1200px
-        1200: {
-          slidesPerView: 3,
-          spaceBetween: 30,
-        },
-      },
-
-      // включаем курсор в виде "руки" при наведении на слайды
-      grabCursor: true,
-      // включаем использование клавиатуры для навигации по слайдам
-      keyboard: {
-        enabled: true,
-      },
-      centeredSlides: true,
-      loop: true,
-      pagination: {
-        el: ".team-content.tab3 .swiper-pagination",
-        type: "bullets",
-        clickable: true,
-      },
-      // включаем кнопки "вперед" и "назад" для навигации по слайдам
-      navigation: {
-        nextEl: ".team-content.tab3 .swiper-button-next",
-        prevEl: ".team-content.tab3 .swiper-button-prev",
-      },
-    });
-    // выбираем элемент с классом "primeSwiper" и создаем новый Swiper объект
-    var swiper = new Swiper(".team-content.tab4 .teamSwiper", {
-      // задаем количество слайдов, которые будут показываться одновременно
-      slidesPerView: 1,
-      centeredSlides: true,
-      // Responsive breakpoints
-      breakpoints: {
-        // when window width is >= 992px
-        992: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        // when window width is >= 1200px
-        1200: {
-          slidesPerView: 3,
-          spaceBetween: 30,
-        },
-      },
-
-      // включаем курсор в виде "руки" при наведении на слайды
-      grabCursor: true,
-      // включаем использование клавиатуры для навигации по слайдам
-      keyboard: {
-        enabled: true,
-      },
-      centeredSlides: true,
-      loop: true,
-      pagination: {
-        el: ".team-content.tab4 .swiper-pagination",
-        type: "bullets",
-        clickable: true,
-      },
-      // включаем кнопки "вперед" и "назад" для навигации по слайдам
-      navigation: {
-        nextEl: ".team-content.tab4 .swiper-button-next",
-        prevEl: ".team-content.tab4 .swiper-button-prev",
-      },
-    });
-    // выбираем элемент с классом "primeSwiper" и создаем новый Swiper объект
-    var swiper = new Swiper(".team-content.tab5 .teamSwiper", {
-      // задаем количество слайдов, которые будут показываться одновременно
-      slidesPerView: 1,
-      centeredSlides: true,
-      // Responsive breakpoints
-      breakpoints: {
-        // when window width is >= 992px
-        992: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        // when window width is >= 1200px
-        1200: {
-          slidesPerView: 3,
-          spaceBetween: 30,
-        },
-      },
-
-      // включаем курсор в виде "руки" при наведении на слайды
-      grabCursor: true,
-      // включаем использование клавиатуры для навигации по слайдам
-      keyboard: {
-        enabled: true,
-      },
-      centeredSlides: true,
-      loop: true,
-      pagination: {
-        el: ".team-content.tab5 .swiper-pagination",
-        type: "bullets",
-        clickable: true,
-      },
-      // включаем кнопки "вперед" и "назад" для навигации по слайдам
-      navigation: {
-        nextEl: ".team-content.tab5 .swiper-button-next",
-        prevEl: ".team-content.tab5 .swiper-button-prev",
-      },
-    });
-    // выбираем элемент с классом "primeSwiper" и создаем новый Swiper объект
-    var swiper = new Swiper(".team-content.tab6 .teamSwiper", {
-      // задаем количество слайдов, которые будут показываться одновременно
-      slidesPerView: 1,
-      centeredSlides: true,
-      // Responsive breakpoints
-      breakpoints: {
-        // when window width is >= 992px
-        992: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        // when window width is >= 1200px
-        1200: {
-          slidesPerView: 3,
-          spaceBetween: 30,
-        },
-      },
-
-      // включаем курсор в виде "руки" при наведении на слайды
-      grabCursor: true,
-      // включаем использование клавиатуры для навигации по слайдам
-      keyboard: {
-        enabled: true,
-      },
-      centeredSlides: true,
-      loop: true,
-      pagination: {
-        el: ".team-content.tab6 .swiper-pagination",
-        type: "bullets",
-        clickable: true,
-      },
-      // включаем кнопки "вперед" и "назад" для навигации по слайдам
-      navigation: {
-        nextEl: ".team-content.tab6 .swiper-button-next",
-        prevEl: ".team-content.tab6 .swiper-button-prev",
+      thumbs: {
+        swiper: swiper,
       },
     });
     // Вызов функции для снятия/установки блокировки скролла

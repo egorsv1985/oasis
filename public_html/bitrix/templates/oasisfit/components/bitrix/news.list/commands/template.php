@@ -45,3 +45,21 @@ if (empty($arResult["ITEMS"])) return false;
 		<? endforeach; ?>
 	</div>
 </div>
+
+</div>
+</div>
+
+<div class="row mb-3">
+	<div class="col-12 col-md-3">
+		<h2 class="fs-40 fw-700 lh-12 mb-4"><? $APPLICATION->ShowTitle(true); ?></h2>
+	</div>
+</div>
+<div class="swiper__control d-flex align-items-center gap-4">
+	<span class="swiper__span fs-20 fw-700 lh-12">01</span>
+	<div class="swiper-pagination position-relative d-flex align-items-center"></div>
+	<span class="swiper__span fs-20 fw-700 lh-12">05</span>
+	<div class="swiper__buttons d-flex gap-1">
+		<div class="swiper-button-prev rounded-circle border-success border"></div>
+		<div class="swiper-button-next rounded-circle border-success border"></div>
+	</div>
+</div>
