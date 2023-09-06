@@ -11,7 +11,7 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-
+print_r($arResult);
 ?>
 </div>
 <div class="gallery slider-gallery" id="gallery_<?=$arResult['ID'];?>">

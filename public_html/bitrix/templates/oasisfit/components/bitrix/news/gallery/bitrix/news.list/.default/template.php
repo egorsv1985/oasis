@@ -11,6 +11,7 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+// print_r($arResult);
 
 ?>
 <div class="swiper gallerySwiper2">
@@ -26,15 +27,16 @@ $this->setFrameMode(true);
 			<div class="swiper-slide">
 				<div class="swiper__title d-flex gap-3 position-absolute align-items-center">
 					<div class="swiper__box-svg rounded-circle bg-secondary d-flex justify-content-center align-items-center">
-						<img src="img/icons/cycle-brown.svg" />
+						<img src="<?= $arItem['DISPLAY_PROPERTIES']['ICON']['FILE_VALUE']['SRC'] ?>" />
 					</div>
 					<div class="fs-18 text-white"><?= $arItem["NAME"] ?></div>
 				</div>
 				<picture>
-					<source srcset="img/gallery1.webp" type="image/webp"><img class="rounded-2 w-100" src="img/gallery1.png" />
+					<source srcset="<?= $arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']['SRC'] ?>" type="image/webp"><img class="rounded-2 w-100" src="<?= $arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']['SRC'] ?>" />
 				</picture>
-			<? endforeach; ?>
 			</div>
+		<? endforeach; ?>
+
 
 	</div>
 </div>
@@ -53,17 +55,17 @@ $this->setFrameMode(true);
 		?>
 			<div class="swiper-slide">
 				<div class="swiper__box-small-svg rounded-circle bg-secondary position-absolute d-flex justify-content-center align-items-center">
-					<img src="img/icons/cycle-brown.svg" />
+					<img src="<?= $arItem['DISPLAY_PROPERTIES']['ICON']['FILE_VALUE']['SRC'] ?>" />
 				</div>
 				<picture>
-					<source srcset="img/gallery1.webp" type="image/webp"><img class="rounded-2 w-100" src="img/gallery1.png" />
+					<source srcset="<?= $arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']['SRC'] ?>" type="image/webp"><img class="rounded-2 w-100" src="<?= $arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']['SRC'] ?>" />
 				</picture>
-
-			<? endforeach; ?>
 			</div>
-			?>
+		<? endforeach; ?>
+
+		
 	</div>
-	?>
+	
 </div>
 <div class="swiper__control d-flex align-items-center gap-4">
 	<span class="swiper__span fs-20 fw-700 lh-12">01</span>
