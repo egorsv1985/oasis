@@ -1328,7 +1328,7 @@ body.popup-show::after {
   position: relative;
 }
 .cards__list li::before {
-  content: "";
+  /* content: ""; */
   display: block;
   width: 4px;
   height: 4px;

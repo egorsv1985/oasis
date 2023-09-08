@@ -94,7 +94,7 @@ $APPLICATION->SetTitle("Контакты");
 						</div>
 					</a>
 				</div>
-				<div class="col-12 col-md-4 offset-xl-1">
+				<div class="col-12 col-md-4 offset-xl-1 ">
 					<ul class="contacts__list mb-4">
 						<li><a href="#">Способы оплаты</a></li>
 						<li><a href="#">Правила клуба</a></li>
