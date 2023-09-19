@@ -11,17 +11,72 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+// print_r($arResult);
 ?>
 
-<ul class="flex-column gap-2">
-	<? foreach ($arResult["ITEMS"] as $arItem) :
-		$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
-		$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+
+<div class="accordion" id="vacanciesAccordion">
+	<?
+	$counter = 1;
+	foreach ($arResult['ITEMS'] as $key => $arItem) :
+		$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], $strItemEdit);
+		$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], $strItemDelete, $arItemDeleteParams);
+
 	?>
-		<li id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
-			<a href="<?= $arItem["DETAIL_PAGE_URL"]; ?>" <?= ($APPLICATION->GetCurPage() == $arItem["DETAIL_PAGE_URL"] ? ' class="active"' : '') ?>>
-				<?= $arItem["NAME"]; ?>
-			</a>
-		</li>
+		<div class="card">
+			<div class="card-header ps-0" id="heading<?= $counter ?>">
+				<h2 class="mb-0">
+					<button class="card__btn fw-700 fs-24 ps-0 d-flex justify-content-between w-100" type="button" data-toggle="collapse" data-target="#collapse<?= $counter ?>" aria-expanded="true" aria-controls="collapse<?= $counter ?>">
+						<span class="py-3"><?= $arItem["NAME"] ?> </span>
+						<span class="vacancies__box-circle rounded-circle bg-primary d-flex justify-content-center align-items-center position-relative">
+						</span>
+					</button>
+				</h2>
+			</div>
+
+			<div id="collapse<?= $counter ?>" class="collapse show mb-4" aria-labelledby="heading<?= $counter ?>" data-parent="#vacanciesAccordion">
+				<div class="card-body ps-0">
+					<?= $arItem["DETAIL_TEXT"]; ?>
+					<? $APPLICATION->IncludeComponent(
+						"bitrix:iblock.element.add.form",
+						"horizontal",
+						array(
+							"COMPONENT_TEMPLATE" => ".default",
+							"CUSTOM_TITLE_DATE_ACTIVE_FROM" => "",
+							"CUSTOM_TITLE_DATE_ACTIVE_TO" => "",
+							"CUSTOM_TITLE_DETAIL_PICTURE" => "",
+							"CUSTOM_TITLE_DETAIL_TEXT" => "",
+							"CUSTOM_TITLE_IBLOCK_SECTION" => "",
+							"CUSTOM_TITLE_NAME" => "Имя",
+							"CUSTOM_TITLE_PREVIEW_PICTURE" => "",
+							"CUSTOM_TITLE_PREVIEW_TEXT" => "",
+							"CUSTOM_TITLE_TAGS" => "",
+							"DEFAULT_INPUT_SIZE" => "30",
+							"DETAIL_TEXT_USE_HTML_EDITOR" => "N",
+							"ELEMENT_ASSOC" => "CREATED_BY",
+							"GROUPS" => array(0 => "2",),
+							"IBLOCK_ID" => "1",
+							"IBLOCK_TYPE" => "FORMS",
+							"LEVEL_LAST" => "Y",
+							"LIST_URL" => "",
+							"MAX_FILE_SIZE" => "0",
+							"MAX_LEVELS" => "100000",
+							"MAX_USER_ENTRIES" => "100000",
+							"PREVIEW_TEXT_USE_HTML_EDITOR" => "N",
+							"PROPERTY_CODES" => array(0 => "10", 1 => "11", 2 => "NAME",),
+							"PROPERTY_CODES_REQUIRED" => array(0 => "10", 1 => "NAME",),
+							"RESIZE_IMAGES" => "N",
+							"SEF_MODE" => "N",
+							"STATUS" => "ANY",
+							"STATUS_NEW" => "N",
+							"USER_MESSAGE_ADD" => "",
+							"USER_MESSAGE_EDIT" => "",
+							"USE_CAPTCHA" => "N"
+						)
+					); ?>
+				</div>
+			</div>
+		</div>
+		<? $counter++; ?>
 	<? endforeach; ?>
-</ul>
+</div>

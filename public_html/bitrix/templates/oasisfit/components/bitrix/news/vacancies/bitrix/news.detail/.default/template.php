@@ -11,8 +11,6 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+// print_r($arResult);
 ?>
 
-<h2><?= $arResult["NAME"] ?></h2>
-
-<?= $arResult["DETAIL_TEXT"]; ?>

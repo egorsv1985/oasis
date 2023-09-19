@@ -1,9 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Вакансии");
-$APPLICATION->SetTitle("Вакансии"); ?>
-
-<main class="pt-5">
+$APPLICATION->SetTitle("Вакансии"); ?><main class="pt-5">
 	<section class="vacancies" id="vacancies">
 		<div class="container">
 			<div class="row">
@@ -29,7 +27,7 @@ $APPLICATION->SetTitle("Вакансии"); ?>
 								"bitrix:news",
 								"vacancies",
 								array(
-									"ADD_ELEMENT_CHAIN" => "Y",
+									"ADD_ELEMENT_CHAIN" => "N",
 									"ADD_SECTIONS_CHAIN" => "Y",
 									"AJAX_MODE" => "N",
 									"AJAX_OPTION_ADDITIONAL" => "",
@@ -46,9 +44,8 @@ $APPLICATION->SetTitle("Вакансии"); ?>
 									"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
 									"DETAIL_DISPLAY_TOP_PAGER" => "N",
 									"DETAIL_FIELD_CODE" => array(
-										0 => "NAME",
-										1 => "DETAIL_TEXT",
-										2 => "",
+										0 => "",
+										1 => "",
 									),
 									"DETAIL_PAGER_SHOW_ALL" => "Y",
 									"DETAIL_PAGER_TEMPLATE" => "",
@@ -59,26 +56,26 @@ $APPLICATION->SetTitle("Вакансии"); ?>
 									),
 									"DETAIL_SET_CANONICAL_URL" => "N",
 									"DISPLAY_BOTTOM_PAGER" => "Y",
-									"DISPLAY_DATE" => "Y",
+									"DISPLAY_DATE" => "N",
 									"DISPLAY_NAME" => "Y",
 									"DISPLAY_PICTURE" => "Y",
-									"DISPLAY_PREVIEW_TEXT" => "Y",
+									"DISPLAY_PREVIEW_TEXT" => "N",
 									"DISPLAY_TOP_PAGER" => "N",
-									"FILE_404" => "",
 									"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-									"IBLOCK_ID" => "6",
+									"IBLOCK_ID" => "2",
 									"IBLOCK_TYPE" => "CONTENT",
 									"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 									"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
 									"LIST_FIELD_CODE" => array(
 										0 => "NAME",
-										1 => "DETAIL_TEXT",
-										2 => "DETAIL_PICTURE",
+										1 => "PREVIEW_TEXT",
+										2 => "PREVIEW_PICTURE",
 										3 => "",
 									),
 									"LIST_PROPERTY_CODE" => array(
 										0 => "",
-										1 => "",
+										1 => "POST",
+										2 => "",
 									),
 									"MESSAGE_404" => "",
 									"META_DESCRIPTION" => "-",
@@ -92,12 +89,12 @@ $APPLICATION->SetTitle("Вакансии"); ?>
 									"PAGER_TEMPLATE" => ".default",
 									"PAGER_TITLE" => "Новости",
 									"PREVIEW_TRUNCATE_LEN" => "",
-									"SEF_FOLDER" => "/vakansii/",
+									"SEF_FOLDER" => "/vacansii/",
 									"SEF_MODE" => "Y",
-									"SET_LAST_MODIFIED" => "Y",
-									"SET_STATUS_404" => "Y",
+									"SET_LAST_MODIFIED" => "N",
+									"SET_STATUS_404" => "N",
 									"SET_TITLE" => "Y",
-									"SHOW_404" => "Y",
+									"SHOW_404" => "N",
 									"SORT_BY1" => "SORT",
 									"SORT_BY2" => "SORT",
 									"SORT_ORDER1" => "ASC",
@@ -113,69 +110,60 @@ $APPLICATION->SetTitle("Вакансии"); ?>
 									"COMPONENT_TEMPLATE" => "vacancies",
 									"SEF_URL_TEMPLATES" => array(
 										"news" => "",
-										"section" => "",
-										"detail" => "#ELEMENT_CODE#/",
+										"section" => "#SECTION_CODE#/",
+										"detail" => "",
 									)
 								),
 								false
 							); ?>
 						</div>
-						<div class="fs-40 lh-12 fw-700 mb-4">Вакансии</div>
-						<div class="fs-20 mb-4">Присоединяйся к команде</div>
+						<div class="fs-40 lh-12 fw-700 mb-4">
+							Вакансии
+						</div>
+						<div class="fs-20 mb-4">
+							Присоединяйся к команде
+						</div>
 					</div>
 				</div>
 				<div class="col-12 col-lg-8">
-
 					<? $APPLICATION->IncludeComponent(
 						"bitrix:iblock.element.add.form",
 						"horizontal",
 						array(
-							"CUSTOM_TITLE_DATE_ACTIVE_FROM" => "",	// * дата начала *
-							"CUSTOM_TITLE_DATE_ACTIVE_TO" => "",	// * дата завершения *
-							"CUSTOM_TITLE_DETAIL_PICTURE" => "",	// * подробная картинка *
-							"CUSTOM_TITLE_DETAIL_TEXT" => "",	// * подробный текст *
-							"CUSTOM_TITLE_IBLOCK_SECTION" => "",	// * раздел инфоблока *
-							"CUSTOM_TITLE_NAME" => "Имя",	// * наименование *
-							"CUSTOM_TITLE_PREVIEW_PICTURE" => "",	// * картинка анонса *
-							"CUSTOM_TITLE_PREVIEW_TEXT" => "",	// * текст анонса *
-							"CUSTOM_TITLE_TAGS" => "",	// * теги *
-							"DEFAULT_INPUT_SIZE" => "30",	// Размер полей ввода
-							"DETAIL_TEXT_USE_HTML_EDITOR" => "N",	// Использовать визуальный редактор для редактирования подробного текста
-							"ELEMENT_ASSOC" => "CREATED_BY",	// Привязка к пользователю
-							"GROUPS" => array(	// Группы пользователей, имеющие право на добавление/редактирование
-								0 => "2",
-							),
-							"IBLOCK_ID" => "7",	// Инфоблок
-							"IBLOCK_TYPE" => "FORMS",	// Тип инфоблока
-							"LEVEL_LAST" => "Y",	// Разрешить добавление только на последний уровень рубрикатора
-							"LIST_URL" => "",	// Страница со списком своих элементов
-							"MAX_FILE_SIZE" => "0",	// Максимальный размер загружаемых файлов, байт (0 - не ограничивать)
-							"MAX_LEVELS" => "100000",	// Ограничить кол-во рубрик, в которые можно добавлять элемент
-							"MAX_USER_ENTRIES" => "100000",	// Ограничить кол-во элементов для одного пользователя
-							"PREVIEW_TEXT_USE_HTML_EDITOR" => "N",	// Использовать визуальный редактор для редактирования текста анонса
-							"PROPERTY_CODES" => array(	// Свойства, выводимые на редактирование
-								0 => "10",
-								1 => "11",
-								2 => "NAME",
-							),
-							"PROPERTY_CODES_REQUIRED" => array(	// Свойства, обязательные для заполнения
-								0 => "10",
-								1 => "NAME",
-							),
-							"RESIZE_IMAGES" => "N",	// Использовать настройки инфоблока для обработки изображений
-							"SEF_MODE" => "N",	// Включить поддержку ЧПУ
-							"STATUS" => "ANY",	// Редактирование возможно
-							"STATUS_NEW" => "N",	// Деактивировать элемент
-							"USER_MESSAGE_ADD" => "",	// Сообщение об успешном добавлении
-							"USER_MESSAGE_EDIT" => "",	// Сообщение об успешном сохранении
-							"USE_CAPTCHA" => "N",	// Использовать CAPTCHA
-							"COMPONENT_TEMPLATE" => ".default"
-						),
-						false
+							"CUSTOM_TITLE_DATE_ACTIVE_FROM" => "",
+							"CUSTOM_TITLE_DATE_ACTIVE_TO" => "",
+							"CUSTOM_TITLE_DETAIL_PICTURE" => "",
+							"CUSTOM_TITLE_DETAIL_TEXT" => "",
+							"CUSTOM_TITLE_IBLOCK_SECTION" => "",
+							"CUSTOM_TITLE_NAME" => "Имя",
+							"CUSTOM_TITLE_PREVIEW_PICTURE" => "",
+							"CUSTOM_TITLE_PREVIEW_TEXT" => "",
+							"CUSTOM_TITLE_TAGS" => "",
+							"DEFAULT_INPUT_SIZE" => "30",
+							"DETAIL_TEXT_USE_HTML_EDITOR" => "N",
+							"ELEMENT_ASSOC" => "CREATED_BY",
+							"GROUPS" => array("2"),
+							"IBLOCK_ID" => "1",
+							"IBLOCK_TYPE" => "FORMS",
+							"LEVEL_LAST" => "Y",
+							"LIST_URL" => "",
+							"MAX_FILE_SIZE" => "0",
+							"MAX_LEVELS" => "100000",
+							"MAX_USER_ENTRIES" => "100000",
+							"PREVIEW_TEXT_USE_HTML_EDITOR" => "N",
+							"PROPERTY_CODES" => array("1", "2", "NAME"),
+							"PROPERTY_CODES_REQUIRED" => array("1", "2", "NAME"),
+							"RESIZE_IMAGES" => "N",
+							"SEF_MODE" => "N",
+							"STATUS" => "ANY",
+							"STATUS_NEW" => "N",
+							"USER_MESSAGE_ADD" => "",
+							"USER_MESSAGE_EDIT" => "",
+							"USE_CAPTCHA" => "N"
+						)
 					); ?>
 				</div>
 			</div>
 		</div>
 	</section>
-</main>
-<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+</main><? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
