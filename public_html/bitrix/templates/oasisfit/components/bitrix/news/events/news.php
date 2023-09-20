@@ -52,7 +52,7 @@ while ($ob = $res->GetNext()) {
 	<div class="col-12 col-md-10">
 		<div class="d-flex justify-content-between mb-3">
 			<div class="fs-24 fw-700"><?= $MONTH_ARRAY[$MONTH]; ?></div>
-			<div class="fs-20 text-info"><?= date('d/m/Y', $MONTH_TIMESTAMP); ?></div>
+			<div class="fs-20 text-info"><?= date('d/m/Y', time()); ?></div>
 		</div>
 		<div class="events__calendar">
 			<div class="events__calendar-top bg-success text-white fs-16 fw-700 d-flex justify-content-between mb-3 px-3 py-1">
@@ -62,8 +62,6 @@ while ($ob = $res->GetNext()) {
 					echo '<div class="events__calendar-day">' . $weekday . '</div>';
 				}
 				?>
-
-
 			</div>
 
 			<div class="events__calendar-bottom">
@@ -161,41 +159,44 @@ while ($ob = $res->GetNext()) {
 				}
 				?>
 			</div>
-
-
-
-		</div>
-		<div class="date-top mb-4">
-			<a href="<?= $APPLICATION->GetCurDir(); ?>?date=<?= date('Y_m', $MONTH_PREV_TIMESTAMP) ?>" class="prev-month"></a>
-			<?= $MONTH_ARRAY[$MONTH]; ?>
-			<a href="<?= $APPLICATION->GetCurDir(); ?>?date=<?= date('Y_m', $MONTH_NEXT_TIMESTAMP) ?>" class="next-month"></a>
-		</div>
-
-		<div class="events__calendar-bottom">
-			<div class="events__week d-flex justify-content-between text-info fs-16 mb-2">
-				<?
-				$number = cal_days_in_month(CAL_GREGORIAN, date('n', $MONTH_TIMESTAMP), date('Y', $MONTH_TIMESTAMP));
-				for ($i = 1; $i <= $number; $i++) {
-					$day = strtotime($i . '.' . date('n', $MONTH_TIMESTAMP) . '.' . date('Y', $MONTH_TIMESTAMP));
-					$day_of_the_week = date('w', $day);
-					$class = array(
-						'border',
-						'border-success',
-						'events__day'
-					);
-					if ($day_of_the_week == 0 || $day_of_the_week == 6) $class[] = 'day-off';
-					if (isset($_GET['date']) && $_GET['date'] == date('Y_m_d', $day)) $class[] = 'current';
-
-					if (isset($EVENTS[date('Y', $MONTH_TIMESTAMP)][date('n', $MONTH_TIMESTAMP)][$i])) {
-						echo '<a href="' . $APPLICATION->GetCurDir() . '?date=' . date('Y_m_d', $day) . '" class="' . implode(' ', $class) . '" date-day="' . date('l', $day) . '">' . $i . '</a> ';
-					} else {
-						echo '<span class="' . implode(' ', $class) . '" date-day="' . date('l', $day) . '">' . $i . '</span> ';
-					}
-				}
-				?>
+			<div class="col-2">
+				<div class="events__description-box">
+					<div class="events__description d-flex flex-wrap">
+						<div class="fs-16 text-info ps-5 w-50 d-flex align-items-center" style="
+                            background: url(img/icons/month.svg) no-repeat left
+                              center / 20px 20px;
+                          ">
+							Текущий месяц
+						</div>
+						<div class="fs-16 text-info ps-5 w-50 d-flex align-items-center" style="
+                            background: url(img/icons/event.svg) no-repeat left
+                              center / 20px 20px;
+                          ">
+							Мероприятие
+						</div>
+						<div class="fs-16 text-info ps-5 w-50 d-flex align-items-center" style="
+                            background: url(img/icons/day.svg) no-repeat left
+                              center / 20px 20px;
+                          ">
+							Текущая дата
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-12">
+				<div class="d-flex justify-content-between align-items-center gap-4">
+					<!-- <span class="fs-20 fw-700 lh-12">07</span> -->
+					<!-- <div class="events__lines-box d-flex align-items-center">
+						<div class="events__line"></div>
+					</div> -->
+					<!-- <div class="fs-20 fw-700 lh-12">12</div> -->
+					<div class="events__links-box d-flex gap-1">
+						<a href="<?= $APPLICATION->GetCurDir(); ?>?date=<?= date('Y_m', $MONTH_PREV_TIMESTAMP) ?>" class="events__prev rounded-circle border-success border"></a>
+						<a href="<?= $APPLICATION->GetCurDir(); ?>?date=<?= date('Y_m', $MONTH_NEXT_TIMESTAMP) ?>" class="events__next rounded-circle border-success border"></a>
+					</div>
+				</div>
 			</div>
 		</div>
-
 		<?
 
 		$arParams["FILTER_NAME"] = 'arFilterMonth';
