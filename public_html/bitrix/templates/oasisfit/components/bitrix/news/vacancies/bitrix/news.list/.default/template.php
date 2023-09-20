@@ -21,7 +21,6 @@ $this->setFrameMode(true);
 	foreach ($arResult['ITEMS'] as $key => $arItem) :
 		$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], $strItemEdit);
 		$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], $strItemDelete, $arItemDeleteParams);
-
 	?>
 		<div class="card">
 			<div class="card-header ps-0" id="heading<?= $counter ?>">
@@ -41,7 +40,7 @@ $this->setFrameMode(true);
 						"bitrix:iblock.element.add.form",
 						"horizontal",
 						array(
-							"COMPONENT_TEMPLATE" => ".default",
+							"COMPONENT_TEMPLATE" => "horizontal",
 							"CUSTOM_TITLE_DATE_ACTIVE_FROM" => "",
 							"CUSTOM_TITLE_DATE_ACTIVE_TO" => "",
 							"CUSTOM_TITLE_DETAIL_PICTURE" => "",
@@ -54,7 +53,9 @@ $this->setFrameMode(true);
 							"DEFAULT_INPUT_SIZE" => "30",
 							"DETAIL_TEXT_USE_HTML_EDITOR" => "N",
 							"ELEMENT_ASSOC" => "CREATED_BY",
-							"GROUPS" => array(0 => "2",),
+							"GROUPS" => array(
+								0 => "2",
+							),
 							"IBLOCK_ID" => "1",
 							"IBLOCK_TYPE" => "FORMS",
 							"LEVEL_LAST" => "Y",
@@ -63,8 +64,20 @@ $this->setFrameMode(true);
 							"MAX_LEVELS" => "100000",
 							"MAX_USER_ENTRIES" => "100000",
 							"PREVIEW_TEXT_USE_HTML_EDITOR" => "N",
-							"PROPERTY_CODES" => array(0 => "10", 1 => "11", 2 => "NAME",),
-							"PROPERTY_CODES_REQUIRED" => array(0 => "10", 1 => "NAME",),
+							"PROPERTY_CODES" => array(
+								0 => "1",
+								1 => "2",
+								2 => "29",
+								3 => "30",
+								4 => "NAME",
+							),
+							"PROPERTY_CODES_REQUIRED" => array(
+								0 => "1",
+								1 => "2",
+								2 => "29",
+								3 => "30",
+								4 => "NAME",
+							),
 							"RESIZE_IMAGES" => "N",
 							"SEF_MODE" => "N",
 							"STATUS" => "ANY",
@@ -72,7 +85,8 @@ $this->setFrameMode(true);
 							"USER_MESSAGE_ADD" => "",
 							"USER_MESSAGE_EDIT" => "",
 							"USE_CAPTCHA" => "N"
-						)
+						),
+						false
 					); ?>
 				</div>
 			</div>
