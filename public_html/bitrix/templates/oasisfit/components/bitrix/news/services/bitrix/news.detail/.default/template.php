@@ -207,10 +207,10 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 					endwhile;
 					?>
 
-					<ul class="nav nav-pills flex-column" id="programms-tabContent" role="tablist">
+					<ul class="nav nav-tabs flex-column" id="directionsTab" role="tablist">
 						<? foreach ($SECTIONS as $i => $arSection) : ?>
 							<li class="nav-item" role="presentation">
-								<button class="nav-link<?= ($i++ ? '' : ' active'); ?>" id="programms-<?= $arSection['ID']; ?>-tab" data-bs-toggle="pill" data-bs-target="#programms-<?= $arSection['ID']; ?>" type="button" role="tab" aria-controls="programms-<?= $arSection['ID']; ?>" aria-selected="true"><?= $arSection['NAME']; ?></button>
+								<button class="nav-link<?= ($i++ ? '' : ' active'); ?>" id="tab-<?= $arSection['ID']; ?>-tab" data-bs-toggle="pill" data-bs-target="#tab-<?= $arSection['ID']; ?>" type="button" role="tab" aria-controls="tab-<?= $arSection['ID']; ?>" aria-selected="true"><?= $arSection['NAME']; ?></button>
 							</li>
 						<? endforeach; ?>
 					</ul>
@@ -222,9 +222,9 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 					</div>
 				</div>
 			</div>
-			<div class="tab-content my-5" id="programms-tabContent">
+			<div class="tab-content my-5" id="directionsTabContent">
 				<? foreach ($SECTIONS as $i => $arSection) : ?>
-					<div class="tab-pane fade<?= ($i ? '' : ' show active'); ?>" id="programms-<?= $arSection['ID']; ?>" role="tabpanel" aria-labelledby="programms-<?= $arSection['ID']; ?>-tab">
+					<div class="tab-pane fade<?= ($i ? '' : ' show active'); ?>" id="tab-<?= $arSection['ID']; ?>" role="tabpanel" aria-labelledby="tab-<?= $arSection['ID']; ?>-tab">
 
 						<? $APPLICATION->IncludeComponent(
 							"bitrix:news.list",
