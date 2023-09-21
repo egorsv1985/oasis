@@ -1,1111 +1,1648 @@
 <!doctype html>
 <html lang="ru">
+  <head>
+    <title>Тренажерный зал</title>
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap&_v=20230921104449"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap&_v=20230921104449"
+      rel="stylesheet"
+    />
 
-<head>
-	<title>Тренажерный зал</title>
-	<meta charset="UTF-8" />
-	<meta name="format-detection" content="telephone=no">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap&_v=20230921104449" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap&_v=20230921104449" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css?_v=20230921104449"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.css?_v=20230921104449"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css?_v=20230921104449" />
 
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css?_v=20230921104449">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.css?_v=20230921104449" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.css?_v=20230921104449">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- <meta name="robots" content="noindex, nofollow"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js?_v=20230921104449"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js?_v=20230921104449"></script>
 
-	<link rel="shortcut icon" href="favicon.ico">
-	<!-- <meta name="robots" content="noindex, nofollow"> -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js?_v=20230921104449"></script>
-	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js?_v=20230921104449"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js?_v=20230921104449"></script>
 
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js?_v=20230921104449"></script>
+    <script src="js/app.min.js?_v=20230921104449"></script>
+  </head>
 
-	<script src="js/app.min.js?_v=20230921104449"></script>
-</head>
+  <body class="galery-page">
+    <div class="wrapper">
+      <header class="header py-3 position-fixed w-100">
+        <div class="container">
+          <div class="row">
+            <div class="col-6 col-xl-4">
+              <div class="d-flex justify-content-between align-items-center">
+                <button
+                  type="button"
+                  class="header__burger burger button py-3 d-flex gap-3 align-items-center me-3 position-relative"
+                >
+                  <span
+                    class="burger__inner position-relative d-flex justify-content-center align-items-center"
+                  >
+                    <span></span>
+                  </span>
+                  <span class="fs-16 fw-700 text-uppercase">МЕНЮ</span>
+                </button>
+                <a
+                  data-popup="#callback"
+                  href="#callback"
+                  role="button"
+                  class="header__btn-shedule btn btn-primary py-3 fw-600 fs-16 px-5"
+                  ><span>Расписание</span></a
+                >
+                <div class="header__box-work">
+                  <div class="d-flex gap-2 align-items-center">
+                    <div class="header__link header__link--work"></div>
+                    <div class="fs-16 fw-700 text-end">
+                      <span class="d-block">Пн-Пт 6:30-23:00 </span>
+                      <span class="d-block">Сб-Вс 9:00-22:00 </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-xl-5 position-relative header__box-logo">
+              <div class="text-center">
+                <a href="/" class="d-block mw-100 text-center">
+                  <picture
+                    ><source srcset="img/logo_oasis.webp" type="image/webp" />
+                    <img src="img/logo_oasis.png" alt="logo" class="mw-100"
+                  /></picture>
+                </a>
+              </div>
+            </div>
+            <div class="col-3 d-none d-xl-block">
+              <a
+                href="tel:+73462949090"
+                class="d-flex gap-2 justify-content-end align-items-center"
+              >
+                <div class="header__link header__link--phone"></div>
+                <div class="fs-20 fw-700 text-end">
+                  <span class="d-block text-nowrap">+7 346 294 90 90</span>
+                </div>
+              </a>
+            </div>
+            <div class="header__menu col-12 col-md-6 col-lg-4">
+              <div class="d-flex flex-column justify-content-between h-100">
+                <div class="header__menu-top">
+                  <nav>
+                    <ul>
+                      <li>
+                        <a href="about.html">О нас</a>
+                      </li>
+                      <li>
+                        <button
+                          role="button"
+                          class="header__service-item text-start w-100"
+                        >
+                          Услуги
+                        </button>
+                      </li>
+                      <li>
+                        <a href="gallery.html">Галерея</a>
+                      </li>
+                      <li>
+                        <a href="teams.html">Наша команда</a>
+                      </li>
+                      <li>
+                        <a href="cards.html">Клубные карты</a>
+                      </li>
+                      <li>
+                        <a href="events.html">Мероприятия</a>
+                      </li>
+                      <li>
+                        <a href="#">Расписание</a>
+                      </li>
+                      <li>
+                        <a href="vacancies.html">Вакансии</a>
+                      </li>
+                      <li>
+                        <a href="contacts.html">Контакты</a>
+                      </li>
+                    </ul>
+                  </nav>
+                  <div class="header__btns row mt-5 gy-3 px-3 px-lg-0">
+                    <a
+                      data-popup="#callback"
+                      href="#callback"
+                      role="button"
+                      class="btn btn-light py-3 d-block fw-600 fs-16 col-12 col-lg-6"
+                      ><span>Гостевой визит</span></a
+                    >
+                    <a
+                      data-popup="#callback"
+                      href="#callback"
+                      role="button"
+                      class="btn btn-transparent header__btn btn--pseudo position-relative py-3 d-block fw-600 fs-16 col-12 col-lg-6 text-start text-md-center"
+                      ><span>Заморозить карту</span></a
+                    >
+                  </div>
+                </div>
+                <div class="header__menu-bottom pb-4 mt-4">
+                  <div class="row align-items-center gy-3 px-3">
+                    <div class="col-12 col-lg-6">
+                      <a
+                        class="btn border-white py-2 rounded-2 d-block text-center"
+                      >
+                        <img src="img/icons/app-store.svg" class="mw-100" />
+                      </a>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                      <a
+                        class="btn border-white py-2 rounded-2 d-block text-center"
+                      >
+                        <img src="img/icons/google-play.svg" class="mw-100" />
+                      </a>
+                    </div>
+                    <a href="#" class="d-flex gap-2 mt-4">
+                      <div
+                        class="header__menu-link header__menu-link--map"
+                      ></div>
+                      <div class="fs-20 fw-700">
+                        <div>
+                          г. Сургут,<br />
+                          ул.Профсоюзов, 53/2
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="header__services">
+                <div class="menu-title fs-36 fw-700 lh-12 mb-4 text-start">
+                  Услуги
+                </div>
+                <div class="header__services-menu py-3">
+                  <ul>
+                    <li>
+                      <a href="services.html"
+                        >Тренажерный зал<span
+                          class="header__ico position-absolute top-0 bottom-0 start-0"
+                          style="
+                            background: url(img/icons/zal.svg) no-repeat 50% 50%;
+                          "
+                        ></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        >Групповые программы<span
+                          class="header__ico position-absolute top-0 bottom-0 start-0"
+                          style="
+                            background: url(img/icons/groups.svg) no-repeat 50%
+                              50%;
+                          "
+                        ></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        >Бассейн<span
+                          class="header__ico position-absolute top-0 bottom-0 start-0"
+                          style="
+                            background: url(img/icons/bassein.svg) no-repeat 50%
+                              50%;
+                          "
+                        ></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        >Детский клуб<span
+                          class="header__ico position-absolute top-0 bottom-0 start-0"
+                          style="
+                            background: url(img/icons/kids.svg) no-repeat 50%
+                              50%;
+                          "
+                        ></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        >Студия йоги<span
+                          class="header__ico position-absolute top-0 bottom-0 start-0"
+                          style="
+                            background: url(img/icons/yoga.svg) no-repeat 50%
+                              50%;
+                          "
+                        ></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        >Студия сайкла<span
+                          class="header__ico position-absolute top-0 bottom-0 start-0"
+                          style="
+                            background: url(img/icons/saikl.svg) no-repeat 50%
+                              50%;
+                          "
+                        ></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        >Бойцовский клуб<span
+                          class="header__ico position-absolute top-0 bottom-0 start-0"
+                          style="
+                            background: url(img/icons/mortal.svg) no-repeat 50%
+                              50%;
+                          "
+                        ></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        >Функциональное тестирование<span
+                          class="header__ico position-absolute top-0 bottom-0 start-0"
+                          style="
+                            background: url(img/icons/test.svg) no-repeat 50%
+                              50%;
+                          "
+                        ></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        >Массаж<span
+                          class="header__ico position-absolute top-0 bottom-0 start-0"
+                          style="
+                            background: url(img/icons/massage.svg) no-repeat 50%
+                              50%;
+                          "
+                        ></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        >Солярий<span
+                          class="header__ico position-absolute top-0 bottom-0 start-0"
+                          style="
+                            background: url(img/icons/solyrii.svg) no-repeat 50%
+                              50%;
+                          "
+                        ></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        >Фитнес-бар<span
+                          class="header__ico position-absolute top-0 bottom-0 start-0"
+                          style="
+                            background: url(img/icons/fitness.svg) no-repeat 50%
+                              50%;
+                          "
+                        ></span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
 
+      <main class="pt-5">
+        <section class="services-item" id="services-item">
+          <div class="container">
+            <div class="row gy-4">
+              <div class="col-1 pt-5">
+                <div class="breadcrumb__box">
+                  <nav
+                    aria-label="breadcrumb"
+                    class="breadcrumb__nav position-relative"
+                  >
+                    <ol
+                      class="breadcrumb flex-row-reverse align-items-center m-0 gap-4"
+                    >
+                      <li class="breadcrumb-item">
+                        <a
+                          href="/"
+                          class="bg-success rounded-circle d-block"
+                        ></a>
+                      </li>
 
-<body class="galery-page">
-	<div class="wrapper">
-		<header class="header py-3 position-fixed w-100">
-			<div class="container">
-				<div class="row">
-					<div class="col-6 col-xl-4">
-						<div class="d-flex justify-content-between align-items-center">
-							<button type="button" class="header__burger burger button py-3 d-flex gap-3 align-items-center me-3 position-relative">
-								<span class="burger__inner position-relative d-flex justify-content-center align-items-center">
-									<span></span>
-								</span>
-								<span class="fs-16 fw-700 text-uppercase">МЕНЮ</span>
-							</button>
-							<a data-popup="#callback" href="#callback" role="button" class="header__btn-shedule btn btn-primary py-3 fw-600 fs-16 px-5"><span>Расписание</span></a>
-							<div class="header__box-work">
-								<div class="d-flex gap-2 align-items-center">
-									<div class="header__link header__link--work"></div>
-									<div class="fs-16 fw-700 text-end">
-										<span class="d-block">Пн-Пт 6:30-23:00 </span>
-										<span class="d-block">Сб-Вс 9:00-22:00 </span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-6 col-xl-5 position-relative header__box-logo">
-						<div class="text-center">
-							<a href="/" class="d-block mw-100 text-center">
-								<picture><source srcset="img/logo_oasis.webp" type="image/webp"><img src="img/logo_oasis.png" alt="logo" class="mw-100" /></picture>
-							</a>
-						</div>
-					</div>
-					<div class="col-3 d-none d-xl-block">
-						<a href="tel:+73462949090" class="d-flex gap-2 justify-content-end align-items-center">
-							<div class="header__link header__link--phone"></div>
-							<div class="fs-20 fw-700 text-end">
-								<span class="d-block text-nowrap">+7 346 294 90 90</span>
-							</div>
-						</a>
-					</div>
-					<div class="header__menu col-12 col-md-6 col-lg-4">
-						<div class="d-flex flex-column justify-content-between h-100">
-							<div class="header__menu-top">
-								<nav>
-									<ul>
-										<li>
-											<a href="about.html">О нас</a>
-										</li>
-										<li>
-											<button role="button" class="header__service-item text-start w-100">
-												Услуги
-											</button>
-										</li>
-										<li>
-											<a href="gallery.html">Галерея</a>
-										</li>
-										<li>
-											<a href="teams.html">Наша команда</a>
-										</li>
-										<li>
-											<a href="cards.html">Клубные карты</a>
-										</li>
-										<li>
-											<a href="events.html">Мероприятия</a>
-										</li>
-										<li>
-											<a href="#">Расписание</a>
-										</li>
-										<li>
-											<a href="vacancies.html">Вакансии</a>
-										</li>
-										<li>
-											<a href="contacts.html">Контакты</a>
-										</li>
-									</ul>
-								</nav>
-								<div class="header__btns row mt-5 gy-3 px-3 px-lg-0">
-									<a data-popup="#callback" href="#callback" role="button" class="btn btn-light py-3 d-block fw-600 fs-16 col-12 col-lg-6"><span>Гостевой визит</span></a>
-									<a data-popup="#callback" href="#callback" role="button" class="btn btn-transparent header__btn btn--pseudo position-relative py-3 d-block fw-600 fs-16 col-12 col-lg-6 text-start text-md-center"><span>Заморозить карту</span></a>
-								</div>
-							</div>
-							<div class="header__menu-bottom pb-4 mt-4">
-								<div class="row align-items-center gy-3 px-3">
-									<div class="col-12 col-lg-6">
-										<a class="btn border-white py-2 rounded-2 d-block text-center">
-											<img src="img/icons/app-store.svg" class="mw-100" />
-										</a>
-									</div>
-									<div class="col-12 col-lg-6">
-										<a class="btn border-white py-2 rounded-2 d-block text-center">
-											<img src="img/icons/google-play.svg" class="mw-100" />
-										</a>
-									</div>
-									<a href="#" class="d-flex gap-2 mt-4">
-										<div class="header__menu-link header__menu-link--map"></div>
-										<div class="fs-20 fw-700">
-											<div>
-												г. Сургут,<br />
-												ул.Профсоюзов, 53/2
-											</div>
-										</div>
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="header__services">
-							<div class="menu-title fs-36 fw-700 lh-12 mb-4 text-start">
-								Услуги
-							</div>
-							<div class="header__services-menu py-3">
-								<ul>
-									<li>
-										<a href="services.html">Тренажерный зал<span class="header__ico position-absolute top-0 bottom-0 start-0" style="
-                      background: url(img/icons/zal.svg) no-repeat 50% 50%;
-                    "></span>
-										</a>
-									</li>
-									<li>
-										<a href="#">Групповые программы<span class="header__ico position-absolute top-0 bottom-0 start-0" style="
-                      background: url(img/icons/groups.svg) no-repeat 50% 50%;
-                    "></span>
-										</a>
-									</li>
-									<li>
-										<a href="#">Бассейн<span class="header__ico position-absolute top-0 bottom-0 start-0" style="
-                      background: url(img/icons/bassein.svg) no-repeat 50% 50%;
-                    "></span>
-										</a>
-									</li>
-									<li>
-										<a href="#">Детский клуб<span class="header__ico position-absolute top-0 bottom-0 start-0" style="
-                      background: url(img/icons/kids.svg) no-repeat 50% 50%;
-                    "></span>
-										</a>
-									</li>
-									<li>
-										<a href="#">Студия йоги<span class="header__ico position-absolute top-0 bottom-0 start-0" style="
-                      background: url(img/icons/yoga.svg) no-repeat 50% 50%;
-                    "></span>
-										</a>
-									</li>
-									<li>
-										<a href="#">Студия сайкла<span class="header__ico position-absolute top-0 bottom-0 start-0" style="
-                      background: url(img/icons/saikl.svg) no-repeat 50% 50%;
-                    "></span>
-										</a>
-									</li>
-									<li>
-										<a href="#">Бойцовский клуб<span class="header__ico position-absolute top-0 bottom-0 start-0" style="
-                      background: url(img/icons/mortal.svg) no-repeat 50% 50%;
-                    "></span>
-										</a>
-									</li>
-									<li>
-										<a href="#">Функциональное тестирование<span class="header__ico position-absolute top-0 bottom-0 start-0" style="
-                      background: url(img/icons/test.svg) no-repeat 50% 50%;
-                    "></span>
-										</a>
-									</li>
-									<li>
-										<a href="#">Массаж<span class="header__ico position-absolute top-0 bottom-0 start-0" style="
-                      background: url(img/icons/massage.svg) no-repeat 50% 50%;
-                    "></span>
-										</a>
-									</li>
-									<li>
-										<a href="#">Солярий<span class="header__ico position-absolute top-0 bottom-0 start-0" style="
-                      background: url(img/icons/solyrii.svg) no-repeat 50% 50%;
-                    "></span>
-										</a>
-									</li>
-									<li>
-										<a href="#">Фитнес-бар<span class="header__ico position-absolute top-0 bottom-0 start-0" style="
-                      background: url(img/icons/fitness.svg) no-repeat 50% 50%;
-                    "></span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
+                      <li
+                        class="breadcrumb-item active ff-inter fs-14 bg-body px-1"
+                        aria-current="page"
+                      >
+                        Услуги
+                      </li>
+                      <li
+                        class="breadcrumb-item active ff-inter fs-14 bg-body px-1"
+                        aria-current="page"
+                      >
+                        Тренажерный зал
+                      </li>
+                    </ol>
+                  </nav>
+                </div>
+              </div>
+              <div class="col-11">
+                <div class="swiper servicesSwiper2">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <picture
+                        ><source
+                          srcset="img/services1.webp"
+                          type="image/webp" />
+                        <img class="rounded-2 w-100" src="img/services1.png"
+                      /></picture>
+                    </div>
+                    <div class="swiper-slide">
+                      <picture
+                        ><source
+                          srcset="img/services2.webp"
+                          type="image/webp" />
+                        <img class="rounded-2 w-100" src="img/services2.png"
+                      /></picture>
+                    </div>
+                    <div class="swiper-slide">
+                      <picture
+                        ><source
+                          srcset="img/services3.webp"
+                          type="image/webp" />
+                        <img class="rounded-2 w-100" src="img/services3.png"
+                      /></picture>
+                    </div>
+                    <div class="swiper-slide">
+                      <picture
+                        ><source
+                          srcset="img/services1.webp"
+                          type="image/webp" />
+                        <img class="rounded-2 w-100" src="img/services1.png"
+                      /></picture>
+                    </div>
+                    <div class="swiper-slide">
+                      <picture
+                        ><source
+                          srcset="img/services2.webp"
+                          type="image/webp" />
+                        <img class="rounded-2 w-100" src="img/services2.png"
+                      /></picture>
+                    </div>
+                    <div class="swiper-slide">
+                      <picture
+                        ><source
+                          srcset="img/services3.webp"
+                          type="image/webp" />
+                        <img class="rounded-2 w-100" src="img/services3.png"
+                      /></picture>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-10 col-lg-4">
+                <div class="fs-40 fw-700 lh-12">Тренажерный зал</div>
+              </div>
+              <div class="col-2">
+                <a href="#" class="services-item__video-box">
+                  <img
+                    src="img/icons/video-btn.svg"
+                    alt=""
+                    class="services-item__video-btn"
+                  />
+                </a>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div thumbsSlider="" class="swiper servicesSwiper">
+                  <div class="swiper-wrapper mb-5">
+                    <div class="swiper-slide">
+                      <picture
+                        ><source
+                          srcset="img/services1.webp"
+                          type="image/webp" />
+                        <img class="rounded-2 w-100" src="img/services1.png"
+                      /></picture>
+                    </div>
+                    <div class="swiper-slide">
+                      <picture
+                        ><source
+                          srcset="img/services2.webp"
+                          type="image/webp" />
+                        <img class="rounded-2 w-100" src="img/services2.png"
+                      /></picture>
+                    </div>
+                    <div class="swiper-slide">
+                      <picture
+                        ><source
+                          srcset="img/services3.webp"
+                          type="image/webp" />
+                        <img class="rounded-2 w-100" src="img/services3.png"
+                      /></picture>
+                    </div>
+                    <div class="swiper-slide">
+                      <picture
+                        ><source
+                          srcset="img/services1.webp"
+                          type="image/webp" />
+                        <img class="rounded-2 w-100" src="img/services1.png"
+                      /></picture>
+                    </div>
+                    <div class="swiper-slide">
+                      <picture
+                        ><source
+                          srcset="img/services2.webp"
+                          type="image/webp" />
+                        <img class="rounded-2 w-100" src="img/services2.png"
+                      /></picture>
+                    </div>
+                    <div class="swiper-slide">
+                      <picture
+                        ><source
+                          srcset="img/services3.webp"
+                          type="image/webp" />
+                        <img class="rounded-2 w-100" src="img/services3.png"
+                      /></picture>
+                    </div>
+                  </div>
+                  <div class="swiper__control d-flex align-items-center gap-4">
+                    <span class="swiper__span fs-20 fw-700 lh-12">01</span>
+                    <div
+                      class="swiper-pagination position-relative d-flex align-items-center"
+                    ></div>
+                    <span class="swiper__span fs-20 fw-700 lh-12">10</span>
+                    <div class="swiper__buttons d-flex gap-1">
+                      <div
+                        class="swiper-button-prev rounded-circle border-success border"
+                      ></div>
+                      <div
+                        class="swiper-button-next rounded-circle border-success border"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-3">
+                <a href="#" class="services-item__box-content d-block">
+                  <div class="fs-20 text-info">Мероприятия</div>
+                </a>
+              </div>
+              <div class="col-12 col-lg-8 offset-lg-1">
+                <div class="fs-16 lh-13 text-info mb-5">
+                  <span class="fst-italic fw-600 text-primary"
+                    >Тренажерный и кардио-зал занимает площадь 700 кв метров, </span
+                  >для более удобного и комфортного ее использования в ней
+                  применена система зонирования с эксклюзивной для России
+                  планировкой по концепции Journey c оборудованием Life Fitness
+                  и Hammer Strength.
+                </div>
+                <div class="fs-24 fw-700">
+                  Концепция Journey это эволюция тренажерного зала!
+                </div>
+                <div class="fs-16 text-info">
+                  Концепция Journey предполагает разделение территории силового
+                  тренинга на "зоны", в зависимости от вида тренировки. Каждая
+                  из "зон" обособлена от общих программ, каждая имеет
+                  соответствующее название и оснащена подробными комментариями,
+                  поясняющими ее предназначение.
+                </div>
+                <div class="fs-16 text-info">
+                  Прогрессивная система расстановки оборудования создает чувство
+                  комфорта во время занятий и стимулирует желание продолжать
+                  тренировки.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
+        <script>
+          var swiper = new Swiper(".servicesSwiper", {
+            loop: true,
+            spaceBetween: 30,
+            slidesPerView: 1,
+            // Responsive breakpoints
+            breakpoints: {
+              // when window width is >= 992px
+              992: {
+                slidesPerView: 2,
+              },
+            },
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+            freeMode: true,
+            watchSlidesProgress: true,
+          });
 
-		<main class="pt-5">
+          var swiper2 = new Swiper(".servicesSwiper2", {
+            loop: true,
+            spaceBetween: 30,
 
-			<section class="services-item" id="services-item">
-				<div class="container">
-					<div class="row gy-4">
-						<div class="col-1 pt-5">
-							<div class="breadcrumb__box">
-								<nav aria-label="breadcrumb" class="breadcrumb__nav position-relative">
-									<ol class="breadcrumb flex-row-reverse align-items-center m-0 gap-4">
-										<li class="breadcrumb-item">
-											<a href="/" class="bg-success rounded-circle d-block"></a>
-										</li>
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+            thumbs: {
+              swiper: swiper,
+            },
+          });
+        </script>
 
-										<li class="breadcrumb-item active ff-inter fs-14 bg-body px-1" aria-current="page">
-											Услуги
-										</li>
-										<li class="breadcrumb-item active ff-inter fs-14 bg-body px-1" aria-current="page">
-											Тренажерный зал
-										</li>
-									</ol>
-								</nav>
-							</div>
-						</div>
-						<div class="col-11">
-							<div class="swiper servicesSwiper2">
-								<div class="swiper-wrapper">
-									<div class="swiper-slide">
-										<picture><source srcset="img/services1.webp" type="image/webp"><img class="rounded-2 w-100" src="img/services1.png" /></picture>
-									</div>
-									<div class="swiper-slide">
-										<picture><source srcset="img/services2.webp" type="image/webp"><img class="rounded-2 w-100" src="img/services2.png" /></picture>
-									</div>
-									<div class="swiper-slide">
-										<picture><source srcset="img/services3.webp" type="image/webp"><img class="rounded-2 w-100" src="img/services3.png" /></picture>
-									</div>
-									<div class="swiper-slide">
-										<picture><source srcset="img/services1.webp" type="image/webp"><img class="rounded-2 w-100" src="img/services1.png" /></picture>
-									</div>
-									<div class="swiper-slide">
-										<picture><source srcset="img/services2.webp" type="image/webp"><img class="rounded-2 w-100" src="img/services2.png" /></picture>
-									</div>
-									<div class="swiper-slide">
-										<picture><source srcset="img/services3.webp" type="image/webp"><img class="rounded-2 w-100" src="img/services3.png" /></picture>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-10 col-lg-4">
-							<div class="fs-40 fw-700 lh-12">Тренажерный зал</div>
-						</div>
-						<div class="col-2">
-							<a href="#" class="services-item__video-box">
-								<img src="img/icons/video-btn.svg" alt="" class="services-item__video-btn" />
-							</a>
-						</div>
-						<div class="col-12 col-lg-6">
-							<div thumbsSlider="" class="swiper servicesSwiper">
-								<div class="swiper-wrapper mb-5">
-									<div class="swiper-slide">
-										<picture><source srcset="img/services1.webp" type="image/webp"><img class="rounded-2 w-100" src="img/services1.png" /></picture>
-									</div>
-									<div class="swiper-slide">
-										<picture><source srcset="img/services2.webp" type="image/webp"><img class="rounded-2 w-100" src="img/services2.png" /></picture>
-									</div>
-									<div class="swiper-slide">
-										<picture><source srcset="img/services3.webp" type="image/webp"><img class="rounded-2 w-100" src="img/services3.png" /></picture>
-									</div>
-									<div class="swiper-slide">
-										<picture><source srcset="img/services1.webp" type="image/webp"><img class="rounded-2 w-100" src="img/services1.png" /></picture>
-									</div>
-									<div class="swiper-slide">
-										<picture><source srcset="img/services2.webp" type="image/webp"><img class="rounded-2 w-100" src="img/services2.png" /></picture>
-									</div>
-									<div class="swiper-slide">
-										<picture><source srcset="img/services3.webp" type="image/webp"><img class="rounded-2 w-100" src="img/services3.png" /></picture>
-									</div>
-								</div>
-								<div class="swiper__control d-flex align-items-center gap-4">
-									<span class="swiper__span fs-20 fw-700 lh-12">01</span>
-									<div class="swiper-pagination position-relative d-flex align-items-center"></div>
-									<span class="swiper__span fs-20 fw-700 lh-12">10</span>
-									<div class="swiper__buttons d-flex gap-1">
-										<div class="swiper-button-prev rounded-circle border-success border"></div>
-										<div class="swiper-button-next rounded-circle border-success border"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-12 col-lg-3">
-							<a href="#" class="services-item__box-content d-block">
-								<div class="fs-20 text-info">Мероприятия</div>
-							</a>
-						</div>
-						<div class="col-12 col-lg-8 offset-lg-1">
-							<div class="fs-16 lh-13 text-info mb-5">
-								<span class="fst-italic fw-600 text-primary">Тренажерный и кардио-зал занимает площадь 700 кв метров, </span>для более удобного и комфортного ее использования в ней применена
-								система зонирования с эксклюзивной для России планировкой по концепции
-								Journey c оборудованием Life Fitness и Hammer Strength.
-							</div>
-							<div class="fs-24 fw-700">
-								Концепция Journey это эволюция тренажерного зала!
-							</div>
-							<div class="fs-16 text-info">
-								Концепция Journey предполагает разделение территории силового тренинга
-								на "зоны", в зависимости от вида тренировки. Каждая из "зон"
-								обособлена от общих программ, каждая имеет соответствующее название и
-								оснащена подробными комментариями, поясняющими ее предназначение.
-							</div>
-							<div class="fs-16 text-info">
-								Прогрессивная система расстановки оборудования создает чувство
-								комфорта во время занятий и стимулирует желание продолжать тренировки.
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+        <section
+          class="directions bg-success py-4 position-relative"
+          id="directions"
+        >
+          <div class="line1 position-absolute"></div>
+          <div class="line2 position-absolute"></div>
+          <div class="container">
+            <div class="row gy-5 mb-5">
+              <div class="col-12 col-sm-4">
+                <ul
+                  class="nav nav-tabs flex-column"
+                  id="directionsTab"
+                  role="tablist"
+                >
+                  <li class="nav-item" role="presentation">
+                    <a
+                      class="nav-link active"
+                      id="tab1-tab"
+                      data-toggle="tab"
+                      href="#tab1"
+                      role="tab"
+                      aria-controls="tab1"
+                      aria-selected="true"
+                    >
+                      Силовые программы</a
+                    >
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a
+                      class="nav-link"
+                      id="tab2-tab"
+                      data-toggle="tab"
+                      href="#tab2"
+                      role="tab"
+                      aria-controls="tab2"
+                      aria-selected="false"
+                    >
+                      Аэробные программы</a
+                    >
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a
+                      class="nav-link"
+                      id="tab3-tab"
+                      data-toggle="tab"
+                      href="#tab3"
+                      role="tab"
+                      aria-controls="tab3"
+                      aria-selected="false"
+                    >
+                      Функциональный тренинг</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="col-4 offset-lg-1">
+                <div class="fs-36 fw-700 lh-12 text-white">
+                  Зоны/Направления тренажерного зала
+                </div>
+              </div>
+            </div>
 
-			<script>
-				var swiper = new Swiper(".servicesSwiper", {
-					loop: true,
-					spaceBetween: 30,
-					slidesPerView: 1,
-					// Responsive breakpoints
-					breakpoints: {
-						// when window width is >= 992px
-						992: {
-							slidesPerView: 2,
-						},
-					},
-					pagination: {
-						el: ".swiper-pagination",
-						clickable: true,
-					},
-					navigation: {
-						nextEl: ".swiper-button-next",
-						prevEl: ".swiper-button-prev",
-					},
-					freeMode: true,
-					watchSlidesProgress: true,
-				});
+            <div class="tab-content my-5" id="directionsTabContent">
+              <div
+                class="tab-pane fade show active"
+                id="tab1"
+                role="tabpanel"
+                aria-labelledby="tab1-tab"
+              >
+                <div class="row gy-4">
+                  <div class="col-12 col-lg-4">
+                    <div class="directions__box-img rounded-3 mb-4">
+                      <picture
+                        ><source
+                          srcset="img/directions1.webp"
+                          type="image/webp" />
+                        <img src="img/directions1.png" alt="" class="w-100"
+                      /></picture>
+                    </div>
+                    <div class="fs-24 text-uppercase text-white fw-700 mb-2">
+                      CARDIO SPACE
+                    </div>
+                    <div class="fs-16 lh-13 text-white">
+                      Кардио тренировки – это неотъемлемый элемент любого
+                      полноценного занятия фитнесом. Они необходимы не только
+                      для поддержания сердечнососудистой системы в здоровом
+                      состоянии, но и для нормального функционирования организма
+                      в целом.
+                    </div>
+                  </div>
+                  <div class="col-2"></div>
+                  <div class="col-12 col-lg-6">
+                    <div class="directions__box-img rounded-3 mb-4">
+                      <picture
+                        ><source
+                          srcset="img/directions2.webp"
+                          type="image/webp" />
+                        <img src="img/directions2.png" alt="" class="w-100"
+                      /></picture>
+                    </div>
+                    <div class="fs-24 text-uppercase text-white fw-700 mb-2">
+                      EXPRESS LINE
+                    </div>
+                    <div class="fs-16 lh-13 text-white">
+                      Все очень просто – тренажеры этой группы расположены в той
+                      последовательности, в которой нужно делать тренировку.
+                      Сделайте по одному подходу до отказа на каждом из
+                      тренажёров и тренировка завершена.
+                    </div>
+                  </div>
+                  <div class="col-2">
+                    <div
+                      class="fs-18 fw-500 fst-italic directions__citation text-white"
+                    >
+                      Ваш прогресс к более сложным упражнениям и программам
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-4 directions__foto">
+                    <div class="directions__box-img rounded-3 mb-4">
+                      <picture
+                        ><source
+                          srcset="img/directions3.webp"
+                          type="image/webp" />
+                        <img src="img/directions3.png" alt="" class="w-100"
+                      /></picture>
+                    </div>
+                    <div class="fs-24 text-uppercase text-white fw-700 mb-2">
+                      CIRCUIT SPACE
+                    </div>
+                    <div class="fs-16 lh-13 text-white">
+                      Зона с простыми и быстро настраиваемыми тренажерами,
+                      обьединяющие в себе силовые и энергичные аэробные
+                      упражнения.
+                    </div>
+                  </div>
+                  <div class="col-2"></div>
+                  <div class="col-12 col-lg-4">
+                    <div class="directions__box-img rounded-3 mb-4">
+                      <picture
+                        ><source
+                          srcset="img/directions4.webp"
+                          type="image/webp" />
+                        <img src="img/directions4.png" alt="" class="w-100"
+                      /></picture>
+                    </div>
+                    <div class="fs-24 text-uppercase text-white fw-700 mb-2">
+                      СORE & TONE SPACE
+                    </div>
+                    <div class="fs-16 lh-13 text-white">
+                      Это пространство – для усиления мышц нижней части тела и
+                      мышц-стабилизаторов корпуса. Тренажеры данной зоны –
+                      отличный помощник в борьбе за красивые, подтянутые мышцы
+                      спины, живота, ягодиц и бедер.
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <div class="directions__box-img rounded-3 mb-4">
+                      <picture
+                        ><source
+                          srcset="img/directions5.webp"
+                          type="image/webp" />
+                        <img src="img/directions5.png" alt="" class="w-100"
+                      /></picture>
+                    </div>
+                    <div class="fs-24 text-uppercase text-white fw-700 mb-2">
+                      HAMMER STRENGTH SPACE
+                    </div>
+                    <div class="fs-16 lh-13 text-white">
+                      Здесь расположены тренажеры нагружаемые дисками для всех
+                      основных мышц тела.В данных тренажерах движения рук
+                      происходят независимо друг от друга, по заданным
+                      нелинейным траекториям, идеально точным с точки зрения
+                      биомеханики и эффективности тренировок.
+                    </div>
+                  </div>
+                  <div class="col-2"></div>
+                  <div class="col-12 col-lg-4">
+                    <div class="directions__box-img rounded-3 mb-4">
+                      <picture
+                        ><source
+                          srcset="img/directions6.webp"
+                          type="image/webp" />
+                        <img src="img/directions6.png" alt="" class="w-100"
+                      /></picture>
+                    </div>
+                    <div class="fs-24 text-uppercase text-white fw-700 mb-2">
+                      FUNCTIONAL SPACE
+                    </div>
+                    <div class="fs-16 lh-13 text-white">
+                      Включает в себя такие зоны как комплекс SYNRGY360 TRX,
+                      ДРТ. Занятия в этой зоне позволяет каждому работать в
+                      своём режиме, возможен усложненный и упрощённый вариант
+                      выполнения упражнений, что позволяет подобрать оптимальную
+                      нагрузку как для начинающих, так и для продвинутых людей в
+                      фитнесе.
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-4 directions__video">
+                    <div class="directions__box-img rounded-3 mb-4">
+                      <picture
+                        ><source
+                          srcset="img/directions7.webp"
+                          type="image/webp" />
+                        <img src="img/directions7.png" alt="" class="w-100"
+                      /></picture>
+                    </div>
+                    <div class="fs-24 text-uppercase text-white fw-700 mb-2">
+                      FREE WEIGHT SPACE
+                    </div>
+                    <div class="fs-16 lh-13 text-white">
+                      Гантели, штанги, скамьи для жима, машина Смита, силовые
+                      стойки и рамы для приседаний – в этой тренировочной зоне
+                      вы найдете все, чтобы не остановиться на достигнутом и
+                      добиться многого.
+                    </div>
+                  </div>
+                  <div class="col-2">
+                    <div
+                      class="fs-18 fw-500 fst-italic directions__citation text-white"
+                    >
+                      Свободные веса – это неисчерпаемый арсенал упражнений.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="tab2"
+                role="tabpanel"
+                aria-labelledby="tab2-tab"
+              >
+                <div class="row gy-4">
+                  <div class="col-12 col-lg-4">
+                    <div class="directions__box-img rounded-3 mb-4">
+                      <picture
+                        ><source
+                          srcset="img/directions1.webp"
+                          type="image/webp" />
+                        <img src="img/directions1.png" alt="" class="w-100"
+                      /></picture>
+                    </div>
+                    <div class="fs-24 text-uppercase text-white fw-700 mb-2">
+                      CARDIO SPACE
+                    </div>
+                    <div class="fs-16 lh-13 text-white">
+                      Кардио тренировки – это неотъемлемый элемент любого
+                      полноценного занятия фитнесом. Они необходимы не только
+                      для поддержания сердечнососудистой системы в здоровом
+                      состоянии, но и для нормального функционирования организма
+                      в целом.
+                    </div>
+                  </div>
+                  <div class="col-2"></div>
+                  <div class="col-12 col-lg-6">
+                    <div class="directions__box-img rounded-3 mb-4">
+                      <picture
+                        ><source
+                          srcset="img/directions2.webp"
+                          type="image/webp" />
+                        <img src="img/directions2.png" alt="" class="w-100"
+                      /></picture>
+                    </div>
+                    <div class="fs-24 text-uppercase text-white fw-700 mb-2">
+                      EXPRESS LINE
+                    </div>
+                    <div class="fs-16 lh-13 text-white">
+                      Все очень просто – тренажеры этой группы расположены в той
+                      последовательности, в которой нужно делать тренировку.
+                      Сделайте по одному подходу до отказа на каждом из
+                      тренажёров и тренировка завершена.
+                    </div>
+                  </div>
+                  <div class="col-2">
+                    <div
+                      class="fs-18 fw-500 fst-italic directions__citation text-white"
+                    >
+                      Ваш прогресс к более сложным упражнениям и программам
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-4 directions__foto">
+                    <div class="directions__box-img rounded-3 mb-4">
+                      <picture
+                        ><source
+                          srcset="img/directions3.webp"
+                          type="image/webp" />
+                        <img src="img/directions3.png" alt="" class="w-100"
+                      /></picture>
+                    </div>
+                    <div class="fs-24 text-uppercase text-white fw-700 mb-2">
+                      CIRCUIT SPACE
+                    </div>
+                    <div class="fs-16 lh-13 text-white">
+                      Зона с простыми и быстро настраиваемыми тренажерами,
+                      обьединяющие в себе силовые и энергичные аэробные
+                      упражнения.
+                    </div>
+                  </div>
+                  <div class="col-2"></div>
+                  <div class="col-12 col-lg-4">
+                    <div class="directions__box-img rounded-3 mb-4">
+                      <picture
+                        ><source
+                          srcset="img/directions4.webp"
+                          type="image/webp" />
+                        <img src="img/directions4.png" alt="" class="w-100"
+                      /></picture>
+                    </div>
+                    <div class="fs-24 text-uppercase text-white fw-700 mb-2">
+                      СORE & TONE SPACE
+                    </div>
+                    <div class="fs-16 lh-13 text-white">
+                      Это пространство – для усиления мышц нижней части тела и
+                      мышц-стабилизаторов корпуса. Тренажеры данной зоны –
+                      отличный помощник в борьбе за красивые, подтянутые мышцы
+                      спины, живота, ягодиц и бедер.
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <div class="directions__box-img rounded-3 mb-4">
+                      <picture
+                        ><source
+                          srcset="img/directions5.webp"
+                          type="image/webp" />
+                        <img src="img/directions5.png" alt="" class="w-100"
+                      /></picture>
+                    </div>
+                    <div class="fs-24 text-uppercase text-white fw-700 mb-2">
+                      HAMMER STRENGTH SPACE
+                    </div>
+                    <div class="fs-16 lh-13 text-white">
+                      Здесь расположены тренажеры нагружаемые дисками для всех
+                      основных мышц тела.В данных тренажерах движения рук
+                      происходят независимо друг от друга, по заданным
+                      нелинейным траекториям, идеально точным с точки зрения
+                      биомеханики и эффективности тренировок.
+                    </div>
+                  </div>
+                  <div class="col-2"></div>
+                  <div class="col-12 col-lg-4">
+                    <div class="directions__box-img rounded-3 mb-4">
+                      <picture
+                        ><source
+                          srcset="img/directions6.webp"
+                          type="image/webp" />
+                        <img src="img/directions6.png" alt="" class="w-100"
+                      /></picture>
+                    </div>
+                    <div class="fs-24 text-uppercase text-white fw-700 mb-2">
+                      FUNCTIONAL SPACE
+                    </div>
+                    <div class="fs-16 lh-13 text-white">
+                      Включает в себя такие зоны как комплекс SYNRGY360 TRX,
+                      ДРТ. Занятия в этой зоне позволяет каждому работать в
+                      своём режиме, возможен усложненный и упрощённый вариант
+                      выполнения упражнений, что позволяет подобрать оптимальную
+                      нагрузку как для начинающих, так и для продвинутых людей в
+                      фитнесе.
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-4 directions__video">
+                    <div class="directions__box-img rounded-3 mb-4">
+                      <picture
+                        ><source
+                          srcset="img/directions7.webp"
+                          type="image/webp" />
+                        <img src="img/directions7.png" alt="" class="w-100"
+                      /></picture>
+                    </div>
+                    <div class="fs-24 text-uppercase text-white fw-700 mb-2">
+                      FREE WEIGHT SPACE
+                    </div>
+                    <div class="fs-16 lh-13 text-white">
+                      Гантели, штанги, скамьи для жима, машина Смита, силовые
+                      стойки и рамы для приседаний – в этой тренировочной зоне
+                      вы найдете все, чтобы не остановиться на достигнутом и
+                      добиться многого.
+                    </div>
+                  </div>
+                  <div class="col-2">
+                    <div
+                      class="fs-18 fw-500 fst-italic directions__citation text-white"
+                    >
+                      Свободные веса – это неисчерпаемый арсенал упражнений.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="tab3"
+                role="tabpanel"
+                aria-labelledby="tab3-tab"
+              >
+                <div class="row gy-4">
+                  <div class="col-12 col-lg-4">
+                    <div class="directions__box-img rounded-3 mb-4">
+                      <picture
+                        ><source
+                          srcset="img/directions1.webp"
+                          type="image/webp" />
+                        <img src="img/directions1.png" alt="" class="w-100"
+                      /></picture>
+                    </div>
+                    <div class="fs-24 text-uppercase text-white fw-700 mb-2">
+                      CARDIO SPACE
+                    </div>
+                    <div class="fs-16 lh-13 text-white">
+                      Кардио тренировки – это неотъемлемый элемент любого
+                      полноценного занятия фитнесом. Они необходимы не только
+                      для поддержания сердечнососудистой системы в здоровом
+                      состоянии, но и для нормального функционирования организма
+                      в целом.
+                    </div>
+                  </div>
+                  <div class="col-2"></div>
+                  <div class="col-12 col-lg-6">
+                    <div class="directions__box-img rounded-3 mb-4">
+                      <picture
+                        ><source
+                          srcset="img/directions2.webp"
+                          type="image/webp" />
+                        <img src="img/directions2.png" alt="" class="w-100"
+                      /></picture>
+                    </div>
+                    <div class="fs-24 text-uppercase text-white fw-700 mb-2">
+                      EXPRESS LINE
+                    </div>
+                    <div class="fs-16 lh-13 text-white">
+                      Все очень просто – тренажеры этой группы расположены в той
+                      последовательности, в которой нужно делать тренировку.
+                      Сделайте по одному подходу до отказа на каждом из
+                      тренажёров и тренировка завершена.
+                    </div>
+                  </div>
+                  <div class="col-2">
+                    <div
+                      class="fs-18 fw-500 fst-italic directions__citation text-white"
+                    >
+                      Ваш прогресс к более сложным упражнениям и программам
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-4 directions__foto">
+                    <div class="directions__box-img rounded-3 mb-4">
+                      <picture
+                        ><source
+                          srcset="img/directions3.webp"
+                          type="image/webp" />
+                        <img src="img/directions3.png" alt="" class="w-100"
+                      /></picture>
+                    </div>
+                    <div class="fs-24 text-uppercase text-white fw-700 mb-2">
+                      CIRCUIT SPACE
+                    </div>
+                    <div class="fs-16 lh-13 text-white">
+                      Зона с простыми и быстро настраиваемыми тренажерами,
+                      обьединяющие в себе силовые и энергичные аэробные
+                      упражнения.
+                    </div>
+                  </div>
+                  <div class="col-2"></div>
+                  <div class="col-12 col-lg-4">
+                    <div class="directions__box-img rounded-3 mb-4">
+                      <picture
+                        ><source
+                          srcset="img/directions4.webp"
+                          type="image/webp" />
+                        <img src="img/directions4.png" alt="" class="w-100"
+                      /></picture>
+                    </div>
+                    <div class="fs-24 text-uppercase text-white fw-700 mb-2">
+                      СORE & TONE SPACE
+                    </div>
+                    <div class="fs-16 lh-13 text-white">
+                      Это пространство – для усиления мышц нижней части тела и
+                      мышц-стабилизаторов корпуса. Тренажеры данной зоны –
+                      отличный помощник в борьбе за красивые, подтянутые мышцы
+                      спины, живота, ягодиц и бедер.
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <div class="directions__box-img rounded-3 mb-4">
+                      <picture
+                        ><source
+                          srcset="img/directions5.webp"
+                          type="image/webp" />
+                        <img src="img/directions5.png" alt="" class="w-100"
+                      /></picture>
+                    </div>
+                    <div class="fs-24 text-uppercase text-white fw-700 mb-2">
+                      HAMMER STRENGTH SPACE
+                    </div>
+                    <div class="fs-16 lh-13 text-white">
+                      Здесь расположены тренажеры нагружаемые дисками для всех
+                      основных мышц тела.В данных тренажерах движения рук
+                      происходят независимо друг от друга, по заданным
+                      нелинейным траекториям, идеально точным с точки зрения
+                      биомеханики и эффективности тренировок.
+                    </div>
+                  </div>
+                  <div class="col-2"></div>
+                  <div class="col-12 col-lg-4">
+                    <div class="directions__box-img rounded-3 mb-4">
+                      <picture
+                        ><source
+                          srcset="img/directions6.webp"
+                          type="image/webp" />
+                        <img src="img/directions6.png" alt="" class="w-100"
+                      /></picture>
+                    </div>
+                    <div class="fs-24 text-uppercase text-white fw-700 mb-2">
+                      FUNCTIONAL SPACE
+                    </div>
+                    <div class="fs-16 lh-13 text-white">
+                      Включает в себя такие зоны как комплекс SYNRGY360 TRX,
+                      ДРТ. Занятия в этой зоне позволяет каждому работать в
+                      своём режиме, возможен усложненный и упрощённый вариант
+                      выполнения упражнений, что позволяет подобрать оптимальную
+                      нагрузку как для начинающих, так и для продвинутых людей в
+                      фитнесе.
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-4 directions__video">
+                    <div class="directions__box-img rounded-3 mb-4">
+                      <picture
+                        ><source
+                          srcset="img/directions7.webp"
+                          type="image/webp" />
+                        <img src="img/directions7.png" alt="" class="w-100"
+                      /></picture>
+                    </div>
+                    <div class="fs-24 text-uppercase text-white fw-700 mb-2">
+                      FREE WEIGHT SPACE
+                    </div>
+                    <div class="fs-16 lh-13 text-white">
+                      Гантели, штанги, скамьи для жима, машина Смита, силовые
+                      стойки и рамы для приседаний – в этой тренировочной зоне
+                      вы найдете все, чтобы не остановиться на достигнутом и
+                      добиться многого.
+                    </div>
+                  </div>
+                  <div class="col-2">
+                    <div
+                      class="fs-18 fw-500 fst-italic directions__citation text-white"
+                    >
+                      Свободные веса – это неисчерпаемый арсенал упражнений.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-				var swiper2 = new Swiper(".servicesSwiper2", {
-					loop: true,
-					spaceBetween: 30,
+        <section class="trainers position-relative" id="trainers">
+          <div class="container">
+            <div class="swiper trainersSwiper mb-5">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a
+                    href="#team"
+                    class="d-block text-center position-relative"
+                    data-popup="#team"
+                  >
+                    <div class="swiper__box-img">
+                      <picture
+                        ><source srcset="img/team1.webp" type="image/webp" />
+                        <img src="img/team1.png" alt="" class=""
+                      /></picture>
+                    </div>
+                    <div class="d-flex flex-column">
+                      <div class="swiper__box-content position-absolute">
+                        <div class="fs-24 fw-700">Фамилия Имя</div>
+                        <div class="fs-16 lh-12 text-primary">Должность</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    href="#team"
+                    class="d-block text-center position-relative"
+                    data-popup="#team"
+                  >
+                    <div class="swiper__box-img">
+                      <picture
+                        ><source srcset="img/team2.webp" type="image/webp" />
+                        <img src="img/team2.png" alt="" class=""
+                      /></picture>
+                    </div>
+                    <div class="d-flex flex-column">
+                      <div class="swiper__box-content position-absolute">
+                        <div class="fs-24 fw-700">Фамилия Имя</div>
+                        <div class="fs-16 lh-12 text-primary">Должность</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    href="#team"
+                    class="d-block text-center position-relative"
+                    data-popup="#team"
+                  >
+                    <div class="swiper__box-img">
+                      <picture
+                        ><source srcset="img/team3.webp" type="image/webp" />
+                        <img src="img/team3.png" alt="" class=""
+                      /></picture>
+                    </div>
+                    <div class="d-flex flex-column">
+                      <div class="swiper__box-content position-absolute">
+                        <div class="fs-24 fw-700">Фамилия Имя</div>
+                        <div class="fs-16 lh-12 text-primary">Должность</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    href="#team"
+                    class="d-block text-center position-relative"
+                    data-popup="#team"
+                  >
+                    <div class="swiper__box-img">
+                      <picture
+                        ><source srcset="img/team1.webp" type="image/webp" />
+                        <img src="img/team1.png" alt="" class=""
+                      /></picture>
+                    </div>
+                    <div class="d-flex flex-column">
+                      <div class="swiper__box-content position-absolute">
+                        <div class="fs-24 fw-700">Фамилия Имя</div>
+                        <div class="fs-16 lh-12 text-primary">Должность</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    href="#team"
+                    class="d-block text-center position-relative"
+                    data-popup="#team"
+                  >
+                    <div class="swiper__box-img">
+                      <picture
+                        ><source srcset="img/team2.webp" type="image/webp" />
+                        <img src="img/team2.png" alt="" class=""
+                      /></picture>
+                    </div>
+                    <div class="d-flex flex-column">
+                      <div class="swiper__box-content position-absolute">
+                        <div class="fs-24 fw-700">Фамилия Имя</div>
+                        <div class="fs-16 lh-12 text-primary">Должность</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    href="#team"
+                    class="d-block text-center position-relative"
+                    data-popup="#team"
+                  >
+                    <div class="swiper__box-img">
+                      <picture
+                        ><source srcset="img/team3.webp" type="image/webp" />
+                        <img src="img/team3.png" alt="" class=""
+                      /></picture>
+                    </div>
+                    <div class="d-flex flex-column">
+                      <div class="swiper__box-content position-absolute">
+                        <div class="fs-24 fw-700">Фамилия Имя</div>
+                        <div class="fs-16 lh-12 text-primary">Должность</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="row flex-row-reverse flex-lg-row">
+              <div class="col-12 col-lg-4">
+                <div class="fs-36 fw-700 lh-12 mb-4">
+                  Тренеры тренажерного зала
+                </div>
+                <div class="fs-20">Выбери своего тренера</div>
+              </div>
+              <div class="col-12 col-lg-8">
+                <div class="swiper__control d-flex align-items-center gap-4">
+                  <span class="swiper__span fs-20 fw-700 lh-12">01</span>
+                  <div
+                    class="swiper-pagination position-relative d-flex align-items-center"
+                  ></div>
+                  <span class="swiper__span fs-20 fw-700 lh-12">05</span>
+                  <div class="swiper__buttons d-flex gap-1">
+                    <div
+                      class="swiper-button-prev rounded-circle border-success border"
+                    ></div>
+                    <div
+                      class="swiper-button-next rounded-circle border-success border"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-					pagination: {
-						el: ".swiper-pagination",
-						clickable: true,
-					},
-					navigation: {
-						nextEl: ".swiper-button-next",
-						prevEl: ".swiper-button-prev",
-					},
-					thumbs: {
-						swiper: swiper,
-					},
-				});
-			</script>
+        <!-- Initialize Swiper -->
+        <script>
+          // выбираем элемент с классом "primeSwiper" и создаем новый Swiper объект
+          var swiper = new Swiper(".trainersSwiper", {
+            // задаем количество слайдов, которые будут показываться одновременно
+            slidesPerView: 1,
+            // Responsive breakpoints
+            breakpoints: {
+              // when window width is >= 992px
+              992: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+            },
+            centeredSlides: true,
+            // включаем курсор в виде "руки" при наведении на слайды
+            grabCursor: true,
+            // включаем использование клавиатуры для навигации по слайдам
+            keyboard: {
+              enabled: true,
+            },
+            loop: true,
+            pagination: {
+              el: ".trainers .swiper-pagination",
+              type: "bullets",
+              clickable: true,
+            },
+            // включаем кнопки "вперед" и "назад" для навигации по слайдам
+            navigation: {
+              nextEl: ".trainers .swiper-button-next",
+              prevEl: ".trainers .swiper-button-prev",
+            },
+          });
+        </script>
 
-			<section class="directions bg-success py-4 position-relative" id="directions">
-				<div class="line1 position-absolute"></div>
-				<div class="line2 position-absolute"></div>
-				<div class="container">
-					<div class="row gy-5 mb-5">
-						<div class="col-12 col-sm-4">
-							<ul class="nav nav-tabs flex-column" id="directionsTab" role="tablist">
-								<li class="nav-item" role="presentation">
-									<a class="nav-link active" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">
-										Силовые программы</a>
-								</li>
-								<li class="nav-item" role="presentation">
-									<a class="nav-link" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">
-										Аэробные программы</a>
-								</li>
-								<li class="nav-item" role="presentation">
-									<a class="nav-link" id="tab3-tab" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">
-										Функциональный тренинг</a>
-								</li>
-							</ul>
-						</div>
-						<div class="col-4 offset-lg-1">
-							<div class="fs-36 fw-700 lh-12 text-white">
-								Зоны/Направления тренажерного зала
-							</div>
-						</div>
-					</div>
+        <section class="forms pb-5 position-relative" id="forms">
+          <div class="container">
+            <div
+              class="fs-80 fw-700 text-uppercase text-center text position-relative"
+            >
+              fitness
+            </div>
+            <form
+              action="#"
+              class="forms__form form position-relative py-5 px-4"
+            >
+              <div class="row gy-4 mb-3">
+                <div class="col-12 col-sm-6 col-lg-4">
+                  <h3 class="fs-24 fw-700">
+                    Запишись на пробное занятие бесплатно!
+                  </h3>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <div class="fs-16 lh-13 text-info">
+                    Оставьте свои контакты и мы с вами свяжемся
+                  </div>
+                </div>
+              </div>
+              <div class="row gy-4 align-items-center">
+                <div
+                  class="form-group position-relative col-12 col-sm-6 col-lg-3"
+                >
+                  <input
+                    type="text"
+                    class="form-control form__input bg-light rounded-2 text-info p-3 h-100"
+                    name="name"
+                    id="name"
+                    placeholder=""
+                    required
+                  />
+                  <label
+                    for="name"
+                    class="form-label form__label fs-16 text-info position-absolute top-50"
+                    >Имя*</label
+                  >
+                </div>
+                <div
+                  class="form-group position-relative col-12 col-sm-6 col-lg-3"
+                >
+                  <input
+                    type="text"
+                    class="form-control form__input bg-light rounded-2 text-info p-3 h-100"
+                    name="tel"
+                    id="tel"
+                    placeholder=""
+                    required
+                  />
+                  <label
+                    for="tel"
+                    class="form-label form__label fs-16 text-info position-absolute top-50"
+                    >Телефон*</label
+                  >
+                </div>
+                <div
+                  class="col-12 col-sm-6 col-lg-3 form-check form-check-inline position-relative me-0 ps-3"
+                >
+                  <input
+                    type="checkbox"
+                    class="form-check-input m-0"
+                    value=""
+                    name="check"
+                    id="check"
+                    checked
+                  />
 
-					<div class="tab-content my-5" id="directionsTabContent">
-						<div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
-							<div class="row gy-4">
-								<div class="col-12 col-lg-4">
-									<div class="directions__box-img rounded-3 mb-4">
-										<picture><source srcset="img/directions1.webp" type="image/webp"><img src="img/directions1.png" alt="" class="w-100" /></picture>
-									</div>
-									<div class="fs-24 text-uppercase text-white fw-700 mb-2">
-										CARDIO SPACE
-									</div>
-									<div class="fs-16 lh-13 text-white">
-										Кардио тренировки – это неотъемлемый элемент любого полноценного
-										занятия фитнесом. Они необходимы не только для поддержания
-										сердечнососудистой системы в здоровом состоянии, но и для
-										нормального функционирования организма в целом.
-									</div>
-								</div>
-								<div class="col-2"></div>
-								<div class="col-12 col-lg-6">
-									<div class="directions__box-img rounded-3 mb-4">
-										<picture><source srcset="img/directions2.webp" type="image/webp"><img src="img/directions2.png" alt="" class="w-100" /></picture>
-									</div>
-									<div class="fs-24 text-uppercase text-white fw-700 mb-2">
-										EXPRESS LINE
-									</div>
-									<div class="fs-16 lh-13 text-white">
-										Все очень просто – тренажеры этой группы расположены в той
-										последовательности, в которой нужно делать тренировку. Сделайте по
-										одному подходу до отказа на каждом из тренажёров и тренировка
-										завершена.
-									</div>
-								</div>
-								<div class="col-2">
-									<div class="fs-18 fw-500 fst-italic directions__citation text-white">
-										Ваш прогресс к более сложным упражнениям и программам
-									</div>
-								</div>
-								<div class="col-12 col-lg-4 directions__foto">
-									<div class="directions__box-img rounded-3 mb-4">
-										<picture><source srcset="img/directions3.webp" type="image/webp"><img src="img/directions3.png" alt="" class="w-100" /></picture>
-									</div>
-									<div class="fs-24 text-uppercase text-white fw-700 mb-2">
-										CIRCUIT SPACE
-									</div>
-									<div class="fs-16 lh-13 text-white">
-										Зона с простыми и быстро настраиваемыми тренажерами, обьединяющие
-										в себе силовые и энергичные аэробные упражнения.
-									</div>
-								</div>
-								<div class="col-2"></div>
-								<div class="col-12 col-lg-4">
-									<div class="directions__box-img rounded-3 mb-4">
-										<picture><source srcset="img/directions4.webp" type="image/webp"><img src="img/directions4.png" alt="" class="w-100" /></picture>
-									</div>
-									<div class="fs-24 text-uppercase text-white fw-700 mb-2">
-										СORE & TONE SPACE
-									</div>
-									<div class="fs-16 lh-13 text-white">
-										Это пространство – для усиления мышц нижней части тела и
-										мышц-стабилизаторов корпуса. Тренажеры данной зоны – отличный
-										помощник в борьбе за красивые, подтянутые мышцы спины, живота,
-										ягодиц и бедер.
-									</div>
-								</div>
-								<div class="col-12 col-lg-6">
-									<div class="directions__box-img rounded-3 mb-4">
-										<picture><source srcset="img/directions5.webp" type="image/webp"><img src="img/directions5.png" alt="" class="w-100" /></picture>
-									</div>
-									<div class="fs-24 text-uppercase text-white fw-700 mb-2">
-										HAMMER STRENGTH SPACE
-									</div>
-									<div class="fs-16 lh-13 text-white">
-										Здесь расположены тренажеры нагружаемые дисками для всех основных
-										мышц тела.В данных тренажерах движения рук происходят независимо
-										друг от друга, по заданным нелинейным траекториям, идеально точным
-										с точки зрения биомеханики и эффективности тренировок.
-									</div>
-								</div>
-								<div class="col-2"></div>
-								<div class="col-12 col-lg-4">
-									<div class="directions__box-img rounded-3 mb-4">
-										<picture><source srcset="img/directions6.webp" type="image/webp"><img src="img/directions6.png" alt="" class="w-100" /></picture>
-									</div>
-									<div class="fs-24 text-uppercase text-white fw-700 mb-2">
-										FUNCTIONAL SPACE
-									</div>
-									<div class="fs-16 lh-13 text-white">
-										Включает в себя такие зоны как комплекс SYNRGY360 TRX, ДРТ.
-										Занятия в этой зоне позволяет каждому работать в своём режиме,
-										возможен усложненный и упрощённый вариант выполнения упражнений,
-										что позволяет подобрать оптимальную нагрузку как для начинающих,
-										так и для продвинутых людей в фитнесе.
-									</div>
-								</div>
-								<div class="col-12 col-lg-4 directions__video">
-									<div class="directions__box-img rounded-3 mb-4">
-										<picture><source srcset="img/directions7.webp" type="image/webp"><img src="img/directions7.png" alt="" class="w-100" /></picture>
-									</div>
-									<div class="fs-24 text-uppercase text-white fw-700 mb-2">
-										FREE WEIGHT SPACE
-									</div>
-									<div class="fs-16 lh-13 text-white">
-										Гантели, штанги, скамьи для жима, машина Смита, силовые стойки и
-										рамы для приседаний – в этой тренировочной зоне вы найдете все,
-										чтобы не остановиться на достигнутом и добиться многого.
-									</div>
-								</div>
-								<div class="col-2">
-									<div class="fs-18 fw-500 fst-italic directions__citation text-white">
-										Свободные веса – это неисчерпаемый арсенал упражнений.
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
-							<div class="row gy-4">
-								<div class="col-12 col-lg-4">
-									<div class="directions__box-img rounded-3 mb-4">
-										<picture><source srcset="img/directions1.webp" type="image/webp"><img src="img/directions1.png" alt="" class="w-100" /></picture>
-									</div>
-									<div class="fs-24 text-uppercase text-white fw-700 mb-2">
-										CARDIO SPACE
-									</div>
-									<div class="fs-16 lh-13 text-white">
-										Кардио тренировки – это неотъемлемый элемент любого полноценного
-										занятия фитнесом. Они необходимы не только для поддержания
-										сердечнососудистой системы в здоровом состоянии, но и для
-										нормального функционирования организма в целом.
-									</div>
-								</div>
-								<div class="col-2"></div>
-								<div class="col-12 col-lg-6">
-									<div class="directions__box-img rounded-3 mb-4">
-										<picture><source srcset="img/directions2.webp" type="image/webp"><img src="img/directions2.png" alt="" class="w-100" /></picture>
-									</div>
-									<div class="fs-24 text-uppercase text-white fw-700 mb-2">
-										EXPRESS LINE
-									</div>
-									<div class="fs-16 lh-13 text-white">
-										Все очень просто – тренажеры этой группы расположены в той
-										последовательности, в которой нужно делать тренировку. Сделайте по
-										одному подходу до отказа на каждом из тренажёров и тренировка
-										завершена.
-									</div>
-								</div>
-								<div class="col-2">
-									<div class="fs-18 fw-500 fst-italic directions__citation text-white">
-										Ваш прогресс к более сложным упражнениям и программам
-									</div>
-								</div>
-								<div class="col-12 col-lg-4 directions__foto">
-									<div class="directions__box-img rounded-3 mb-4">
-										<picture><source srcset="img/directions3.webp" type="image/webp"><img src="img/directions3.png" alt="" class="w-100" /></picture>
-									</div>
-									<div class="fs-24 text-uppercase text-white fw-700 mb-2">
-										CIRCUIT SPACE
-									</div>
-									<div class="fs-16 lh-13 text-white">
-										Зона с простыми и быстро настраиваемыми тренажерами, обьединяющие
-										в себе силовые и энергичные аэробные упражнения.
-									</div>
-								</div>
-								<div class="col-2"></div>
-								<div class="col-12 col-lg-4">
-									<div class="directions__box-img rounded-3 mb-4">
-										<picture><source srcset="img/directions4.webp" type="image/webp"><img src="img/directions4.png" alt="" class="w-100" /></picture>
-									</div>
-									<div class="fs-24 text-uppercase text-white fw-700 mb-2">
-										СORE & TONE SPACE
-									</div>
-									<div class="fs-16 lh-13 text-white">
-										Это пространство – для усиления мышц нижней части тела и
-										мышц-стабилизаторов корпуса. Тренажеры данной зоны – отличный
-										помощник в борьбе за красивые, подтянутые мышцы спины, живота,
-										ягодиц и бедер.
-									</div>
-								</div>
-								<div class="col-12 col-lg-6">
-									<div class="directions__box-img rounded-3 mb-4">
-										<picture><source srcset="img/directions5.webp" type="image/webp"><img src="img/directions5.png" alt="" class="w-100" /></picture>
-									</div>
-									<div class="fs-24 text-uppercase text-white fw-700 mb-2">
-										HAMMER STRENGTH SPACE
-									</div>
-									<div class="fs-16 lh-13 text-white">
-										Здесь расположены тренажеры нагружаемые дисками для всех основных
-										мышц тела.В данных тренажерах движения рук происходят независимо
-										друг от друга, по заданным нелинейным траекториям, идеально точным
-										с точки зрения биомеханики и эффективности тренировок.
-									</div>
-								</div>
-								<div class="col-2"></div>
-								<div class="col-12 col-lg-4">
-									<div class="directions__box-img rounded-3 mb-4">
-										<picture><source srcset="img/directions6.webp" type="image/webp"><img src="img/directions6.png" alt="" class="w-100" /></picture>
-									</div>
-									<div class="fs-24 text-uppercase text-white fw-700 mb-2">
-										FUNCTIONAL SPACE
-									</div>
-									<div class="fs-16 lh-13 text-white">
-										Включает в себя такие зоны как комплекс SYNRGY360 TRX, ДРТ.
-										Занятия в этой зоне позволяет каждому работать в своём режиме,
-										возможен усложненный и упрощённый вариант выполнения упражнений,
-										что позволяет подобрать оптимальную нагрузку как для начинающих,
-										так и для продвинутых людей в фитнесе.
-									</div>
-								</div>
-								<div class="col-12 col-lg-4 directions__video">
-									<div class="directions__box-img rounded-3 mb-4">
-										<picture><source srcset="img/directions7.webp" type="image/webp"><img src="img/directions7.png" alt="" class="w-100" /></picture>
-									</div>
-									<div class="fs-24 text-uppercase text-white fw-700 mb-2">
-										FREE WEIGHT SPACE
-									</div>
-									<div class="fs-16 lh-13 text-white">
-										Гантели, штанги, скамьи для жима, машина Смита, силовые стойки и
-										рамы для приседаний – в этой тренировочной зоне вы найдете все,
-										чтобы не остановиться на достигнутом и добиться многого.
-									</div>
-								</div>
-								<div class="col-2">
-									<div class="fs-18 fw-500 fst-italic directions__citation text-white">
-										Свободные веса – это неисчерпаемый арсенал упражнений.
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
-							<div class="row gy-4">
-								<div class="col-12 col-lg-4">
-									<div class="directions__box-img rounded-3 mb-4">
-										<picture><source srcset="img/directions1.webp" type="image/webp"><img src="img/directions1.png" alt="" class="w-100" /></picture>
-									</div>
-									<div class="fs-24 text-uppercase text-white fw-700 mb-2">
-										CARDIO SPACE
-									</div>
-									<div class="fs-16 lh-13 text-white">
-										Кардио тренировки – это неотъемлемый элемент любого полноценного
-										занятия фитнесом. Они необходимы не только для поддержания
-										сердечнососудистой системы в здоровом состоянии, но и для
-										нормального функционирования организма в целом.
-									</div>
-								</div>
-								<div class="col-2"></div>
-								<div class="col-12 col-lg-6">
-									<div class="directions__box-img rounded-3 mb-4">
-										<picture><source srcset="img/directions2.webp" type="image/webp"><img src="img/directions2.png" alt="" class="w-100" /></picture>
-									</div>
-									<div class="fs-24 text-uppercase text-white fw-700 mb-2">
-										EXPRESS LINE
-									</div>
-									<div class="fs-16 lh-13 text-white">
-										Все очень просто – тренажеры этой группы расположены в той
-										последовательности, в которой нужно делать тренировку. Сделайте по
-										одному подходу до отказа на каждом из тренажёров и тренировка
-										завершена.
-									</div>
-								</div>
-								<div class="col-2">
-									<div class="fs-18 fw-500 fst-italic directions__citation text-white">
-										Ваш прогресс к более сложным упражнениям и программам
-									</div>
-								</div>
-								<div class="col-12 col-lg-4 directions__foto">
-									<div class="directions__box-img rounded-3 mb-4">
-										<picture><source srcset="img/directions3.webp" type="image/webp"><img src="img/directions3.png" alt="" class="w-100" /></picture>
-									</div>
-									<div class="fs-24 text-uppercase text-white fw-700 mb-2">
-										CIRCUIT SPACE
-									</div>
-									<div class="fs-16 lh-13 text-white">
-										Зона с простыми и быстро настраиваемыми тренажерами, обьединяющие
-										в себе силовые и энергичные аэробные упражнения.
-									</div>
-								</div>
-								<div class="col-2"></div>
-								<div class="col-12 col-lg-4">
-									<div class="directions__box-img rounded-3 mb-4">
-										<picture><source srcset="img/directions4.webp" type="image/webp"><img src="img/directions4.png" alt="" class="w-100" /></picture>
-									</div>
-									<div class="fs-24 text-uppercase text-white fw-700 mb-2">
-										СORE & TONE SPACE
-									</div>
-									<div class="fs-16 lh-13 text-white">
-										Это пространство – для усиления мышц нижней части тела и
-										мышц-стабилизаторов корпуса. Тренажеры данной зоны – отличный
-										помощник в борьбе за красивые, подтянутые мышцы спины, живота,
-										ягодиц и бедер.
-									</div>
-								</div>
-								<div class="col-12 col-lg-6">
-									<div class="directions__box-img rounded-3 mb-4">
-										<picture><source srcset="img/directions5.webp" type="image/webp"><img src="img/directions5.png" alt="" class="w-100" /></picture>
-									</div>
-									<div class="fs-24 text-uppercase text-white fw-700 mb-2">
-										HAMMER STRENGTH SPACE
-									</div>
-									<div class="fs-16 lh-13 text-white">
-										Здесь расположены тренажеры нагружаемые дисками для всех основных
-										мышц тела.В данных тренажерах движения рук происходят независимо
-										друг от друга, по заданным нелинейным траекториям, идеально точным
-										с точки зрения биомеханики и эффективности тренировок.
-									</div>
-								</div>
-								<div class="col-2"></div>
-								<div class="col-12 col-lg-4">
-									<div class="directions__box-img rounded-3 mb-4">
-										<picture><source srcset="img/directions6.webp" type="image/webp"><img src="img/directions6.png" alt="" class="w-100" /></picture>
-									</div>
-									<div class="fs-24 text-uppercase text-white fw-700 mb-2">
-										FUNCTIONAL SPACE
-									</div>
-									<div class="fs-16 lh-13 text-white">
-										Включает в себя такие зоны как комплекс SYNRGY360 TRX, ДРТ.
-										Занятия в этой зоне позволяет каждому работать в своём режиме,
-										возможен усложненный и упрощённый вариант выполнения упражнений,
-										что позволяет подобрать оптимальную нагрузку как для начинающих,
-										так и для продвинутых людей в фитнесе.
-									</div>
-								</div>
-								<div class="col-12 col-lg-4 directions__video">
-									<div class="directions__box-img rounded-3 mb-4">
-										<picture><source srcset="img/directions7.webp" type="image/webp"><img src="img/directions7.png" alt="" class="w-100" /></picture>
-									</div>
-									<div class="fs-24 text-uppercase text-white fw-700 mb-2">
-										FREE WEIGHT SPACE
-									</div>
-									<div class="fs-16 lh-13 text-white">
-										Гантели, штанги, скамьи для жима, машина Смита, силовые стойки и
-										рамы для приседаний – в этой тренировочной зоне вы найдете все,
-										чтобы не остановиться на достигнутом и добиться многого.
-									</div>
-								</div>
-								<div class="col-2">
-									<div class="fs-18 fw-500 fst-italic directions__citation text-white">
-										Свободные веса – это неисчерпаемый арсенал упражнений.
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+                  <label
+                    class="form-check-label fs-14 d-block ms-5"
+                    for="check"
+                  >
+                    Согласие на
+                    <a href="#" class="">политику конфиденциальности</a>
+                  </label>
+                </div>
 
-			<section class="trainers position-relative" id="trainers">
-				<div class="container">
-					<div class="swiper trainersSwiper mb-5">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<a href="#team" class="d-block text-center position-relative" data-popup="#team">
-									<div class="swiper__box-img">
-										<picture><source srcset="img/team1.webp" type="image/webp"><img src="img/team1.png" alt="" class="" /></picture>
-									</div>
-									<div class="d-flex flex-column">
-										<div class="swiper__box-content position-absolute">
-											<div class="fs-24 fw-700">Фамилия Имя</div>
-											<div class="fs-16 lh-12 text-primary">Должность</div>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="swiper-slide">
-								<a href="#team" class="d-block text-center position-relative" data-popup="#team">
-									<div class="swiper__box-img">
-										<picture><source srcset="img/team2.webp" type="image/webp"><img src="img/team2.png" alt="" class="" /></picture>
-									</div>
-									<div class="d-flex flex-column">
-										<div class="swiper__box-content position-absolute">
-											<div class="fs-24 fw-700">Фамилия Имя</div>
-											<div class="fs-16 lh-12 text-primary">Должность</div>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="swiper-slide">
-								<a href="#team" class="d-block text-center position-relative" data-popup="#team">
-									<div class="swiper__box-img">
-										<picture><source srcset="img/team3.webp" type="image/webp"><img src="img/team3.png" alt="" class="" /></picture>
-									</div>
-									<div class="d-flex flex-column">
-										<div class="swiper__box-content position-absolute">
-											<div class="fs-24 fw-700">Фамилия Имя</div>
-											<div class="fs-16 lh-12 text-primary">Должность</div>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="swiper-slide">
-								<a href="#team" class="d-block text-center position-relative" data-popup="#team">
-									<div class="swiper__box-img">
-										<picture><source srcset="img/team1.webp" type="image/webp"><img src="img/team1.png" alt="" class="" /></picture>
-									</div>
-									<div class="d-flex flex-column">
-										<div class="swiper__box-content position-absolute">
-											<div class="fs-24 fw-700">Фамилия Имя</div>
-											<div class="fs-16 lh-12 text-primary">Должность</div>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="swiper-slide">
-								<a href="#team" class="d-block text-center position-relative" data-popup="#team">
-									<div class="swiper__box-img">
-										<picture><source srcset="img/team2.webp" type="image/webp"><img src="img/team2.png" alt="" class="" /></picture>
-									</div>
-									<div class="d-flex flex-column">
-										<div class="swiper__box-content position-absolute">
-											<div class="fs-24 fw-700">Фамилия Имя</div>
-											<div class="fs-16 lh-12 text-primary">Должность</div>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="swiper-slide">
-								<a href="#team" class="d-block text-center position-relative" data-popup="#team">
-									<div class="swiper__box-img">
-										<picture><source srcset="img/team3.webp" type="image/webp"><img src="img/team3.png" alt="" class="" /></picture>
-									</div>
-									<div class="d-flex flex-column">
-										<div class="swiper__box-content position-absolute">
-											<div class="fs-24 fw-700">Фамилия Имя</div>
-											<div class="fs-16 lh-12 text-primary">Должность</div>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-					</div>
-					<div class="row flex-row-reverse flex-lg-row">
-						<div class="col-12 col-lg-4">
-							<div class="fs-36 fw-700 lh-12 mb-4">Тренеры тренажерного зала</div>
-							<div class="fs-20">Выбери своего тренера</div>
-						</div>
-						<div class="col-12 col-lg-8">
-							<div class="swiper__control d-flex align-items-center gap-4">
-								<span class="swiper__span fs-20 fw-700 lh-12">01</span>
-								<div class="swiper-pagination position-relative d-flex align-items-center"></div>
-								<span class="swiper__span fs-20 fw-700 lh-12">05</span>
-								<div class="swiper__buttons d-flex gap-1">
-									<div class="swiper-button-prev rounded-circle border-success border"></div>
-									<div class="swiper-button-next rounded-circle border-success border"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+                <button
+                  type="submit"
+                  class="col-12 col-sm-6 col-lg-3 form__btn btn fs-16 fw-600 px-3 py-3 btn-primary border-0"
+                >
+                  Отправить
+                </button>
+              </div>
+            </form>
+            <div
+              class="fs-80 fw-700 text-uppercase position-relative text-center text text--pseudo"
+            >
+              SPA
+            </div>
+          </div>
+        </section>
 
-			<!-- Initialize Swiper -->
-			<script>
-				// выбираем элемент с классом "primeSwiper" и создаем новый Swiper объект
-				var swiper = new Swiper(".trainersSwiper", {
-					// задаем количество слайдов, которые будут показываться одновременно
-					slidesPerView: 1,
-					// Responsive breakpoints
-					breakpoints: {
-						// when window width is >= 992px
-						992: {
-							slidesPerView: 3,
-							spaceBetween: 20,
-						},
-					},
-					centeredSlides: true,
-					// включаем курсор в виде "руки" при наведении на слайды
-					grabCursor: true,
-					// включаем использование клавиатуры для навигации по слайдам
-					keyboard: {
-						enabled: true,
-					},
-					loop: true,
-					pagination: {
-						el: ".trainers .swiper-pagination",
-						type: "bullets",
-						clickable: true,
-					},
-					// включаем кнопки "вперед" и "назад" для навигации по слайдам
-					navigation: {
-						nextEl: ".trainers .swiper-button-next",
-						prevEl: ".trainers .swiper-button-prev",
-					},
-				});
-			</script>
+        <section class="abonements py-5" id="abonements">
+          <div class="container">
+            <h2 class="fs-36 fw-700 lh-12 mb-4">Абонементы</h2>
+            <div class="table-responsive">
+              <table class="table align-middle">
+                <thead class="text-info">
+                  <tr>
+                    <th>№</th>
+                    <th>Услуга</th>
+                    <th>1 занятие</th>
+                    <th>4 занятие</th>
+                    <th>8 занятие</th>
+                    <th>12 занятие</th>
+                  </tr>
+                </thead>
+                <tbody class="fw-700 lh-12">
+                  <tr class="">
+                    <td class="fw-normal fst-italic" scope="row">(01)</td>
+                    <td>Персональное занятие с тренером</td>
+                    <td>1 200 руб.</td>
+                    <td>4 200 руб.</td>
+                    <td>8 200 руб.</td>
+                    <td>10 200 руб.</td>
+                  </tr>
+                  <tr class="">
+                    <td class="fw-normal fst-italic" scope="row">(02)</td>
+                    <td>Тренажерный зал</td>
+                    <td>500 руб.</td>
+                    <td>2100 руб.</td>
+                    <td>4200 руб.</td>
+                    <td>7700 руб.</td>
+                  </tr>
+                  <tr class="">
+                    <td class="fw-normal fst-italic" scope="row">(03)</td>
+                    <td>Тренажерный зал с сауной и джакузи</td>
+                    <td>800 руб.</td>
+                    <td>2900 руб.</td>
+                    <td>5000 руб.</td>
+                    <td>8200 руб.</td>
+                  </tr>
+                  <tr class="">
+                    <td class="fw-normal fst-italic" scope="row">(04)</td>
+                    <td>Тренажерный зал + массаж</td>
+                    <td>500 руб.</td>
+                    <td>2100 руб.</td>
+                    <td>4200 руб.</td>
+                    <td>7700 руб.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer py-5">
+        <div class="container">
+          <div
+            class="d-flex justify-content-between align-items-center flex-column flex-sm-row gap-4"
+          >
+            <a href="#" class="d-flex gap-2">
+              <div class="footer__link"></div>
+              <div class="fs-20 fw-700">
+                <div>
+                  г. Сургут,<br />
+                  ул.Профсоюзов, 53/2
+                </div>
+              </div>
+            </a>
 
-			<section class="forms pb-5 position-relative" id="forms">
-				<div class="container">
-					<div class="fs-80 fw-700 text-uppercase text-center text position-relative">fitness</div>
-					<form action="#" class="forms__form form position-relative py-5 px-4">
-						<div class="row gy-4 mb-3">
-							<div class="col-12 col-sm-6 col-lg-4">
-								<h3 class="fs-24 fw-700">
-									Запишись на пробное занятие бесплатно!
-								</h3>
-							</div>
-							<div class="col-12 col-sm-6 col-lg-3">
-								<div class=" fs-16 lh-13 text-info">
-									Оставьте свои контакты и мы с вами свяжемся
-								</div>
-							</div>
-						</div>
-						<div class="row gy-4 align-items-center">
-							<div class="form-group position-relative col-12 col-sm-6 col-lg-3">
-								<input type="text" class="form-control form__input bg-light rounded-2 text-info p-3 h-100" name="name" id="name" placeholder="" required />
-								<label for="name" class="form-label form__label fs-16 text-info position-absolute top-50">Имя*</label>
-							</div>
-							<div class="form-group position-relative col-12 col-sm-6 col-lg-3">
-								<input type="text" class="form-control form__input bg-light rounded-2 text-info p-3 h-100" name="tel" id="tel" placeholder="" required />
-								<label for="tel" class="form-label form__label fs-16 text-info position-absolute top-50">Телефон*</label>
-							</div>
-							<div class="col-12 col-sm-6 col-lg-3 form-check form-check-inline position-relative me-0 ps-3">
-								<input type="checkbox" class="form-check-input m-0" value="" name="check" id="check" checked />
+            <ul class="footer__social social d-flex gap-1">
+              <li>
+                <a href="#" class="social__link social__link--vk"></a>
+              </li>
+              <li>
+                <a href="#" class="social__link social__link--fb"></a>
+              </li>
+              <li>
+                <a href="#" class="social__link social__link--insta"></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div id="callback" aria-hidden="true" class="popup">
+      <div class="popup__wrapper">
+        <div
+          class="popup__content bg-secondary rounded-3 d-flex justify-content-center align-items-center position-relative"
+        >
+          <button data-close type="button" class="popup__close">
+            <svg
+              width="45"
+              height="46"
+              viewBox="0 0 45 46"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M22.4999 24.6545L32.7543 34.9117L34.7455 32.9232L24.4883 22.666L34.7455 12.4117L32.7571 10.4204L22.4999 20.6776L12.2455 10.4204L10.2571 12.4117L20.5115 22.666L10.2571 32.9204L12.2455 34.9117L22.4999 24.6545Z"
+                fill="#262722"
+              />
+            </svg>
+          </button>
 
-								<label class="form-check-label fs-14 d-block ms-5" for="check">
-									Согласие на <a href="#" class="">политику конфиденциальности</a>
-								</label>
-							</div>
+          <form
+            action="#"
+            class="popup__form form border-3 d-flex flex-column justify-content-center"
+          >
+            <div class="fs-24 text-center fw-700 mb-2">Оставить заявку</div>
+            <p class="fs-16 text-info text-center lh-13 mb-4">
+              Оставьте свои контакты и мы с вами свяжемся
+            </p>
+            <div class="form-group position-relative mb-3">
+              <input
+                type="text"
+                class="form-control form__input bg-light rounded-2 text-info p-3 h-100"
+                name="name"
+                id="name"
+                placeholder=""
+                required
+              />
+              <label
+                for="name"
+                class="form-label form__label fs-16 text-info position-absolute top-50 mb-0"
+                >Имя*</label
+              >
+            </div>
+            <div class="form-group position-relative mb-4">
+              <input
+                type="text"
+                class="form-control form__input bg-light rounded-2 text-info p-3 h-100"
+                name="tel"
+                id="tel"
+                placeholder=""
+                required
+              />
+              <label
+                for="tel"
+                class="form-label form__label fs-16 text-info position-absolute top-50 mb-0"
+                >Телефон*</label
+              >
+            </div>
+            <button
+              type="submit"
+              class="form__btn btn fs-16 fw-600 px-3 py-3 btn-primary w-100 border-0 mb-4"
+            >
+              Отправить
+            </button>
+            <p class="fs-14 lh-12 text-info text-center">
+              Нажимая на кнопку, вы даете согласие на обработку персональных
+              данных
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="team" aria-hidden="true" class="popup popup-team bg-secondary">
+      <div class="popup__wrapper">
+        <div
+          class="popup__content border border-success rounded-3 position-relative"
+        >
+          <button data-close type="button" class="popup__close rounded-circle">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="50"
+              height="50"
+              viewBox="0 0 50 50"
+              fill="none"
+            >
+              <line
+                x1="14.747"
+                y1="34.546"
+                x2="34.546"
+                y2="14.747"
+                stroke="white"
+              />
+              <line
+                x1="15.4541"
+                y1="14.7469"
+                x2="35.2531"
+                y2="34.5459"
+                stroke="white"
+              />
+            </svg>
+          </button>
+          <div class="row">
+            <div class="col-12 col-lg-6 position-relative">
+              <div class="popup__box-fon text-center position-relative h-100">
+                <div
+                  class="popup__box-trener position-absolute w-100 h-100"
+                ></div>
 
-							<button type="submit" class="col-12 col-sm-6 col-lg-3 form__btn btn fs-16 fw-600 px-3 py-3 btn-primary border-0">
-								Отправить
-							</button>
-						</div>
-					</form>
-					<div class="fs-80 fw-700 text-uppercase position-relative text-center text text--pseudo">
-						SPA
-					</div>
-				</div>
-			</section>
-
-			<section class="abonements py-5" id="abonements">
-				<div class="container">
-					<h2 class="fs-36 fw-700 lh-12 mb-4">
-						Абонементы
-					</h2>
-					<div class="table-responsive">
-						<table class="table  align-middle">
-							<thead class="text-info">
-								<tr>
-									<th>№</th>
-									<th>Услуга</th>
-									<th>1 занятие</th>
-									<th>4 занятие</th>
-									<th>8 занятие</th>
-									<th>12 занятие</th>
-								</tr>
-							</thead>
-							<tbody class="fw-700 lh-12">
-								<tr class="">
-									<td class="fw-normal fst-italic" scope="row">(01)</td>
-									<td>Персональное занятие с тренером</td>
-									<td>1 200 руб.</td>
-									<td>4 200 руб.</td>
-									<td>8 200 руб.</td>
-									<td>10 200 руб.</td>
-								</tr>
-								<tr class="">
-									<td class="fw-normal fst-italic" scope="row">(02)</td>
-									<td>Тренажерный зал</td>
-									<td>500 руб.</td>
-									<td>2100 руб.</td>
-									<td>4200 руб.</td>
-									<td>7700 руб.</td>
-								</tr>
-								<tr class="">
-									<td class="fw-normal fst-italic" scope="row">(03)</td>
-									<td>Тренажерный зал с сауной и джакузи</td>
-									<td>800 руб.</td>
-									<td>2900 руб.</td>
-									<td>5000 руб.</td>
-									<td>8200 руб.</td>
-								</tr>
-								<tr class="">
-									<td class="fw-normal fst-italic" scope="row">(04)</td>
-									<td>Тренажерный зал + массаж</td>
-									<td>500 руб.</td>
-									<td>2100 руб.</td>
-									<td>4200 руб.</td>
-									<td>7700 руб.</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</section>
-
-
-
-		</main>
-		<footer class="footer py-5">
-			<div class="container">
-				<div class="d-flex justify-content-between align-items-center flex-column flex-sm-row gap-4">
-					<a href="#" class="d-flex gap-2">
-						<div class="footer__link"></div>
-						<div class="fs-20 fw-700">
-							<div>
-								г. Сургут,<br />
-								ул.Профсоюзов, 53/2
-							</div>
-						</div>
-					</a>
-
-					<ul class="footer__social social d-flex gap-1">
-						<li>
-							<a href="#" class="social__link social__link--vk"></a>
-						</li>
-						<li>
-							<a href="#" class="social__link social__link--fb"></a>
-						</li>
-						<li>
-							<a href="#" class="social__link social__link--insta"></a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</footer>
-
-	</div>
-	<div id="callback" aria-hidden="true" class="popup">
-		<div class="popup__wrapper">
-			<div class="popup__content bg-secondary rounded-3 d-flex justify-content-center align-items-center position-relative">
-				<button data-close type="button" class="popup__close">
-					<svg width="45" height="46" viewBox="0 0 45 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path fill-rule="evenodd" clip-rule="evenodd" d="M22.4999 24.6545L32.7543 34.9117L34.7455 32.9232L24.4883 22.666L34.7455 12.4117L32.7571 10.4204L22.4999 20.6776L12.2455 10.4204L10.2571 12.4117L20.5115 22.666L10.2571 32.9204L12.2455 34.9117L22.4999 24.6545Z" fill="#262722" />
-					</svg>
-				</button>
-
-				<form action="#" class="popup__form form border-3 d-flex flex-column justify-content-center ">
-					<div class="fs-24 text-center fw-700 mb-2">Оставить заявку</div>
-					<p class="fs-16 text-info text-center lh-13 mb-4">Оставьте свои контакты и мы с вами свяжемся</p>
-					<div class="form-group position-relative mb-3">
-						<input type="text" class="form-control form__input bg-light rounded-2 text-info p-3 h-100" name="name" id="name" placeholder="" required />
-						<label for="name" class="form-label form__label fs-16 text-info position-absolute top-50 mb-0">Имя*</label>
-					</div>
-					<div class="form-group position-relative mb-4">
-						<input type="text" class="form-control form__input bg-light rounded-2 text-info p-3 h-100" name="tel" id="tel" placeholder="" required />
-						<label for="tel" class="form-label form__label fs-16 text-info position-absolute top-50 mb-0 ">Телефон*</label>
-					</div>
-					<button type="submit" class="form__btn btn fs-16 fw-600 px-3 py-3 btn-primary w-100 border-0 mb-4">
-						Отправить
-					</button>
-					<p class="fs-14 lh-12 text-info text-center">
-						Нажимая на кнопку, вы даете согласие на обработку персональных
-						данных
-					</p>
-
-				</form>
-			</div>
-		</div>
-	</div>
-	<div id="team" aria-hidden="true" class="popup popup-team bg-secondary">
-		<div class="popup__wrapper">
-			<div class="popup__content border border-success rounded-3 position-relative">
-				<button data-close type="button" class="popup__close rounded-circle">
-					<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
-						<line x1="14.747" y1="34.546" x2="34.546" y2="14.747" stroke="white" />
-						<line x1="15.4541" y1="14.7469" x2="35.2531" y2="34.5459" stroke="white" />
-					</svg>
-				</button>
-				<div class="row">
-					<div class="col-12 col-lg-6 position-relative">
-						<div class="popup__box-fon text-center position-relative h-100">
-							<div class="popup__box-trener position-absolute w-100 h-100"></div>
-
-							<div class="popup__box-fon-1 d-inline-block h-100"></div>
-						</div>
-						<div class="popup__box-text position-absolute rounded-3 border border-success p-4 end-0">
-							<div class="fs-16 fw-700">
-								«Тут можно написать приветствие от тренера или любую цитату от
-								него»
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-lg-6">
-						<div class="popup__box-content">
-							<div class="fs-24 fw-700 mb-4">Фамилия Имя</div>
-							<ul class="popup__list fs-16 lh-12 text-info ps-0 mb-5">
-								<li>Координатор групповых программ</li>
-								<li>Мастер-тренер тренажерного зала</li>
-							</ul>
-							<div class="popup__numbered-list fs-16 lh-13 text-info">
-								<ol class="ps-0">
-									<li>
-										Развитие функциональных и скоростно-силовых способностей,
-										коррекция осанки, улучшение гибкости и подвижности суставов,
-										развитие координационных способностей, динамическое вытяжение
-										позвоночника за счет хореографии рук.
-									</li>
-									<li>
-										Коррекция веса, увеличение силовых показателей и мышечной
-										массы, детский и подростковый тренинг.
-									</li>
-									<li>
-										Коррекция веса, увеличение силовых показателей и мышечной
-										массы, детский и подростковый тренинг.
-									</li>
-								</ol>
-							</div>
-							<div class="row">
-								<div class="col-6">
-									<a data-popup="#callback" href="#callback" role="button" class="btn btn-primary py-3 d-block fw-600 fs-16 w-100"><span>Записаться к тренеру</span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-</body>
-
+                <div class="popup__box-fon-1 d-inline-block h-100"></div>
+              </div>
+              <div
+                class="popup__box-text position-absolute rounded-3 border border-success p-4 end-0"
+              >
+                <div class="fs-16 fw-700">
+                  «Тут можно написать приветствие от тренера или любую цитату от
+                  него»
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="popup__box-content">
+                <div class="fs-24 fw-700 mb-4">Фамилия Имя</div>
+                <ul class="popup__list fs-16 lh-12 text-info ps-0 mb-5">
+                  <li>Координатор групповых программ</li>
+                  <li>Мастер-тренер тренажерного зала</li>
+                </ul>
+                <div class="popup__numbered-list fs-16 lh-13 text-info">
+                  <ol class="ps-0">
+                    <li>
+                      Развитие функциональных и скоростно-силовых способностей,
+                      коррекция осанки, улучшение гибкости и подвижности
+                      суставов, развитие координационных способностей,
+                      динамическое вытяжение позвоночника за счет хореографии
+                      рук.
+                    </li>
+                    <li>
+                      Коррекция веса, увеличение силовых показателей и мышечной
+                      массы, детский и подростковый тренинг.
+                    </li>
+                    <li>
+                      Коррекция веса, увеличение силовых показателей и мышечной
+                      массы, детский и подростковый тренинг.
+                    </li>
+                  </ol>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <a
+                      data-popup="#callback"
+                      href="#callback"
+                      role="button"
+                      class="btn btn-primary py-3 d-block fw-600 fs-16 w-100"
+                      ><span>Записаться к тренеру</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

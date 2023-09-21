@@ -11,7 +11,7 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-// print_r($arResult);
+print_r($arResult);
 $arResult['PROPERTIES']['IMAGES']['VALUE'] = array();
 $IMAGES_ARRAY = array();
 foreach ($arResult['ITEMS'] as $arItem) {
