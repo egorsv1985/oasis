@@ -159,61 +159,63 @@ while ($ob = $res->GetNext()) {
 				}
 				?>
 			</div>
-			<div class="col-2">
-				<div class="events__description-box">
-					<div class="events__description d-flex flex-wrap">
-						<div class="fs-16 text-info ps-5 w-50 d-flex align-items-center" style="
+		</div>
+	</div>
+	<div class="col-2">
+		<div class="events__description-box">
+			<div class="events__description d-flex flex-wrap">
+				<div class="fs-16 text-info ps-5 w-50 d-flex align-items-center" style="
                             background: url(img/icons/month.svg) no-repeat left
                               center / 20px 20px;
                           ">
-							Текущий месяц
-						</div>
-						<div class="fs-16 text-info ps-5 w-50 d-flex align-items-center" style="
+					Текущий месяц
+				</div>
+				<div class="fs-16 text-info ps-5 w-50 d-flex align-items-center" style="
                             background: url(img/icons/event.svg) no-repeat left
                               center / 20px 20px;
                           ">
-							Мероприятие
-						</div>
-						<div class="fs-16 text-info ps-5 w-50 d-flex align-items-center" style="
+					Мероприятие
+				</div>
+				<div class="fs-16 text-info ps-5 w-50 d-flex align-items-center" style="
                             background: url(img/icons/day.svg) no-repeat left
                               center / 20px 20px;
                           ">
-							Текущая дата
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-12">
-				<div class="d-flex justify-content-between align-items-center gap-4">
-					<!-- <span class="fs-20 fw-700 lh-12">07</span> -->
-					<!-- <div class="events__lines-box d-flex align-items-center">
-						<div class="events__line"></div>
-					</div> -->
-					<!-- <div class="fs-20 fw-700 lh-12">12</div> -->
-					<div class="events__links-box d-flex gap-1">
-						<a href="<?= $APPLICATION->GetCurDir(); ?>?date=<?= date('Y_m', $MONTH_PREV_TIMESTAMP) ?>" class="events__prev rounded-circle border-success border"></a>
-						<a href="<?= $APPLICATION->GetCurDir(); ?>?date=<?= date('Y_m', $MONTH_NEXT_TIMESTAMP) ?>" class="events__next rounded-circle border-success border"></a>
-					</div>
+					Текущая дата
 				</div>
 			</div>
 		</div>
-		<?
+	</div>
+	<div class="col-12">
+		<div class="d-flex justify-content-between align-items-center gap-4">
+			<span class="d-none fs-20 fw-700 lh-12">07</span>
+			<div class="d-none events__lines-box d-flex align-items-center">
+				<div class="events__line"></div>
+			</div>
+			<div class="d-none fs-20 fw-700 lh-12">12</div>
+			<div class="events__links-box d-flex gap-1">
+				<a href="<?= $APPLICATION->GetCurDir(); ?>?date=<?= date('Y_m', $MONTH_PREV_TIMESTAMP) ?>" class="events__prev rounded-circle border-success border"></a>
+				<a href="<?= $APPLICATION->GetCurDir(); ?>?date=<?= date('Y_m', $MONTH_NEXT_TIMESTAMP) ?>" class="events__next rounded-circle border-success border"></a>
+			</div>
+		</div>
+	</div>
+</div>
+<?
 
-		$arParams["FILTER_NAME"] = 'arFilterMonth';
+$arParams["FILTER_NAME"] = 'arFilterMonth';
 
-		global $arFilterMonth;
+global $arFilterMonth;
 
 
-		$arFilterMonth['>PROPERTY_DATE'] = date('Y-m-01', $MONTH_TIMESTAMP) . ' 00:00:00';
-		$arFilterMonth['<PROPERTY_DATE'] = date('Y-m-31', $MONTH_TIMESTAMP) . ' 23:59:59';
+$arFilterMonth['>PROPERTY_DATE'] = date('Y-m-01', $MONTH_TIMESTAMP) . ' 00:00:00';
+$arFilterMonth['<PROPERTY_DATE'] = date('Y-m-31', $MONTH_TIMESTAMP) . ' 23:59:59';
 
-		if (isset($_GET['date'])) {
-			$date = explode('_', $_GET['date']);
-			if ($date[2]) {
-				$arFilterMonth = array();
-				$day = strtotime($date[0] . '-' . $date[1] . '-' . $date[2]);
-				$arFilterMonth['=PROPERTY_DATE'] = date('Y-m-d', $day);
-			}
-		}
+if (isset($_GET['date'])) {
+	$date = explode('_', $_GET['date']);
+	if ($date[2]) {
+		$arFilterMonth = array();
+		$day = strtotime($date[0] . '-' . $date[1] . '-' . $date[2]);
+		$arFilterMonth['=PROPERTY_DATE'] = date('Y-m-d', $day);
+	}
+}
 
-		?>
+?>

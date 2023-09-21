@@ -1629,8 +1629,8 @@ body.popup-show::after {
   border: 1px solid #b8ada0;
   background: url("img/icons/events-arrow.svg") no-repeat center/12px 13px;
   position: absolute;
-  top: 0%;
-  right: 16%;
+  top: 0;
+  right: 0%;
 }
 
 .services-item {

@@ -110,10 +110,10 @@ $APPLICATION->SetTitle("Мероприятия");
 					); ?>
 				</div>
 			</div>
-			<div class="row align-items-center gy-4 flex-row-reverse">
+			
 				<? $APPLICATION->IncludeComponent(
 					"bitrix:news.list",
-					".default",
+					"events",
 					array(
 						"ACTIVE_DATE_FORMAT" => "d.m.Y",
 						"ADD_SECTIONS_CHAIN" => "Y",
@@ -172,4 +172,5 @@ $APPLICATION->SetTitle("Мероприятия");
 			</div>
 		</div>
 	</section>
-</main><? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+</main>
+<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

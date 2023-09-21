@@ -11,8 +11,9 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+// print_r($arResult);
 ?>
-<div class="row gy-3">
+<div class="row align-items-center gy-4 flex-row-reverse">
 	<? foreach ($arResult["ITEMS"] as $arItem) :
 		$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 		$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
@@ -20,36 +21,31 @@ $this->setFrameMode(true);
 			$arItem["PREVIEW_PICTURE"]["SRC"] = CMillcomPhpThumb::generateImg($arItem["PREVIEW_PICTURE"]["SRC"], 7);
 
 	?>
-		<div class="col-md-6" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
-			<div class="events-item rounded-5 overflow-hidden">
-				<div class="row gx-0">
-					<div class="col-sm-5">
-						<!--
-					<a href="<?= $arItem["DETAIL_PAGE_URL"] ?>" title="<?= $arItem["PREVIEW_PICTURE"]["TITLE"] ?>" class="d-block">
-						<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" class="w-100">
-					</a>
-					-->
-						<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" class="w-100">
-					</div>
-					<div class="col-sm-7">
-						<div class="p-4 px-md-5 h-100">
-							<div class="d-flex flex-column h-100 justify-content-between">
-								<div class="top">
-									<div class="type fs-14 mb-2"><?= $arItem["DISPLAY_PROPERTIES"]['TYPE']['VALUE']; ?></div>
-									<div class="name fs-30 fw-600 mb-2"><?= $arItem['NAME']; ?></div>
-								</div>
-								<div class="bottom">
-									<div class="date fs-14 fw-600 my-2">
-										<?= $arItem['DISPLAY_PROPERTIES']['DATE']['VALUE']; ?> | <?= $arItem['DISPLAY_PROPERTIES']['TIME']['VALUE']; ?><br>
-										<?= $arItem['DISPLAY_PROPERTIES']['LOCATION']['VALUE']; ?>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+
+		<a href="<?= $arItem["DETAIL_PAGE_URL"] ?>" title="<?= $arItem["PREVIEW_PICTURE"]["TITLE"] ?>" class="events__item col-12 col-md-6 col-xl-4" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
+			<div class="events__box-img mb-2">
+				<picture>
+					<source srcset="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" type="image/webp" />
+					<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" class="w-100" />
+				</picture>
+			</div>
+			<div class="events__content position-relative">
+				<div class="fs-16 lh-12 text-info mb-1">
+					<?= $arItem["DISPLAY_PROPERTIES"]['TYPE']['VALUE']; ?>
+				</div>
+				<div class="fs-24 fw-700 mb-3"><?= $arItem['NAME']; ?></div>
+				<div class="fw-16 text-info mb-1 ps-5" style="
+                      background: url(img/icons/calendar.svg) no-repeat left
+                        center / 20px 20px;
+                    ">
+					<?= $arItem['DISPLAY_PROPERTIES']['DATE']['VALUE']; ?> | <?= $arItem['DISPLAY_PROPERTIES']['TIME']['VALUE']; ?>
+				</div>
+				<div class="fw-16 text-info mb-1 ps-5" style="
+                      background: url(img/icons/map.svg) no-repeat left center /
+                        20px 20px;
+                    ">
+					<?= $arItem['DISPLAY_PROPERTIES']['LOCATION']['VALUE']; ?>
 				</div>
 			</div>
-		</div>
-	<? endforeach; ?>
-
+		<? endforeach; ?>
 </div>
