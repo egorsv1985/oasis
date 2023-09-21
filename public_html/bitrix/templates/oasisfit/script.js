@@ -201,7 +201,38 @@
         prevEl: ".teams .swiper-button-prev",
       },
     });
-  	var swiper = new Swiper(".gallerySwiper", {
+    // выбираем элемент с классом "trainersSwiper" и создаем новый Swiper объект
+    var swiper = new Swiper(".trainersSwiper", {
+      // задаем количество слайдов, которые будут показываться одновременно
+      slidesPerView: 1,
+      // Responsive breakpoints
+      breakpoints: {
+        // when window width is >= 992px
+        992: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+      },
+      centeredSlides: true,
+      // включаем курсор в виде "руки" при наведении на слайды
+      grabCursor: true,
+      // включаем использование клавиатуры для навигации по слайдам
+      keyboard: {
+        enabled: true,
+      },
+      loop: true,
+      pagination: {
+        el: ".trainers .swiper-pagination",
+        type: "bullets",
+        clickable: true,
+      },
+      // включаем кнопки "вперед" и "назад" для навигации по слайдам
+      navigation: {
+        nextEl: ".trainers .swiper-button-next",
+        prevEl: ".trainers .swiper-button-prev",
+      },
+    });
+    var swiper = new Swiper(".gallerySwiper", {
       loop: true,
       spaceBetween: 30,
       slidesPerView: 1,

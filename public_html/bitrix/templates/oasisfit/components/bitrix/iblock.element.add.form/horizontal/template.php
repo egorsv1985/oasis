@@ -14,7 +14,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 $this->setFrameMode(false);
 
 if (!empty($arResult["ERRORS"])) : ?>
-	<? ShowError(implode("<br />", $arResult["ERRORS"])) ?>
+	<? ShowError(implode("<br>", $arResult["ERRORS"])) ?>
 <? endif;
 if ($arResult["MESSAGE"] <> '') : ?>
 	<? ShowNote($arResult["MESSAGE"]) ?>
@@ -25,7 +25,7 @@ if ($arResult["MESSAGE"] <> '') : ?>
 	</div>
 	<div class="row">
 		<?= bitrix_sessid_post() ?>
-		<? if ($arParams["MAX_FILE_SIZE"] > 0) : ?><input type="hidden" name="MAX_FILE_SIZE" value="<?= $arParams["MAX_FILE_SIZE"] ?>" /><? endif ?>
+		<? if ($arParams["MAX_FILE_SIZE"] > 0) : ?><input type="hidden" name="MAX_FILE_SIZE" value="<?= $arParams["MAX_FILE_SIZE"] ?>" ><? endif ?>
 
 		<? if (is_array($arResult["PROPERTY_LIST"]) && !empty($arResult["PROPERTY_LIST"])) : ?>
 			<div class="col-12 col-lg-6">
