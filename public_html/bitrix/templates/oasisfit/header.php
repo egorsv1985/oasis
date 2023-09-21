@@ -1,178 +1,184 @@
 <?
-require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetPageProperty("title", "Вакансии");
-$APPLICATION->SetTitle("Вакансии"); ?>
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
+	die();
 
-<main class="pt-5">
+if (!defined("PAGE"))
+	define("PAGE", "TEXT");
 
-	<section class="vacancies" id="vacancies">
-		<div class="container">
-			<div class="row">
-				<div class="col-12 col-lg-4">
+use \Bitrix\Main\Page\Asset;
+
+$asset = Asset::getInstance();
+$asset->addCss('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+$asset->addCss('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+$asset->addJs('https://code.jquery.com/jquery-3.6.0.js');
+$asset->addJs('https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js');
+
+$asset->addCss('https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css');
+$asset->addJs('https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js');
+
+$asset->addCss('https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css');
+$asset->addJs('https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js');
+
+$asset->addCss('https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.css');
+$asset->addJs('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.js');
+
+$asset->addJs('https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js');
+
+$asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
+
+?>
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<? if (strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome-Lighthouse') === false) : ?>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<? else : ?>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<? endif; ?>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<? $APPLICATION->ShowHead(); ?>
+	<title><? $APPLICATION->ShowTitle(); ?></title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="shortcut icon" type="image/x-icon" href="<?= SITE_TEMPLATE_PATH ?>/favicon/favicon.ico">
+	<!-- <link rel="apple-touch-icon" sizes="180x180" href="<?= SITE_TEMPLATE_PATH ?>/favicon//apple-touch-icon.png"> -->
+	<!-- <link rel="icon" type="image/png" sizes="32x32" href="<?= SITE_TEMPLATE_PATH ?>/favicon//favicon-32x32.png"> -->
+	<!-- <link rel="icon" type="image/png" sizes="16x16" href="<?= SITE_TEMPLATE_PATH ?>/favicon//favicon-16x16.png"> -->
+	<!-- <link rel="manifest" href="<?= SITE_TEMPLATE_PATH ?>/favicon//site.webmanifest"> -->
+</head>
+
+<body>
+	<div id="panel">
+		<? $APPLICATION->ShowPanel(); ?>
+	</div>
+
+	<body class="<?= PAGE === "MAIN" ? 'home' : '' ?>">
+
+		<div class="wrapper">
+			<header class="header py-3 position-fixed w-100">
+				<div class="container">
 					<div class="row">
-						<div class="col-3">
-							<? $APPLICATION->IncludeComponent(
-								"bitrix:breadcrumb",
-								".default",
-								array(
-									"PATH" => "",	// Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)
-									"SITE_ID" => "s1",	// Cайт (устанавливается в случае многосайтовой версии, когда DOCUMENT_ROOT у сайтов разный)
-									"START_FROM" => "0",	// Номер пункта, начиная с которого будет построена навигационная цепочка
-								),
-								false,
-								array(
-									'HIDE_ICONS' => 'Y'
-								)
-							); ?>
+						<div class="col-6 col-xl-4">
+							<div class="d-flex justify-content-between align-items-center">
+								<button type="button" class="header__burger burger button py-3 d-flex gap-3 align-items-center me-3 position-relative">
+									<span class="burger__inner position-relative d-flex justify-content-center align-items-center">
+										<span></span>
+									</span>
+									<span class="fs-16 fw-700 text-uppercase">МЕНЮ</span>
+								</button>
+								<a data-popup="#callback" href="#callback" role="button" class="header__btn-shedule btn btn-primary py-3 fw-600 fs-16 px-5"><span>Расписание</span></a>
+								<div class="header__box-work">
+									<div class="d-flex gap-2 align-items-center">
+										<div class="header__link header__link--work"></div>
+										<div class="fs-16 fw-700 text-end">
+											<span class="d-block">Пн-Пт 6:30-23:00 </span>
+											<span class="d-block">Сб-Вс 9:00-22:00 </span>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
-						<div class="col-9">
-							<?
-							$APPLICATION->IncludeComponent(
-								"bitrix:news",
-								"vacancies",
-								array(
-									"ADD_ELEMENT_CHAIN" => "Y",
-									"ADD_SECTIONS_CHAIN" => "Y",
-									"AJAX_MODE" => "N",
-									"AJAX_OPTION_ADDITIONAL" => "",
-									"AJAX_OPTION_HISTORY" => "N",
-									"AJAX_OPTION_JUMP" => "N",
-									"AJAX_OPTION_STYLE" => "Y",
-									"BROWSER_TITLE" => "-",
-									"CACHE_FILTER" => "N",
-									"CACHE_GROUPS" => "Y",
-									"CACHE_TIME" => "7200",
-									"CACHE_TYPE" => "A",
-									"CHECK_DATES" => "Y",
-									"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
-									"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
-									"DETAIL_DISPLAY_TOP_PAGER" => "N",
-									"DETAIL_FIELD_CODE" => array(
-										0 => "NAME",
-										1 => "DETAIL_TEXT",
-										2 => "",
-									),
-									"DETAIL_PAGER_SHOW_ALL" => "Y",
-									"DETAIL_PAGER_TEMPLATE" => "",
-									"DETAIL_PAGER_TITLE" => "Страница",
-									"DETAIL_PROPERTY_CODE" => array(
-										0 => "",
-										1 => "",
-									),
-									"DETAIL_SET_CANONICAL_URL" => "N",
-									"DISPLAY_BOTTOM_PAGER" => "Y",
-									"DISPLAY_DATE" => "Y",
-									"DISPLAY_NAME" => "Y",
-									"DISPLAY_PICTURE" => "Y",
-									"DISPLAY_PREVIEW_TEXT" => "Y",
-									"DISPLAY_TOP_PAGER" => "N",
-									"FILE_404" => "",
-									"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-									"IBLOCK_ID" => "6",
-									"IBLOCK_TYPE" => "CONTENT",
-									"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-									"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
-									"LIST_FIELD_CODE" => array(
-										0 => "NAME",
-										1 => "DETAIL_TEXT",
-										2 => "DETAIL_PICTURE",
-										3 => "",
-									),
-									"LIST_PROPERTY_CODE" => array(
-										0 => "",
-										1 => "",
-									),
-									"MESSAGE_404" => "",
-									"META_DESCRIPTION" => "-",
-									"META_KEYWORDS" => "-",
-									"NEWS_COUNT" => "200",
-									"PAGER_BASE_LINK_ENABLE" => "N",
-									"PAGER_DESC_NUMBERING" => "N",
-									"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-									"PAGER_SHOW_ALL" => "N",
-									"PAGER_SHOW_ALWAYS" => "N",
-									"PAGER_TEMPLATE" => ".default",
-									"PAGER_TITLE" => "Новости",
-									"PREVIEW_TRUNCATE_LEN" => "",
-									"SEF_FOLDER" => "/vakansii/",
-									"SEF_MODE" => "Y",
-									"SET_LAST_MODIFIED" => "Y",
-									"SET_STATUS_404" => "Y",
-									"SET_TITLE" => "Y",
-									"SHOW_404" => "Y",
-									"SORT_BY1" => "SORT",
-									"SORT_BY2" => "SORT",
-									"SORT_ORDER1" => "ASC",
-									"SORT_ORDER2" => "ASC",
-									"STRICT_SECTION_CHECK" => "N",
-									"USE_CATEGORIES" => "N",
-									"USE_FILTER" => "N",
-									"USE_PERMISSIONS" => "N",
-									"USE_RATING" => "N",
-									"USE_RSS" => "N",
-									"USE_SEARCH" => "N",
-									"USE_SHARE" => "N",
-									"COMPONENT_TEMPLATE" => "vacancies",
-									"SEF_URL_TEMPLATES" => array(
-										"news" => "",
-										"section" => "",
-										"detail" => "#ELEMENT_CODE#/",
-									)
-								),
-								false
-							); ?>
-							<? $APPLICATION->IncludeComponent(
-								"bitrix:iblock.element.add.form",
-								"horizontal",
-								array(
-									"CUSTOM_TITLE_DATE_ACTIVE_FROM" => "",	// * дата начала *
-									"CUSTOM_TITLE_DATE_ACTIVE_TO" => "",	// * дата завершения *
-									"CUSTOM_TITLE_DETAIL_PICTURE" => "",	// * подробная картинка *
-									"CUSTOM_TITLE_DETAIL_TEXT" => "",	// * подробный текст *
-									"CUSTOM_TITLE_IBLOCK_SECTION" => "",	// * раздел инфоблока *
-									"CUSTOM_TITLE_NAME" => "Имя",	// * наименование *
-									"CUSTOM_TITLE_PREVIEW_PICTURE" => "",	// * картинка анонса *
-									"CUSTOM_TITLE_PREVIEW_TEXT" => "",	// * текст анонса *
-									"CUSTOM_TITLE_TAGS" => "",	// * теги *
-									"DEFAULT_INPUT_SIZE" => "30",	// Размер полей ввода
-									"DETAIL_TEXT_USE_HTML_EDITOR" => "N",	// Использовать визуальный редактор для редактирования подробного текста
-									"ELEMENT_ASSOC" => "CREATED_BY",	// Привязка к пользователю
-									"GROUPS" => array(	// Группы пользователей, имеющие право на добавление/редактирование
-										0 => "2",
-									),
-									"IBLOCK_ID" => "7",	// Инфоблок
-									"IBLOCK_TYPE" => "FORMS",	// Тип инфоблока
-									"LEVEL_LAST" => "Y",	// Разрешить добавление только на последний уровень рубрикатора
-									"LIST_URL" => "",	// Страница со списком своих элементов
-									"MAX_FILE_SIZE" => "0",	// Максимальный размер загружаемых файлов, байт (0 - не ограничивать)
-									"MAX_LEVELS" => "100000",	// Ограничить кол-во рубрик, в которые можно добавлять элемент
-									"MAX_USER_ENTRIES" => "100000",	// Ограничить кол-во элементов для одного пользователя
-									"PREVIEW_TEXT_USE_HTML_EDITOR" => "N",	// Использовать визуальный редактор для редактирования текста анонса
-									"PROPERTY_CODES" => array(	// Свойства, выводимые на редактирование
-										0 => "10",
-										1 => "11",
-										2 => "NAME",
-									),
-									"PROPERTY_CODES_REQUIRED" => array(	// Свойства, обязательные для заполнения
-										0 => "10",
-										1 => "NAME",
-									),
-									"RESIZE_IMAGES" => "N",	// Использовать настройки инфоблока для обработки изображений
-									"SEF_MODE" => "N",	// Включить поддержку ЧПУ
-									"STATUS" => "ANY",	// Редактирование возможно
-									"STATUS_NEW" => "N",	// Деактивировать элемент
-									"USER_MESSAGE_ADD" => "",	// Сообщение об успешном добавлении
-									"USER_MESSAGE_EDIT" => "",	// Сообщение об успешном сохранении
-									"USE_CAPTCHA" => "N",	// Использовать CAPTCHA
-									"COMPONENT_TEMPLATE" => ".default"
-								),
-								false
-							); ?>
+						<div class="col-6 col-xl-5 position-relative header__box-logo">
+							<div class="text-center">
+
+								<a href="/" class="d-block mw-100 text-center">
+									<picture>
+										<source srcset="<?= PAGE === "TEXT" ? SITE_TEMPLATE_PATH . '/img/logo_oasis.webp' : SITE_TEMPLATE_PATH . '/img/logo_oasis-black.webp' ?>" type="image/webp">
+										<img src="<?= PAGE === "TEXT" ? SITE_TEMPLATE_PATH . '/img/logo_oasis.png' : SITE_TEMPLATE_PATH . '/img/logo_oasis-black.png' ?>" alt="oasis" title="oasis" class="mw-100" width="141" height="58">
+									</picture>
+
+
+								</a>
+							</div>
+						</div>
+						<div class="col-3 d-none d-xl-block">
+							<a href="tel:+73462949090" class="d-flex gap-2 justify-content-end align-items-center">
+								<div class="header__link header__link--phone"></div>
+								<div class="fs-20 fw-700 text-end">
+									<span class="d-block text-nowrap">+7 346 294 90 90</span>
+								</div>
+							</a>
+						</div>
+						<div class="header__menu col-12 col-md-6 col-lg-4">
+							<div class="d-flex flex-column justify-content-between h-100">
+								<div class="header__menu-top">
+									<? $APPLICATION->IncludeComponent(
+										"bitrix:menu",
+										"main",
+										array(
+											"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+											"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+											"DELAY" => "N",	// Откладывать выполнение шаблона меню
+											"MAX_LEVEL" => "1",	// Уровень вложенности меню
+											"MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
+												0 => "",
+											),
+											"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+											"MENU_CACHE_TYPE" => "N",	// Тип кеширования
+											"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+											"ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
+											"USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+										),
+										false
+									); ?>
+									<div class="header__btns row mt-5 gy-3 px-3 px-lg-0">
+										<a data-popup="#callback" href="#callback" role="button" class="btn btn-light py-3 d-block fw-600 fs-16 col-12 col-lg-6"><span>Гостевой визит</span></a>
+										<a data-popup="#callback" href="#callback" role="button" class="btn btn-transparent header__btn btn--pseudo position-relative py-3 d-block fw-600 fs-16 col-12 col-lg-6 text-start text-md-center"><span>Заморозить карту</span></a>
+									</div>
+								</div>
+
+								<div class="header__menu-bottom pb-4 mt-4">
+									<div class="row align-items-center gy-3 px-3">
+										<div class="col-12 col-lg-6">
+											<a class="btn border-white py-2 rounded-2 d-block text-center">
+												<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/app-store-white.svg" class="mw-100">
+											</a>
+										</div>
+										<div class="col-12 col-lg-6">
+											<a class="btn border-white py-2 rounded-2 d-block text-center">
+												<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/google-play-white.svg" class="mw-100">
+											</a>
+										</div>
+										<a href="#" class="d-flex gap-2 mt-4">
+											<div class="header__menu-link header__menu-link--map"></div>
+											<div class="fs-20 fw-700">
+												<div>
+													г. Сургут,<br>
+													ул.Профсоюзов, 53/2
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="header__services">
+								<div class="menu-title fs-36 fw-700 lh-12 mb-4 text-start">
+									Услуги
+								</div>
+
+								<div class="header__services-menu py-3">
+									<ul>
+										<?
+										CModule::IncludeModule("iblock");
+										$arSelect = array("ID", "NAME", "PROPERTY_ICO", "PROPERTY_COLOR", 'DETAIL_PAGE_URL');
+										$arFilter = array("IBLOCK_ID" => 11, "ACTIVE" => "Y");
+										$rsElements = CIBlockElement::GetList(array('SORT' => 'ASC'), $arFilter, false, false, $arSelect);
+										while ($arElement = $rsElements->GetNext()) : ?>
+											<li>
+												<a href="<?= $arElement['DETAIL_PAGE_URL']; ?>">
+													<?= $arElement['NAME']; ?>
+													<span class="header__ico rounded-circle position-absolute top-0 bottom-0 start-0" style="background: <?= $arElement['PROPERTY_COLOR_VALUE']; ?> url(<?= CFile::GetPath($arElement['PROPERTY_ICO_VALUE']); ?>) no-repeat 50% 50%;"></span>
+												</a>
+											</li>
+
+										<? endwhile; ?>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-	</section>
-</main>
-<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+			</header>
