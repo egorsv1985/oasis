@@ -441,4 +441,14 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 			</div>
 		</div>
 	</section>
+	<section class="abonements py-5" id="abonements">
+		<div class="container">
+			<h2 class="fs-36 fw-700 lh-12 mb-4">Абонементы</h2>
+
+			<div class="table-responsive">
+
+				<?= str_replace('<table', '<table class="table align-middle"', $arResult['PROPERTIES']['SUBSCRIPTION']['~VALUE']['TEXT']); ?>
+			</div>
+		</div>
+	</section>
 </main>

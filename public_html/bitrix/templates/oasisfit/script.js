@@ -201,8 +201,8 @@
         prevEl: ".teams .swiper-button-prev",
       },
     });
-    // выбираем элемент с классом "trainersSwiper" и создаем новый Swiper объект
-    var swiper = new Swiper(".trainersSwiper", {
+    // выбираем элемент с классом "teamSwiper" и создаем новый Swiper объект
+    var swiper = new Swiper(".teamSwiper", {
       // задаем количество слайдов, которые будут показываться одновременно
       slidesPerView: 1,
       // Responsive breakpoints
