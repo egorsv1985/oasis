@@ -255,8 +255,8 @@
   transform: translateY(-50%);
 }
 
-.teams .nav-link,
-.vacancies .nav-link {
+.teams a,
+.vacancies a {
   display: block;
   font-size: var(--bs-nav-link-font-size);
   font-weight: var(--bs-nav-link-font-weight);
@@ -270,10 +270,8 @@
     background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out;
 }
-.teams .nav-tabs .nav-link.active,
-.teams .nav-tabs .nav-item.show .nav-link,
-.vacancies .nav-tabs .nav-link.active,
-.vacancies .nav-tabs .nav-item.show .nav-link {
+.teams__list a:hover,
+.vacancies__list a:hover {
   color: #262722;
   background-color: initial;
   border-color: initial;
@@ -281,10 +279,8 @@
   position: relative;
   padding-left: 24px;
 }
-.teams .nav-tabs .nav-link.active::before,
-.teams .nav-tabs .nav-item.show .nav-link::before,
-.vacancies .nav-tabs .nav-link.active::before,
-.vacancies .nav-tabs .nav-item.show .nav-link::before {
+.teams__list a:hover::before,
+.vacancies__list a:hover::before {
   content: "";
   display: block;
   width: 20px;
@@ -296,18 +292,20 @@
   top: 50%;
   transform: translateY(-50%);
 }
-.teams .nav-link:hover,
-.teams .nav-link:focus,
-.vacancies .nav-link:hover,
-.vacancies .nav-link:focus {
+.teams__list a:hover,
+.teams__list a:focus,
+.vacancies__list a:hover,
+.vacancies__list a:focus
+ {
   color: #262722;
   position: relative;
   padding-left: 24px;
 }
-.teams .nav-link:hover::before,
-.teams .nav-link:focus::before,
-.vacancies .nav-link:hover::before,
-.vacancies .nav-link:focus::before {
+.teams__list a:hover::before,
+.teams__list a:focus::before,
+.vacancies__list a:hover::before,
+.vacancies__list a:focus::before
+ {
   content: "";
   display: block;
   width: 20px;
@@ -1378,13 +1376,13 @@ body.popup-show::after {
     left: 40%;
   }
 }
-.teams__nav-tabs {
+.teams__list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
 @media only screen and (min-width: 991px) {
-  .teams__nav-tabs {
+  .teams__list {
     grid-template-columns: repeat(3, 1fr);
   }
 }
