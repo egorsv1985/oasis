@@ -96,7 +96,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 						</div>
 						<div class="col-3 d-none d-xl-block">
 							<a href="tel:+73462949090" class="d-flex gap-2 justify-content-end align-items-center">
-								<div class="header__link header__link--phone"></div>
+								<div class="header__link header__link--phone rounded-circle"></div>
 								<div class="fs-20 fw-700 text-end">
 									<span class="d-block text-nowrap">+7 346 294 90 90</span>
 								</div>

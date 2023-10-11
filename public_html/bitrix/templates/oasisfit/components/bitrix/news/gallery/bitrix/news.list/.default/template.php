@@ -36,12 +36,8 @@ $this->setFrameMode(true);
 				</picture>
 			</div>
 		<? endforeach; ?>
-
-
 	</div>
 </div>
-
-
 <? $this->SetViewTarget('gallery-swiper'); ?>
 <div thumbsSlider="" class="swiper gallerySwiper">
 	<div class="swiper-wrapper mb-5">
@@ -62,10 +58,7 @@ $this->setFrameMode(true);
 				</picture>
 			</div>
 		<? endforeach; ?>
-
-		
 	</div>
-	
 </div>
 <div class="swiper__control d-flex align-items-center gap-4">
 	<span class="swiper__span fs-20 fw-700 lh-12">01</span>
