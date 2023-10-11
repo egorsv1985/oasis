@@ -1,5 +1,5 @@
 <?
-define('TYPE_PAGE', 'MAIN');
+define('PAGE', 'MAIN');
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 $APPLICATION->SetPageProperty("title", "Фитнес-центр OasisFit");
 $APPLICATION->SetTitle("Главная");
@@ -25,7 +25,7 @@ $APPLICATION->SetTitle("Главная");
 					</div>
 				</div>
 				<div class="col-6">
-					<div class="promo__box d-flex flex-column p-5 position-absolute start-0">
+					<div class="promo__box d-flex flex-column p-5 position-absolute">
 						<div class="fs-48 h1 fw-700 lh-12">
 							<h1>Стань лучшей<br>версией себя!</h1>
 						</div>
@@ -35,10 +35,6 @@ $APPLICATION->SetTitle("Главная");
 						</div>
 					</div>
 				</div>
-			</div>
-
-			<div class="row">
-
 			</div>
 		</div>
 	</section>

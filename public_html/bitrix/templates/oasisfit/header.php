@@ -55,7 +55,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 		<? $APPLICATION->ShowPanel(); ?>
 	</div>
 
-	<body class="<?= PAGE === "MAIN" ? 'home' : '' ?>">
+	<body class="<?= PAGE === "MAIN" ? 'main' : '' ?>">
 
 		<div class="wrapper">
 			<header class="header py-3 position-fixed w-100">
@@ -86,8 +86,8 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 
 								<a href="/" class="d-block mw-100 text-center">
 									<picture>
-										<source srcset="<?= PAGE === "TEXT" ? SITE_TEMPLATE_PATH . '/img/logo_oasis.webp' : SITE_TEMPLATE_PATH . '/img/logo_oasis-black.webp' ?>" type="image/webp">
-										<img src="<?= PAGE === "TEXT" ? SITE_TEMPLATE_PATH . '/img/logo_oasis.png' : SITE_TEMPLATE_PATH . '/img/logo_oasis-black.png' ?>" alt="oasis" title="oasis" class="mw-100" width="141" height="58">
+										<source srcset="<?= PAGE === "MAIN" ? SITE_TEMPLATE_PATH . '/img/logo_oasis.webp' : SITE_TEMPLATE_PATH . '/img/logo_oasis-black.webp' ?>" type="image/webp">
+										<img src="<?= PAGE === "MAIN" ? SITE_TEMPLATE_PATH . '/img/logo_oasis.png' : SITE_TEMPLATE_PATH . '/img/logo_oasis-black.png' ?>" alt="oasis" title="oasis" class="mw-100" width="141" height="58">
 									</picture>
 
 
@@ -170,7 +170,8 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 											<li>
 												<a href="<?= $arElement['DETAIL_PAGE_URL']; ?>">
 													<?= $arElement['NAME']; ?>
-													<span class="header__ico rounded-circle position-absolute top-0 bottom-0 start-0" style="background: <?= $arElement['PROPERTY_COLOR_VALUE']; ?> url(<?= CFile::GetPath($arElement['PROPERTY_ICO_VALUE']); ?>) no-repeat 50% 50%;"></span>
+													<span class="header__ico position-absolute top-0 bottom-0 start-0" style="background: url(<?= CFile::GetPath($arElement['PROPERTY_ICO_VALUE']); ?>) no-repeat center;"></span>
+													<span class="header__back  position-absolute top-0 bottom-0 start-0" style="background-color: <?= $arElement['PROPERTY_COLOR_VALUE']; ?>"></span>
 												</a>
 											</li>
 

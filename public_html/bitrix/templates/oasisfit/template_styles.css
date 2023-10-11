@@ -295,8 +295,7 @@
 .teams__list a:hover,
 .teams__list a:focus,
 .vacancies__list a:hover,
-.vacancies__list a:focus
- {
+.vacancies__list a:focus {
   color: #262722;
   position: relative;
   padding-left: 24px;
@@ -304,8 +303,7 @@
 .teams__list a:hover::before,
 .teams__list a:focus::before,
 .vacancies__list a:hover::before,
-.vacancies__list a:focus::before
- {
+.vacancies__list a:focus::before {
   content: "";
   display: block;
   width: 20px;
@@ -1035,7 +1033,7 @@ body.popup-show::after {
 .home .wrapper {
   height: 100vh;
 }
-.home .footer {
+.main .footer {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -1081,16 +1079,24 @@ body.popup-show::after {
   width: 83%;
   max-height: 984px;
 }
-.promo__box {
+
+.promo__box{
   border-radius: 50px;
   background: rgba(255, 255, 255, 0.4);
   box-shadow: 0px 4px 50px 0px rgba(38, 39, 34, 0.25);
   backdrop-filter: blur(15px);
-  top: 22%;
+  top: 61%;
+  
+  bottom: -16%;
+  align-items: center;
+  right: -20%;    
+  z-index: 2;
+  left: -20%;
+
 }
 .error__box {
   max-width: 350px;
- 
+
   bottom: 22%;
 }
 .promo__btn {
@@ -1116,6 +1122,15 @@ body.popup-show::after {
   .about::before {
     display: block;
   }
+  .promo__box {
+    align-items: start;
+    left: 0;
+    right: inherit;
+    bottom: inherit;
+    z-index: inherit;
+    top: 20%;
+  }
+ 
 }
 @media only screen and (min-width: 991px) {
   .about::before {
@@ -1816,16 +1831,26 @@ body.popup-show::after {
 .forms .text--pseudo::before {
   right: 53%;
 }
-
-.social__link {
+.social {
+  position: relative;
+  z-index: 1;
+}
+.social__link,
+.footer__link,
+.header__link {
   width: 50px;
   height: 50px;
   display: block;
   transition: all 0.2s ease-out;
+  
 }
 
-.social__link:hover {
-  background-color: #262722;
+
+.social__link:hover,
+.footer__link:hover,
+.header__link:hover {
+  background-color: #B8ADA0;
+  
 }
 .popup__content {
   border-radius: 40px;
@@ -1863,8 +1888,8 @@ body.popup-show::after {
 .header {
   z-index: 999;
   /* background: var(--bs-secondary); */
-
 }
+
 .header__btn-shedule {
   display: none;
 }
@@ -1872,6 +1897,7 @@ body.popup-show::after {
   .header__btn-shedule {
     display: block;
   }
+ 
 }
 .header__box-logo {
   z-index: 50;
@@ -1938,19 +1964,36 @@ body.popup-show::after {
   display: block;
   padding: 0.72em 0;
   position: relative;
+  z-index: 1;
   color: #fff;
   font-size: 18px;
 }
-.header__menu nav ul a::before,
+
+
+.header__menu  nav ul li a::before,
 .header__menu nav ul button::before {
-  content: "";
-  top: 0;
-  right: 100%;
-  bottom: 0;
-  width: 100vw;
-  background: inherit;
+  content: '';
   position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 100%;
+  bottom: 0;
+  left: -.5rem;
+  background-color: rgba(125, 104, 88, 20%);
+  transition: width 0.3s cubic-bezier(.03, .3, .4, .96);
+  transform: skew(-10deg);
 }
+
+.header__menu nav ul li a:hover,
+.header__menu nav ul button:hover {
+  background-color: transparent;
+}
+
+.header__menu nav ul li a:hover::before,
+.header__menu nav ul button:hover::before {
+  width: 100%;
+}
+
 .header__menu-top {
   margin-top: 8rem;
   flex: 1 0 0%;
@@ -1992,6 +2035,7 @@ body.popup-show::after {
   display: block;
   position: relative;
   z-index: 1;
+  margin-right: .5rem;
 }
 .header__services-menu ul .ico {
   width: 50px;
@@ -2001,11 +2045,22 @@ body.popup-show::after {
   width: 50px;
   z-index: 5;
 }
+.header__back {
+  width: 50px;
+  z-index: -1;
+  border-radius: 10rem;
+  transition: all 0.2s ease-out;
+}
+.header__services-menu ul li a:hover .header__back {
+  width: 100%;
+  border-radius: 10rem;
+ 
+}
 
 @media (max-height: 1000px) {
-  .header__menu-top,
+  /* .header__menu-top, */
   .header__services {
-    overflow: auto;
+    overflow-y: auto;
   }
 }
 .footer__link {
