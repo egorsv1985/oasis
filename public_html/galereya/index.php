@@ -116,7 +116,7 @@ Array(
 	false
 );?>
 		</div>
-		<div class="col-12 col-lg-4">
+		<div class="col-12 col-lg-4 order-1 order-lg-0">
 			<h2 class="fs-40 fw-700 lh-12 mb-4">
 			<? $APPLICATION->ShowTitle(true); ?></h2>
 			<div class="fs-20">

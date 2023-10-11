@@ -1328,7 +1328,7 @@ body.popup-show::after {
   backdrop-filter: none;
 }
 .gallery {
-  padding-block: 100px;
+  /* padding-block: 100px; */
 }
 .gallery .swiper__title {
   bottom: 4%;
@@ -1345,10 +1345,10 @@ body.popup-show::after {
   left: 2%;
 }
 .gallery .swiper-slide {
-  max-height: 480px;
+  /* max-height: 480px; */
 }
 .gallery .mySwiper .swiper-slide {
-  max-height: 170px;
+  /* max-height: 170px; */
 }
 
 .cards__box {
