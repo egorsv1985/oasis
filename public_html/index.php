@@ -24,17 +24,26 @@ $APPLICATION->SetTitle("Главная");
 						</div>
 					</div>
 				</div>
-				<div class="col-6">
-					<div class="promo__box d-flex flex-column p-5 position-absolute">
-						<div class="fs-48 h1 fw-700 lh-12">
-							<h1>Стань лучшей<br>версией себя!</h1>
-						</div>
-						<div class="fs-24 mb-5">Присоединяйся к нам в фитнес зале!</div>
-						<div class="promo__box-btn">
-							<a data-popup="#callback" href="#callback" role="button" class="promo__btn btn btn-primary py-3 d-block fw-500 fs-18"><span>Купить клубную карту</span></a>
-						</div>
+
+				<div class="promo__box d-none d-md-flex flex-column p-5 position-absolute">
+					<div class="fs-48 h1 fw-700 lh-12">
+						<h1>Стань лучшей<br>версией себя!</h1>
+					</div>
+					<div class="fs-24 mb-5">Присоединяйся к нам в фитнес зале!</div>
+					<div class="promo__box-btn">
+						<a data-popup="#callback" href="#callback" role="button" class="promo__btn btn btn-primary py-3 d-block fw-500 fs-18"><span>Купить клубную карту</span></a>
 					</div>
 				</div>
+
+			</div>
+		</div>
+		<div class="promo__box d-flex d-md-none flex-column align-items-center p-5 position-absolute">
+			<div class="fs-48 h1 fw-700 lh-12 text-center">
+				<h1>Стань лучшей<br>версией себя!</h1>
+			</div>
+			<div class="fs-24 mb-5 text-center">Присоединяйся к нам в фитнес зале!</div>
+			<div class="promo__box-btn">
+				<a data-popup="#callback" href="#callback" role="button" class="promo__btn btn btn-primary py-3 d-block fw-500 fs-18"><span>Купить клубную карту</span></a>
 			</div>
 		</div>
 	</section>
