@@ -20,13 +20,13 @@ $strSectionEdit = CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_EDIT");
 $strSectionDelete = CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_DELETE");
 ?>
 
-<ul class="vacancies__nav-tabs nav nav-tabs flex-column gap-2">
+<ul class="vacancies__list flex-column gap-2">
 	<? foreach ($arResult["SECTIONS"] as &$arSection) :
 		$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
 		$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete);
 	?>
-		<li class="nav-item" id="<?= $this->GetEditAreaId($arSection['ID']); ?>">
-			<a href="<?= $arSection["DETAIL_PAGE_URL"]; ?>" class="nav-link vacancies-tab" <?= ($APPLICATION->GetCurPage() == $arSection["DETAIL_PAGE_URL"] ? ' class="active"' : '') ?>>
+		<li  id="<?= $this->GetEditAreaId($arSection['ID']); ?>">
+			<a href="<?= $arSection["DETAIL_PAGE_URL"]; ?>">
 				<?= $arSection["NAME"]; ?>
 			</a>
 		</li>

@@ -19,21 +19,15 @@ $arFilter = array(
 $strSectionEdit = CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_EDIT");
 $strSectionDelete = CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_DELETE");
 ?>
-
-<ul class="teams__nav-tabs nav nav-tabs">
+<ul class="teams__list">
 	<? foreach ($arResult['SECTIONS'] as &$arSection) :
 		$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
 		$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete);
 	?>
-
-		<li class="nav-item" id="<? echo $this->GetEditAreaId($arSection['ID']); ?>">
-			<a href="<?= $arSection['SECTION_PAGE_URL'] ?>" class="nav-link team-tab" <?= ($APPLICATION->GetCurPage() == $arSection['SECTION_PAGE_URL'] ? ' class="active"' : '') ?>>
+		<li id="<? echo $this->GetEditAreaId($arSection['ID']); ?>">
+			<a href="<?= $arSection['SECTION_PAGE_URL'] ?>">
 				<?= $arSection['NAME']; ?>
-
-
 			</a>
 		</li>
-		
-
 	<? endforeach; ?>
 </ul>

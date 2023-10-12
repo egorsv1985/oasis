@@ -13,14 +13,12 @@
 $this->setFrameMode(true);
 // print_r($arResult);
 ?>
-
 <? foreach ($arResult["ITEMS"] as $index => $arItem) :
 	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 
 	// Проверяем, является ли индекс четным числом
 	$isEven = ($index % 2 === 0);
-
 	// Добавляем класс "flex-row-reverse" для четных элементов
 	$rowClass = $isEven ? "flex-row-reverse" : "";
 ?>
@@ -42,7 +40,7 @@ $this->setFrameMode(true);
 			<div class="fs-14 lh-12 text-center text-info mb-4">
 				<?= $arItem['DETAIL_TEXT']; ?>
 			</div>
-			<a data-popup="#callback" href="#callback" role="button" class="btn btn-primary py-3 d-block fw-600 fs-16 w-100"><span>Узнать цену</span></a>
+			<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="btn btn-primary py-3 d-block fw-600 fs-16 w-100"><span>Узнать цену</span></button>
 		</div>
 	</div>
 <? endforeach; ?>

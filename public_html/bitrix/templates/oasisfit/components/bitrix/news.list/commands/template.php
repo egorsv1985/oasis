@@ -20,26 +20,31 @@ if (empty($arResult["ITEMS"])) return false;
 		// Инициализируем переменную для подсчета слайдов
 		$slideCount = 0;
 		foreach ($arResult["ITEMS"] as $arItem) :
+			if (CModule::IncludeModule("millcom.phpthumb")) {
+				$arItem['PREVIEW_PICTURE']["WEBP"] = CMillcomPhpThumb::generateImg($arItem['PREVIEW_PICTURE']["SRC"], 3);
+				$arItem['PREVIEW_PICTURE']["PNG"] = CMillcomPhpThumb::generateImg($arItem['PREVIEW_PICTURE']["SRC"], 5);
+			}
 			$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 			$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 			$slideCount++; // Увеличиваем счетчик слайдов
 		?>
 			<div class="swiper-slide">
-				<button type="button" class="d-block text-center position-relative" data-bs-toggle="modal" data-bs-target="#team">
+				<button type="button" class="d-block text-center position-relative" data-bs-toggle="modal" data-bs-target="#team-<?= $arItem['ID'] ?>">
 					<div class="swiper__box-img">
 						<picture>
-							<source srcset="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" type="image/webp">
-							<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" title="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" class="w-100" width="350" height="460">
+							<source srcset="<?= $arItem["PREVIEW_PICTURE"]["WEBP"] ?>" type="image/webp">
+							<img src="<?= $arItem["PREVIEW_PICTURE"]["PNG"] ?>" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" title="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" class="w-100" width="350" height="460">
 						</picture>
 					</div>
 					<div class="d-flex flex-column">
 						<div class="swiper__box-content position-absolute">
 							<div class="fs-24 fw-700"><?= $arItem["NAME"]; ?></div>
-							<div class="fs-16 lh-12 text-primary"><?= $arItem['PROPERTIES']['POST']['VALUE']; ?></div>
+							<div class="fs-16 lh-12 text-primary"><?= $arItem['PROPERTIES']['POST']['VALUE'][0]; ?></div>
 						</div>
 					</div>
 				</button>
 			</div>
+
 		<? endforeach; ?>
 	</div>
 </div>
@@ -56,3 +61,50 @@ if (empty($arResult["ITEMS"])) return false;
 	</div>
 </div>
 <? $this->EndViewTarget(); ?>
+<? foreach ($arResult["ITEMS"] as $arItem) :
+?>
+	<!-- Modal -->
+	<div class="modal fade modal-team" id="team-<?= $arItem['ID'] ?>" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal__wrapper my-0" role="document">
+			<div class="modal-content modal__content border border-success rounded-3 position-relative">
+				<button type="button" class="btn-close modal__close rounded-circle opacity-100 text-white" data-bs-dismiss="modal" aria-label="Close"> </button>
+				<div class="modal-body p-0">
+					<div class="row">
+						<div class="col-12 col-lg-6 position-relative">
+							<div class="modal__box-fon text-center position-relative h-100">
+								<div class="modal__box-trener position-absolute w-100 h-100"></div>
+
+								<div class="modal__box-fon-1 d-inline-block h-100"></div>
+							</div>
+							<div class="modal__box-text position-absolute rounded-3 border border-success p-4 end-0">
+								<div class="fs-16 fw-700">
+									<?= $arItem["DETAIL_TEXT"] ?>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-lg-6">
+							<div class="modal__box-content">
+								<div class="fs-24 fw-700 mb-4"><?= $arItem["NAME"] ?></div>
+								<ul class="modal__list fs-16 lh-12 text-info ps-0 mb-5 flex-wrap">
+									<? foreach ($arItem['PROPERTIES']['POST']['VALUE'] as $postItem) : ?>
+										<li><?= $postItem ?></li>
+									<? endforeach; ?>
+								</ul>
+								<div class="modal__numbered-list fs-16 lh-13 text-info">
+									<?= $arItem["PREVIEW_TEXT"] ?>
+
+								</div>
+								<div class="row">
+									<div class="col-6">
+										<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="btn btn-primary py-3 d-block fw-600 fs-16 w-100"><span>Записаться к тренеру</span></button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+<? endforeach; ?>
