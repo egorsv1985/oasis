@@ -25,7 +25,7 @@ if ($arResult["MESSAGE"] <> '') : ?>
 	</div>
 	<div class="row">
 		<?= bitrix_sessid_post() ?>
-		<? if ($arParams["MAX_FILE_SIZE"] > 0) : ?><input type="hidden" name="MAX_FILE_SIZE" value="<?= $arParams["MAX_FILE_SIZE"] ?>" ><? endif ?>
+		<? if ($arParams["MAX_FILE_SIZE"] > 0) : ?><input type="hidden" name="MAX_FILE_SIZE" value="<?= $arParams["MAX_FILE_SIZE"] ?>"><? endif ?>
 
 		<? if (is_array($arResult["PROPERTY_LIST"]) && !empty($arResult["PROPERTY_LIST"])) : ?>
 			<div class="col-12 col-lg-6">
@@ -186,58 +186,58 @@ if ($arResult["MESSAGE"] <> '') : ?>
 									<input class="form-control form__input bg-light rounded-2 text-info p-3 h-100" type="text" name="PROPERTY[<?= $propertyID ?>][<?= $i ?>]" id="PROPERTY[<?= $propertyID ?>][<?= $i ?>]" value="<?= $value ?>" placeholder="" required>
 									<label for="PROPERTY[<?= $propertyID ?>][<?= $i ?>]" class="form-label form__label fs-16 text-info position-absolute top-50"><? if (intval($propertyID) > 0) : ?><?= $arResult["PROPERTY_LIST_FULL"][$propertyID]["NAME"] ?><? else : ?><?= !empty($arParams["CUSTOM_TITLE_" . $propertyID]) ? $arParams["CUSTOM_TITLE_" . $propertyID] : GetMessage("IBLOCK_FIELD_" . $propertyID) ?><? endif ?></label>
 									<?
-									if ($arResult["PROPERTY_LIST_FULL"][$propertyID]["USER_TYPE"] == "DateTime") : ?><?
-																														$APPLICATION->IncludeComponent(
-																															'bitrix:main.calendar',
-																															'',
-																															array(
-																																'FORM_NAME' => 'iblock_add',																													'INPUT_NAME' => "PROPERTY[" . $propertyID . "][" . $i . "]",
-																																'INPUT_VALUE' => $value,
-																															),
-																															null,
-																															array('HIDE_ICONS' => 'Y')
-																														);
-																														?>
-									<br>
-									<small>
-										<?= GetMessage("IBLOCK_FORM_DATE_FORMAT") ?>
-										<?= FORMAT_DATETIME ?>
-									</small>
-								<?
+									if ($arResult["PROPERTY_LIST_FULL"][$propertyID]["USER_TYPE"] == "DateTime") : ?>
+										<?
+										$APPLICATION->IncludeComponent(
+											'bitrix:main.calendar',
+											'',
+											array(
+												'FORM_NAME' => 'iblock_add',																													'INPUT_NAME' => "PROPERTY[" . $propertyID . "][" . $i . "]",
+												'INPUT_VALUE' => $value,
+											),
+											null,
+											array('HIDE_ICONS' => 'Y')
+										);
+										?>
+
+										<small>
+											<?= GetMessage("IBLOCK_FORM_DATE_FORMAT") ?>
+											<?= FORMAT_DATETIME ?>
+										</small>
+									<?
 									endif
-								?>
-							<?
+									?>
+								<?
 								}
 								break;
 
 							case "F":
 								for ($i = 0; $i < $inputNum; $i++) {
 									$value = intval($propertyID) > 0 ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE"] : $arResult["ELEMENT"][$propertyID];
-							?>
-								<input type="hidden" name="PROPERTY[<?= $propertyID ?>][<?= $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] : $i ?>]" value="<?= $value ?>" />
-								<input type="file" size="<?= $arResult["PROPERTY_LIST_FULL"][$propertyID]["COL_COUNT"] ?>" name="PROPERTY_FILE_<?= $propertyID ?>_<?= $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] : $i ?>">
-								<br>
-								<?
+								?>
+									<input type="hidden" name="PROPERTY[<?= $propertyID ?>][<?= $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] : $i ?>]" value="<?= $value ?>">
+									<input type="file" size="<?= $arResult["PROPERTY_LIST_FULL"][$propertyID]["COL_COUNT"] ?>" name="PROPERTY_FILE_<?= $propertyID ?>_<?= $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] : $i ?>">
+									<br>
+									<?
 
 									if (!empty($value) && is_array($arResult["ELEMENT_FILES"][$value])) {
-								?>
-									<input type="checkbox" name="DELETE_FILE[<?= $propertyID ?>][<?= $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] : $i ?>]" id="file_delete_<?= $propertyID ?>_<?= $i ?>" value="Y"><label for="file_delete_<?= $propertyID ?>_<?= $i ?>"><?= GetMessage("IBLOCK_FORM_FILE_DELETE") ?></label>
-									<?
+									?>
+										<input type="checkbox" name="DELETE_FILE[<?= $propertyID ?>][<?= $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] : $i ?>]" id="file_delete_<?= $propertyID ?>_<?= $i ?>" value="Y"><label for="file_delete_<?= $propertyID ?>_<?= $i ?>"><?= GetMessage("IBLOCK_FORM_FILE_DELETE") ?></label>
+										<?
 
 										if ($arResult["ELEMENT_FILES"][$value]["IS_IMAGE"]) {
-									?>
-										<img src="<?= $arResult["ELEMENT_FILES"][$value]["SRC"] ?>" height="<?= $arResult["ELEMENT_FILES"][$value]["HEIGHT"] ?>" width="<?= $arResult["ELEMENT_FILES"][$value]["WIDTH"] ?>" border="0">
-									<?
+										?>
+											<img src="<?= $arResult["ELEMENT_FILES"][$value]["SRC"] ?>" height="<?= $arResult["ELEMENT_FILES"][$value]["HEIGHT"] ?>" width="<?= $arResult["ELEMENT_FILES"][$value]["WIDTH"] ?>" border="0">
+										<?
 										} else {
-									?>
-										<?= GetMessage("IBLOCK_FORM_FILE_NAME") ?>: <?= $arResult["ELEMENT_FILES"][$value]["ORIGINAL_NAME"] ?><br />
-										<?= GetMessage("IBLOCK_FORM_FILE_SIZE") ?>: <?= $arResult["ELEMENT_FILES"][$value]["FILE_SIZE"] ?> b<br />
-										[<a href="<?= $arResult["ELEMENT_FILES"][$value]["SRC"] ?>"><?= GetMessage("IBLOCK_FORM_FILE_DOWNLOAD") ?></a>]
-									<?
+										?>
+											<?= GetMessage("IBLOCK_FORM_FILE_NAME") ?>: <?= $arResult["ELEMENT_FILES"][$value]["ORIGINAL_NAME"] ?>
+											<?= GetMessage("IBLOCK_FORM_FILE_SIZE") ?>: <?= $arResult["ELEMENT_FILES"][$value]["FILE_SIZE"] ?> b
+											[<a href="<?= $arResult["ELEMENT_FILES"][$value]["SRC"] ?>"><?= GetMessage("IBLOCK_FORM_FILE_DOWNLOAD") ?></a>]
+										<?
 										}
 									}
 								}
-
 								break;
 							case "L":
 
@@ -245,7 +245,6 @@ if ($arResult["MESSAGE"] <> '') : ?>
 									$type = $arResult["PROPERTY_LIST_FULL"][$propertyID]["MULTIPLE"] == "Y" ? "checkbox" : "radio";
 								else
 									$type = $arResult["PROPERTY_LIST_FULL"][$propertyID]["MULTIPLE"] == "Y" ? "multiselect" : "dropdown";
-
 								switch ($type):
 									case "checkbox":
 									case "radio":
@@ -264,40 +263,40 @@ if ($arResult["MESSAGE"] <> '') : ?>
 												if ($arEnum["DEF"] == "Y") $checked = true;
 											}
 
-									?>
-										<input type="<?= $type ?>" name="PROPERTY[<?= $propertyID ?>]<?= $type == "checkbox" ? "[" . $key . "]" : "" ?>" value="<?= $key ?>" id="property_<?= $key ?>" <?= $checked ? " checked=\"checked\"" : "" ?>><label for="property_<?= $key ?>"><?= $arEnum["VALUE"] ?></label>
-									<?
+										?>
+											<input type="<?= $type ?>" name="PROPERTY[<?= $propertyID ?>]<?= $type == "checkbox" ? "[" . $key . "]" : "" ?>" value="<?= $key ?>" id="property_<?= $key ?>" <?= $checked ? " checked=\"checked\"" : "" ?>><label for="property_<?= $key ?>"><?= $arEnum["VALUE"] ?></label>
+										<?
 										}
 										break;
 
 									case "dropdown":
 									case "multiselect":
-									?>
-									<select name="PROPERTY[<?= $propertyID ?>]<?= $type == "multiselect" ? "[]\" size=\"" . $arResult["PROPERTY_LIST_FULL"][$propertyID]["ROW_COUNT"] . "\" multiple=\"multiple" : "" ?>">
-										<option value=""><? echo GetMessage("CT_BIEAF_PROPERTY_VALUE_NA") ?></option>
-										<?
-										if (intval($propertyID) > 0) $sKey = "ELEMENT_PROPERTIES";
-										else $sKey = "ELEMENT";
+										?>
+										<select name="PROPERTY[<?= $propertyID ?>]<?= $type == "multiselect" ? "[]\" size=\"" . $arResult["PROPERTY_LIST_FULL"][$propertyID]["ROW_COUNT"] . "\" multiple=\"multiple" : "" ?>">
+											<option value=""><? echo GetMessage("CT_BIEAF_PROPERTY_VALUE_NA") ?></option>
+											<?
+											if (intval($propertyID) > 0) $sKey = "ELEMENT_PROPERTIES";
+											else $sKey = "ELEMENT";
 
-										foreach ($arResult["PROPERTY_LIST_FULL"][$propertyID]["ENUM"] as $key => $arEnum) {
-											$checked = false;
-											if ($arParams["ID"] > 0 || count($arResult["ERRORS"]) > 0) {
-												foreach ($arResult[$sKey][$propertyID] as $elKey => $arElEnum) {
-													if ($key == $arElEnum["VALUE"]) {
-														$checked = true;
-														break;
+											foreach ($arResult["PROPERTY_LIST_FULL"][$propertyID]["ENUM"] as $key => $arEnum) {
+												$checked = false;
+												if ($arParams["ID"] > 0 || count($arResult["ERRORS"]) > 0) {
+													foreach ($arResult[$sKey][$propertyID] as $elKey => $arElEnum) {
+														if ($key == $arElEnum["VALUE"]) {
+															$checked = true;
+															break;
+														}
 													}
+												} else {
+													if ($arEnum["DEF"] == "Y") $checked = true;
 												}
-											} else {
-												if ($arEnum["DEF"] == "Y") $checked = true;
+											?>
+												<option value="<?= $key ?>" <?= $checked ? " selected=\"selected\"" : "" ?>><?= $arEnum["VALUE"] ?></option>
+											<?
 											}
-										?>
-											<option value="<?= $key ?>" <?= $checked ? " selected=\"selected\"" : "" ?>><?= $arEnum["VALUE"] ?></option>
-										<?
-										}
-										?>
-									</select>
-					<?
+											?>
+										</select>
+						<?
 										break;
 
 								endswitch;
@@ -305,6 +304,10 @@ if ($arResult["MESSAGE"] <> '') : ?>
 						endswitch; ?>
 					</div>
 				<? endforeach; ?>
+				<p class="fs-14 lh-12 text-info">
+					Нажимая на кнопку, вы даете согласие на обработку
+					персональных данных
+				</p>
 				<? if ($arParams["USE_CAPTCHA"] == "Y" && $arParams["ID"] <= 0) : ?>
 					<?= GetMessage("IBLOCK_FORM_CAPTCHA_TITLE") ?>
 
@@ -312,9 +315,7 @@ if ($arResult["MESSAGE"] <> '') : ?>
 					<img src="/bitrix/tools/captcha.php?captcha_sid=<?= $arResult["CAPTCHA_CODE"] ?>" width="180" height="40" alt="CAPTCHA">
 					<?= GetMessage("IBLOCK_FORM_CAPTCHA_PROMPT") ?><span class="starrequired">*</span>:
 					<input type="text" name="captcha_word" maxlength="50" value="">
-
 				<? endif ?>
-
 			<? endif ?>
 			</div>
 			<div class="col-12 col-lg-6">
@@ -327,7 +328,7 @@ if ($arResult["MESSAGE"] <> '') : ?>
 						<span class="form__label--bg ps-4 rounded-circle border border-primary"></span>
 						<span>Прикрепить файл (.doc, .pdf)</span>
 					</label>
-					<input type="file" class="form-control w-100 d-none" name="file" id="file" />
+					<input type="file" class="form-control w-100 d-none" name="file" id="file">
 				</div>
 				<button type="submit" class="form__btn btn fs-16 fw-600 px-3 py-3 btn-primary w-100 border-0">
 					Отправить

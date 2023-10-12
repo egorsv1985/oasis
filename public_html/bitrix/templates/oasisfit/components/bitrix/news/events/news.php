@@ -161,9 +161,9 @@ while ($ob = $res->GetNext()) {
 			</div>
 		</div>
 	</div>
-	<div class="col-2">
+	<div class="col-12 col-md-2">
 		<div class="events__description-box">
-			<div class="events__description d-flex flex-wrap">
+			<div class="events__description d-flex flex-wrap gap-2  gap-md-0">
 				<div class="fs-16 text-info ps-5 w-50 d-flex align-items-center" style="
                             background: url(img/icons/month.svg) no-repeat left
                               center / 20px 20px;

@@ -704,8 +704,8 @@ body.modal-show::after {
   flex: 1 1 auto;
   width: 100%;
 }
-.modal-team.modal{
-  background-color: #F6F3EE;
+.modal-team.modal {
+  background-color: #f6f3ee;
 }
 .modal__content {
   /* visibility: hidden; */
@@ -722,7 +722,7 @@ body.modal-show::after {
   height: 1em;
   padding: 0.25em 0.25em;
   color: #000;
-  background: #CFC8BE url("img/icons/btn-close.svg") center/22px auto no-repeat;
+  background: #cfc8be url("img/icons/btn-close.svg") center/22px auto no-repeat;
   border: 0;
   border-radius: 0.375rem;
   opacity: 0.5;
@@ -741,7 +741,7 @@ body.modal-show::after {
   top: 0%;
   right: 0%;
 }
-.main .footer{
+.main .footer {
   z-index: -1;
 }
 
@@ -749,7 +749,6 @@ body.modal-show::after {
   .footer .container {
     max-width: 100%;
   }
-  
 }
 @media only screen and (min-width: 576px) {
   .modal__content::after {
@@ -758,12 +757,11 @@ body.modal-show::after {
   .fs-48 {
     font-size: 48px;
   }
- .modal-team .modal-dialog {
+  .modal-team .modal-dialog {
     max-width: 1200px;
     margin-right: auto;
     margin-left: auto;
-}
-  
+  }
 }
 .modal__content::before {
   background: url("img/popup-fon2.png") no-repeat center/100% auto;
@@ -850,7 +848,7 @@ body.modal-show::after {
   padding-block: 70px;
 }
 .modal-team .modal__list {
-  display: flex;  
+  display: flex;
 }
 .modal-team .modal__list li {
   margin-bottom: 8px;
@@ -868,7 +866,6 @@ body.modal-show::after {
   position: absolute;
   left: 0;
   top: 20%;
-  
 }
 .modal-team .modal__numbered-list {
   margin-bottom: 125px;
@@ -1118,19 +1115,18 @@ body.modal-show::after {
   max-height: 984px;
 }
 
-.promo__box{
+.promo__box {
   border-radius: 50px;
   background: rgba(255, 255, 255, 0.4);
   box-shadow: 0px 4px 50px 0px rgba(38, 39, 34, 0.25);
   backdrop-filter: blur(15px);
   top: 50%;
-  
+
   bottom: -10%;
-  
-  right: 0;    
+
+  right: 0;
   z-index: 2;
   left: 0;
-
 }
 .error__box {
   max-width: 350px;
@@ -1168,10 +1164,9 @@ body.modal-show::after {
     z-index: inherit;
     top: 20%;
   }
-  .main .footer{
+  .main .footer {
     z-index: 1;
   }
- 
 }
 @media only screen and (min-width: 991px) {
   .about::before {
@@ -1600,17 +1595,7 @@ body.modal-show::after {
   top: 0;
   right: 0;
 }
-.events__description-box {
-  height: 28%;
-}
-.events__description {
-  transform: rotate(270deg) translateX(-100%);
-  transform-origin: top left;
-  width: 415px;
-  overflow: hidden;
-  row-gap: 20px;
-  height: 100%;
-}
+
 .events__day {
   padding: 10px 5px 5px 10px;
 }
@@ -1708,6 +1693,10 @@ body.modal-show::after {
   position: absolute;
   top: 0;
   right: 0%;
+  transition: all .5s ease-in-out;
+}
+.events__item:hover .events__content::before{
+ background-color: rgba(184, 173, 160, 50);
 }
 
 .services-item {
@@ -1883,15 +1872,12 @@ body.modal-show::after {
   height: 50px;
   display: block;
   transition: all 0.2s ease-out;
-  
 }
-
 
 .social__link:hover,
 .footer__link:hover,
 .header__link:hover {
-  background-color: #B8ADA0;
-  
+  background-color: #b8ada0;
 }
 .modal__content {
   border-radius: 40px;
@@ -1928,7 +1914,7 @@ body.modal-show::after {
 
 .header {
   z-index: 999;
-  /* background: var(--bs-secondary); */
+  background: var(--bs-secondary);
 }
 
 .header__btn-shedule {
@@ -1938,7 +1924,17 @@ body.modal-show::after {
   .header__btn-shedule {
     display: block;
   }
- 
+  .events__description-box {
+    height: 28%;
+  }
+  .events__description {
+    transform: rotate(270deg) translateX(-100%);
+    transform-origin: top left;
+    width: 415px;
+    overflow: hidden;
+    row-gap: 20px;
+    height: 100%;
+  }
 }
 .header__box-logo {
   z-index: 50;
@@ -2010,18 +2006,17 @@ body.modal-show::after {
   font-size: 18px;
 }
 
-
-.header__menu  nav ul li a::before,
+.header__menu nav ul li a::before,
 .header__menu nav ul button::before {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
   width: 0;
   height: 100%;
   bottom: 0;
-  left: -.5rem;
+  left: -0.5rem;
   background-color: rgba(125, 104, 88, 20%);
-  transition: width 0.3s cubic-bezier(.03, .3, .4, .96);
+  transition: width 0.3s cubic-bezier(0.03, 0.3, 0.4, 0.96);
   transform: skew(-10deg);
 }
 
@@ -2076,7 +2071,7 @@ body.modal-show::after {
   display: block;
   position: relative;
   z-index: 1;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 .header__services-menu ul .ico {
   width: 50px;
@@ -2095,7 +2090,6 @@ body.modal-show::after {
 .header__services-menu ul li a:hover .header__back {
   width: 100%;
   border-radius: 10rem;
- 
 }
 
 @media (max-height: 1000px) {
@@ -2149,6 +2143,6 @@ body.modal-show::after {
     z-index: 1;
   }
 }
-.tablebodytext{
+.tablebodytext {
   display: none;
 }

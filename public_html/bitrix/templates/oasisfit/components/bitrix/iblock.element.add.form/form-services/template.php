@@ -22,28 +22,24 @@ if ($arResult["MESSAGE"] <> '') : ?>
 <form class="forms__form form position-relative py-5 px-4" name="iblock_add" action="<?= POST_FORM_ACTION_URI ?>" method="post" enctype="multipart/form-data">
 	<div class="row gy-4 mb-3">
 		<div class="col-12 col-sm-6 col-lg-4">
-			<h3 class="fs-24 fw-700">
-				Запишись на пробное занятие бесплатно!
-			</h3>
+			<h3 class="fs-24 fw-700"> Запишись на пробное занятие бесплатно! </h3>
 		</div>
 		<div class="col-12 col-sm-6 col-lg-3">
-			<div class="fs-16 lh-13 text-info">
-				Оставьте свои контакты и мы с вами свяжемся
-			</div>
+			<div class="fs-16 lh-13 text-info"> Оставьте свои контакты и мы с вами свяжемся </div>
 		</div>
 	</div>
 	<div class="row gy-4 align-items-center">
 		<?= bitrix_sessid_post() ?>
-		<? if ($arParams["MAX_FILE_SIZE"] > 0) : ?><input type="hidden" name="MAX_FILE_SIZE" value="<?= $arParams["MAX_FILE_SIZE"] ?>"><? endif ?>
+		<? if ($arParams["MAX_FILE_SIZE"] > 0) : ?>
+			<input type="hidden" name="MAX_FILE_SIZE" value="<?= $arParams["MAX_FILE_SIZE"] ?>">
+		<? endif ?>
 		<? if (is_array($arResult["PROPERTY_LIST"]) && !empty($arResult["PROPERTY_LIST"])) : ?>
 			<? foreach ($arResult["PROPERTY_LIST"] as $propertyID) : ?>
 				<div class=" col-12 col-sm-6 col-lg-3">
 					<div class="form-group position-relative">
-						<?
-						if (intval($propertyID) > 0) {
+						<? if (intval($propertyID) > 0) {
 							if (
-								$arResult["PROPERTY_LIST_FULL"][$propertyID]["PROPERTY_TYPE"] == "T"
-								&&
+								$arResult["PROPERTY_LIST_FULL"][$propertyID]["PROPERTY_TYPE"] == "T"	&&
 								$arResult["PROPERTY_LIST_FULL"][$propertyID]["ROW_COUNT"] == "1"
 							)
 								$arResult["PROPERTY_LIST_FULL"][$propertyID]["PROPERTY_TYPE"] = "S";
@@ -58,7 +54,6 @@ if ($arResult["MESSAGE"] <> '') : ?>
 								$arResult["PROPERTY_LIST_FULL"][$propertyID]["PROPERTY_TYPE"] = "T";
 						} elseif (($propertyID == "TAGS") && CModule::IncludeModule('search'))
 							$arResult["PROPERTY_LIST_FULL"][$propertyID]["PROPERTY_TYPE"] = "TAGS";
-
 						if ($arResult["PROPERTY_LIST_FULL"][$propertyID]["MULTIPLE"] == "Y") {
 							$inputNum = ($arParams["ID"] > 0 || count($arResult["ERRORS"]) > 0) ? count($arResult["ELEMENT_PROPERTIES"][$propertyID]) : 0;
 							$inputNum += $arResult["PROPERTY_LIST_FULL"][$propertyID]["MULTIPLE_CNT"];
@@ -117,7 +112,13 @@ if ($arResult["MESSAGE"] <> '') : ?>
 							case "HTML":
 								$LHE = new CHTMLEditor;
 								$LHE->Show(array(
-									'name' => "PROPERTY[" . $propertyID . "][0]",									'id' => preg_replace("/[^a-z0-9]/i", '', "PROPERTY[" . $propertyID . "][0]"),									'inputName' => "PROPERTY[" . $propertyID . "][0]",									'content' => $arResult["ELEMENT"][$propertyID],
+									'name' => "PROPERTY[" . $propertyID . "][0]", 'id' => preg_replace(
+										"/[^a-z0-9]/i",
+										'',
+										"PROPERTY[" . $propertyID . "][0]"
+									),
+									'inputName' => "PROPERTY[" . $propertyID . "][0]",
+									'content' => $arResult["ELEMENT"][$propertyID],
 									'width' => '100%',
 									'minBodyWidth' => 350,
 									'normalBodyWidth' => 555,
@@ -167,7 +168,7 @@ if ($arResult["MESSAGE"] <> '') : ?>
 										$value = "";
 									}
 								?>
-									<!-- <textarea cols="<?= $arResult["PROPERTY_LIST_FULL"][$propertyID]["COL_COUNT"] ?>" rows="<?= $arResult["PROPERTY_LIST_FULL"][$propertyID]["ROW_COUNT"] ?>" name="PROPERTY[<?= $propertyID ?>][<?= $i ?>]"><?= $value ?></textarea> -->
+									<textarea cols="<?= $arResult["PROPERTY_LIST_FULL"][$propertyID]["COL_COUNT"] ?>" rows="<?= $arResult["PROPERTY_LIST_FULL"][$propertyID]["ROW_COUNT"] ?>" name="PROPERTY[<?= $propertyID ?>][<?= $i ?>]"><?= $value ?></textarea>
 								<?
 								}
 								break;
@@ -213,20 +214,21 @@ if ($arResult["MESSAGE"] <> '') : ?>
 								for ($i = 0; $i < $inputNum; $i++) {
 									$value = intval($propertyID) > 0 ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE"] : $arResult["ELEMENT"][$propertyID];
 								?>
-									<input type="hidden" name="PROPERTY[<?= $propertyID ?>][<?= $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] : $i ?>]" value="<?= $value ?>" />
-									<input type="file" size="<?= $arResult["PROPERTY_LIST_FULL"][$propertyID]["COL_COUNT"] ?>" name="PROPERTY_FILE_<?= $propertyID ?>_<?= $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] : $i ?>" /><br />
+									<input type="hidden" name="PROPERTY[<?= $propertyID ?>][<?= $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] : $i ?>]" value="<?= $value ?>">
+									<input type="file" size="<?= $arResult["PROPERTY_LIST_FULL"][$propertyID]["COL_COUNT"] ?>" name="PROPERTY_FILE_<?= $propertyID ?>_<?= $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] : $i ?>">
 									<?
 									if (!empty($value) && is_array($arResult["ELEMENT_FILES"][$value])) {
 									?>
-										<input type="checkbox" name="DELETE_FILE[<?= $propertyID ?>][<?= $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] : $i ?>]" id="file_delete_<?= $propertyID ?>_<?= $i ?>" value="Y" /><label for="file_delete_<?= $propertyID ?>_<?= $i ?>"><?= GetMessage("IBLOCK_FORM_FILE_DELETE") ?></label><br />
+										<input type="checkbox" name="DELETE_FILE[<?= $propertyID ?>][<?= $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] : $i ?>]" id="file_delete_<?= $propertyID ?>_<?= $i ?>" value="Y">
+										<label for="file_delete_<?= $propertyID ?>_<?= $i ?>"><?= GetMessage("IBLOCK_FORM_FILE_DELETE") ?></label>
 										<? if ($arResult["ELEMENT_FILES"][$value]["IS_IMAGE"]) {
 										?>
-											<img src="<?= $arResult["ELEMENT_FILES"][$value]["SRC"] ?>" height="<?= $arResult["ELEMENT_FILES"][$value]["HEIGHT"] ?>" width="<?= $arResult["ELEMENT_FILES"][$value]["WIDTH"] ?>" border="0" /><br />
+											<img src="<?= $arResult["ELEMENT_FILES"][$value]["SRC"] ?>" height="<?= $arResult["ELEMENT_FILES"][$value]["HEIGHT"] ?>" width="<?= $arResult["ELEMENT_FILES"][$value]["WIDTH"] ?>" border="0">
 										<?																																																			} else {
 										?>
-											<?= GetMessage("IBLOCK_FORM_FILE_NAME") ?>: <?= $arResult["ELEMENT_FILES"][$value]["ORIGINAL_NAME"] ?><br />
-											<?= GetMessage("IBLOCK_FORM_FILE_SIZE") ?>: <?= $arResult["ELEMENT_FILES"][$value]["FILE_SIZE"] ?> b<br />
-											[<a href="<?= $arResult["ELEMENT_FILES"][$value]["SRC"] ?>"><?= GetMessage("IBLOCK_FORM_FILE_DOWNLOAD") ?></a>]<br />
+											<?= GetMessage("IBLOCK_FORM_FILE_NAME") ?>: <?= $arResult["ELEMENT_FILES"][$value]["ORIGINAL_NAME"] ?>
+											<?= GetMessage("IBLOCK_FORM_FILE_SIZE") ?>: <?= $arResult["ELEMENT_FILES"][$value]["FILE_SIZE"] ?> b
+											[<a href="<?= $arResult["ELEMENT_FILES"][$value]["SRC"] ?>"><?= GetMessage("IBLOCK_FORM_FILE_DOWNLOAD") ?></a>]
 										<?
 										}
 									}
@@ -255,7 +257,8 @@ if ($arResult["MESSAGE"] <> '') : ?>
 												if ($arEnum["DEF"] == "Y") $checked = true;
 											}
 										?>
-											<input type="<?= $type ?>" name="PROPERTY[<?= $propertyID ?>]<?= $type == "checkbox" ? "[" . $key . "]" : "" ?>" value="<?= $key ?>" id="property_<?= $key ?>" <?= $checked ? " checked=\"checked\"" : "" ?> /><label for="property_<?= $key ?>"><?= $arEnum["VALUE"] ?></label><br />
+											<input type="<?= $type ?>" name="PROPERTY[<?= $propertyID ?>]<?= $type == "checkbox" ? "[" . $key . "]" : "" ?>" value="<?= $key ?>" id="property_<?= $key ?>" <?= $checked ? " checked=\"checked\"" : "" ?>>
+											<label for="property_<?= $key ?>"><?= $arEnum["VALUE"] ?></label>
 										<?
 										}
 										break;
@@ -304,7 +307,7 @@ if ($arResult["MESSAGE"] <> '') : ?>
 		<? endif ?>
 		<div class="col-12 col-sm-6 col-lg-3 ">
 			<div class="form-check form-check-inline position-relative me-0 ps-3">
-				<input type="checkbox" class="form-check-input m-0" value="" name="check" id="check" checked />
+				<input type="checkbox" class="form-check-input m-0" value="" name="check" id="check" checked>
 				<label class="form-check-label fs-14 d-block ms-5" for="check">
 					Согласие на
 					<a href="#" class="">политику конфиденциальности</a>
