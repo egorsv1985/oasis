@@ -198,7 +198,9 @@
 .breadcrumb-item + .breadcrumb-item::before {
   display: none;
 }
-
+.directions .container{
+  z-index: 1;
+}
 .nav-tabs {
   --bs-nav-tabs-border-width: 0;
   --bs-nav-tabs-border-color: initial;
@@ -1747,17 +1749,17 @@ body.modal-show::after {
 }
 .directions .line1 {
   background: url("img/icons/line1.svg") no-repeat center/100% auto;
-  top: 17%;
-  left: -5%;
-  width: 29%;
-  height: 8%;
+  top: 30%;
+  left: 0%;
+  width: 30%;
+  height: 12%;
 }
 .directions .line2 {
   background: url("img/icons/line2.svg") no-repeat center/100% auto;
-  bottom: 31%;
-  right: -6%;
-  width: 26%;
-  height: 7%;
+  bottom: 16%;
+    right: 0%;
+    width: 34%;
+    height: 17%;
 }
 .directions__citation {
   position: relative;

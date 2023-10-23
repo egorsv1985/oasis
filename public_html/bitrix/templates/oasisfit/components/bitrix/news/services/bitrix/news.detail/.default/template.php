@@ -172,7 +172,7 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 	<section class="directions bg-success py-4 position-relative" id="directions">
 		<div class="line1 position-absolute"></div>
 		<div class="line2 position-absolute"></div>
-		<div class="container">
+		<div class="container position-relative">
 			<div class="row gy-5 mb-5">
 				<div class="col-12 col-sm-4">
 					<?

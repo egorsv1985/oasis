@@ -27,7 +27,6 @@ $this->setFrameMode(true);
 			$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 			$slideCount++; // Увеличиваем счетчик слайдов
 		?>
-
 			<div class="swiper-slide">
 				<button type="button" class="d-block text-center position-relative" data-bs-toggle="modal" data-bs-target="#team-<?= $arItem['ID'] ?>">
 					<div class="swiper__box-img">
@@ -44,11 +43,9 @@ $this->setFrameMode(true);
 					</div>
 				</button>
 			</div>
-
 		<? endforeach; ?>
 	</div>
 </div>
-
 
 <? $this->SetViewTarget('swiper__control'); ?>
 <div class="swiper__control d-flex align-items-center gap-4">
@@ -61,7 +58,6 @@ $this->setFrameMode(true);
 	</div>
 </div>
 <? $this->EndViewTarget(); ?>
-
 <? foreach ($arResult["ITEMS"] as $arItem) :
 ?>
 	<!-- Modal -->
