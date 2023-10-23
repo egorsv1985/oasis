@@ -984,7 +984,9 @@ body.modal-show::after {
 .swiper-pagination-bullet-active {
   height: 3px;
 }
-
+.gallerySwiper2{
+  height: 100%;
+}
 .breadcrumb__nav {
   transform: rotate(270deg) translateX(-100%);
   transform-origin: top left;
@@ -1705,7 +1707,7 @@ body.modal-show::after {
 
 .services-item {
   padding-top: 110px;
-  padding-bottom: 310px;
+  padding-bottom: 8%;
 }
 .services-item__box-content {
   border-radius: 10px;
@@ -1736,15 +1738,15 @@ body.modal-show::after {
   left: 0;
   right: 0;
   position: absolute;
-  height: 12%;
+  height: 6%;
   z-index: -1;
 }
 .directions::before {
   border-radius: 100% 100% 0% 0%;
-  top: -6%;
+  top: -3%;
 }
 .directions::after {
-  bottom: -6%;
+  bottom: -3%;
   border-radius: 0% 0% 100% 100%;
 }
 .directions .line1 {
@@ -1803,7 +1805,7 @@ body.modal-show::after {
 }
 
 .trainers {
-  padding-top: 185px;
+  padding-top: 8%;
 }
 .trainers::before {
   content: "";
@@ -1820,6 +1822,41 @@ body.modal-show::after {
     width: 40%;
     left: 40%;
   }
+  .forms__form::before {
+    content: "";
+    display: block;
+    background: url("img/forms-fon2.png") no-repeat center/cover;
+    width: 34%;
+    height: 127%;
+    position: absolute;
+    right: -6%;
+    bottom: -8%;
+    z-index: -1;
+  }
+  .forms::before {
+    content: "";
+    display: block;
+    background: url("img/forms-fon.png") no-repeat center/cover;
+    width: 12%;
+    height: 72%;
+    position: absolute;
+    left: 12%;
+    top: -2%;
+  }
+  .directions::after,
+.directions::before {
+ 
+  height: 12%;
+  
+}
+.directions::before {
+ 
+  top: -6%;
+}
+.directions::after {
+  bottom: -6%;
+  
+}
 }
 .trainers .swiper__box-content {
   transform: rotate(270deg);
@@ -1827,31 +1864,12 @@ body.modal-show::after {
   z-index: 1;
 }
 
-.forms::before {
-  content: "";
-  display: block;
-  background: url("img/forms-fon.png") no-repeat center/cover;
-  width: 12%;
-  height: 72%;
-  position: absolute;
-  left: 12%;
-  top: -2%;
-}
+
 .forms__form {
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(20px);
 }
-.forms__form::before {
-  content: "";
-  display: block;
-  background: url("img/forms-fon2.png") no-repeat center/cover;
-  width: 34%;
-  height: 127%;
-  position: absolute;
-  right: -6%;
-  bottom: -8%;
-  z-index: -1;
-}
+
 .forms .form-control {
   border: 1px solid #cfc8be;
 }

@@ -18,7 +18,7 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 	<section class="services-item" id="services-item">
 		<div class="container">
 			<div class="row gy-4">
-				<div class="col-1 pt-5">
+				<div class="col-2 col-md-1 pt-5">
 					<? $APPLICATION->IncludeComponent(
 						"bitrix:breadcrumb",
 						".default",
@@ -33,7 +33,7 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 						)
 					); ?>
 				</div>
-				<div class="col-11">
+				<div class="col-10 col-md-11">
 					<? $APPLICATION->IncludeComponent(
 						"bitrix:news.list",
 						"gallery",
@@ -189,16 +189,16 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 					endwhile;
 					?>
 
-					<ul class="nav nav-tabs flex-column" id="directionsTab" role="tablist">
+					<ul class="nav nav-tabs flex-sm-column" id="directionsTab" role="tablist">
 						<? foreach ($SECTIONS as $i => $arSection) : ?>
 							<li class="nav-item" role="presentation">
-								<button class="nav-link<?= ($i++ ? '' : ' active'); ?>" id="tab-<?= $arSection['ID']; ?>-tab" data-bs-toggle="pill" data-bs-target="#tab-<?= $arSection['ID']; ?>" type="button" role="tab" aria-controls="tab-<?= $arSection['ID']; ?>" aria-selected="true"><?= $arSection['NAME']; ?></button>
+								<button class="text-start nav-link<?= ($i++ ? '' : ' active'); ?>" id="tab-<?= $arSection['ID']; ?>-tab" data-bs-toggle="pill" data-bs-target="#tab-<?= $arSection['ID']; ?>" type="button" role="tab" aria-controls="tab-<?= $arSection['ID']; ?>" aria-selected="true"><?= $arSection['NAME']; ?></button>
 							</li>
 						<? endforeach; ?>
 					</ul>
 
 				</div>
-				<div class="col-4 offset-lg-1">
+				<div class="col-sm-4 col-12 offset-lg-1">
 					<div class="fs-36 fw-700 lh-12 text-white">
 						Зоны/Направления тренажерного зала
 					</div>
