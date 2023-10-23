@@ -207,7 +207,6 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 			<div class="tab-content my-5" id="directionsTabContent">
 				<? foreach ($SECTIONS as $i => $arSection) : ?>
 					<div class="tab-pane fade<?= ($i ? '' : ' show active'); ?>" id="tab-<?= $arSection['ID']; ?>" role="tabpanel" aria-labelledby="tab-<?= $arSection['ID']; ?>-tab">
-
 						<? $APPLICATION->IncludeComponent(
 							"bitrix:news.list",
 							"directions",
@@ -279,7 +278,6 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 							),
 							false
 						); ?>
-
 					</div>
 				<? endforeach; ?>
 			</div>
@@ -288,83 +286,78 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 
 	<section class="trainers position-relative" id="trainers">
 		<div class="container">
-			<? if ($arResult['PROPERTIES']['COMMANDS']['VALUE']) : ?>
-
-				<? $APPLICATION->IncludeComponent(
-					"bitrix:new.list",
-					"commands",
-					array(
-						"TITLE" => 'Тренеры' . ($arResult['ID'] == 1 ? ' тренажерного зала' : ''),
-						"NOPADDING" => 'Y',
-						"ACTIVE_DATE_FORMAT" => "d.m.Y",
-						"ADD_SECTIONS_CHAIN" => "N",
-						"AJAX_MODE" => "N",
-						"AJAX_OPTION_ADDITIONAL" => "",
-						"AJAX_OPTION_HISTORY" => "N",
-						"AJAX_OPTION_JUMP" => "N",
-						"AJAX_OPTION_STYLE" => "Y",
-
-						"CACHE_FILTER" => "N",
-						"CACHE_GROUPS" => "Y",
-						"CACHE_TIME" => "7200",
-						"CACHE_TYPE" => "A",
-						"CHECK_DATES" => "Y",
-						"DETAIL_URL" => "",
-						"DISPLAY_BOTTOM_PAGER" => "Y",
-						"DISPLAY_DATE" => "N",
-						"DISPLAY_NAME" => "N",
-						"DISPLAY_PICTURE" => "N",
-						"DISPLAY_PREVIEW_TEXT" => "N",
-						"DISPLAY_TOP_PAGER" => "N",
-						"FIELD_CODE" => array(
-							0 => "POST",
-							1 => "IMAGES",
-							2 => "",
-						),
-
-						"FILTER_NAME" => "",
-						"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-						"IBLOCK_ID" => "6",
-						"IBLOCK_TYPE" => "CONTENT",
-						"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-						"INCLUDE_SUBSECTIONS" => "N",
-						"MESSAGE_404" => "",
-						"NEWS_COUNT" => "200",
-						"PAGER_BASE_LINK_ENABLE" => "N",
-						"PAGER_DESC_NUMBERING" => "N",
-						"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-						"PAGER_SHOW_ALL" => "N",
-						"PAGER_SHOW_ALWAYS" => "N",
-						"PAGER_TEMPLATE" => ".default",
-						"PAGER_TITLE" => "Новости",
-						"PARENT_SECTION" => $arResult['PROPERTIES']['COMMANDS']['VALUE'],
-						"PARENT_SECTION_CODE" => "",
-						"PREVIEW_TRUNCATE_LEN" => "",
-						"PROPERTY_CODE" => array(
-							0 => "POST",
-							1 => "IMAGES",
-							2 => "",
-						),
-						"SET_LAST_MODIFIED" => "N",
-						"SET_META_DESCRIPTION" => "N",
-						"SET_META_KEYWORDS" => "N",
-						"SET_STATUS_404" => "N",
-						"SET_TITLE" => "N",
-						"SHOW_404" => "N",
-						"SORT_BY1" => "SORT",
-						"SORT_BY2" => "SORT",
-						"SORT_ORDER1" => "ASC",
-						"SORT_ORDER2" => "ASC",
-						"STRICT_SECTION_CHECK" => "N",
-						"COMPONENT_TEMPLATE" => "commands"
+			<? $APPLICATION->IncludeComponent(
+				"bitrix:news.list",
+				"commands",
+				array(
+					"TITLE" => 'Тренеры' . ($arResult['ID'] == 1 ? ' тренажерного зала' : ''),
+					"ACTIVE_DATE_FORMAT" => "d.m.Y",
+					"ADD_SECTIONS_CHAIN" => "N",
+					"AJAX_MODE" => "N",
+					"AJAX_OPTION_ADDITIONAL" => "",
+					"AJAX_OPTION_HISTORY" => "N",
+					"AJAX_OPTION_JUMP" => "N",
+					"AJAX_OPTION_STYLE" => "Y",
+					"CACHE_FILTER" => "N",
+					"CACHE_GROUPS" => "Y",
+					"CACHE_TIME" => "7200",
+					"CACHE_TYPE" => "A",
+					"CHECK_DATES" => "Y",
+					"DETAIL_URL" => "",
+					"DISPLAY_BOTTOM_PAGER" => "Y",
+					"DISPLAY_DATE" => "N",
+					"DISPLAY_NAME" => "N",
+					"DISPLAY_PICTURE" => "N",
+					"DISPLAY_PREVIEW_TEXT" => "N",
+					"DISPLAY_TOP_PAGER" => "N",
+					"FIELD_CODE" => array(
+						0 => "NAME",
+						1 => "PREVIEW_TEXT",
+						2 => "PREVIEW_PICTURE",
 					),
-					false
-				); ?>
-			<? endif; ?>
+
+					"FILTER_NAME" => "",
+					"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+					"IBLOCK_ID" => "6",
+					"IBLOCK_TYPE" => "CONTENT",
+					"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+					"INCLUDE_SUBSECTIONS" => "N",
+					"MESSAGE_404" => "",
+					"NEWS_COUNT" => "200",
+					"PAGER_BASE_LINK_ENABLE" => "N",
+					"PAGER_DESC_NUMBERING" => "N",
+					"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+					"PAGER_SHOW_ALL" => "N",
+					"PAGER_SHOW_ALWAYS" => "N",
+					"PAGER_TEMPLATE" => ".default",
+					"PAGER_TITLE" => "Новости",
+					"PARENT_SECTION" => $arResult['PROPERTIES']['COMMANDS']['VALUE'],
+					"PARENT_SECTION_CODE" => "",
+					"PREVIEW_TRUNCATE_LEN" => "",
+					"PROPERTY_CODE" => array(
+						0 => "POST",
+						1 => "IMAGES",
+						2 => "",
+					),
+					"SET_LAST_MODIFIED" => "N",
+					"SET_META_DESCRIPTION" => "N",
+					"SET_META_KEYWORDS" => "N",
+					"SET_STATUS_404" => "N",
+					"SET_TITLE" => "N",
+					"SHOW_404" => "N",
+					"SORT_BY1" => "SORT",
+					"SORT_BY2" => "SORT",
+					"SORT_ORDER1" => "ASC",
+					"SORT_ORDER2" => "ASC",
+					"STRICT_SECTION_CHECK" => "N",
+					"COMPONENT_TEMPLATE" => "commands"
+				),
+				false
+			); ?>
 			<div class="row flex-row-reverse flex-lg-row">
 				<div class="col-12 col-lg-4">
 					<div class="fs-36 fw-700 lh-12 mb-4">
-						<? echo $title; ?>
+						<? $arParams['TITLE']; ?>
 					</div>
 					<div class="fs-20">Выбери своего тренера</div>
 				</div>
