@@ -192,7 +192,9 @@
   background-color: var(--bs-breadcrumb-bg);
   border-radius: var(--bs-breadcrumb-border-radius);
 }
-
+.breadcrumb-item{
+  color: #b8ada0;
+}
 .breadcrumb-item + .breadcrumb-item::before {
   display: none;
 }

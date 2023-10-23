@@ -1,4 +1,4 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -11,33 +11,69 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-print_r($arResult);
+// print_r($arResult);
 ?>
-</div>
-<div class="gallery slider-gallery" id="gallery_<?=$arResult['ID'];?>">
-	<?foreach($arResult['PROPERTIES']['IMAGES']['VALUE'] as $key => $IMAGES):
-		if (CModule::IncludeModule("millcom.phpthumb"))
-			$WEBP = CMillcomPhpThumb::generateImg($IMAGES, 2);
+<div class="swiper gallerySwiper2">
+	<div class="swiper-wrapper">
+		<?
+		// Инициализируем переменную для подсчета слайдов
+		$slideCount = 0;
+		foreach ($arResult["ITEMS"] as $arItem) :
+			if (CModule::IncludeModule("millcom.phpthumb")) {
+				$arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']["WEBP"] = CMillcomPhpThumb::generateImg($arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']["SRC"], 2);
+				$arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']["PNG"] = CMillcomPhpThumb::generateImg($arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']["SRC"], 1);
+			}
+			$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+			$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+			$slideCount++; // Увеличиваем счетчик слайдов
 		?>
-		<div class="item" id="item_<?=$arResult['ID'];?>_<?=$key;?>">
-			<img src="<?=$WEBP;?>" alt="" class="w-100">
-		</div>
-	<?endforeach;?>
-</div>
-<div class="container">
-	<?if (count($arResult['PROPERTIES']['IMAGES']['VALUE']) > 1):?>
-	<div class="slider-ctrl scroll-horizontal d-none d-md-block mb-4" data-slider="gallery_<?=$arResult['ID'];?>">
-		<div class="d-flex gap-4 flex-nowrap">
-		<?foreach($arResult['PROPERTIES']['IMAGES']['VALUE'] as $IMAGES):
-			if (CModule::IncludeModule("millcom.phpthumb"))
-				$WEBP = CMillcomPhpThumb::generateImg($IMAGES, 3);
-			?>
-			<div class="item">
-				<a href="#" class="rounded-5">
-					<img src="<?=$WEBP;?>" alt="" class="rounded-5">
-				</a>
+			<div class="swiper-slide">
+				<div class="swiper__title d-flex gap-3 position-absolute align-items-center">
+					<div class="swiper__box-svg rounded-circle bg-secondary d-flex justify-content-center align-items-center">
+						<img src="<?= $arItem['DISPLAY_PROPERTIES']['ICON']['FILE_VALUE']['SRC'] ?>" />
+					</div>
+					<div class="fs-18 text-white"><?= $arItem["NAME"] ?></div>
+				</div>
+				<picture>
+					<source srcset="<?= $arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']['WEBP'] ?>" type="image/webp"><img class="rounded-2 w-100 h-100" src="<?= $arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']['PNG'] ?>" />
+				</picture>
 			</div>
-		<?endforeach;?>
-		</div>
+		<? endforeach; ?>
 	</div>
-	<?endif;?>
+</div>
+<? $this->SetViewTarget('gallery-swiper'); ?>
+<div thumbsSlider="" class="swiper gallerySwiper d-none d-lg-block">
+	<div class="swiper-wrapper mb-5">
+		<?
+		// Инициализируем переменную для подсчета слайдов
+		$slideCount = 0;
+		foreach ($arResult["ITEMS"] as $arItem) :
+			if (CModule::IncludeModule("millcom.phpthumb")) {
+				$arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']["WEBP"] = CMillcomPhpThumb::generateImg($arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']["SRC"], 2);
+				$arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']["PNG"] = CMillcomPhpThumb::generateImg($arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']["SRC"], 1);
+			}
+			$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+			$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+			$slideCount++; // Увеличиваем счетчик слайдов
+		?>
+			<div class="swiper-slide">
+				<div class="swiper__box-small-svg rounded-circle bg-secondary position-absolute d-flex justify-content-center align-items-center">
+					<img src="<?= $arItem['DISPLAY_PROPERTIES']['ICON']['FILE_VALUE']['SRC'] ?>" />
+				</div>
+				<picture>
+					<source srcset="<?= $arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']['WEBP'] ?>" type="image/webp"><img class="rounded-2 w-100 h-100" src="<?= $arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']['PNG'] ?>" />
+				</picture>
+			</div>
+		<? endforeach; ?>
+	</div>
+</div>
+<div class="swiper__control d-flex align-items-center gap-4">
+	<span class="swiper__span fs-20 fw-700 lh-12">01</span>
+	<div class="swiper-pagination position-relative d-flex align-items-center"></div>
+	<span class="swiper__span fs-20 fw-700 lh-12"><? echo ($slideCount < 10) ? str_pad($slideCount, 2, '0', STR_PAD_LEFT) : $slideCount; ?></span>
+	<div class="swiper__buttons d-flex gap-1">
+		<div class="swiper-button-prev rounded-circle border-success border"></div>
+		<div class="swiper-button-next rounded-circle border-success border"></div>
+	</div>
+</div>
+<? $this->EndViewTarget(); ?>
