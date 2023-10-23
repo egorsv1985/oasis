@@ -244,12 +244,12 @@
         },
       },
       pagination: {
-        el: ".swiper-pagination",
+        el: "#gallery .swiper-pagination",
         clickable: true,
       },
       navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: "#gallery .swiper-button-next",
+        prevEl: "#gallery .swiper-button-prev",
       },
       freeMode: true,
       watchSlidesProgress: true,
@@ -260,12 +260,51 @@
       spaceBetween: 30,
 
       pagination: {
-        el: ".swiper-pagination",
+        el: "#gallery .swiper-pagination",
         clickable: true,
       },
       navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: "#gallery .swiper-button-next",
+        prevEl: "#gallery .swiper-button-prev",
+      },
+      thumbs: {
+        swiper: swiper,
+      },
+    });
+    var swiper = new Swiper(".gallerySwiper", {
+      loop: true,
+      spaceBetween: 30,
+      slidesPerView: 1,
+      // Responsive breakpoints
+      breakpoints: {
+        // when window width is >= 992px
+        992: {
+          slidesPerView: 2,
+        },
+      },
+      pagination: {
+        el: "#services-item .swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: "#services-item .swiper-button-next",
+        prevEl: "#services-item .swiper-button-prev",
+      },
+      freeMode: true,
+      watchSlidesProgress: true,
+    });
+
+    var swiper2 = new Swiper(".gallerySwiper2", {
+      loop: true,
+      spaceBetween: 30,
+
+      pagination: {
+        el: "#services-item .swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: "#services-item .swiper-button-next",
+        prevEl: "#services-item .swiper-button-prev",
       },
       thumbs: {
         swiper: swiper,
@@ -294,5 +333,13 @@
 
     // Вызов функции для проверки поддержки WebP
     checkWebpSupport();
+  }),
+  jQuery(document).ready(function () {
+    var e = document.querySelectorAll('input[type="tel"]');
+    jQuery(e).inputmask({
+      mask: ["+7 (999) 999 99 99", "8 (999) 999 99 99"],
+      greedy: !1,
+      placeholder: "_",
+    });
   });
 })();
