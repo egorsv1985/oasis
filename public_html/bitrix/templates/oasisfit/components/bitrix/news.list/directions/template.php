@@ -33,7 +33,6 @@ $this->setFrameMode(true);
 			</div>
 			<div class="fs-16 lh-13 text-white">
 				<?= $arItem["PREVIEW_TEXT"] ?>
-
 			</div>
 		</div>
 		<div class="col-12 col-lg-2">
@@ -41,9 +40,5 @@ $this->setFrameMode(true);
 				Ваш прогресс к более сложным упражнениям и программам
 			</div>
 		</div>
-
 	<? endforeach; ?>
-
-
-
 </div>

@@ -192,13 +192,13 @@
   background-color: var(--bs-breadcrumb-bg);
   border-radius: var(--bs-breadcrumb-border-radius);
 }
-.breadcrumb-item{
+.breadcrumb-item {
   color: #b8ada0;
 }
 .breadcrumb-item + .breadcrumb-item::before {
   display: none;
 }
-.directions .container{
+.directions .container {
   z-index: 1;
 }
 .nav-tabs {
@@ -395,7 +395,8 @@ a:-webkit-any-link:focus-visible {
   border-bottom: none;
 }
 
-.form-control:focus ~ .form-label {
+.form-control:focus ~ .form-label,
+.form__textarea:focus ~ .form__label--textarea {
   opacity: 0;
 }
 
@@ -405,6 +406,37 @@ a:-webkit-any-link:focus-visible {
   opacity: 1;
 }
 
+.form-control:active ~ .form-label,
+.form-control:focus ~ .form-label,
+.form-control:hover ~ .form-label,
+.form__textarea:not(:placeholder-shown) + .form__label,
+input:not([type="textarea"]):valid + .form__label {
+  opacity: 0;
+  top: 0;
+}
+
+.vacancies__form::before {
+  content: "";
+  display: block;
+  background: url("img/icons/star-dark.svg") no-repeat center/cover;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  right: 2%;
+}
+.vacancies .form__label--bg {
+  width: 50px;
+  height: 50px;
+  display: block;
+  background: url("img/icons/download.svg") no-repeat center/15px;
+}
+.vacancies .form-label.form__label--textarea {
+  top: 25%;
+}
+.vacancies .form__btn {
+  margin-bottom: 130px;
+}
 .form-file {
   transform: none;
 }
@@ -984,7 +1016,7 @@ body.modal-show::after {
 .swiper-pagination-bullet-active {
   height: 3px;
 }
-.gallerySwiper2{
+.gallerySwiper2 {
   height: 100%;
 }
 .breadcrumb__nav {
@@ -1552,28 +1584,6 @@ body.modal-show::after {
 .vacancies .card__btn[aria-expanded="true"] .vacancies__box-circle::before {
   transform: translate(-50%, -50%) rotate(45deg);
 }
-.vacancies .form::before {
-  content: "";
-  display: block;
-  background: url("img/icons/star-dark.svg") no-repeat center/cover;
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  top: -25px;
-  right: 2%;
-}
-.vacancies .form__label--bg {
-  width: 50px;
-  height: 50px;
-  display: block;
-  background: url("img/icons/download.svg") no-repeat center/15px;
-}
-.vacancies .form__label--textarea {
-  top: 25%;
-}
-.vacancies .form__btn {
-  margin-bottom: 130px;
-}
 
 .events {
   padding-top: 150px;
@@ -1699,10 +1709,10 @@ body.modal-show::after {
   position: absolute;
   top: 0;
   right: 0%;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
-.events__item:hover .events__content::before{
- background-color: rgba(184, 173, 160, 50);
+.events__item:hover .events__content::before {
+  background-color: rgba(184, 173, 160, 50);
 }
 
 .services-item {
@@ -1759,9 +1769,9 @@ body.modal-show::after {
 .directions .line2 {
   background: url("img/icons/line2.svg") no-repeat center/100% auto;
   bottom: 16%;
-    right: 0%;
-    width: 34%;
-    height: 17%;
+  right: 0%;
+  width: 34%;
+  height: 17%;
 }
 .directions__citation {
   position: relative;
@@ -1844,26 +1854,21 @@ body.modal-show::after {
     top: -2%;
   }
   .directions::after,
-.directions::before {
- 
-  height: 12%;
-  
-}
-.directions::before {
- 
-  top: -6%;
-}
-.directions::after {
-  bottom: -6%;
-  
-}
+  .directions::before {
+    height: 12%;
+  }
+  .directions::before {
+    top: -6%;
+  }
+  .directions::after {
+    bottom: -6%;
+  }
 }
 .trainers .swiper__box-content {
   transform: rotate(270deg);
   transform-origin: left top;
   z-index: 1;
 }
-
 
 .forms__form {
   background: rgba(255, 255, 255, 0.5);
