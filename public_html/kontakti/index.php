@@ -103,12 +103,12 @@ $APPLICATION->SetTitle("Контакты");
 					</ul>
 					<div class="row align-items-center gy-3 mb-3">
 						<div class="col-12 col-sm-6">
-							<a class="btn border-primary py-2 rounded-2 d-block text-center">
+							<a class="contacts__btn--link btn border-primary py-2 rounded-2 d-block text-center">
 								<img src="/bitrix/templates/oasisfit/img/icons/app-store-dark.svg" data-bx-app-ex-src="#BXAPP0#" class="mw-100" data-bx-orig-src="/bitrix/templates/oasisfit/img/icons/app-store-dark.svg">
 							</a>
 						</div>
 						<div class="col-12 col-sm-6">
-							<a class="btn border-primary py-2 rounded-2 d-block text-center">
+							<a class="contacts__btn--link btn border-primary py-2 rounded-2 d-block text-center">
 								<img src="/bitrix/templates/oasisfit/img/icons/google-play-dark.svg" data-bx-app-ex-src="#BXAPP1#" class="mw-100" data-bx-orig-src="/bitrix/templates/oasisfit/img/icons/google-play-dark.svg">
 							</a>
 						</div>
@@ -120,5 +120,4 @@ $APPLICATION->SetTitle("Контакты");
 			</div>
 		</div>
 	</section>
-</main>
-<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+</main><? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

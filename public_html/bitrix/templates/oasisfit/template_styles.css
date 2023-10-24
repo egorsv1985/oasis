@@ -144,7 +144,7 @@
   --bs-btn-color: #fff;
   --bs-btn-bg: #7d6858;
   --bs-btn-border-color: #7d6858;
-  --bs-btn-hover-color: #262722;
+  --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #b8ada0;
   --bs-btn-hover-border-color: #b8ada0;
   --bs-btn-focus-shadow-rgb: 49, 132, 253;
@@ -161,7 +161,7 @@
   --bs-btn-color: #7d6858;
   --bs-btn-bg: #fff;
   --bs-btn-border-color: #fff;
-  --bs-btn-hover-color: #262722;
+  --bs-btn-hover-color: #7D6858;
   --bs-btn-hover-bg: #d3d4d5;
   --bs-btn-hover-border-color: #c6c7c8;
   --bs-btn-focus-shadow-rgb: 211, 212, 213;
@@ -414,7 +414,10 @@ input:not([type="textarea"]):valid + .form__label {
   opacity: 0;
   top: 0;
 }
-
+.vacancies__form{
+  /* background: url("img/form-fon.png") no-repeat bottom center/ 75% 38%; */
+  background-color: red;
+}
 .vacancies__form::before {
   content: "";
   display: block;
@@ -1112,7 +1115,25 @@ body.modal-show::after {
   bottom: 0;
   width: 100%;
 }
-
+.promo__box-fon-1::after,
+.promo__box-fon-1::before
+{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  
+}
+.promo__box-fon-1::after{
+background: url("img/fon-left.png") no-repeat left center/ 50% 100%;
+left: -50%;
+}
+.promo__box-fon-1::before{
+background: url("img/fon-right.png") no-repeat right center/ 50% 100%;
+right: -50%;
+}
 .promo__box-trener {
   background: url("img/foto-trener2.png") no-repeat;
   background-size: 80% auto;
@@ -1176,7 +1197,8 @@ body.modal-show::after {
 }
 
 .about {
-  padding-block: 90px;
+  padding-top: 90px;
+  padding-bottom: 150px;
 }
 .about::before {
   content: "";
@@ -1541,7 +1563,9 @@ body.modal-show::after {
   top: 50%;
   transform: translateY(-50%);
 }
-
+.contacts__btn--link:hover{
+  background-color: rgba(125, 104, 88, .1) ;
+}
 .vacancies {
   padding-block: 170px;
 }
@@ -1938,10 +1962,12 @@ body.modal-show::after {
 .modal .form__btn {
   width: 100%;
 }
-
+.main .header{
+  background-color: transparent;
+}
 .header {
-  z-index: 999;
-  background: var(--bs-secondary);
+  
+  background-color: var(--bs-secondary);
 }
 
 .header__btn-shedule {
@@ -2062,8 +2088,9 @@ body.modal-show::after {
   flex: 1 0 0%;
 }
 .header__menu-bottom .btn:hover {
-  background-color: #262722;
+  background-color: rgba(255, 255, 255, .1);
 }
+
 .header__menu-link--map {
   background: url("img/icons/place-white.svg") no-repeat center/cover;
   width: 50px;

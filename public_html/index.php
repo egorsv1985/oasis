@@ -11,7 +11,7 @@ $APPLICATION->SetTitle("Главная");
 				<div class="col-11 offset-1 h-100">
 					<div class="promo__box-fon text-center position-relative h-100">
 						<div class="promo__box-trener position-absolute w-100 h-100"></div>
-						<div class="promo__box-fon-1 d-inline-block h-100">
+						<div class="promo__box-fon-1 position-relative d-inline-block h-100">
 							<picture>
 								<source srcset="<?= SITE_TEMPLATE_PATH ?>/img/fon.webp" type="image/webp"><img src="<?= SITE_TEMPLATE_PATH ?>/img/fon.png" alt="oasisfit" class="h-100">
 							</picture>

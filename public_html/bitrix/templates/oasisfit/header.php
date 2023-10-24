@@ -59,7 +59,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 	<body class="<?= PAGE === "MAIN" ? 'main' : '' ?>">
 
 		<div class="wrapper">
-			<header class="header py-3 position-fixed w-100">
+			<header class="header py-3 fixed-top w-100">
 				<div class="container">
 					<div class="row">
 						<div class="col-6 col-xl-4">
