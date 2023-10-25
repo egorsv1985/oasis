@@ -65,9 +65,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 						Нажимая на кнопку, вы даете согласие на обработку персональных
 						данных
 					</p>
-
 				</form>
-
 			</div>
 		</div>
 	</div>
