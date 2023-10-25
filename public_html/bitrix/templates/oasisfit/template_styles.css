@@ -161,7 +161,7 @@
   --bs-btn-color: #7d6858;
   --bs-btn-bg: #fff;
   --bs-btn-border-color: #fff;
-  --bs-btn-hover-color: #7D6858;
+  --bs-btn-hover-color: #7d6858;
   --bs-btn-hover-bg: #d3d4d5;
   --bs-btn-hover-border-color: #c6c7c8;
   --bs-btn-focus-shadow-rgb: 211, 212, 213;
@@ -414,7 +414,7 @@ input:not([type="textarea"]):valid + .form__label {
   opacity: 0;
   top: 0;
 }
-.vacancies__form{
+.vacancies__form {
   /* background: url("img/form-fon.png") no-repeat bottom center/ 75% 38%; */
   background-color: red;
 }
@@ -1116,23 +1116,21 @@ body.modal-show::after {
   width: 100%;
 }
 .promo__box-fon-1::after,
-.promo__box-fon-1::before
-{
+.promo__box-fon-1::before {
   content: "";
   display: block;
   position: absolute;
   top: 0;
   bottom: 0;
   width: 100%;
-  
 }
-.promo__box-fon-1::after{
-background: url("img/fon-left.png") no-repeat left center/ 50% 100%;
-left: -50%;
+.promo__box-fon-1::after {
+  background: url("img/fon-left.png") no-repeat left center/ 50% 100%;
+  left: -50%;
 }
-.promo__box-fon-1::before{
-background: url("img/fon-right.png") no-repeat right center/ 50% 100%;
-right: -50%;
+.promo__box-fon-1::before {
+  background: url("img/fon-right.png") no-repeat right center/ 50% 100%;
+  right: -50%;
 }
 .promo__box-trener {
   background: url("img/foto-trener2.png") no-repeat;
@@ -1563,8 +1561,8 @@ right: -50%;
   top: 50%;
   transform: translateY(-50%);
 }
-.contacts__btn--link:hover{
-  background-color: rgba(125, 104, 88, .1) ;
+.contacts__btn--link:hover {
+  background-color: rgba(125, 104, 88, 0.1);
 }
 .vacancies {
   padding-block: 170px;
@@ -1921,6 +1919,7 @@ right: -50%;
 .header__link {
   width: 50px;
   height: 50px;
+
   display: block;
   transition: all 0.2s ease-out;
 }
@@ -1929,6 +1928,11 @@ right: -50%;
 .footer__link:hover,
 .header__link:hover {
   background-color: #b8ada0;
+}
+.social__link:hover svg path,
+.footer__link:hover svg path,
+.header__link:hover svg path {
+  fill: #fff;
 }
 .modal__content {
   border-radius: 40px;
@@ -1962,11 +1966,10 @@ right: -50%;
 .modal .form__btn {
   width: 100%;
 }
-.main .header{
+.main .header {
   background-color: transparent;
 }
 .header {
-  
   background-color: var(--bs-secondary);
 }
 
@@ -1996,15 +1999,29 @@ right: -50%;
   display: none;
   color: #fff;
 }
-.header__link--work {
-  background: url("img/icons/time-white.svg") no-repeat center/cover;
+
+.header__link--work,
+.header__link--phone,
+.header__menu-link--map {
   width: 50px;
   height: 50px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+.header__link--phone{
+  border: 1px solid #B8ADA0;
+}
+.header__link--work {
+  background: url("img/icons/time-white.svg") no-repeat center/20px;
+}
+.header__link--work:hover {
+  background: #fff url("img/icons/time-dark.svg") no-repeat center/20px;
 }
 .header__link--phone {
-  background: url("img/icons/phone-dark.svg") no-repeat center/cover;
-  width: 50px;
-  height: 50px;
+  background: url("img/icons/phone-dark.svg") no-repeat center/18px;
+}
+.header__link--phone:hover {
+  background: #b8ada0 url("img/icons/phone-white.svg") no-repeat center/18px;
 }
 .header__menu {
   color: #fff;
@@ -2072,7 +2089,23 @@ right: -50%;
   transition: width 0.3s cubic-bezier(0.03, 0.3, 0.4, 0.96);
   transform: skew(-10deg);
 }
-
+.header__menu nav ul button::after {
+  content: "";
+  display: block;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background: #fff url("img/icons/arrow-menu.svg") no-repeat center / 9px 5px;
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease-in-out;
+}
+.header__menu nav ul button:hover::after {
+  background: #fff url("img/icons/arrow-menu-transform.svg") no-repeat center /
+    9px 5px;
+}
 .header__menu nav ul li a:hover,
 .header__menu nav ul button:hover {
   background-color: transparent;
@@ -2088,14 +2121,16 @@ right: -50%;
   flex: 1 0 0%;
 }
 .header__menu-bottom .btn:hover {
-  background-color: rgba(255, 255, 255, .1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .header__menu-link--map {
-  background: url("img/icons/place-white.svg") no-repeat center/cover;
-  width: 50px;
-  height: 50px;
+  background: url("img/icons/place-white.svg") no-repeat center/18px 22px;
 }
+.header__menu-link--map:hover {
+  background: #fff url("img/icons/place-dark.svg") no-repeat center/18px 22px;
+}
+
 .header__services {
   padding-top: 8rem;
   padding-left: 30px;
@@ -2153,9 +2188,15 @@ right: -50%;
   }
 }
 .footer__link {
-  background: url("img/icons/place-dark.svg") no-repeat center/cover;
+  background: url("img/icons/place-dark.svg") no-repeat center/18px 22px;
   width: 50px;
   height: 50px;
+  border: 1px solid #b8ada0;
+  border-radius: 50%;
+}
+.footer__link:hover {
+  background: #b8ada0 url("img/icons/place-white.svg") no-repeat center/18px
+    22px;
 }
 
 .open .header__menu {
