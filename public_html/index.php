@@ -13,7 +13,7 @@ $APPLICATION->SetTitle("Главная");
 						</div>
 						<div class="promo__box-fon-1 position-relative d-inline-block h-100">
 							<picture>
-								<source srcset="<?= SITE_TEMPLATE_PATH ?>/img/fon.webp" type="image/webp"><img src="<?= SITE_TEMPLATE_PATH ?>/img/fon.png" alt="oasisfit" class="h-100">
+								<source srcset="<?= SITE_TEMPLATE_PATH ?>/img/fon-promo.png" type="image/webp"><img src="<?= SITE_TEMPLATE_PATH ?>/img/fon-promo.png" alt="oasisfit" class="h-100">
 							</picture>
 						</div>
 						<div class="promo__box-text-fon d-inline-block h-100 position-absolute start-50">
