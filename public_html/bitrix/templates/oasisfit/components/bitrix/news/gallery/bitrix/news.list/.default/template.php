@@ -11,7 +11,7 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-// print_r($arResult);
+print_r($arResult);
 
 ?>
 <div class="swiper gallerySwiper2">
@@ -50,8 +50,8 @@ $this->setFrameMode(true);
 		$slideCount = 0;
 		foreach ($arResult["ITEMS"] as $arItem) :
 			if (CModule::IncludeModule("millcom.phpthumb")) {
-				$arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']["WEBP"] = CMillcomPhpThumb::generateImg($arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']["SRC"], 2);
-				$arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']["PNG"] = CMillcomPhpThumb::generateImg($arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']["SRC"], 1);
+				$arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']["WEBP"] = CMillcomPhpThumb::generateImg($arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']["SRC"], 9);
+				$arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']["PNG"] = CMillcomPhpThumb::generateImg($arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']["SRC"], 8);
 			}
 			$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 			$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));

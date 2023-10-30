@@ -1270,7 +1270,8 @@ body.modal-show::after {
     no-repeat 85% 18%/23px 23px;
     transition: all .3s ease-in-out;
 }
-.about__box-content:hover {
+.about__box-content:hover,
+.services-item__box-content:hover {
   background-position: 90% 15%;
   border: 1px solid #CFC8BE;
 }
@@ -1772,6 +1773,7 @@ body.modal-show::after {
   max-height: 210px;
   background: rgba(255, 255, 255, 0.4) url("img/icons/arrow-about.svg")
     no-repeat 85% 18%/23px 23px;
+    transition: all .3s ease-in-out;
 }
 .services-item__box-content::before {
   content: "";
@@ -1980,10 +1982,10 @@ body.modal-show::after {
   top: 50%;
   opacity: 0;
 }
-.modal .form__input::placeholder {
+input::placeholder {
   font-size: 16px;
   line-height: 20px;
-  color: #fff;
+  color: #8E8D88;
 }
 .modal .form__btn {
   width: 100%;
