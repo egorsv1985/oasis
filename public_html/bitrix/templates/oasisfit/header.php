@@ -83,23 +83,20 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 								</div>
 							</div>
 						</div>
-						<div class="col-6 col-xl-5 position-relative header__box-logo">
+						<div class="col-4 position-relative header__box-logo">
 							<div class="text-center">
-
 								<a href="/" class="d-block mw-100 text-center">
 									<picture>
 										<source srcset="<?= PAGE === "MAIN" ? SITE_TEMPLATE_PATH . '/img/logo_oasis.webp' : SITE_TEMPLATE_PATH . '/img/logo_oasis-black.webp' ?>" type="image/webp">
 										<img src="<?= PAGE === "MAIN" ? SITE_TEMPLATE_PATH . '/img/logo_oasis.png' : SITE_TEMPLATE_PATH . '/img/logo_oasis-black.png' ?>" alt="oasis" title="oasis" class="mw-100" width="141" height="58">
 									</picture>
-
-
 								</a>
 							</div>
 						</div>
-						<div class="col-3 d-none d-xl-block">
+						<div class="col-2 col-xl-3 d-block">
 							<a href="tel:+73462949090" class="d-flex gap-2 justify-content-end align-items-center">
 								<div class="header__link header__link--phone rounded-circle"></div>
-								<div class="fs-20 fw-700 text-end">
+								<div class="d-none d-xl-block fs-20 fw-700 text-end">
 									<span class="d-block text-nowrap">+7 346 294 90 90</span>
 								</div>
 							</a>

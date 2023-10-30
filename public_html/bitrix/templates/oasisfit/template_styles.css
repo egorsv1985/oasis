@@ -1128,7 +1128,7 @@ body.modal-show::after {
   width: 100%;
 }
 .promo__box-fon-1 {
-  left: -56%;
+  left: 0%;
 }
 .promo__box-fon-1::after {
   background: url("img/fon-left.png") no-repeat left center/ 100% 99%;
@@ -1140,9 +1140,11 @@ body.modal-show::after {
 }
 .promo__box-trener {
   background: url("img/foto-trener2.png") no-repeat;
-  background-size: 223% auto;
-  background-position: 35% 0%;
-  z-index: 1;
+  background-size: 100% auto;
+    background-position: 0% 0%;
+    z-index: 1;
+    left: 10%;
+    top: -2%;
 }
 .error__box-trener {
   background: url("img/404.png") no-repeat;
@@ -1223,12 +1225,12 @@ body.modal-show::after {
     display: block;
   }
   .promo__box {
-    /* max-width: 510px;
+    max-width: 510px;
     left: 0;
     right: 20%;
     bottom: inherit;
     z-index: 2;
-    top: 20%; */
+    top: 20%;
   }
   .main .footer {
     z-index: 1;
@@ -1266,6 +1268,11 @@ body.modal-show::after {
   max-height: 210px;
   background: rgba(255, 255, 255, 0.4) url("img/icons/arrow-about.svg")
     no-repeat 85% 18%/23px 23px;
+    transition: all .3s ease-in-out;
+}
+.about__box-content:hover {
+  background-position: 90% 15%;
+  border: 1px solid #CFC8BE;
 }
 
 .plans {
@@ -2018,7 +2025,7 @@ body.modal-show::after {
 .header__link--work,
 .header__link--phone,
 .header__menu-link--map {
-  width: 50px;
+  min-width: 50px;
   height: 50px;
   border-radius: 50%;
   border: 1px solid #fff;
@@ -2033,10 +2040,10 @@ body.modal-show::after {
   background: #fff url("img/icons/time-dark.svg") no-repeat center/20px;
 }
 .header__link--phone {
-  background: url("img/icons/phone-dark.svg") no-repeat center/18px;
+  background: url("img/icons/phone-white.svg") no-repeat center/18px;
 }
 .header__link--phone:hover {
-  background: #b8ada0 url("img/icons/phone-white.svg") no-repeat center/18px;
+  background: #fff url("img/icons/phone-dark.svg") no-repeat center/18px;
 }
 .header__menu {
   color: #fff;
@@ -2075,6 +2082,12 @@ body.modal-show::after {
 @media only screen and (min-width: 991px) {
   .header__menu::after {
     left: -75%;
+  }
+  .header__link--phone {
+    background: url("img/icons/phone-dark.svg") no-repeat center/18px;
+  }
+  .header__link--phone:hover {
+    background: #b8ada0 url("img/icons/phone-white.svg") no-repeat center/18px;
   }
 }
 .header__menu nav ul {

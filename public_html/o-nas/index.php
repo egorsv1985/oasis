@@ -186,7 +186,7 @@ $APPLICATION->SetTitle("О нас"); ?>
 				</div>
 
 				<div class="tab-pane fade show active" id="tab-2" role="tabpanel" aria-labelledby="tab2-tab">
-					<div class="plans__img position-relative" style="padding-top: 70%; background: url(plan.svg) no-repeat center / 100% 100%;">
+					<div class="plans__img position-relative" style="padding-top: 70%; background: url(plan.svg) no-repeat center / 100% 100%; z-index:1">
 						<?
 						$arSelect = array("ID", "NAME", "PROPERTY_ICO", "PROPERTY_TOP", "PROPERTY_LEFT", "PROPERTY_LINK", "PROPERTY_COLOR");
 						$arFilter = array(
