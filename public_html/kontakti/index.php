@@ -6,8 +6,8 @@ $APPLICATION->SetTitle("Контакты");
 ?><main class="pt-5">
 	<section class="contacts" id="contacts">
 		<div class="container">
-			<div class="row mb-4">
-				<div class="col-1">
+			<div class="row mb-4 gy-4">
+				<div class="col-2 col-md-1">
 					<? $APPLICATION->IncludeComponent(
 						"bitrix:breadcrumb",
 						".default",
@@ -22,7 +22,7 @@ $APPLICATION->SetTitle("Контакты");
 						)
 					); ?>
 				</div>
-				<div class="col-11">
+				<div class="col-12 col-md-11 order-1 order-md-0">
 					<? $APPLICATION->IncludeComponent(
 						"bitrix:map.yandex.view",
 						".default",
@@ -36,7 +36,7 @@ $APPLICATION->SetTitle("Контакты");
 							),
 							"INIT_MAP_TYPE" => "MAP",
 							"MAP_DATA" => "a:4:{s:10:\"yandex_lat\";d:61.263305193075;s:10:\"yandex_lon\";d:73.429972213835;s:12:\"yandex_scale\";i:15;s:10:\"PLACEMARKS\";a:1:{i:0;a:3:{s:3:\"LON\";d:37.834502840623;s:3:\"LAT\";d:55.811321389916;s:4:\"TEXT\";s:0:\"\";}}}",
-							"MAP_HEIGHT" => "500",
+							"MAP_HEIGHT" => "480",
 							"MAP_ID" => "",
 							"MAP_WIDTH" => "100%",
 							"OPTIONS" => array(
@@ -49,20 +49,50 @@ $APPLICATION->SetTitle("Контакты");
 						false
 					); ?>
 				</div>
-			</div>
-			<div class="row gy-4">
-				<div class="col-12 col-md-4 col-lg-3">
+				<div class="col-10 col-md-4 col-lg-3">
 					<h2 class="fs-40 lh-12 fw-700 mb-4"><? $APPLICATION->ShowTitle(true); ?></h2>
 					<div class="fs-20 mb-4">
 						Мы всегда на связи!
 					</div>
-					<a href="#" class="contacts__box-content d-block">
+					<a href="#" class="contacts__box-content d-block mb-4 mb-md-0">
 						<div class="fs-20 text-info">
 							Написать в WhatsApp
 						</div>
 					</a>
+					<div class="d-md-none">
+						<a href="#" class="d-flex gap-2 mb-4 align-items-center">
+							<div class="contacts__link contacts__link--map">
+							</div>
+							<div class="fs-16 fw-700">
+								<div>
+									г. Сургут,<br>
+									ул.Профсоюзов, 53/2
+								</div>
+							</div>
+						</a> <a href="tel:+73462949090" class="d-flex gap-2 mb-4 align-items-center">
+							<div class="contacts__link contacts__link--phone">
+							</div>
+							<div class="fs-16 fw-700 text-end">
+								<span class="d-block text-nowrap">+7 346 294 90 90</span>
+							</div>
+						</a>
+						<div class="d-flex gap-2 mb-4 align-items-center">
+							<div class="contacts__link contacts__link--work">
+							</div>
+							<div class="fs-16 fw-700 text-end">
+								<span class="d-block">Пн-Пт 6:30-23:00 </span> <span class="d-block">Сб-Вс 9:00-22:00 </span>
+							</div>
+						</div>
+						<a href="mailto:info@oasis.ru" class="d-flex gap-2 mb-4 align-items-center">
+							<div class="contacts__link contacts__link--phone">
+							</div>
+							<div class="fs-16 fw-700 text-end">
+								<span class="d-block text-nowrap">info@oasis.ru</span>
+							</div>
+						</a>
+					</div>
 				</div>
-				<div class="col-12 col-md-4 col-lg-3 offset-lg-1">
+				<div class="d-none d-md-block col-md-4 col-lg-3 offset-lg-1">
 					<a href="#" class="d-flex gap-2 mb-4 align-items-center">
 						<div class="contacts__link contacts__link--map">
 						</div>
@@ -94,7 +124,7 @@ $APPLICATION->SetTitle("Контакты");
 						</div>
 					</a>
 				</div>
-				<div class="col-12 col-md-4 offset-xl-1">
+				<div class="col-12 col-md-4 offset-xl-1 order-2 order-md-0">
 					<ul class="contacts__list mb-4">
 						<li><a href="#">Способы оплаты</a></li>
 						<li><a href="#">Правила клуба</a></li>
