@@ -11,7 +11,7 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-print_r($arResult);
+// print_r($arResult);
 
 ?>
 <div class="swiper gallerySwiper2">
@@ -29,15 +29,19 @@ print_r($arResult);
 			$slideCount++; // Увеличиваем счетчик слайдов
 		?>
 			<div class="swiper-slide">
-				<div class="swiper__title d-flex gap-3 position-absolute align-items-center">
-					<div class="swiper__box-svg rounded-circle bg-secondary d-flex justify-content-center align-items-center">
-						<img src="<?= $arItem['DISPLAY_PROPERTIES']['ICON']['FILE_VALUE']['SRC'] ?>" />
+
+				<div class="swiper__box-img position-relative">
+					<div class="swiper__title d-flex gap-3 position-absolute align-items-center">
+						<div class="swiper__box-svg rounded-circle bg-secondary d-flex justify-content-center align-items-center">
+							<img src="<?= $arItem['DISPLAY_PROPERTIES']['ICON']['FILE_VALUE']['SRC'] ?>" />
+						</div>
+						<div class="fs-18 text-white"><?= $arItem["NAME"] ?></div>
 					</div>
-					<div class="fs-18 text-white"><?= $arItem["NAME"] ?></div>
+					<picture>
+						<source srcset="<?= $arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']['WEBP'] ?>" type="image/webp"><img class="rounded-2 w-100 h-auto" src="<?= $arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']['PNG'] ?>" />
+					</picture>
 				</div>
-				<picture>
-					<source srcset="<?= $arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']['WEBP'] ?>" type="image/webp"><img class="rounded-2 w-100 h-100" src="<?= $arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']['PNG'] ?>" />
-				</picture>
+
 			</div>
 		<? endforeach; ?>
 	</div>
@@ -58,12 +62,15 @@ print_r($arResult);
 			$slideCount++; // Увеличиваем счетчик слайдов
 		?>
 			<div class="swiper-slide">
-				<div class="swiper__box-small-svg rounded-circle bg-secondary position-absolute d-flex justify-content-center align-items-center">
-					<img src="<?= $arItem['DISPLAY_PROPERTIES']['ICON']['FILE_VALUE']['SRC'] ?>" />
+				<div class="swiper__box-img position-relative">
+					<div class="swiper__box-small-svg rounded-circle bg-secondary position-absolute d-flex justify-content-center align-items-center">
+						<img src="<?= $arItem['DISPLAY_PROPERTIES']['ICON']['FILE_VALUE']['SRC'] ?>" />
+					</div>
+					<picture>
+						<source srcset="<?= $arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']['WEBP'] ?>" type="image/webp"><img class="rounded-2 w-100 h-auto" src="<?= $arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']['PNG'] ?>" />
+					</picture>
 				</div>
-				<picture>
-					<source srcset="<?= $arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']['WEBP'] ?>" type="image/webp"><img class="rounded-2 w-100 h-100" src="<?= $arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']['PNG'] ?>" />
-				</picture>
+
 			</div>
 		<? endforeach; ?>
 	</div>

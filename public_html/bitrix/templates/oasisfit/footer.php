@@ -6,7 +6,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
 <footer class="footer py-5">
 	<div class="container">
-		<div class="d-flex justify-content-between align-items-center flex-column flex-sm-row gap-4">
+		<div class="d-flex justify-content-between flex-column flex-sm-row gap-4">
 			<a href="#" class="d-flex gap-2">
 				<div class="footer__link rounded-circle"></div>
 				<div class="fs-20 fw-700">
@@ -17,7 +17,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 				</div>
 			</a>
 
-			<ul class="footer__social social d-flex gap-1">
+			<ul class="footer__social social d-flex gap-1 ps-0">
 				<li>
 					<a href="#" target="_blank" class="social__link rounded-circle">
 						<?= file_get_contents($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/img/icons/vk.svg'); ?>

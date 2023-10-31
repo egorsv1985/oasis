@@ -1013,7 +1013,7 @@ body.modal-show::after {
 .swiper-pagination-bullet {
   opacity: 1;
   height: 1px;
-  width: 18%;
+  width: 20%;
   border-radius: 0;
   background-color: #b8ada0;
   margin: 0 !important;
@@ -1271,7 +1271,8 @@ body.modal-show::after {
     transition: all .3s ease-in-out;
 }
 .about__box-content:hover,
-.services-item__box-content:hover {
+.services-item__box-content:hover,
+.contacts__box-content:hover {
   background-position: 90% 15%;
   border: 1px solid #CFC8BE;
 }
@@ -1358,9 +1359,7 @@ body.modal-show::after {
   border-width: 0.75rem 0.75rem;
   border-color: rgba(255, 255, 255, 0.15) transparent transparent transparent;
 }
-.plans__content {
-  margin-top: -22%;
-}
+
 .plans__numbered-list {
   counter-reset: plan-counter; /* Сброс счетчика перед списком */
 }
@@ -1381,28 +1380,40 @@ body.modal-show::after {
 }
 
 .community {
-  padding-block: 245px;
-  background: url("img/comunity_fon.png") no-repeat center 22%/100% auto;
+  padding-block: 120px;
+  
 }
 @media only screen and (min-width: 991px) {
   .community {
-    background-size: 45% auto;
+    
+    background: url("img/comunity_fon.png") no-repeat center 22%/45% auto;
+  }
+  .plans__content {
+    margin-top: -22%;
+  }
+  .community {
+    padding-block: 240px;
+    
   }
 }
-.community .container::before {
-  content: "";
-  display: block;
-  background: url("img/phone3.png") no-repeat center/cover;
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 100%;
+@media only screen and (min-width: 1919px) {
+  .community {
+    background-size: 37% auto;
+  }
 }
+
 @media only screen and (min-width: 991px) {
+  
   .community .container::before {
-    width: 33%;
+    content: "";
+    display: block;
+    background: url("img/phone3.png") no-repeat center/100% 100%;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36%;
+    height: 100%;
   }
 }
 .community__box-fon {
@@ -1422,7 +1433,7 @@ body.modal-show::after {
   padding: 30px;
 }
 .community .swiper-wrapper {
-  margin-bottom: 375px;
+  margin-bottom: 60px;
 }
 .community .swiper-slide-active .swiper__box-content {
   background-color: initial;
@@ -1456,11 +1467,13 @@ body.modal-show::after {
   height: 390px;
   margin-bottom: 60px;
 }
+
 .cards__box-title {
   transform: rotate(270deg) translateX(-100%);
   transform-origin: top left;
   width: 390px;
   overflow: hidden;
+  mix-blend-mode: overlay;
 }
 .cards__box-content::after {
   content: "";
@@ -1492,35 +1505,43 @@ body.modal-show::after {
   top: 50%;
   transform: translateY(-50%);
 }
-.teams::before {
-  content: "";
-  display: block;
-  background: url("img/icons/oasis-teams.svg") no-repeat center/100% auto;
-  width: 80%;
-  height: 32%;
-  position: absolute;
-  left: 10%;
-  top: 12%;
-}
+
 @media only screen and (min-width: 991px) {
   .teams::before {
+    content: "";
+    display: block;
+    background: url("img/icons/oasis-teams.svg") no-repeat center/100% auto;
     width: 40%;
     left: 40%;
+    height: 32%;
+    position: absolute;
+    
+    top: 12%;
+  }
+  
+  .community .swiper-wrapper {
+    margin-bottom: 240px;
   }
 }
 .teams__list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 10px;
+}
+@media only screen and (min-width: 575px) {
+  .teams__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media only screen and (min-width: 991px) {
   .teams__list {
     grid-template-columns: repeat(3, 1fr);
   }
+  .teams .breadcrumb__box {
+    padding-top: 115px;
+  }
 }
-.teams .breadcrumb__box {
-  padding-top: 115px;
-}
+
 .teams .swiper__box-content {
   transform: rotate(270deg);
   transform-origin: left top;
@@ -1538,22 +1559,39 @@ body.modal-show::after {
   max-height: 152px;
   background: rgba(255, 255, 255, 0.4) url("img/icons/arrow-about.svg")
     no-repeat 85% 18%/23px 23px;
+    transition: all .3s ease-in-out ;
 }
+
 .contacts__link--map {
-  background: url("img/icons/place-dark.svg") no-repeat center/cover;
+  background: url("img/icons/place-dark.svg") no-repeat center/18px 22px;
   width: 50px;
   height: 50px;
+  border: 1px solid #b8ada0;
+  border-radius: 50%;
+}
+.contacts__link--map:hover {
+  background: #b8ada0 url("img/icons/place-white.svg") no-repeat center/18px 22px;
+  
 }
 .contacts__link--phone {
-  background: url("img/icons/phone-dark.svg") no-repeat center/cover;
+  background: url("img/icons/phone-dark.svg") no-repeat center/18px 18px;
   width: 50px;
   height: 50px;
+  border: 1px solid #b8ada0;
+  border-radius: 50%;
+}
+.contacts__link--phone:hover {
+  background: #b8ada0 url("img/icons/phone-white.svg") no-repeat center/18px 18px;
+  
 }
 .contacts__link--work {
-  background: url("img/icons/time-dark.svg") no-repeat center/cover;
+  background: url("img/icons/time-dark.svg") no-repeat center/21px 20px;
   width: 50px;
   height: 50px;
+  border: 1px solid #b8ada0;
+  border-radius: 50%;
 }
+
 .contacts__list {
   padding-left: 0;
 }
@@ -1640,23 +1678,44 @@ body.modal-show::after {
   margin-bottom: 60px;
 }
 .events__fon {
-  text-align: center;
-  height: 100%;
-  background: url("img/events-fon.png") top center;
+  /* text-align: center; */
+  /* height: 100%; */
+  /* background: url("img/events-fon.png") top center; */
   position: relative;
 }
+/* .events__title{
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 80px;
+  z-index: 1;
+} */
 .events__fon::before {
   content: "";
   display: block;
-  background: url("img/icons/year_2023.svg") no-repeat center top/100% auto;
+  background:  url("img/icons/year_2023.svg") no-repeat center top/100% auto;
+  width: 100.3%;
+  height: 100%;
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  right: 0;
+  z-index: 1;
+}
+/* .events__fon::after {
+  content: "";
+  display: block;
+  background: #F6F3EE;
   width: 100%;
   height: 100%;
   position: absolute;
   left: 0;
   top: 0;
   right: 0;
+} */
+.events__fon-text img{
+  width: 100%;
 }
-
 .events__day {
   padding: 10px 5px 5px 10px;
 }
@@ -1664,6 +1723,14 @@ body.modal-show::after {
   .events__day {
     padding-left: 40px;
     padding-top: 20px;
+  }
+  .events__fon-text img{
+    width: inherit;
+  }
+  .events__fon::before {
+    
+    width: 67.5%;
+    
   }
 }
 .events svg {
@@ -1909,6 +1976,10 @@ body.modal-show::after {
   .directions::after {
     bottom: -6%;
   }
+  .events__fon-text img {
+    width: 100%;
+}
+  
 }
 .trainers .swiper__box-content {
   transform: rotate(270deg);
@@ -2015,6 +2086,9 @@ input::placeholder {
     row-gap: 20px;
     height: 100%;
   }
+  .events__fon::before {
+    width: 49.9%;
+}
 }
 .header__box-logo {
   z-index: 50;
@@ -2091,6 +2165,11 @@ input::placeholder {
   .header__link--phone:hover {
     background: #b8ada0 url("img/icons/phone-white.svg") no-repeat center/18px;
   }
+  .events__fon::before {
+    
+    width: 101%;
+  
+  }
 }
 .header__menu nav ul {
   padding: 0;
@@ -2128,7 +2207,7 @@ input::placeholder {
   background: #fff url("img/icons/arrow-menu.svg") no-repeat center / 9px 5px;
   position: absolute;
   top: 50%;
-  left: 15%;
+  left: 75px;
   transform: translateY(-50%);
   transition: all 0.3s ease-in-out;
 }
@@ -2217,6 +2296,7 @@ input::placeholder {
     overflow-y: auto;
   }
 }
+
 .footer__link {
   background: url("img/icons/place-dark.svg") no-repeat center/18px 22px;
   width: 50px;

@@ -23,6 +23,11 @@ $APPLICATION->SetTitle("Галерея"); ?>
 					); ?>
 				</div>
 				<div class="col-10 col-md-11">
+				<h2 class="d-lg-none fs-40 fw-700 lh-12 mb-4">
+						<? $APPLICATION->ShowTitle(true); ?></h2>
+					<div class="d-lg-none fs-20 mb-3">
+						Знакомься с интерьерами нашего фитнес-клуба!
+					</div>
 					<? $APPLICATION->IncludeComponent(
 						"bitrix:news",
 						"gallery",
@@ -117,7 +122,7 @@ $APPLICATION->SetTitle("Галерея"); ?>
 						false
 					); ?>
 				</div>
-				<div class="col-12 col-lg-4 order-1 order-lg-0">
+				<div class="col-12 col-lg-4 order-1 order-lg-0 d-none d-lg-block">
 					<h2 class="fs-40 fw-700 lh-12 mb-4">
 						<? $APPLICATION->ShowTitle(true); ?></h2>
 					<div class="fs-20">

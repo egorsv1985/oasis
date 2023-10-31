@@ -9,7 +9,7 @@ $APPLICATION->SetTitle("О нас"); ?>
 			<div class="row">
 				<div class="col-12 col-lg-4 pt-5">
 					<div class="row">
-						<div class="col-3">
+						<div class="col-2 col-lg-3">
 							<? $APPLICATION->IncludeComponent(
 								"bitrix:breadcrumb",
 								".default",
@@ -24,7 +24,9 @@ $APPLICATION->SetTitle("О нас"); ?>
 								)
 							); ?>
 						</div>
-						<div class="col-9">
+						<div class="col-10 col-lg-9">
+						<h1 class="d-lg-none fs-40 fw-700 lh-12 mb-3"><? $APPLICATION->ShowTitle(true); ?></h1>
+						<div class="d-lg-none fs-20 mb-3">Узнай нас еще лучше!</div>
 							<a href="#" class="about__box-content d-block">
 								<div class="fs-20 text-info">
 									Меняем карту вашего клуба на
@@ -32,8 +34,8 @@ $APPLICATION->SetTitle("О нас"); ?>
 								</div>
 							</a>
 						</div>
-						<h1 class="fs-40 fw-700 lh-12 mb-3"><? $APPLICATION->ShowTitle(true); ?></h1>
-						<div class="fs-20">Узнай нас еще лучше!</div>
+						<h1 class="d-none d-lg-block fs-40 fw-700 lh-12 mb-3"><? $APPLICATION->ShowTitle(true); ?></h1>
+						<div class="d-none d-lg-block fs-20">Узнай нас еще лучше!</div>
 					</div>
 
 				</div>
@@ -210,7 +212,7 @@ $APPLICATION->SetTitle("О нас"); ?>
 					</div>
 					<div class="plans__content position-relative">
 						<div class="row">
-							<div class="col-8 col-sm-6">
+							<div class="col-12 col-lg-6">
 								<div class="fs-24 fw-700 text-white lh-15 mb-4">
 									<h2>
 										Тут можно что-нибудь написать интересное о клубе, но это не

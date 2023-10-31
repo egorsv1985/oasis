@@ -2,7 +2,8 @@
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Мероприятия");
 $APPLICATION->SetTitle("Мероприятия");
-?><main class="pt-5">
+?>
+<main class="pt-5">
 	<section class="events" id="events">
 		<div class="container">
 			<div class="row gy-4">
@@ -24,15 +25,28 @@ $APPLICATION->SetTitle("Мероприятия");
 							); ?>
 						</div>
 						<div class="col-9">
-							<div class="events__fon">
-								<div class="events__fon-text position-relative">
+							<div class="d-lg-none">
+								<h2 class="fs-40 lh-12 fw-700 mb-4"><?= $APPLICATION->GetTitle(); ?></h2>
+								<div class="fs-20 mb-4">
+									Мы всегда на связи!
 								</div>
 							</div>
+							<!-- <div class="position-relative"> -->
+							<!-- <h2 class="events__title ">2023</h2> -->
+							<div class="events__fon">
+								<div class="events__fon-text position-relative">
+									<img src="<?= SITE_TEMPLATE_PATH ?>/img/events-fon.png" alt="">
+								</div>
+							</div>
+							<!-- </div> -->
+
 						</div>
 					</div>
-					<h2 class="fs-40 lh-12 fw-700 mb-4"><?= $APPLICATION->GetTitle(); ?></h2>
-					<div class="fs-20 mb-4">
-						Мы всегда на связи!
+					<div class="d-none d-lg-block">
+						<h2 class="fs-40 lh-12 fw-700 mb-4"><?= $APPLICATION->GetTitle(); ?></h2>
+						<div class="fs-20 mb-4">
+							Мы всегда на связи!
+						</div>
 					</div>
 				</div>
 				<div class="col-12 col-lg-8">
@@ -110,66 +124,75 @@ $APPLICATION->SetTitle("Мероприятия");
 					); ?>
 				</div>
 			</div>
-			
-				<? $APPLICATION->IncludeComponent(
-					"bitrix:news.list",
-					"events",
-					array(
-						"ACTIVE_DATE_FORMAT" => "d.m.Y",
-						"ADD_SECTIONS_CHAIN" => "Y",
-						"AJAX_MODE" => "N",
-						"AJAX_OPTION_ADDITIONAL" => "",
-						"AJAX_OPTION_HISTORY" => "N",
-						"AJAX_OPTION_JUMP" => "N",
-						"AJAX_OPTION_STYLE" => "Y",
-						"CACHE_FILTER" => "N",
-						"CACHE_GROUPS" => "Y",
-						"CACHE_TIME" => "36000000",
-						"CACHE_TYPE" => "A",
-						"CHECK_DATES" => "Y",
-						"COMPONENT_TEMPLATE" => ".default",
-						"DETAIL_URL" => "",
-						"DISPLAY_BOTTOM_PAGER" => "Y",
-						"DISPLAY_DATE" => "Y",
-						"DISPLAY_NAME" => "Y",
-						"DISPLAY_PICTURE" => "Y",
-						"DISPLAY_PREVIEW_TEXT" => "Y",
-						"DISPLAY_TOP_PAGER" => "N",
-						"FIELD_CODE" => array(0 => "", 1 => "",),
-						"FILTER_NAME" => "",
-						"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-						"IBLOCK_ID" => "7",
-						"IBLOCK_TYPE" => "CONTENT",
-						"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
-						"INCLUDE_SUBSECTIONS" => "Y",
-						"MESSAGE_404" => "",
-						"NEWS_COUNT" => "20",
-						"PAGER_BASE_LINK_ENABLE" => "N",
-						"PAGER_DESC_NUMBERING" => "N",
-						"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-						"PAGER_SHOW_ALL" => "N",
-						"PAGER_SHOW_ALWAYS" => "N",
-						"PAGER_TEMPLATE" => ".default",
-						"PAGER_TITLE" => "Новости",
-						"PARENT_SECTION" => "",
-						"PARENT_SECTION_CODE" => "",
-						"PREVIEW_TRUNCATE_LEN" => "",
-						"PROPERTY_CODE" => array(0 => "TIME", 1 => "DATE", 2 => "LOCATION", 3 => "TYPE", 4 => "location", 5 => "",),
-						"SET_BROWSER_TITLE" => "Y",
-						"SET_LAST_MODIFIED" => "N",
-						"SET_META_DESCRIPTION" => "Y",
-						"SET_META_KEYWORDS" => "Y",
-						"SET_STATUS_404" => "N",
-						"SET_TITLE" => "Y",
-						"SHOW_404" => "N",
-						"SORT_BY1" => "ACTIVE_FROM",
-						"SORT_BY2" => "SORT",
-						"SORT_ORDER1" => "DESC",
-						"SORT_ORDER2" => "ASC",
-						"STRICT_SECTION_CHECK" => "N"
-					)
-				); ?>
-			</div>
+			<? $APPLICATION->IncludeComponent(
+				"bitrix:news.list",
+				"events",
+				array(
+					"ACTIVE_DATE_FORMAT" => "d.m.Y",
+					"ADD_SECTIONS_CHAIN" => "N",
+					"AJAX_MODE" => "N",
+					"AJAX_OPTION_ADDITIONAL" => "",
+					"AJAX_OPTION_HISTORY" => "N",
+					"AJAX_OPTION_JUMP" => "N",
+					"AJAX_OPTION_STYLE" => "Y",
+					"CACHE_FILTER" => "N",
+					"CACHE_GROUPS" => "Y",
+					"CACHE_TIME" => "36000000",
+					"CACHE_TYPE" => "A",
+					"CHECK_DATES" => "Y",
+					"COMPONENT_TEMPLATE" => "events",
+					"DETAIL_URL" => "",
+					"DISPLAY_BOTTOM_PAGER" => "Y",
+					"DISPLAY_DATE" => "Y",
+					"DISPLAY_NAME" => "Y",
+					"DISPLAY_PICTURE" => "Y",
+					"DISPLAY_PREVIEW_TEXT" => "Y",
+					"DISPLAY_TOP_PAGER" => "N",
+					"FIELD_CODE" => array(
+						0 => "",
+						1 => "",
+					),
+					"FILTER_NAME" => "",
+					"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+					"IBLOCK_ID" => "7",
+					"IBLOCK_TYPE" => "CONTENT",
+					"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+					"INCLUDE_SUBSECTIONS" => "Y",
+					"MESSAGE_404" => "",
+					"NEWS_COUNT" => "20",
+					"PAGER_BASE_LINK_ENABLE" => "N",
+					"PAGER_DESC_NUMBERING" => "N",
+					"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+					"PAGER_SHOW_ALL" => "N",
+					"PAGER_SHOW_ALWAYS" => "N",
+					"PAGER_TEMPLATE" => ".default",
+					"PAGER_TITLE" => "Новости",
+					"PARENT_SECTION" => "",
+					"PARENT_SECTION_CODE" => "",
+					"PREVIEW_TRUNCATE_LEN" => "",
+					"PROPERTY_CODE" => array(
+						0 => "TIME",
+						1 => "DATE",
+						2 => "LOCATION",
+						3 => "TYPE",
+						4 => "location",
+						5 => "",
+					),
+					"SET_BROWSER_TITLE" => "Y",
+					"SET_LAST_MODIFIED" => "N",
+					"SET_META_DESCRIPTION" => "Y",
+					"SET_META_KEYWORDS" => "Y",
+					"SET_STATUS_404" => "N",
+					"SET_TITLE" => "Y",
+					"SHOW_404" => "N",
+					"SORT_BY1" => "ACTIVE_FROM",
+					"SORT_BY2" => "SORT",
+					"SORT_ORDER1" => "DESC",
+					"SORT_ORDER2" => "ASC",
+					"STRICT_SECTION_CHECK" => "N"
+				),
+				false
+			); ?>
 		</div>
 	</section>
 </main>

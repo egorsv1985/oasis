@@ -43,12 +43,16 @@ foreach ($arResult['ITEMS'] as $arItem) {
 			$slideCount++; // Увеличиваем счетчик слайдов
 		?>
 			<div class="swiper-slide">
+				
+				<div class="swiper__box position-relative">
 				<div class="swiper__title d-flex gap-3 position-absolute align-items-center">
 					<div class="fs-18 text-white"><?= $arItem["NAME"] ?></div>
 				</div>
 				<picture>
-					<source srcset="<?= $arItem["WEBP"] ?>" type="image/webp"><img class="rounded-2 w-100 h-100" src="<?= $arItem["PNG"] ?>" />
+					<source srcset="<?= $arItem["WEBP"] ?>" type="image/webp"><img class="rounded-2 w-100 h-auto" src="<?= $arItem["PNG"] ?>" />
 				</picture>
+				</div>
+				
 			</div>
 		<? endforeach; ?>
 	</div>
@@ -61,14 +65,15 @@ foreach ($arResult['ITEMS'] as $arItem) {
 		$slideCount = 0;
 		foreach ($IMAGES_ARRAY as $arItem) :
 			if (CModule::IncludeModule("millcom.phpthumb")) {
-				$arItem["WEBP"] = CMillcomPhpThumb::generateImg($arItem['IMG'], 2);
-				$arItem["PNG"] = CMillcomPhpThumb::generateImg($arItem['IMG'], 1);
+				$arItem["WEBP"] = CMillcomPhpThumb::generateImg($arItem['IMG'], 9);
+				$arItem["PNG"] = CMillcomPhpThumb::generateImg($arItem['IMG'], 8);
 			}
 			$slideCount++; // Увеличиваем счетчик слайдов
 		?>
 			<div class="swiper-slide">
+
 				<picture>
-					<source srcset="<?= $arItem["WEBP"] ?>" type="image/webp"><img class="rounded-2 w-100 h-100" src="<?= $arItem["PNG"] ?>" />
+					<source srcset="<?= $arItem["WEBP"] ?>" type="image/webp"><img class="rounded-2 w-100 h-auto" src="<?= $arItem["PNG"] ?>" />
 				</picture>
 			</div>
 		<? endforeach; ?>
