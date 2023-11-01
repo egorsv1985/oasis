@@ -67,7 +67,7 @@ $this->setFrameMode(true);
 				<button type="button" class="btn-close modal__close rounded-circle opacity-100 text-white" data-bs-dismiss="modal" aria-label="Close"> </button>
 				<div class="modal-body p-0">
 					<div class="row">
-						<div class="col-12 col-lg-6 position-relative">
+						<div class="col-12 col-lg-6 position-relative d-none d-lg-block">
 							<div class="modal__box-fon text-center position-relative h-100">
 								<div class="modal__box-trener position-absolute w-100 h-100"></div>
 
