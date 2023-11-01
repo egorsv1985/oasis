@@ -179,8 +179,8 @@ if ($arResult["MESSAGE"] <> '') : ?>
 									}
 							?>
 
-								<textarea class="form-control form__textarea bg-light w-100 p-3" placeholder="" cols="<?= $arResult["PROPERTY_LIST_FULL"][$propertyID]["COL_COUNT"] ?>" rows="<?= $arResult["PROPERTY_LIST_FULL"][$propertyID]["ROW_COUNT"] ?>" id="PROPERTY[<?= $propertyID ?>][<?= $i ?>]" name="PROPERTY[<?= $propertyID ?>][<?= $i ?>]"><?= $value ?></textarea>
-								<label for="PROPERTY[<?= $propertyID ?>][<?= $i ?>]" class="form-label form__label form__label--textarea fs-16 text-info position-absolute"><?= $arResult["PROPERTY_LIST_FULL"][$propertyID]["NAME"] ?></label>
+								<textarea class="form-control form__textarea bg-light w-100 p-3" placeholder="<?= $arResult["PROPERTY_LIST_FULL"][$propertyID]["NAME"] ?>" cols="<?= $arResult["PROPERTY_LIST_FULL"][$propertyID]["COL_COUNT"] ?>" rows="<?= $arResult["PROPERTY_LIST_FULL"][$propertyID]["ROW_COUNT"] ?>" id="PROPERTY[<?= $propertyID ?>][<?= $i ?>]" name="PROPERTY[<?= $propertyID ?>][<?= $i ?>]"><?= $value ?></textarea>
+								<!-- <label for="PROPERTY[<?= $propertyID ?>][<?= $i ?>]" class="form-label form__label form__label--textarea fs-16 text-info position-absolute"><?= $arResult["PROPERTY_LIST_FULL"][$propertyID]["NAME"] ?></label> -->
 							<?
 								}
 								break;
@@ -250,7 +250,8 @@ if ($arResult["MESSAGE"] <> '') : ?>
 									<span class="form__label--bg ps-4 rounded-circle border border-primary"></span>
 									<span>Прикрепить файл (.doc, .pdf)</span>
 								</label>
-								<input type="file" class="form-control w-100 d-none" size="<?= $arResult["PROPERTY_LIST_FULL"][$propertyID]["COL_COUNT"] ?>" name="PROPERTY_FILE_<?= $propertyID ?>_<?= $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] : $i ?>">
+								<input type="file" class="form-control w-100 d-none" size="<?= $arResult["PROPERTY_LIST_FULL"][$propertyID]["COL_COUNT"] ?>" id="PROPERTY_FILE_<?= $propertyID ?>_<?= $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] : $i ?>" name="PROPERTY_FILE_<?= $propertyID ?>_<?= $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] : $i ?>">
+
 								<?
 									if (!empty($value) && is_array($arResult["ELEMENT_FILES"][$value])) {
 								?>

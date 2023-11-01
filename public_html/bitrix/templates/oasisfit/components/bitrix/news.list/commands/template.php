@@ -12,6 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 if (empty($arResult["ITEMS"])) return false;
+// print_r($arResult);
 ?>
 
 <div class="swiper teamSwiper mb-5">
@@ -83,7 +84,7 @@ if (empty($arResult["ITEMS"])) return false;
 							</div>
 						</div>
 						<div class="col-12 col-lg-6">
-							<div class="modal__box-content">
+							<div class="modal__box-content py-5 px-3">
 								<div class="fs-24 fw-700 mb-4"><?= $arItem["NAME"] ?></div>
 								<ul class="modal__list fs-16 lh-12 text-info ps-0 mb-5 flex-wrap">
 									<? foreach ($arItem['PROPERTIES']['POST']['VALUE'] as $postItem) : ?>

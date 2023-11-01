@@ -10,20 +10,18 @@ use \Bitrix\Main\Page\Asset;
 $asset = Asset::getInstance();
 $asset->addCss('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
 $asset->addCss('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
-$asset->addJs('https://code.jquery.com/jquery-3.6.0.js');
+$asset->addJs('https://code.jquery.com/jquery-3.6.0.min.js');
 $asset->addJs('https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js');
 
 $asset->addCss('https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css');
 $asset->addJs('https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js');
 
-$asset->addCss('https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css');
-$asset->addJs('https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js');
 
-$asset->addCss('https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.css');
-$asset->addJs('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.js');
+$asset->addCss('https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css');
+$asset->addJs('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js');
+
 $asset->addJs('https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js');
 
-$asset->addJs('https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js');
 
 $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 
@@ -57,7 +55,6 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 	</div>
 
 	<body class="<?= PAGE === "MAIN" ? 'main' : '' ?>">
-
 		<div class="wrapper">
 			<header class="header py-3 fixed-top w-100">
 				<div class="container">
@@ -70,7 +67,6 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 									</span>
 									<span class="fs-16 fw-700 text-uppercase">МЕНЮ</span>
 								</button>
-
 								<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="header__btn-shedule btn btn-primary py-3 fw-600 fs-16 px-5"><span>Расписание</span></button>
 								<div class="header__box-work">
 									<div class="d-flex gap-2 align-items-center">
@@ -94,7 +90,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 							</div>
 						</div>
 						<div class="col-2 col-xl-3 d-block">
-							<a href="tel:+73462949090" class="d-flex gap-2 justify-content-end align-items-center">
+							<a href="tel:+73462949090" class="d-flex gap-2 justify-content-end align-items-center" title="+73462949090">
 								<div class="header__link header__link--phone rounded-circle"></div>
 								<div class="d-none d-xl-block fs-20 fw-700 text-end">
 									<span class="d-block text-nowrap">+7 346 294 90 90</span>
@@ -133,13 +129,13 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 								<div class="header__menu-bottom pb-4 mt-4">
 									<div class="row align-items-center gy-3 px-3">
 										<div class="col-12 col-lg-6">
-											<a class="btn border-white py-2 rounded-2 d-block text-center">
-												<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/app-store-white.svg" class="mw-100">
+											<a href="#" class="btn border-white py-2 rounded-2 d-block text-center" title="app-store">
+												<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/app-store-white.svg" class="mw-100" alt="app-store" width="100" height="33">
 											</a>
 										</div>
 										<div class="col-12 col-lg-6">
-											<a class="btn border-white py-2 rounded-2 d-block text-center">
-												<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/google-play-white.svg" class="mw-100">
+											<a href="#" class="btn border-white py-2 rounded-2 d-block text-center" title="google-play">
+												<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/google-play-white.svg" class="mw-100" alt="google-play" width="100" height="33">
 											</a>
 										</div>
 										<a href="#" class="d-flex gap-2 mt-4">

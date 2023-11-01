@@ -179,7 +179,7 @@ if ($arResult["MESSAGE"] <> '') : ?>
 							for ($i = 0; $i < $inputNum; $i++) {
 
 								$inputName = "PROPERTY[" . $propertyID . "][" . $i . "]";
-								if ($inputName === "PROPERTY[31][0]") {
+								if ($inputName === "PROPERTY[1][0]") {
 							?>
 									<input placeholder="<? if (intval($propertyID) > 0) : ?><?= $arResult["PROPERTY_LIST_FULL"][$propertyID]["NAME"] ?><? else : ?><?= !empty($arParams["CUSTOM_TITLE_" . $propertyID]) ? $arParams["CUSTOM_TITLE_" . $propertyID] : GetMessage("IBLOCK_FIELD_" . $propertyID) ?><? endif ?>" class="form-control form__input bg-light rounded-2 text-info p-3 h-100" type="tel" name="<?= $inputName ?>" id="<?= $inputName ?>" value="<?= $value ?>" required>
 								<?

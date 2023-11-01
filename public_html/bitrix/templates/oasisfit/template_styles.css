@@ -868,13 +868,13 @@ body.modal-show::after {
 }
 .modal-team .modal__box-fon {
   background: url("img/fon.png") no-repeat;
-  background-size: 50% auto;
-  background-position: 55% 70%;
+  background-size: 50% 100%;
+  background-position: 55% 50%;
 }
 .modal-team .modal__box-trener {
   background: url("img/foto-trener2.png") no-repeat;
-  background-size: 111% auto;
-  background-position: 12% 26%;
+  background-size: 118% 162%;
+  background-position: 31% 22%;
 }
 .modal-team .modal__box-text {
   max-width: 255px;
@@ -887,7 +887,7 @@ body.modal-show::after {
   background-color: rgba(255, 255, 255, 0.5);
 }
 .modal-team .modal__box-content {
-  padding-block: 70px;
+  /* padding-block: 45px; */
 }
 .modal-team .modal__list {
   display: flex;
@@ -910,7 +910,7 @@ body.modal-show::after {
   top: 20%;
 }
 .modal-team .modal__numbered-list {
-  margin-bottom: 125px;
+  margin-bottom: 8%;
   counter-reset: modal-counter; /* Сброс счетчика перед списком */
 }
 .modal-team .modal__numbered-list ol {
@@ -1013,7 +1013,7 @@ body.modal-show::after {
 .swiper-pagination-bullet {
   opacity: 1;
   height: 1px;
-  width: 20%;
+  width: 50%;
   border-radius: 0;
   background-color: #b8ada0;
   margin: 0 !important;
@@ -1141,10 +1141,10 @@ body.modal-show::after {
 .promo__box-trener {
   background: url("img/foto-trener2.png") no-repeat;
   background-size: 100% auto;
-    background-position: 0% 0%;
-    z-index: 1;
-    left: 10%;
-    top: -2%;
+  background-position: 0% 0%;
+  z-index: 1;
+  left: 10%;
+  top: -2%;
 }
 .error__box-trener {
   background: url("img/404.png") no-repeat;
@@ -1236,12 +1236,15 @@ body.modal-show::after {
     z-index: 1;
   }
 }
-@media only screen and (min-width: 1399px) {
+@media only screen and (min-width: 1099px) {
   /* .promo__box {
     
     z-index: 2;
    
   } */
+  .modal-team .modal__numbered-list {
+    margin-bottom: 19%;
+  }
 }
 @media only screen and (min-width: 991px) {
   .about::before {
@@ -1268,13 +1271,13 @@ body.modal-show::after {
   max-height: 210px;
   background: rgba(255, 255, 255, 0.4) url("img/icons/arrow-about.svg")
     no-repeat 85% 18%/23px 23px;
-    transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .about__box-content:hover,
 .services-item__box-content:hover,
 .contacts__box-content:hover {
   background-position: 90% 15%;
-  border: 1px solid #CFC8BE;
+  border: 1px solid #cfc8be;
 }
 
 .plans {
@@ -1381,11 +1384,9 @@ body.modal-show::after {
 
 .community {
   padding-block: 120px;
-  
 }
 @media only screen and (min-width: 991px) {
   .community {
-    
     background: url("img/comunity_fon.png") no-repeat center 22%/45% auto;
   }
   .plans__content {
@@ -1393,7 +1394,6 @@ body.modal-show::after {
   }
   .community {
     padding-block: 240px;
-    
   }
 }
 @media only screen and (min-width: 1919px) {
@@ -1403,7 +1403,6 @@ body.modal-show::after {
 }
 
 @media only screen and (min-width: 991px) {
-  
   .community .container::before {
     content: "";
     display: block;
@@ -1515,10 +1514,10 @@ body.modal-show::after {
     left: 40%;
     height: 32%;
     position: absolute;
-    
+
     top: 12%;
   }
-  
+
   .community .swiper-wrapper {
     margin-bottom: 240px;
   }
@@ -1559,7 +1558,7 @@ body.modal-show::after {
   max-height: 152px;
   background: rgba(255, 255, 255, 0.4) url("img/icons/arrow-about.svg")
     no-repeat 85% 18%/23px 23px;
-    transition: all .3s ease-in-out ;
+  transition: all 0.3s ease-in-out;
 }
 
 .contacts__link--map {
@@ -1570,8 +1569,8 @@ body.modal-show::after {
   border-radius: 50%;
 }
 .contacts__link--map:hover {
-  background: #b8ada0 url("img/icons/place-white.svg") no-repeat center/18px 22px;
-  
+  background: #b8ada0 url("img/icons/place-white.svg") no-repeat center/18px
+    22px;
 }
 .contacts__link--phone {
   background: url("img/icons/phone-dark.svg") no-repeat center/18px 18px;
@@ -1581,8 +1580,8 @@ body.modal-show::after {
   border-radius: 50%;
 }
 .contacts__link--phone:hover {
-  background: #b8ada0 url("img/icons/phone-white.svg") no-repeat center/18px 18px;
-  
+  background: #b8ada0 url("img/icons/phone-white.svg") no-repeat center/18px
+    18px;
 }
 .contacts__link--work {
   background: url("img/icons/time-dark.svg") no-repeat center/21px 20px;
@@ -1693,7 +1692,7 @@ body.modal-show::after {
 .events__fon::before {
   content: "";
   display: block;
-  background:  url("img/icons/year_2023.svg") no-repeat center top/100% auto;
+  background: url("img/icons/year_2023.svg") no-repeat center top/100% auto;
   width: 100.3%;
   height: 100%;
   position: absolute;
@@ -1713,7 +1712,7 @@ body.modal-show::after {
   top: 0;
   right: 0;
 } */
-.events__fon-text img{
+.events__fon-text img {
   width: 100%;
 }
 .events__day {
@@ -1724,13 +1723,11 @@ body.modal-show::after {
     padding-left: 40px;
     padding-top: 20px;
   }
-  .events__fon-text img{
+  .events__fon-text img {
     width: inherit;
   }
   .events__fon::before {
-    
     width: 67.5%;
-    
   }
 }
 .events svg {
@@ -1840,7 +1837,7 @@ body.modal-show::after {
   max-height: 210px;
   background: rgba(255, 255, 255, 0.4) url("img/icons/arrow-about.svg")
     no-repeat 85% 18%/23px 23px;
-    transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .services-item__box-content::before {
   content: "";
@@ -1940,6 +1937,18 @@ body.modal-show::after {
   left: 10%;
   top: 30%;
 }
+.forms__form::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.5;
+  backdrop-filter: blur(20px);
+  z-index: -1;
+}
 @media only screen and (min-width: 991px) {
   .trainers::before {
     width: 40%;
@@ -1978,15 +1987,17 @@ body.modal-show::after {
   }
   .events__fon-text img {
     width: 100%;
-}
-  
+  }
 }
 .trainers .swiper__box-content {
   transform: rotate(270deg);
   transform-origin: left top;
   z-index: 1;
 }
-
+.form-file {
+  cursor: pointer;
+  column-gap: 16px;
+}
 .forms__form {
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(20px);
@@ -2056,7 +2067,7 @@ body.modal-show::after {
 input::placeholder {
   font-size: 16px;
   line-height: 20px;
-  color: #8E8D88;
+  color: #8e8d88;
 }
 .modal .form__btn {
   width: 100%;
@@ -2088,7 +2099,7 @@ input::placeholder {
   }
   .events__fon::before {
     width: 49.9%;
-}
+  }
 }
 .header__box-logo {
   z-index: 50;
@@ -2166,9 +2177,7 @@ input::placeholder {
     background: #b8ada0 url("img/icons/phone-white.svg") no-repeat center/18px;
   }
   .events__fon::before {
-    
     width: 101%;
-  
   }
 }
 .header__menu nav ul {

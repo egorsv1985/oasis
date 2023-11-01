@@ -20,14 +20,23 @@ $this->setFrameMode(true);
 		<div class="community__box-fon"></div>
 		<div class="swiper communitySwiper">
 			<div class="swiper-wrapper">
-				<? foreach ($arResult["ITEMS"] as $arItem) : ?>
+				<?
+				// Инициализируем переменную для подсчета слайдов
+				$slideCount = 0;
+				foreach ($arResult["ITEMS"] as $arItem) :
+					if (CModule::IncludeModule("millcom.phpthumb")) {
+						$arItem['PREVIEW_PICTURE']["WEBP"] = CMillcomPhpThumb::generateImg($arItem['PREVIEW_PICTURE']["SRC"], 10);
+						$arItem['PREVIEW_PICTURE']["PNG"] = CMillcomPhpThumb::generateImg($arItem['PREVIEW_PICTURE']["SRC"], 11);
+					}
+					$slideCount++;
+				?>
 					<div class="swiper-slide">
 						<div class="swiper__box-content">
 							<div class="d-flex gap-3 mb-5">
 								<div class="swiper__box-img rounded-circle d-block">
 									<picture>
-										<source srcset="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" type="image/webp">
-										<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem['NAME']; ?>" title="<?= $arItem['NAME']; ?>" width="50" height="50" class="d-block rounded-circle w-100 h-100" />
+										<source srcset="<?= $arItem["PREVIEW_PICTURE"]["WEBP"] ?>" type="image/webp">
+										<img src="<?= $arItem["PREVIEW_PICTURE"]["PNG"] ?>" alt="<?= $arItem['NAME']; ?>" title="<?= $arItem['NAME']; ?>" width="50" height="50" class="d-block rounded-circle w-100 h-100">
 									</picture>
 								</div>
 								<div class="d-flex flex-column">
@@ -55,7 +64,7 @@ $this->setFrameMode(true);
 			<div class="swiper__control d-flex align-items-center gap-4">
 				<span class="swiper__span fs-20 fw-700 lh-12">01</span>
 				<div class="swiper-pagination position-relative d-flex align-items-center"></div>
-				<span class="swiper__span fs-20 fw-700 lh-12">05</span>
+				<span class="swiper__span fs-20 fw-700 lh-12"><? echo ($slideCount < 10) ? str_pad($slideCount, 2, '0', STR_PAD_LEFT) : $slideCount; ?></span>
 				<div class="swiper__buttons d-flex gap-1">
 					<div class="swiper-button-prev rounded-circle border-success border"></div>
 					<div class="swiper-button-next rounded-circle border-success border"></div>
