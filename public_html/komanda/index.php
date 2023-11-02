@@ -5,7 +5,7 @@ $APPLICATION->SetTitle("Команда"); ?>
 <main class="pt-5">
 	<section class="teams py-5 position-relative" id="teams">
 		<div class="container">
-			<div class="row mb-5">
+			<div class="row gy-5">
 				<div class="col-2 col-lg-1">
 					<? $APPLICATION->IncludeComponent(
 						"bitrix:breadcrumb",
@@ -21,37 +21,7 @@ $APPLICATION->SetTitle("Команда"); ?>
 						)
 					); ?>
 				</div>
-				<div class="col-10  d-lg-none">
-					<h2 class="fs-40 fw-700 lh-12 mb-4"><? $APPLICATION->ShowTitle(true); ?></h2>
-					<div class="fs-20 mb-3">Выбери своего тренера</div>
-					<? $APPLICATION->IncludeComponent(
-						"bitrix:catalog.section.list",
-						"commands",
-						array(
-							"ADDITIONAL_COUNT_ELEMENTS_FILTER" => "additionalCountFilter",
-							"ADD_SECTIONS_CHAIN" => "Y",
-							"CACHE_FILTER" => "N",
-							"CACHE_GROUPS" => "Y",
-							"CACHE_TIME" => "7200",
-							"CACHE_TYPE" => "A",
-							"COUNT_ELEMENTS" => "Y",
-							"COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
-							"FILTER_NAME" => "sectionsFilter",
-							"HIDE_SECTIONS_WITH_ZERO_COUNT_ELEMENTS" => "N",
-							"IBLOCK_ID" => "6",
-							"IBLOCK_TYPE" => "CONTENT",
-							"SECTION_CODE" => "",
-							"SECTION_FIELDS" => array(0 => "NAME", 1 => "",),
-							"SECTION_ID" => "0",
-							"SECTION_URL" => "",
-							"SECTION_USER_FIELDS" => array(0 => "", 1 => "",),
-							"SHOW_PARENT_NAME" => "Y",
-							"TOP_DEPTH" => "2",
-							"VIEW_MODE" => "LINE"
-						)
-					); ?>
-				</div>
-				<div class="col-11">
+				<div class="col-11 order-1 order-lg-0">
 					<? $APPLICATION->IncludeComponent(
 						"bitrix:news",
 						"commands",
@@ -125,46 +95,69 @@ $APPLICATION->SetTitle("Команда"); ?>
 						)
 					); ?>
 				</div>
-			</div>
-			<div class="row mb-3">
-				<div class="col-12 col-md-3 d-none d-lg-block">
+				<div class="col-10 col-lg-3">
 					<h2 class="fs-40 fw-700 lh-12 mb-4"><? $APPLICATION->ShowTitle(true); ?></h2>
+					<div class="fs-20 mb-4 text-nowrap">Выбери своего тренера</div>
+					<div class="d-lg-none">
+						<? $APPLICATION->IncludeComponent(
+							"bitrix:catalog.section.list",
+							"commands",
+							array(
+								"ADDITIONAL_COUNT_ELEMENTS_FILTER" => "additionalCountFilter",
+								"ADD_SECTIONS_CHAIN" => "Y",
+								"CACHE_FILTER" => "N",
+								"CACHE_GROUPS" => "Y",
+								"CACHE_TIME" => "7200",
+								"CACHE_TYPE" => "A",
+								"COUNT_ELEMENTS" => "Y",
+								"COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
+								"FILTER_NAME" => "sectionsFilter",
+								"HIDE_SECTIONS_WITH_ZERO_COUNT_ELEMENTS" => "N",
+								"IBLOCK_ID" => "6",
+								"IBLOCK_TYPE" => "CONTENT",
+								"SECTION_CODE" => "",
+								"SECTION_FIELDS" => array(0 => "NAME", 1 => "",),
+								"SECTION_ID" => "0",
+								"SECTION_URL" => "",
+								"SECTION_USER_FIELDS" => array(0 => "", 1 => "",),
+								"SHOW_PARENT_NAME" => "Y",
+								"TOP_DEPTH" => "2",
+								"VIEW_MODE" => "LINE"
+							)
+						); ?>
+					</div>
+
 				</div>
-				<div class="col-12 col-md-9">
+				<div class="col-12 col-lg-9 order-1 order-lg-0">
 					<? $APPLICATION->ShowViewContent('swiper__control'); ?>
-				</div>
-			</div>
-			<div class="row d-none d-lg-flex">
-				<div class="col-12 col-md-3">
-					<div class="fs-20">Выбери своего тренера</div>
-				</div>
-				<div class="col-12 col-md-9">
-					<? $APPLICATION->IncludeComponent(
-						"bitrix:catalog.section.list",
-						"commands",
-						array(
-							"ADDITIONAL_COUNT_ELEMENTS_FILTER" => "additionalCountFilter",
-							"ADD_SECTIONS_CHAIN" => "Y",
-							"CACHE_FILTER" => "N",
-							"CACHE_GROUPS" => "Y",
-							"CACHE_TIME" => "7200",
-							"CACHE_TYPE" => "A",
-							"COUNT_ELEMENTS" => "Y",
-							"COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
-							"FILTER_NAME" => "sectionsFilter",
-							"HIDE_SECTIONS_WITH_ZERO_COUNT_ELEMENTS" => "N",
-							"IBLOCK_ID" => "6",
-							"IBLOCK_TYPE" => "CONTENT",
-							"SECTION_CODE" => "",
-							"SECTION_FIELDS" => array(0 => "NAME", 1 => "",),
-							"SECTION_ID" => "0",
-							"SECTION_URL" => "",
-							"SECTION_USER_FIELDS" => array(0 => "", 1 => "",),
-							"SHOW_PARENT_NAME" => "Y",
-							"TOP_DEPTH" => "2",
-							"VIEW_MODE" => "LINE"
-						)
-					); ?>
+					<div class=" d-none d-lg-block">
+						<? $APPLICATION->IncludeComponent(
+							"bitrix:catalog.section.list",
+							"commands",
+							array(
+								"ADDITIONAL_COUNT_ELEMENTS_FILTER" => "additionalCountFilter",
+								"ADD_SECTIONS_CHAIN" => "Y",
+								"CACHE_FILTER" => "N",
+								"CACHE_GROUPS" => "Y",
+								"CACHE_TIME" => "7200",
+								"CACHE_TYPE" => "A",
+								"COUNT_ELEMENTS" => "Y",
+								"COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
+								"FILTER_NAME" => "sectionsFilter",
+								"HIDE_SECTIONS_WITH_ZERO_COUNT_ELEMENTS" => "N",
+								"IBLOCK_ID" => "6",
+								"IBLOCK_TYPE" => "CONTENT",
+								"SECTION_CODE" => "",
+								"SECTION_FIELDS" => array(0 => "NAME", 1 => "",),
+								"SECTION_ID" => "0",
+								"SECTION_URL" => "",
+								"SECTION_USER_FIELDS" => array(0 => "", 1 => "",),
+								"SHOW_PARENT_NAME" => "Y",
+								"TOP_DEPTH" => "2",
+								"VIEW_MODE" => "LINE"
+							)
+						); ?>
+					</div>
 				</div>
 			</div>
 		</div>

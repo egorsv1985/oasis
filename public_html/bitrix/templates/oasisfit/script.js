@@ -170,13 +170,8 @@
       centeredSlides: true,
       // Responsive breakpoints
       breakpoints: {
-        // when window width is >= 992px
-        992: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
         // when window width is >= 1200px
-        1200: {
+        992: {
           slidesPerView: 3,
           spaceBetween: 30,
         },
@@ -188,7 +183,7 @@
       keyboard: {
         enabled: true,
       },
-      centeredSlides: true,
+      // centeredSlides: true,
       loop: true,
       pagination: {
         el: ".teams .swiper-pagination",
@@ -213,7 +208,7 @@
           spaceBetween: 20,
         },
       },
-      centeredSlides: true,
+      // centeredSlides: true,
       // включаем курсор в виде "руки" при наведении на слайды
       grabCursor: true,
       // включаем использование клавиатуры для навигации по слайдам
@@ -334,12 +329,12 @@
     // Вызов функции для проверки поддержки WebP
     checkWebpSupport();
   }),
-  jQuery(document).ready(function () {
-    var e = document.querySelectorAll('input[type="tel"]');
-    jQuery(e).inputmask({
-      mask: ["+7 (999) 999 99 99", "8 (999) 999 99 99"],
-      greedy: !1,
-      placeholder: "_",
+    jQuery(document).ready(function () {
+      var e = document.querySelectorAll('input[type="tel"]');
+      jQuery(e).inputmask({
+        mask: ["+7 (999) 999 99 99", "8 (999) 999 99 99"],
+        greedy: !1,
+        placeholder: "_",
+      });
     });
-  });
 })();

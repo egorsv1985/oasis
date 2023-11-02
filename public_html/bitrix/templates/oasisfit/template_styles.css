@@ -639,7 +639,8 @@ h6 {
 }
 
 .fs-40 {
-  font-size: 40px;
+  --font-size-40: clamp(2rem, 3.14vw + 1.37rem, 2.5rem);
+  font-size: var(--font-size-40);
 }
 
 .fs-48 {
@@ -1242,6 +1243,11 @@ body.modal-show::after {
   } */
   .modal-team .modal__numbered-list {
     margin-bottom: 19%;
+  }
+}
+@media only screen and (min-width: 991px) and (max-width: 1199px) {
+  .fs-40 {
+    font-size: 34px;
   }
 }
 @media only screen and (min-width: 991px) {
