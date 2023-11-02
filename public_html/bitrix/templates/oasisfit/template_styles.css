@@ -1832,7 +1832,9 @@ body.modal-show::after {
 .events__item:hover .events__content::before {
   background-color: rgba(184, 173, 160, 50);
 }
-
+.services__box-text span {
+  color: #7d6858;
+}
 .services-item {
   padding-top: 110px;
   padding-bottom: 8%;

@@ -166,7 +166,7 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 					</a>
 				</div>
 				<div class="col-12 col-lg-8 offset-lg-1 order-1 order-lg-0">
-					<div class="fs-16 lh-13 text-info mb-5">
+					<div class="fs-16 lh-13 text-info mb-5 services__box-text">
 						<?= $DETAIL_TEXT[0]; ?>
 					</div>
 				</div>
