@@ -55,6 +55,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 	</div>
 
 	<body class="<?= PAGE === "MAIN" ? 'main' : '' ?>">
+
 		<div class="wrapper">
 			<header class="header py-3 fixed-top w-100">
 				<div class="container">
@@ -67,6 +68,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 									</span>
 									<span class="fs-16 fw-700 text-uppercase">МЕНЮ</span>
 								</button>
+
 								<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="header__btn-shedule btn btn-primary py-3 fw-600 fs-16 px-5"><span>Расписание</span></button>
 								<div class="header__box-work">
 									<div class="d-flex gap-2 align-items-center">

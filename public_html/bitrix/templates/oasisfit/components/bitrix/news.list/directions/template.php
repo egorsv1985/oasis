@@ -11,21 +11,35 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-
+// print_r($arResult);
 ?>
-<div class="row gy-4">
-
-	<? foreach ($arResult["ITEMS"] as $arItem) :
+<div class="row gy-5">
+	<?
+	$evenCount = 1;
+	foreach ($arResult["ITEMS"] as $arItem) :
 		$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 		$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
-		if (CModule::IncludeModule("millcom.phpthumb"))
-			$arItem["PREVIEW_PICTURE"]["WEBP"] = CMillcomPhpThumb::generateImg($arItem["PREVIEW_PICTURE"]["SRC"], 4);
+		if (CModule::IncludeModule("millcom.phpthumb")) {
+			$arItem['PREVIEW_PICTURE']["WEBP"] = CMillcomPhpThumb::generateImg($arItem['PREVIEW_PICTURE']["SRC"], !empty($arItem["PROPERTIES"]["SIZE"]["VALUE"]) ? '14' : '12');
+			$arItem['PREVIEW_PICTURE']["PNG"] = CMillcomPhpThumb::generateImg($arItem['PREVIEW_PICTURE']["SRC"], !empty($arItem["PROPERTIES"]["SIZE"]["VALUE"]) ? '15' : '13');
+		}
 	?>
-		<div class="col-12 col-lg-4">
+		<?
+		if ($arItem["DETAIL_TEXT"]) {
+		?>
+			<div class="col-12 col-lg-2">
+				<div class="fs-18 fw-500 fst-italic directions__citation text-white">
+					<?= $arItem["DETAIL_TEXT"] ?>
+				</div>
+			</div>
+		<?
+		}
+		?>
+		<div class="col-12 <? echo !empty($arItem["PROPERTIES"]["SIZE"]["VALUE"]) ? 'col-lg-6' : 'col-lg-4'; ?> <? echo $evenCount % 2 == 0 ? 'offset-lg-2' : ''; ?>">
 			<div class="directions__box-img rounded-3 mb-4">
 				<picture>
-					<source srcset="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" type="image/webp" />
-					<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" class="w-100 rounded-3" />
+					<source srcset="<?= $arItem["PREVIEW_PICTURE"]["WEBP"] ?>" type="image/webp">
+					<img src="<?= $arItem["PREVIEW_PICTURE"]["PNG"] ?>" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" class="w-100 rounded-3">
 				</picture>
 			</div>
 			<div class="fs-24 text-uppercase text-white fw-700 mb-2">
@@ -35,10 +49,7 @@ $this->setFrameMode(true);
 				<?= $arItem["PREVIEW_TEXT"] ?>
 			</div>
 		</div>
-		<div class="col-12 col-lg-2">
-			<div class="fs-18 fw-500 fst-italic directions__citation text-white">
-				Ваш прогресс к более сложным упражнениям и программам
-			</div>
-		</div>
-	<? endforeach; ?>
+	<?
+		$evenCount++;
+	endforeach; ?>
 </div>

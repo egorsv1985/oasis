@@ -62,7 +62,7 @@ $this->setFrameMode(true);
 ?>
 	<!-- Modal -->
 	<div class="modal fade modal-team p-4" id="team-<?= $arItem['ID'] ?>" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal__wrapper my-0" role="document">
+		<div class="modal-dialog modal-dialog-centered modal__wrapper my-0 p-4" role="document">
 			<div class="modal-content modal__content border border-success rounded-3 position-relative">
 				<button type="button" class="btn-close modal__close rounded-circle opacity-100 text-white" data-bs-dismiss="modal" aria-label="Close"> </button>
 				<div class="modal-body p-0">
@@ -82,7 +82,7 @@ $this->setFrameMode(true);
 						<div class="col-12 col-lg-6">
 							<div class="modal__box-content py-5 px-3">
 								<div class="fs-24 fw-700 mb-4"><?= $arItem["NAME"] ?></div>
-								<ul class="modal__list fs-16 lh-12 text-info ps-0 mb-5 flex-wrap">
+								<ul class="modal__list fs-16 lh-12 text-info ps-0 mb-5 flex-wrap gap-sm-3">
 									<? foreach ($arItem['PROPERTIES']['POST']['VALUE'] as $postItem) : ?>
 										<li><?= $postItem ?></li>
 									<? endforeach; ?>
@@ -91,7 +91,7 @@ $this->setFrameMode(true);
 									<?= $arItem["PREVIEW_TEXT"] ?>
 								</div>
 								<div class="row">
-									<div class="col-6">
+									<div class="col-12 col-sm-6">
 										<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="btn btn-primary py-3 d-block fw-600 fs-16 w-100"><span>Записаться к тренеру</span></button>
 									</div>
 								</div>

@@ -24,30 +24,30 @@ $APPLICATION->SetTitle("Клубные карты");
 							); ?>
 						</div>
 						<div class="col-9">
-						<div class="d-lg-none">
-						<div class="fs-40 fw-700 lh-12 mb-4"><? $APPLICATION->ShowTitle(true); ?></div>
-						<div class="fs-20">Выбери для себя удобный вариант тренировок</div>
-						<div class="cards__btns row my-5 gy-3 px-3 px-lg-0">
-							<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="btn btn-primary py-3 d-block fw-600 fs-16 col-12 col-lg-6">
-								<span>Гостевой визит</span>
-							</button>
-							<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="btn btn-transparent cards__btn btn--pseudo position-relative py-3 d-block fw-600 fs-16 col-12 col-lg-6 text-start text-md-center">
-								<span>Заморозить карту</span>
-							</button>
-						</div>
-						<div class="cards__box-wave my-5 d-none d-lg-block">
-							<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/wave.svg" alt="" class="" />
-						</div>
-						<a href="#" class="d-flex gap-3 align-items-center">
-							<div class="cards__box-img">
-								<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/question.svg" alt="" class="" />
+							<div class="d-lg-none">
+								<div class="fs-40 fw-700 lh-12 mb-4"><? $APPLICATION->ShowTitle(true); ?></div>
+								<div class="fs-20">Выбери для себя удобный вариант тренировок</div>
+								<div class="cards__btns row my-5 gy-3 px-3 px-lg-0">
+									<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="btn btn-primary py-3 d-block fw-600 fs-16 col-12 col-lg-6">
+										<span>Гостевой визит</span>
+									</button>
+									<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="btn btn-transparent cards__btn btn--pseudo position-relative py-3 d-block fw-600 fs-16 col-12 col-lg-6 text-start text-md-center">
+										<span>Заморозить карту</span>
+									</button>
+								</div>
+								<div class="cards__box-wave my-5 d-none d-lg-block">
+									<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/wave.svg" alt="" class="" />
+								</div>
+								<a href="#" class="d-flex gap-3 align-items-center">
+									<div class="cards__box-img">
+										<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/question.svg" alt="" class="" />
+									</div>
+									<div class="fs-16 text-info">
+										Какую карту<br />
+										выберишь ты?
+									</div>
+								</a>
 							</div>
-							<div class="fs-16 text-info">
-								Какую карту<br />
-								выберишь ты?
-							</div>
-						</a>
-					</div>
 							<div class="cards__box d-none d-lg-block">
 								<div class="cards__box-title">
 									<div class="fs-80 fw-700 text-uppercase text">

@@ -18,7 +18,7 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 	<section class="services-item" id="services-item">
 		<div class="container">
 			<div class="row gy-4">
-				<div class="col-2 col-md-1 pt-5">
+				<div class="col-2 col-md-1 pt-lg-5">
 					<? $APPLICATION->IncludeComponent(
 						"bitrix:breadcrumb",
 						".default",
@@ -33,7 +33,7 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 						)
 					); ?>
 				</div>
-				<div class="col-10 col-md-11">
+				<div class="col-12 col-md-11 order-1 order-lg-0">
 					<? $APPLICATION->IncludeComponent(
 						"bitrix:news.list",
 						"gallery",
@@ -146,22 +146,26 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 
 				<div class="col-10 col-lg-4">
 					<h2 class="fs-40 fw-700 lh-12 mb-4">
-						<? $APPLICATION->ShowTitle(true); ?></h2>
-				</div>
-				<div class="col-2">
-					<a href="#" class="services-item__video-box">
-						<img src="img/icons/video-btn.svg" alt="" class="services-item__video-btn" />
+						<? $APPLICATION->ShowTitle(true); ?>
+					</h2>
+					<a href="/meropriyatiya/" target="_blank" class="d-lg-none services-item__box-content d-block">
+						<div class="fs-20 text-info">Мероприятия</div>
 					</a>
 				</div>
-				<div class="col-12 col-lg-6">
+				<div class="d-none d-lg-block col-2">
+					<a href="#" class="services-item__video-box h-100 w-100">
+						<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/video-btn-dark.svg" alt="video" class="services-item__video-btn w-100 h-auto" />
+					</a>
+				</div>
+				<div class="col-12 col-lg-6 order-1 order-lg-0">
 					<? $APPLICATION->ShowViewContent('gallery-swiper'); ?>
 				</div>
-				<div class="col-12 col-lg-3">
+				<div class="d-none d-lg-block col-12 col-lg-3">
 					<a href="/meropriyatiya/" target="_blank" class="services-item__box-content d-block">
 						<div class="fs-20 text-info">Мероприятия</div>
 					</a>
 				</div>
-				<div class="col-12 col-lg-8 offset-lg-1">
+				<div class="col-12 col-lg-8 offset-lg-1 order-1 order-lg-0">
 					<div class="fs-16 lh-13 text-info mb-5">
 						<?= $DETAIL_TEXT[0]; ?>
 					</div>
@@ -174,7 +178,7 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 		<div class="line2 position-absolute"></div>
 		<div class="container position-relative">
 			<div class="row gy-5 mb-5">
-				<div class="col-12 col-sm-4">
+				<div class="col-12 col-md-4">
 					<?
 					$arFilter = array(
 						'IBLOCK_ID' => 9,
@@ -198,7 +202,7 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 					</ul>
 
 				</div>
-				<div class="col-sm-4 col-12 offset-lg-1">
+				<div class="col-lg-4 col-md-7 col-12 offset-lg-1">
 					<div class="fs-36 fw-700 lh-12 text-white">
 						Зоны/Направления тренажерного зала
 					</div>
@@ -247,7 +251,7 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 								"INCLUDE_IBLOCK_INTO_CHAIN" => "N",	// Включать инфоблок в цепочку навигации
 								"INCLUDE_SUBSECTIONS" => "N",	// Показывать элементы подразделов раздела
 								"MESSAGE_404" => "",	// Сообщение для показа (по умолчанию из компонента)
-								"NEWS_COUNT" => "4",	// Количество новостей на странице
+								"NEWS_COUNT" => "20",	// Количество новостей на странице
 								"PAGER_BASE_LINK_ENABLE" => "N",	// Включить обработку ссылок
 								"PAGER_DESC_NUMBERING" => "N",	// Использовать обратную навигацию
 								"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",	// Время кеширования страниц для обратной навигации

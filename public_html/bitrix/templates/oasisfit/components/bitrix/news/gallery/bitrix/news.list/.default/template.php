@@ -13,6 +13,22 @@
 $this->setFrameMode(true);
 // print_r($arResult);
 
+$IMAGES_ARRAY = array();
+foreach ($arResult['ITEMS'] as $arItem) {
+	//print_r($arItem);
+	//$arResult['PROPERTIES']['IMAGES']['VALUE'] = array_merge($arResult['PROPERTIES']['IMAGES']['VALUE'], $arItem['PROPERTIES']['IMAGES']['VALUE']);
+
+	foreach ($arItem['PROPERTIES']['IMAGES']['VALUE'] as $key => $IMG) {
+		$IMAGES_ARRAY[] = array(
+			'TITLE' => $arItem['NAME'],
+			'ICON' => $arItem['PROPERTIES']['ICON']['VALUE'],
+			'DESCRIPTION' => $arItem['PROPERTIES']['IMAGES']['DESCRIPTION'][$key],
+			'IMG' => $IMG,
+		);
+	}
+}
+
+
 ?>
 <div class="swiper gallerySwiper2">
 	<div class="swiper-wrapper">
@@ -20,58 +36,65 @@ $this->setFrameMode(true);
 		// Инициализируем переменную для подсчета слайдов
 		$slideCount = 0;
 		foreach ($arResult["ITEMS"] as $arItem) :
-			if (CModule::IncludeModule("millcom.phpthumb")) {
-				$arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']["WEBP"] = CMillcomPhpThumb::generateImg($arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']["SRC"], 2);
-				$arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']["PNG"] = CMillcomPhpThumb::generateImg($arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']["SRC"], 1);
-			}
-			$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
-			$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
-			$slideCount++; // Увеличиваем счетчик слайдов
+			foreach ($arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE'] as $img) :
+				if (CModule::IncludeModule("millcom.phpthumb")) {
+					$img["WEBP"] = CMillcomPhpThumb::generateImg($img["SRC"], 2);
+					$img["PNG"] = CMillcomPhpThumb::generateImg($img["SRC"], 1);
+				}
+				$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+				$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+				$slideCount++; // Увеличиваем счетчик слайдов
 		?>
-			<div class="swiper-slide">
+				<div class="swiper-slide">
 
-				<div class="swiper__box-img position-relative">
-					<div class="swiper__title d-flex gap-3 position-absolute align-items-center">
-						<div class="swiper__box-svg rounded-circle bg-secondary d-flex justify-content-center align-items-center">
-							<img src="<?= $arItem['DISPLAY_PROPERTIES']['ICON']['FILE_VALUE']['SRC'] ?>" />
+					<div class="swiper__box-img position-relative">
+						<div class="swiper__title d-flex gap-3 position-absolute align-items-center">
+							<div class="swiper__box-svg rounded-circle bg-secondary d-flex justify-content-center align-items-center">
+								<img src="<?= $arItem['DISPLAY_PROPERTIES']['ICON']['FILE_VALUE']['SRC'] ?>">
+							</div>
+							<div class="fs-18 text-white"><?= $arItem["NAME"] ?></div>
 						</div>
-						<div class="fs-18 text-white"><?= $arItem["NAME"] ?></div>
+						<picture>
+							<source srcset="<?= $img['WEBP'] ?>" type="image/webp"><img class="rounded-2 w-100 h-auto" src="<?= $img['PNG'] ?>">
+						</picture>
 					</div>
-					<picture>
-						<source srcset="<?= $arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']['WEBP'] ?>" type="image/webp"><img class="rounded-2 w-100 h-auto" src="<?= $arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']['PNG'] ?>" />
-					</picture>
-				</div>
 
-			</div>
+				</div>
+			<? endforeach; ?>
 		<? endforeach; ?>
 	</div>
 </div>
 <? $this->SetViewTarget('gallery-swiper'); ?>
+
 <div thumbsSlider="" class="swiper gallerySwiper d-none d-lg-block">
 	<div class="swiper-wrapper mb-5">
 		<?
 		// Инициализируем переменную для подсчета слайдов
 		$slideCount = 0;
 		foreach ($arResult["ITEMS"] as $arItem) :
-			if (CModule::IncludeModule("millcom.phpthumb")) {
-				$arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']["WEBP"] = CMillcomPhpThumb::generateImg($arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']["SRC"], 9);
-				$arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']["PNG"] = CMillcomPhpThumb::generateImg($arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']["SRC"], 8);
-			}
-			$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
-			$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
-			$slideCount++; // Увеличиваем счетчик слайдов
-		?>
-			<div class="swiper-slide">
-				<div class="swiper__box-img position-relative">
-					<div class="swiper__box-small-svg rounded-circle bg-secondary position-absolute d-flex justify-content-center align-items-center">
-						<img src="<?= $arItem['DISPLAY_PROPERTIES']['ICON']['FILE_VALUE']['SRC'] ?>" />
-					</div>
-					<picture>
-						<source srcset="<?= $arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']['WEBP'] ?>" type="image/webp"><img class="rounded-2 w-100 h-auto" src="<?= $arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']['PNG'] ?>" />
-					</picture>
-				</div>
 
-			</div>
+			foreach ($arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE'] as $img) :
+
+				if (CModule::IncludeModule("millcom.phpthumb")) {
+					$img["WEBP"] = CMillcomPhpThumb::generateImg($img["SRC"], 9);
+					$img["PNG"] = CMillcomPhpThumb::generateImg($img["SRC"], 8);
+				}
+				$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+				$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+				$slideCount++; // Увеличиваем счетчик слайдов
+		?>
+				<div class="swiper-slide">
+					<div class="swiper__box-img position-relative">
+						<div class="swiper__box-small-svg rounded-circle bg-secondary position-absolute d-flex justify-content-center align-items-center">
+							<img src="<?= $arItem['DISPLAY_PROPERTIES']['ICON']['FILE_VALUE']['SRC'] ?>">
+						</div>
+						<picture>
+							<source srcset="<?= $img['WEBP'] ?>" type="image/webp"><img class="rounded-2 w-100 h-auto" src="<?= $img['PNG'] ?>">
+						</picture>
+					</div>
+
+				</div>
+			<? endforeach; ?>
 		<? endforeach; ?>
 	</div>
 </div>

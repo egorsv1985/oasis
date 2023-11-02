@@ -7,7 +7,7 @@ $APPLICATION->SetTitle("Галерея"); ?>
 	<section class="gallery py-5" id="gallery">
 		<div class="container">
 			<div class="row gy-4">
-				<div class="col-2 col-md-1 pt-5">
+				<div class="col-2 col-md-1 pt-lg-5">
 					<? $APPLICATION->IncludeComponent(
 						"bitrix:breadcrumb",
 						".default",
@@ -22,12 +22,13 @@ $APPLICATION->SetTitle("Галерея"); ?>
 						)
 					); ?>
 				</div>
-				<div class="col-10 col-md-11">
-				<h2 class="d-lg-none fs-40 fw-700 lh-12 mb-4">
-						<? $APPLICATION->ShowTitle(true); ?></h2>
-					<div class="d-lg-none fs-20 mb-3">
+				<div class="col-12 col-md-11 order-1 order-lg-0">
+					<!-- <h2 class="d-lg-none fs-40 fw-700 lh-12 mb-4">
+						<? $APPLICATION->ShowTitle(true); ?>
+					</h2> -->
+					<!-- <div class="d-lg-none fs-20 mb-3">
 						Знакомься с интерьерами нашего фитнес-клуба!
-					</div>
+					</div> -->
 					<? $APPLICATION->IncludeComponent(
 						"bitrix:news",
 						"gallery",
@@ -122,14 +123,14 @@ $APPLICATION->SetTitle("Галерея"); ?>
 						false
 					); ?>
 				</div>
-				<div class="col-12 col-lg-4 order-1 order-lg-0 d-none d-lg-block">
+				<div class="col-10 col-lg-4">
 					<h2 class="fs-40 fw-700 lh-12 mb-4">
 						<? $APPLICATION->ShowTitle(true); ?></h2>
 					<div class="fs-20">
 						Знакомься с интерьерами нашего фитнес-клуба!
 					</div>
 				</div>
-				<div class="col-12 col-lg-6 offset-lg-2">
+				<div class="col-12 col-lg-6 offset-lg-2 order-1 order-lg-0">
 					<? $APPLICATION->ShowViewContent('gallery-swiper'); ?>
 				</div>
 			</div>
