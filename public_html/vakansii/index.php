@@ -6,9 +6,9 @@ $APPLICATION->SetTitle("Вакансии"); ?>
 	<section class="vacancies" id="vacancies">
 		<div class="container">
 			<div class="row">
-				<div class="col-12 col-lg-4">
-					<div class="row">
-						<div class="col-3">
+				<div class="col-lg-5 col-xl-4 col-12">
+					<div class="d-flex flex-wrap">
+						<div class="col-3 col-sm-2">
 							<? $APPLICATION->IncludeComponent(
 								"bitrix:breadcrumb",
 								".default",
@@ -22,8 +22,15 @@ $APPLICATION->SetTitle("Вакансии"); ?>
 									'HIDE_ICONS' => 'Y'
 								)
 							); ?>
+
 						</div>
-						<div class="col-9">
+						<div class="col-9 col-sm-10">
+							<div class="d-lg-none">
+								<h2 class="fs-40 lh-12 fw-700 mb-4"><?= $APPLICATION->GetTitle(); ?></h2>
+								<div class="fs-20 mb-4">
+									Присоединяйся к команде
+								</div>
+							</div>
 							<? $APPLICATION->IncludeComponent(
 								"bitrix:catalog.section.list",
 								"vacancies",
@@ -52,19 +59,23 @@ $APPLICATION->SetTitle("Вакансии"); ?>
 							); ?>
 
 						</div>
-						<h2 class="fs-40 lh-12 fw-700 mb-4"><?= $APPLICATION->GetTitle(); ?></h2>
-						<div class="fs-20 mb-4">
-							Присоединяйся к команде
+						<div class="col-12 d-none d-lg-block">
+							<h2 class="fs-40 lh-12 fw-700 mb-4"><?= $APPLICATION->GetTitle(); ?></h2>
+							<div class="fs-20 mb-4">
+								Присоединяйся к команде
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-12 col-lg-8">
+
+
+				<div class="col-lg-7 col-12 col-xl-8">
 					<? $APPLICATION->IncludeComponent(
 						"bitrix:news",
 						"vacancies",
 						array(
-							"ADD_ELEMENT_CHAIN" => "Y",
-							"ADD_SECTIONS_CHAIN" => "Y",
+							"ADD_ELEMENT_CHAIN" => "N",
+							"ADD_SECTIONS_CHAIN" => "N",
 							"AJAX_MODE" => "N",
 							"AJAX_OPTION_ADDITIONAL" => "",
 							"AJAX_OPTION_HISTORY" => "N",
@@ -81,34 +92,8 @@ $APPLICATION->SetTitle("Вакансии"); ?>
 							"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
 							"DETAIL_DISPLAY_TOP_PAGER" => "N",
 							"DETAIL_FIELD_CODE" => array(
-								0 => "ID",
-								1 => "CODE",
-								2 => "XML_ID",
-								3 => "NAME",
-								4 => "TAGS",
-								5 => "SORT",
-								6 => "PREVIEW_TEXT",
-								7 => "PREVIEW_PICTURE",
-								8 => "DETAIL_TEXT",
-								9 => "DETAIL_PICTURE",
-								10 => "DATE_ACTIVE_FROM",
-								11 => "ACTIVE_FROM",
-								12 => "DATE_ACTIVE_TO",
-								13 => "ACTIVE_TO",
-								14 => "SHOW_COUNTER",
-								15 => "SHOW_COUNTER_START",
-								16 => "IBLOCK_TYPE_ID",
-								17 => "IBLOCK_ID",
-								18 => "IBLOCK_CODE",
-								19 => "IBLOCK_NAME",
-								20 => "IBLOCK_EXTERNAL_ID",
-								21 => "DATE_CREATE",
-								22 => "CREATED_BY",
-								23 => "CREATED_USER_NAME",
-								24 => "TIMESTAMP_X",
-								25 => "MODIFIED_BY",
-								26 => "USER_NAME",
-								27 => "",
+								0 => "",
+								1 => "",
 							),
 							"DETAIL_PAGER_SHOW_ALL" => "Y",
 							"DETAIL_PAGER_TEMPLATE" => "",
@@ -131,34 +116,8 @@ $APPLICATION->SetTitle("Вакансии"); ?>
 							"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 							"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
 							"LIST_FIELD_CODE" => array(
-								0 => "ID",
-								1 => "CODE",
-								2 => "XML_ID",
-								3 => "NAME",
-								4 => "TAGS",
-								5 => "SORT",
-								6 => "PREVIEW_TEXT",
-								7 => "PREVIEW_PICTURE",
-								8 => "DETAIL_TEXT",
-								9 => "DETAIL_PICTURE",
-								10 => "DATE_ACTIVE_FROM",
-								11 => "ACTIVE_FROM",
-								12 => "DATE_ACTIVE_TO",
-								13 => "ACTIVE_TO",
-								14 => "SHOW_COUNTER",
-								15 => "SHOW_COUNTER_START",
-								16 => "IBLOCK_TYPE_ID",
-								17 => "IBLOCK_ID",
-								18 => "IBLOCK_CODE",
-								19 => "IBLOCK_NAME",
-								20 => "IBLOCK_EXTERNAL_ID",
-								21 => "DATE_CREATE",
-								22 => "CREATED_BY",
-								23 => "CREATED_USER_NAME",
-								24 => "TIMESTAMP_X",
-								25 => "MODIFIED_BY",
-								26 => "USER_NAME",
-								27 => "",
+								0 => "",
+								1 => "",
 							),
 							"LIST_PROPERTY_CODE" => array(
 								0 => "",
@@ -197,7 +156,7 @@ $APPLICATION->SetTitle("Вакансии"); ?>
 							"SEF_URL_TEMPLATES" => array(
 								"news" => "",
 								"section" => "#SECTION_CODE#/",
-								"detail" => "",
+								"detail" => "#SECTION_CODE#/#ELEMENT_CODE#/",
 							)
 						),
 						false
@@ -207,4 +166,5 @@ $APPLICATION->SetTitle("Вакансии"); ?>
 			</div>
 		</div>
 	</section>
-</main><? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+</main>
+<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

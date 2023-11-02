@@ -24,7 +24,7 @@ $this->setFrameMode(true);
 			<div class="card-header ps-0" id="heading-<?= $counter ?>">
 				<h2 class="mb-0">
 					<button class="card__btn fw-700 fs-24 ps-0 d-flex justify-content-between w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<?= $counter ?>" aria-expanded="<?= $key ? 'false' : 'true' ?>" aria-controls="collapse-<?= $counter ?>">
-						<span class="py-3"><?= $arItem["NAME"] ?> </span>
+						<span class="py-3 px-2"><?= $arItem["NAME"] ?> </span>
 						<span class="vacancies__box-circle rounded-circle bg-primary d-flex justify-content-center align-items-center position-relative">
 						</span>
 					</button>

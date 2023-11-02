@@ -246,7 +246,7 @@ if ($arResult["MESSAGE"] <> '') : ?>
 									$value = intval($propertyID) > 0 ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE"] : $arResult["ELEMENT"][$propertyID];
 							?>
 								<input type="hidden" name="PROPERTY[<?= $propertyID ?>][<?= $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] : $i ?>]" value="<?= $value ?>">
-								<label for="PROPERTY_FILE_<?= $propertyID ?>_<?= $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] : $i ?>" class="form-label form-file form__label fs-16 d-flex align-items-center h-100 text-nowrap w-100 gap-3">
+								<label for="PROPERTY_FILE_<?= $propertyID ?>_<?= $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] : $i ?>" class="form-label form-file form__label fs-16 d-flex align-items-center h-100 w-100 gap-3">
 									<span class="form__label--bg ps-4 rounded-circle border border-primary"></span>
 									<span>Прикрепить файл (.doc, .pdf)</span>
 								</label>

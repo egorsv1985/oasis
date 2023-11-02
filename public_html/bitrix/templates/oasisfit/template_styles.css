@@ -430,6 +430,7 @@ input:not([type="textarea"]):valid + .form__label {
 }
 .vacancies .form__label--bg {
   width: 50px;
+  min-width: 50px;
   height: 50px;
   display: block;
   background: url("img/icons/download.svg") no-repeat center/15px;
@@ -1632,12 +1633,13 @@ body.modal-show::after {
   background-color: rgba(125, 104, 88, 0.1);
 }
 .vacancies {
-  padding-block: 170px;
+  padding-block: 120px;
 }
 .vacancies__form {
   background: url("img/form-fon.png") no-repeat center bottom/75% auto;
 }
 .vacancies__box-circle {
+  min-width: 50px;
   width: 50px;
   height: 50px;
 }

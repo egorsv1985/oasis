@@ -14,7 +14,7 @@ if (empty($arResult))
 $strReturn = '
 <div class="breadcrumb__box">
     <nav aria-label="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb__nav position-relative ">
-        <ol class="breadcrumb flex-row-reverse align-items-center m-0 gap-4">';
+        <ol class="breadcrumb flex-row-reverse flex-nowrap align-items-center m-0 gap-4">';
 
 $itemSize = count($arResult);
 for ($index = 0; $index < $itemSize; $index++) {
@@ -61,4 +61,3 @@ $strReturn .= '
 </div>';
 
 return $strReturn;
-?>
