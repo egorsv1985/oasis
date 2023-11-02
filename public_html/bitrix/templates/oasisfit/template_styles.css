@@ -1479,9 +1479,9 @@ body.modal-show::after {
 }
 
 .cards__box-content::after {
-  top: 10%;
+  top: 30px;
   right: 30px;
-  width: 80%;
+  width: 70%;
   height: 1px;
   background-color: #cfc8be;
 }

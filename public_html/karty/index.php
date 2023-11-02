@@ -5,6 +5,7 @@ $APPLICATION->SetTitle("Клубные карты");
 ?><main class="pt-5">
 	<section class="cards py-5" id="cards">
 		<div class="container">
+
 			<div class="row pt-5">
 				<div class="col-12 col-lg-4 pt-5">
 					<div class="row">
@@ -63,11 +64,11 @@ $APPLICATION->SetTitle("Клубные карты");
 					<div class="d-none d-lg-block">
 						<div class="fs-40 fw-700 lh-12 mb-4"><? $APPLICATION->ShowTitle(true); ?></div>
 						<div class="fs-20">Выбери для себя удобный вариант тренировок</div>
-						<div class="cards__btns row my-5 gy-3 px-3 px-lg-0">
-							<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="btn btn-primary py-3 d-block fw-600 fs-16 col-12 col-lg-6">
+						<div class="cards__btns d-flex flex-wrap my-5 gap-3 px-3 px-lg-0">
+							<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="btn btn-primary py-3 d-block fw-600 fs-16 col-12 col-xl-6">
 								<span>Гостевой визит</span>
 							</button>
-							<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="btn btn-transparent cards__btn btn--pseudo position-relative py-3 d-block fw-600 fs-16 col-12 col-lg-6 text-start text-md-center">
+							<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="btn btn-transparent cards__btn btn--pseudo position-relative py-3 d-block fw-600 fs-16 col-12 col-xl-6 text-start text-md-center">
 								<span>Заморозить карту</span>
 							</button>
 						</div>
@@ -159,4 +160,5 @@ $APPLICATION->SetTitle("Клубные карты");
 			</div>
 		</div>
 	</section>
-</main><? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+</main>
+<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

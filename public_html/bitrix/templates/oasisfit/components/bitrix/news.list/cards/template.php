@@ -23,7 +23,7 @@ $this->setFrameMode(true);
 	$rowClass = $isEven ? "flex-row-reverse" : "";
 ?>
 	<div class="row mb-4 <?= $rowClass ?>">
-		<div class="col-12 col-xl-8">
+		<div class="col-12 col-lg-6 col-xl-8">
 			<div class="cards__box-content py-5 position-relative <?= $arItem['PROPERTIES']['COLOR']['VALUE']; ?>" id="<?= $this->GetEditAreaId($arItem['ID']); ?>" style="background: url(<?= $arItem['DISPLAY_PROPERTIES']['STAR']['FILE_VALUE']['SRC']; ?>) no-repeat top 2% left / 50px 50px;">
 				<div class="fs-24 fw-700 mb-4 mt-3"><?= $arItem["NAME"] ?></div>
 				<div class="cards__list fs-16 lh-12 text-info ps-0">
@@ -31,7 +31,7 @@ $this->setFrameMode(true);
 				</div>
 			</div>
 		</div>
-		<div class="col-12 col-xl-4">
+		<div class="col-12 col-lg-6 col-xl-4">
 			<div class="cards__box-images mb-3 rounded-2">
 				<picture>
 					<source srcset="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" type="image/webp"><img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["NAME"] ?>" title="<?= $arItem["NAME"] ?>" class="w-100 h-auto" width="255" height="150" />
