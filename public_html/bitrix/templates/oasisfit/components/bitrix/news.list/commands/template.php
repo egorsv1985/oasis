@@ -11,7 +11,8 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-if (empty($arResult["ITEMS"])) return false;
+
+
 // print_r($arResult);
 ?>
 
@@ -20,6 +21,9 @@ if (empty($arResult["ITEMS"])) return false;
 		<?
 		// Инициализируем переменную для подсчета слайдов
 		$slideCount = 0;
+
+		$arResult['TITLE'] = 'Тренеры' . ($arResult['ID'] == 1 ? ' тренажерного зала' : '');
+
 		foreach ($arResult["ITEMS"] as $arItem) :
 			if (CModule::IncludeModule("millcom.phpthumb")) {
 				$arItem['PREVIEW_PICTURE']["WEBP"] = CMillcomPhpThumb::generateImg($arItem['PREVIEW_PICTURE']["SRC"], 3);

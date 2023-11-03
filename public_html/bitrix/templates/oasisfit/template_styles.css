@@ -1884,15 +1884,15 @@ body.modal-show::after {
   background: url("img/icons/line1.svg") no-repeat center/100% auto;
   top: 14%;
   left: 0%;
-  width: 30%;
-  height: 12%;
+  width: 35.375rem;
+  height: 8.75rem;
 }
 .directions .line2 {
   background: url("img/icons/line2.svg") no-repeat center/100% auto;
   bottom: 26%;
   right: 0%;
-  width: 21%;
-  height: 17%;
+  width: 29.4375rem;
+  height: 8.75rem;
 }
 .directions__citation {
   position: relative;
