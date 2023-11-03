@@ -36,23 +36,32 @@ $this->setFrameMode(true);
 		<?
 		}
 		?>
-		<div class="col-12 <? echo ($counter  == 2 || $counter  == 5 || $counter  == 8) ? 'col-lg-6' : 'col-lg-4'; ?> <? echo $evenCount % 2 == 0 ? 'offset-lg-2' : ''; ?>">
-			<div class="directions__box-img rounded-3 mb-4">
+		<div class="col-12 <? echo ($counter  == 2 || $counter  == 5 || $counter  == 8) ? 'col-lg-6' : 'col-lg-4'; ?> <? echo $evenCount % 2 == 0 ? 'offset-lg-2' : ''; ?> float-start">
+			<div class="directions__box-img rounded-3 mb-4" style="background-image: url('<?= $arItem["PREVIEW_PICTURE"]["WEBP"] ?>')">
 				<?
 				if ($arItem['DETAIL_TEXT']) :
 				?>
 
 					<a href="<?= $arItem['DETAIL_PAGE_URL']; ?>" title="<?= $arItem["PREVIEW_PICTURE"]["TITLE"] ?>" class="d-block h-100">
-						<picture>
-							<source srcset="<?= $arItem["PREVIEW_PICTURE"]["WEBP"] ?>" type="image/webp">
-							<img src="<?= $arItem["PREVIEW_PICTURE"]["PNG"] ?>" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" class="w-100 rounded-3">
-						</picture>
+						<div class="row">
+							<div class="col-12 col-md-12">
+								<picture>
+									<source srcset="<?= $arItem["PREVIEW_PICTURE"]["WEBP"] ?>" type="image/webp">
+									<img src="<?= $arItem["PREVIEW_PICTURE"]["PNG"] ?>" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" class="w-100 rounded-3 h-100">
+								</picture>
+
+							</div>
+						</div>
 					</a>
 				<? else : ?>
-					<picture>
-						<source srcset="<?= $arItem["PREVIEW_PICTURE"]["WEBP"] ?>" type="image/webp">
-						<img src="<?= $arItem["PREVIEW_PICTURE"]["PNG"] ?>" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" class="w-100 rounded-3">
-					</picture>
+					<div class="row">
+						<div class="col-12 col-md-12">
+							<picture>
+								<source srcset="<?= $arItem["PREVIEW_PICTURE"]["WEBP"] ?>" type="image/webp">
+								<img src="<?= $arItem["PREVIEW_PICTURE"]["PNG"] ?>" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" class="w-100 rounded-3 h-100">
+							</picture>
+						</div>
+					</div>
 				<? endif; ?>
 			</div>
 			<div class="fs-24 text-uppercase text-white fw-700 mb-2">
@@ -66,4 +75,5 @@ $this->setFrameMode(true);
 		$evenCount++;
 		$counter++;
 	endforeach; ?>
+	<div class="clearfix"></div>
 </div>

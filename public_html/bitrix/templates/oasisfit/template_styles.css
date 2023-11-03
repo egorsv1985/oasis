@@ -1908,6 +1908,19 @@ body.modal-show::after {
   left: 0;
   top: 0;
 }
+.directions__box-img {
+  border-radius: 10px;
+  background-size: cover;
+  background-position: 50% 50%;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.directions__box-img img,
+.directions__box-img picture {
+  opacity: 0;
+}
 .directions__foto {
   position: relative;
 }
