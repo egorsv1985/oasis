@@ -37,7 +37,7 @@ $this->setFrameMode(true);
 		}
 		?>
 		<div class="col-12 <? echo ($counter  == 2 || $counter  == 5 || $counter  == 8) ? 'col-lg-6' : 'col-lg-4'; ?> <? echo $evenCount % 2 == 0 ? 'offset-lg-2' : ''; ?> float-start">
-			<div class="directions__box-img rounded-3 mb-4" style="background-image: url('<?= $arItem["PREVIEW_PICTURE"]["WEBP"] ?>')">
+			<div class="directions__box-img rounded-3 mb-4" style="background-image: url('<?= $arItem["PREVIEW_PICTURE"]["PNG"] ?>')">
 				<?
 				if ($arItem['DETAIL_TEXT']) :
 				?>
