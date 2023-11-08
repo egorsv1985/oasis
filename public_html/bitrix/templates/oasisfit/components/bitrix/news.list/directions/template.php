@@ -41,26 +41,22 @@ $this->setFrameMode(true);
 				<?
 				if ($arItem['DETAIL_TEXT']) :
 				?>
-
-					<a href="<?= $arItem['DETAIL_PAGE_URL']; ?>" title="<?= $arItem["PREVIEW_PICTURE"]["TITLE"] ?>" class="d-block h-100">
-						<div class="row">
-							<div class="col-12 col-md-12">
+					<div class="row">
+						<div class="<? echo ($counter  == 2 || $counter  == 5 || $counter  == 8) ? 'col-12' : 'col-8'; ?> col-lg-12">
+							<a href="<?= $arItem['DETAIL_PAGE_URL']; ?>" title="<?= $arItem["PREVIEW_PICTURE"]["TITLE"] ?>" class="d-block h-100">
 								<picture>
 									<source srcset="<?= $arItem["PREVIEW_PICTURE"]["WEBP"] ?>" type="image/webp">
 									<img src="<?= $arItem["PREVIEW_PICTURE"]["PNG"] ?>" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" class="w-100 rounded-3 h-100">
 								</picture>
-
-							</div>
+							</a>
 						</div>
-					</a>
+					</div>
 				<? else : ?>
-					<div class="row">
-						<div class="col-12 col-md-12">
-							<picture>
-								<source srcset="<?= $arItem["PREVIEW_PICTURE"]["WEBP"] ?>" type="image/webp">
-								<img src="<?= $arItem["PREVIEW_PICTURE"]["PNG"] ?>" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" class="w-100 rounded-3 h-100">
-							</picture>
-						</div>
+					<div class="<? echo ($counter  == 2 || $counter  == 5 || $counter  == 8) ? 'col-12' : 'col-8'; ?> col-lg-12">
+						<picture>
+							<source srcset="<?= $arItem["PREVIEW_PICTURE"]["WEBP"] ?>" type="image/webp">
+							<img src="<?= $arItem["PREVIEW_PICTURE"]["PNG"] ?>" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" class="w-100 rounded-3 h-100">
+						</picture>
 					</div>
 				<? endif; ?>
 			</div>
@@ -75,5 +71,5 @@ $this->setFrameMode(true);
 		$evenCount++;
 		$counter++;
 	endforeach; ?>
-	<div class="clearfix"></div>
+	<!-- <div class="clearfix"></div> -->
 </div>

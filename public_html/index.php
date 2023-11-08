@@ -33,7 +33,7 @@ $APPLICATION->SetTitle("Главная");
 						Присоединяйся к нам в фитнес зале!
 					</div>
 					<div class="promo__box-btn">
-						<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="promo__btn btn btn-primary py-3 d-block fw-500 fs-18">Купить клубную карту</button>
+						<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="promo__btn btn btn-primary py-3 px-sm-4 d-block fw-500 fs-18">Купить клубную карту</button>
 					</div>
 				</div>
 			</div>
@@ -48,7 +48,7 @@ $APPLICATION->SetTitle("Главная");
 				Присоединяйся к нам в фитнес зале!
 			</div>
 			<div class="promo__box-btn">
-				<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="promo__btn btn btn-primary py-3 d-block fw-500 fs-18">Купить клубную карту</button>
+				<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="promo__btn btn btn-primary py-3 px-sm-4 d-block fw-500 fs-18">Купить клубную карту</button>
 			</div>
 		</div>
 	</section>
