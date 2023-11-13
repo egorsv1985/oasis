@@ -1488,7 +1488,6 @@ body.modal-show::after {
   transform-origin: top left;
   width: 390px;
   overflow: hidden;
-  mix-blend-mode: overlay;
 }
 .cards__box-content::after {
   content: "";
