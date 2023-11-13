@@ -117,7 +117,7 @@ $APPLICATION->SetTitle("Контакты");
 						</div>
 					</div>
 					<a href="mailto:info@oasis.ru" class="d-flex gap-2 mb-4 align-items-center">
-						<div class="contacts__link contacts__link--phone">
+						<div class="contacts__link contacts__link--mail">
 						</div>
 						<div class="fs-16 fw-700 text-end">
 							<span class="d-block text-nowrap">info@oasis.ru</span>

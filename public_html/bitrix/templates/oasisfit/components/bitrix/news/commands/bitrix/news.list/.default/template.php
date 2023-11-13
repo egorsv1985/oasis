@@ -37,7 +37,7 @@ $this->setFrameMode(true);
 					</div>
 					<div class="d-flex flex-column">
 						<div class="swiper__box-content position-absolute">
-							<div class="fs-24 fw-700"><?= $arItem["NAME"]; ?></div>
+							<div class="fs-24 fw-700 text-start"><?= $arItem["NAME"]; ?></div>
 							<div class="fs-16 lh-12 text-primary"><?= $arItem['PROPERTIES']['POST']['VALUE'][0]; ?></div>
 						</div>
 					</div>

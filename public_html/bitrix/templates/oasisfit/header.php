@@ -86,7 +86,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 								<a href="/" class="d-block mw-100 text-center">
 									<picture>
 										<source srcset="<?= PAGE === "MAIN" ? SITE_TEMPLATE_PATH . '/img/logo_oasis.webp' : SITE_TEMPLATE_PATH . '/img/logo_oasis-black.webp' ?>" type="image/webp">
-										<img src="<?= PAGE === "MAIN" ? SITE_TEMPLATE_PATH . '/img/logo_oasis.png' : SITE_TEMPLATE_PATH . '/img/logo_oasis-black.png' ?>" alt="oasis" title="oasis" class="mw-100" width="141" height="58">
+										<img src="<?= PAGE === "MAIN" ? SITE_TEMPLATE_PATH . '/img/logo_oasis.png' : SITE_TEMPLATE_PATH . '/img/logo_oasis-black.png' ?>" alt="oasis" title="oasis" class="mw-100 h-auto" width="141" height="58">
 									</picture>
 								</a>
 							</div>

@@ -1139,12 +1139,22 @@ body.modal-show::after {
   right: -99%;
 }
 .promo__box-trener {
-  background: url("img/foto-trener2.png") no-repeat;
-  background-size: 100% auto;
-  background-position: 0% 0%;
+  background: url("img/offer-trainer-min.png") no-repeat;
+  background-size: 74% auto;
+  background-position: 50% -15%;
   z-index: 1;
-  left: 10%;
-  top: -2%;
+  /*top: -2%;*/
+}
+@media only screen and (max-width: 998px) {
+  .promo__box-trener {
+    background-position: 50% 50%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .promo__box-trener {
+    background-position: 50% 50%;
+    background-size: contain;
+  }
 }
 .error__box-trener {
   background: url("img/404.png") no-repeat;
@@ -1230,7 +1240,8 @@ body.modal-show::after {
     right: 20%;
     bottom: inherit;
     z-index: 2;
-    top: 20%;
+    top: auto;
+    bottom: 36%;
   }
   .main .footer {
     z-index: 1;
@@ -1590,6 +1601,16 @@ body.modal-show::after {
 .contacts__link--phone:hover {
   background: #b8ada0 url("img/icons/phone-white.svg") no-repeat center/18px
     18px;
+}
+.contacts__link--mail {
+  background: url("img/icons/mail-dark.svg") no-repeat center/18px 18px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #b8ada0;
+  border-radius: 50%;
+}
+.contacts__link--mail:hover {
+  background: #b8ada0 url("img/icons/mail-white.svg") no-repeat center/18px 18px;
 }
 .contacts__link--work {
   background: url("img/icons/time-dark.svg") no-repeat center/21px 20px;
@@ -2200,12 +2221,15 @@ input::placeholder {
   .header__menu::after {
     left: -75%;
   }
-  .header__link--phone {
+  .header__link--phone,
+  .main .header__link--phone {
     background: url("img/icons/phone-dark.svg") no-repeat center/18px;
   }
-  .header__link--phone:hover {
+  .header__link--phone:hover,
+  .main .header__link--phone:hover {
     background: #b8ada0 url("img/icons/phone-white.svg") no-repeat center/18px;
   }
+
   .events__fon::before {
     width: 101%;
   }
