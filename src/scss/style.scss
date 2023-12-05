@@ -32,7 +32,7 @@ $containerPadding: 30;
 // 2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
 $responsiveType: 1;
 
-// Ширина страбатывания первого брейкпоинта
+// Ширина срабатывания первого брейкпоинта
 $containerWidth: $maxWidthContainer + $containerPadding;
 
 // Брейк-поинты
@@ -146,8 +146,6 @@ $grid_breakpoints: (
 // pages
 @import "./pages/home";
 
-
-
 // sections
 @import "./sections/promo";
 @import "./sections/about";
@@ -163,7 +161,6 @@ $grid_breakpoints: (
 @import "./sections/directions";
 @import "./sections/trainers";
 @import "./sections/forms";
-
 
 // @import "./components/social";
 // @import "./components/scroll-header";
