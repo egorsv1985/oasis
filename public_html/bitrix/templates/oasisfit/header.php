@@ -101,7 +101,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 						</div>
 						<div class="header__menu col-12 col-md-6 col-lg-4">
 							<div class="d-flex flex-column justify-content-between h-100">
-								<div class="header__menu-top">
+								<div class="header__menu-top pb-4">
 									<? $APPLICATION->IncludeComponent(
 										"bitrix:menu",
 										"main",
