@@ -2358,6 +2358,9 @@ input::placeholder {
 		overflow-y: auto;
 		overflow-x: hidden;
 	}
+	.promo__box {
+		bottom: 25%;
+	}
 }
 
 .footer__link {
