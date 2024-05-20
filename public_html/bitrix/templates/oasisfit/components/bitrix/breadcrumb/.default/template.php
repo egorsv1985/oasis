@@ -19,7 +19,7 @@ $strReturn = '
 $itemSize = count($arResult);
 for ($index = 0; $index < $itemSize; $index++) {
     $title = htmlspecialcharsex($arResult[$index]["TITLE"]);
-    
+
     if ($index === 0) {
         // Первый элемент
         if ($arResult[$index]["LINK"] === "/") {
