@@ -25,8 +25,8 @@ $APPLICATION->SetTitle("О нас"); ?>
 							); ?>
 						</div>
 						<div class="col-10 col-lg-9">
-						<h1 class="d-lg-none fs-40 fw-700 lh-12 mb-3"><? $APPLICATION->ShowTitle(true); ?></h1>
-						<div class="d-lg-none fs-20 mb-3">Узнай нас еще лучше!</div>
+							<h1 class="d-lg-none fs-40 fw-700 lh-12 mb-3"><? $APPLICATION->ShowTitle(true); ?></h1>
+							<div class="d-lg-none fs-20 mb-3">Узнай нас еще лучше!</div>
 							<a href="#" class="about__box-content d-block">
 								<div class="fs-20 text-info">
 									Меняем карту вашего клуба на
