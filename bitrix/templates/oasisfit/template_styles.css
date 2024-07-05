@@ -1904,14 +1904,14 @@ body.modal-show::after {
 }
 .directions .line1 {
 	background: url('img/icons/line1.svg') no-repeat center/100% auto;
-	top: 14%;
+	top: 32rem;
 	left: 0%;
 	width: 35.375rem;
 	height: 8.75rem;
 }
 .directions .line2 {
 	background: url('img/icons/line2.svg') no-repeat center/100% auto;
-	bottom: 26%;
+	bottom: 10rem;
 	right: 0%;
 	width: 29.4375rem;
 	height: 8.75rem;

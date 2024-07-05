@@ -186,8 +186,11 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 			<div class="line1 position-absolute"></div>
 			<div class="line2 position-absolute"></div>
 			<div class="container position-relative">
+				<div class="fs-36 fw-700 lh-12 text-white mb-4">
+					Зоны/Направления<!-- тренажерного зала-->
+				</div>
 				<div class="row gy-5 mb-5">
-					<div class="col-12 col-md-4">
+					<div class="col-12">
 						<?
 						$arFilter = array(
 							'IBLOCK_ID' => 9,
@@ -202,25 +205,20 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 						endwhile;
 						?>
 
-						<ul class="nav nav-tabs flex-sm-column" id="directionsTab" role="tablist">
+						<ul class="nav nav-tabs " id="directionsTab" role="tablist">
 							<? foreach ($SECTIONS as $i => $arSection) :
 								
 								$arSection['NAME'] = str_replace('в детском клубе', '', $arSection['NAME']);
 								?>
 								<li class="nav-item" role="presentation">
-									<button class="text-start nav-link<?= ($i++ ? '' : ' active'); ?>" id="tab-<?= $arSection['ID']; ?>-tab" data-bs-toggle="pill" data-bs-target="#tab-<?= $arSection['ID']; ?>" type="button" role="tab" aria-controls="tab-<?= $arSection['ID']; ?>" aria-selected="true">
+									<button class="text-start fs-20 nav-link<?= ($i++ ? '' : ' active'); ?>" id="tab-<?= $arSection['ID']; ?>-tab" data-bs-toggle="pill" data-bs-target="#tab-<?= $arSection['ID']; ?>" type="button" role="tab" aria-controls="tab-<?= $arSection['ID']; ?>" aria-selected="true">
 										<span><?= $arSection['NAME']; ?></span>
 									</button>
 								</li>
 							<? endforeach; ?>
 						</ul>
 
-					</div>
-					<div class="col-lg-4 col-md-7 col-12 offset-lg-1">
-						<div class="fs-36 fw-700 lh-12 text-white">
-							Зоны/Направления<!-- тренажерного зала-->
-						</div>
-					</div>
+					</div>					
 				</div>
 				<div class="tab-content my-5" id="directionsTabContent">
 					<? foreach ($SECTIONS as $i => $arSection) : ?>
