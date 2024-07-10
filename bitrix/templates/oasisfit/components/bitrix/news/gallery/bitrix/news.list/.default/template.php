@@ -36,9 +36,10 @@ foreach ($arResult['ITEMS'] as $arItem) {
 		// Инициализируем переменную для подсчета слайдов
 		$slideCount = 0;
 		foreach ($arResult["ITEMS"] as $arItem) :
+			if (isset($arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']['ID'])) $arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE'] = array($arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']);
 			foreach ($arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE'] as $img) :
 				if (CModule::IncludeModule("millcom.phpthumb")) {
-					// $img["WEBP"] = CMillcomPhpThumb::generateImg($img["SRC"], 2);
+					$img["WEBP"] = CMillcomPhpThumb::generateImg($img["SRC"], 2);
 					$img["PNG"] = CMillcomPhpThumb::generateImg($img["SRC"], 1);
 				}
 				$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
@@ -72,11 +73,11 @@ foreach ($arResult['ITEMS'] as $arItem) {
 		// Инициализируем переменную для подсчета слайдов
 		$slideCount = 0;
 		foreach ($arResult["ITEMS"] as $arItem) :
-
+			if (isset($arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']['ID'])) $arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE'] = array($arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']);
 			foreach ($arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE'] as $img) :
 
 				if (CModule::IncludeModule("millcom.phpthumb")) {
-					// $img["WEBP"] = CMillcomPhpThumb::generateImg($img["SRC"], 9);
+					$img["WEBP"] = CMillcomPhpThumb::generateImg($img["SRC"], 9);
 					$img["PNG"] = CMillcomPhpThumb::generateImg($img["SRC"], 8);
 				}
 				$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));

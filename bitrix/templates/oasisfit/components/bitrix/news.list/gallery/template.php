@@ -34,11 +34,11 @@ foreach ($arResult['ITEMS'] as $arItem) {
 		<?
 		// Инициализируем переменную для подсчета слайдов
 		$slideCount = 0;
+		if (CModule::IncludeModule("millcom.phpthumb")) {
+			$arItem["WEBP"] = CMillcomPhpThumb::generateImg($arItem['IMG'], 2);
+			$arItem["PNG"] = CMillcomPhpThumb::generateImg($arItem['IMG'], 1);
+		}
 		foreach ($IMAGES_ARRAY as $arItem):
-			if (CModule::IncludeModule("millcom.phpthumb")) {
-				$arItem["WEBP"] = CMillcomPhpThumb::generateImg($arItem['IMG'], 2);
-				$arItem["PNG"] = CMillcomPhpThumb::generateImg($arItem['IMG'], 1);
-			}
 
 			$slideCount++; // Увеличиваем счетчик слайдов
 		?>

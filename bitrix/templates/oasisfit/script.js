@@ -165,7 +165,7 @@
 		var swiper = new Swiper('.teamSwiper', {
 			// задаем количество слайдов, которые будут показываться одновременно
 			slidesPerView: 1,
-			centeredSlides: true,
+			// centeredSlides: true,
 			// Responsive breakpoints
 			breakpoints: {
 				// when window width is >= 1200px
