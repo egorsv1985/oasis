@@ -142,7 +142,7 @@ Array(
 										<div class="plans__ico" style="background: url(' . CFile::GetPath($arElement['PROPERTY_ICO_VALUE']) . ') no-repeat center / contain;"></div>
 										<div class="plans__inform text-center text-nowrap position-absolute start-50 fs-16 fw-700 px-5 py-4 rounded-4">
 											' . $arElement['~NAME'] . '	' . ($arElement['PROPERTY_LINK_VALUE'] ? '<div>
-											<a href="' . $arElement['PROPERTY_LINK_VALUE'] . '#gallery" class="btn btn-primary mt-2 fw-500 fs-14" target="_blank">В галерею</a>
+											<a href="/galereya/" class="btn btn-primary mt-2 fw-500 fs-14" target="_blank">В галерею</a>
 											</div>' : '') . '
 										</div>
 									</div>';

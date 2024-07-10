@@ -32,7 +32,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 
 <head>
 
-<meta name="yandex-verification" content="2b9b6b06def27c8a" />
+	<meta name="yandex-verification" content="2b9b6b06def27c8a" />
 
 	<? if (strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome-Lighthouse') === false) : ?>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
@@ -128,6 +128,11 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 										<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="header__btn-shedule btn btn-primary py-3 fw-600 fs-16 px-5"><span>Расписание</span></button>
 										<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="btn btn-light py-3 d-block fw-600 fs-16 col-12 col-lg-6"><span>Гостевой визит</span></button>
 										<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="btn btn-transparent header__btn btn--pseudo position-relative py-3 d-block fw-600 fs-16 col-12 col-lg-6 text-start text-md-center"><span>Заморозить карту</span></button>
+									</div>
+									<div class="header__icons">
+										<div class="chevron"></div>
+										<div class="chevron"></div>
+										<div class="chevron"></div>
 									</div>
 								</div>
 
