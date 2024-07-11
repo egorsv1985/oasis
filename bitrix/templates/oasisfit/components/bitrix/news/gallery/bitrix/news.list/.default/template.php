@@ -11,7 +11,7 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-// print_r($arResult);
+print_r($arResult);
 
 $IMAGES_ARRAY = array();
 foreach ($arResult['ITEMS'] as $arItem) {
@@ -31,6 +31,10 @@ foreach ($arResult['ITEMS'] as $arItem) {
 
 ?>
 <div class="swiper gallerySwiper2">
+	<div class="large-ctrl">
+		<div class="swiper-button-prev rounded-circle border-success border"></div>
+		<div class="swiper-button-next rounded-circle border-success border"></div>
+	</div>
 	<div class="swiper-wrapper">
 		<?
 		// Инициализируем переменную для подсчета слайдов
