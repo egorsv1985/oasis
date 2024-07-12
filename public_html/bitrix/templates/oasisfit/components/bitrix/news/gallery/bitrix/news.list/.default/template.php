@@ -11,7 +11,6 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-// print_r($arResult);
 
 $IMAGES_ARRAY = array();
 foreach ($arResult['ITEMS'] as $arItem) {
@@ -31,11 +30,16 @@ foreach ($arResult['ITEMS'] as $arItem) {
 
 ?>
 <div class="swiper gallerySwiper2">
+	<div class="large-ctrl">
+		<div class="swiper-button-prev rounded-circle border-success border"></div>
+		<div class="swiper-button-next rounded-circle border-success border"></div>
+	</div>
 	<div class="swiper-wrapper">
 		<?
 		// Инициализируем переменную для подсчета слайдов
 		$slideCount = 0;
 		foreach ($arResult["ITEMS"] as $arItem) :
+			if (isset($arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']['ID'])) $arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE'] = array($arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']);
 			foreach ($arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE'] as $img) :
 				if (CModule::IncludeModule("millcom.phpthumb")) {
 					$img["WEBP"] = CMillcomPhpThumb::generateImg($img["SRC"], 2);
@@ -72,7 +76,7 @@ foreach ($arResult['ITEMS'] as $arItem) {
 		// Инициализируем переменную для подсчета слайдов
 		$slideCount = 0;
 		foreach ($arResult["ITEMS"] as $arItem) :
-
+			if (isset($arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']['ID'])) $arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE'] = array($arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE']);
 			foreach ($arItem['DISPLAY_PROPERTIES']['IMAGES']['FILE_VALUE'] as $img) :
 
 				if (CModule::IncludeModule("millcom.phpthumb")) {

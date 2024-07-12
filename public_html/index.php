@@ -30,7 +30,7 @@ $APPLICATION->SetTitle("Главная");
 							версией себя!</h1>
 					</div>
 					<div class="fs-24 mb-5">
-						Присоединяйся к нам в фитнес зале!
+						Присоединяйтесь к нам в фитнес-зал!
 					</div>
 					<div class="promo__box-btn">
 						<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="promo__btn btn btn-primary py-3 px-sm-4 d-block fw-500 fs-18">Купить клубную карту</button>

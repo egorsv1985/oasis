@@ -31,8 +31,8 @@ foreach ($arResult['ITEMS'] as $arItem) {
 if (empty($IMAGES_ARRAY)) return false;
 //print_r($IMAGES_ARRAY);
 ?>
-<? $this->SetViewTarget('gallery-swiper2'); ?>
-<div class="swiper gallerySwiper2">
+
+<div class="swiper gallerySwiper2 ">
 	<div class="large-ctrl">
 		<div class="swiper-button-prev rounded-circle border-success border"></div>
 		<div class="swiper-button-next rounded-circle border-success border"></div>
@@ -64,7 +64,7 @@ if (empty($IMAGES_ARRAY)) return false;
 		<? endforeach; ?>
 	</div>
 </div>
-<? $this->EndViewTarget(); ?>
+
 <? $this->SetViewTarget('gallery-swiper'); ?>
 <div thumbsSlider="" class="swiper gallerySwiper">
 	<div class="swiper-wrapper mb-5">

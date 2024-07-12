@@ -58,7 +58,13 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 	</div>
 
 	<body class="<?= PAGE === "MAIN" ? 'main' : '' ?>">
-
+		<? if (strpos($APPLICATION->GetCurPage(), 'o-nas') !== false) : ?>
+			<style>
+				.modal-backdrop {
+					opacity: 0;
+				}
+			</style>
+		<? endif; ?>
 		<div class="wrapper">
 			<header class="header py-3 fixed-top w-100">
 				<div class="container">

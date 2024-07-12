@@ -1,6 +1,9 @@
 <?
-$sSectionName = "Команда";
-$arDirProperties = Array(
-
+$sSectionName = 'Главная';
+$arDirProperties = array(
+	'title' => 'Title',
+	'description' => 'Description',
+	'keywords' => 'Keywords',
+	'robots' => 'index, follow'
 );
 ?>

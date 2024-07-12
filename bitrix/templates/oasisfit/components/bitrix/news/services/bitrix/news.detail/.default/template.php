@@ -39,7 +39,7 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 						'ID' => $arResult['PROPERTIES']['GALLERY']['VALUE']
 					);
 				?>
-					<div class="col-12 col-md-11 order-1 order-lg-0">
+					<div class="col-12 col-md-11 order-1 order-lg-0 d-none d-lg-block">
 
 						<? $APPLICATION->IncludeComponent(
 							"bitrix:news.list",
@@ -204,7 +204,7 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 							$SECTIONS[] = $arSection;
 						endwhile;
 						?>
-
+						<?if (count($SECTIONS) > 1):?>
 						<ul class="nav nav-tabs " id="directionsTab" role="tablist">
 							<? foreach ($SECTIONS as $i => $arSection) :
 								
@@ -217,8 +217,8 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 								</li>
 							<? endforeach; ?>
 						</ul>
-
-					</div>					
+						<?endif;?>
+					</div>
 				</div>
 				<div class="tab-content my-5" id="directionsTabContent">
 					<? foreach ($SECTIONS as $i => $arSection) : ?>

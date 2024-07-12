@@ -2,6 +2,7 @@
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Галерея");
 $APPLICATION->SetTitle("Галерея"); ?><main class="pt-5">
+	
 	<section class="gallery py-5" id="gallery">
 		<div class="container">
 			<div class="row gy-4">
@@ -21,7 +22,7 @@ $APPLICATION->SetTitle("Галерея"); ?><main class="pt-5">
 					); ?>
 				</div>
 				<div class="col-12 col-md-11 order-1 order-lg-0">
-					<!-- <? $APPLICATION->ShowViewContent('gallery-swiper'); ?> -->
+					
 					<!-- <h2 class="d-lg-none fs-40 fw-700 lh-12 mb-4">
 						<? $APPLICATION->ShowTitle(true); ?>
 					</h2> --> <!-- <div class="d-lg-none fs-20 mb-3">

@@ -1,0 +1,1 @@
+/home/c/cu40230/oasisfit.ru/public_html/bitrix/modules/sale/install/components/bitrix/sale.personal.order/templates/.default/bitrix//home/c/cu40230/oasisfit.ru/public_html/bitrix/components/bitrix/sale.personal.order/templates/.default/bitrix/

@@ -12,8 +12,9 @@ if (empty($arResult))
     return "";
 
 $strReturn = '
-<div class="breadcrumb__box">
-    <nav aria-label="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb__nav position-relative ">
+
+<div class="breadcrumb__box ' . (strpos($APPLICATION->GetCurPage(), 'galereya') !== false ? 'gallery-breadcrumb__box' : '') . '">
+    <nav aria-label="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb__nav position-relative ' . (strpos($APPLICATION->GetCurPage(), 'galereya') !== false ? 'gallery-breadcrumb__nav' : '') . '">
         <ol class="breadcrumb flex-row-reverse flex-nowrap align-items-center m-0 gap-4">';
 
 $itemSize = count($arResult);

@@ -344,9 +344,17 @@ if ($arResult["MESSAGE"] <> '') : ?>
 				<input type="text" name="captcha_word" maxlength="50" value="">
 			<? endif ?>
 		<? endif ?>
-		<button type="submit" class="form__btn btn fs-16 fw-600 px-3 py-3 btn-primary w-100 border-0 mt-4">
-			Отправить
-		</button>
+			<button type="submit" class="form__btn btn fs-16 fw-600 px-3 py-3 btn-primary w-100 border-0 mt-4">
+				Отправить
+			</button>
+			<p class="fs-10 lh-12 text-info text-start">
+				<input type="checkbox" name="politika" value="politika" required="required" checked="checked">
+				Согласие на <a href="/politika/" target="_blank">политику конфиденциальности</a><br>
+			</p>
+			<p class="fs-10 lh-12 text-info text-start">
+				<input type="checkbox" name="soglasie" value="soglasie" required="required" checked="checked">
+				Даю согласие на <a href="/soglasie/" target="_blank">обработку персональных</a>
+			</p>
 				</div>
 		</div>
 	</form>

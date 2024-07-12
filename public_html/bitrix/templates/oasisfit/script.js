@@ -109,7 +109,7 @@
 			breakpoints: {
 				// when window width is >= 992px
 				992: {
-					slidesPerView: 3,
+					slidesPerView: 1,
 					spaceBetween: 50,
 				},
 			},
@@ -165,35 +165,36 @@
 		var swiper = new Swiper('.teamSwiper', {
 			// задаем количество слайдов, которые будут показываться одновременно
 			slidesPerView: 1,
-			centeredSlides: true,
+			// centeredSlides: true,
 			// Responsive breakpoints
 			breakpoints: {
 				// when window width is >= 1200px
 				992: {
 					slidesPerView: 3,
-					spaceBetween: 30,
+					spaceBetween: 0,
 				},
 			},
 
 			// включаем курсор в виде "руки" при наведении на слайды
-			grabCursor: true,
+			grabCursor: false,
 			// включаем использование клавиатуры для навигации по слайдам
 			keyboard: {
 				enabled: true,
 			},
 			// centeredSlides: true,
-			loop: true,
+			loop: false,
 			pagination: {
-				el: '.teams .swiper-pagination',
+				el: '.team_swiper__control .swiper-pagination',
 				type: 'bullets',
 				clickable: true,
 			},
 			// включаем кнопки "вперед" и "назад" для навигации по слайдам
 			navigation: {
-				nextEl: '.teams .swiper-button-next',
-				prevEl: '.teams .swiper-button-prev',
+				nextEl: '.team_swiper__control .swiper-button-next',
+				prevEl: '.team_swiper__control .swiper-button-prev',
 			},
 		})
+		/*
 		// выбираем элемент с классом "teamSwiper" и создаем новый Swiper объект
 		var swiper = new Swiper('.teamSwiper', {
 			// задаем количество слайдов, которые будут показываться одновременно
@@ -225,6 +226,7 @@
 				prevEl: '.trainers .swiper-button-prev',
 			},
 		})
+		*/
 		var swiper = new Swiper('.gallerySwiper', {
 			loop: true,
 			spaceBetween: 30,

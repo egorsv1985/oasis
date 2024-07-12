@@ -329,16 +329,25 @@ if ($arResult["MESSAGE"] <> '') : ?>
 			<? endif ?>
 		<? endif ?>
 		<div class="col-12 col-sm-6 col-lg-3 ">
-			<div class="form-check form-check-inline position-relative me-0 ps-3">
+			<div class="form-check form-check-inline position-relative me-0 ps-0 mb-2">
+				<input type="checkbox" class="form-check-input m-0" value="" name="polity" id="polity" checked>
+				<label class="form-check-label fs-10 d-block ms-5 pt-1" for="polity">
+					Согласен с <a href="/politika/" class="" target="_blank">политикой конфиденциальности</a>
+				</label>
+			</div>
+			<div class="form-check form-check-inline position-relative me-0 ps-0 mb-0">
 				<input type="checkbox" class="form-check-input m-0" value="" name="check" id="check" checked>
-				<label class="form-check-label fs-14 d-block ms-5" for="check">
-					Согласие на
-					<a href="#" class="">политику конфиденциальности</a>
+				<label class="form-check-label fs-10 d-block ms-5 pt-1" for="check">
+					Даю согласие на <a href="/soglasie/" target="_blank">обработку персональных данных</a>
 				</label>
 			</div>
 		</div>
-		<button type="submit" class="col-12 col-sm-6 col-lg-3 form__btn btn fs-16 fw-600 px-3 py-3 btn-primary border-0">
-			Отправить
-		</button>
+		<div class="col-12 col-sm-6 col-lg-3">
+			<button type="submit" class=" form__btn btn w-100 fs-16 fw-600 px-3 py-3 btn-primary border-0">
+				Отправить
+			</button>
+		</div>
+
+
 	</div>
 </form>

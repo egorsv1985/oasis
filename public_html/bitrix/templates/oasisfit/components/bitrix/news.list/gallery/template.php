@@ -11,6 +11,7 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+// print_r($arResult);
 
 // $arResult['PROPERTIES']['IMAGES']['VALUE'] = array();
 $IMAGES_ARRAY = array();
@@ -27,38 +28,45 @@ foreach ($arResult['ITEMS'] as $arItem) {
 		);
 	}
 }
+if (empty($IMAGES_ARRAY)) return false;
 //print_r($IMAGES_ARRAY);
 ?>
-<div class="swiper gallerySwiper2">
+
+<div class="swiper gallerySwiper2 ">
+	<div class="large-ctrl">
+		<div class="swiper-button-prev rounded-circle border-success border"></div>
+		<div class="swiper-button-next rounded-circle border-success border"></div>
+	</div>
 	<div class="swiper-wrapper">
 		<?
 		// Инициализируем переменную для подсчета слайдов
 		$slideCount = 0;
-		foreach ($IMAGES_ARRAY as $arItem):
+
+		foreach ($IMAGES_ARRAY as $arItem) :
 			if (CModule::IncludeModule("millcom.phpthumb")) {
 				$arItem["WEBP"] = CMillcomPhpThumb::generateImg($arItem['IMG'], 2);
 				$arItem["PNG"] = CMillcomPhpThumb::generateImg($arItem['IMG'], 1);
 			}
-
 			$slideCount++; // Увеличиваем счетчик слайдов
 		?>
 			<div class="swiper-slide">
-				
+
 				<div class="swiper__box position-relative">
-				<div class="swiper__title d-flex gap-3 position-absolute align-items-center">
-					<div class="fs-18 text-white"><?= $arItem["NAME"] ?></div>
+					<div class="swiper__title d-flex gap-3 position-absolute align-items-center">
+						<div class="fs-18 text-white"><?= $arItem["NAME"] ?></div>
+					</div>
+					<picture>
+						<source srcset="<?= $arItem["WEBP"] ?>" type="image/webp"><img class="rounded-2 w-100 h-auto" src="<?= $arItem["PNG"] ?>" />
+					</picture>
 				</div>
-				<picture>
-					<source srcset="<?= $arItem["WEBP"] ?>" type="image/webp"><img class="rounded-2 w-100 h-auto" src="<?= $arItem["PNG"] ?>" />
-				</picture>
-				</div>
-				
+
 			</div>
 		<? endforeach; ?>
 	</div>
 </div>
+
 <? $this->SetViewTarget('gallery-swiper'); ?>
-<div thumbsSlider="" class="swiper gallerySwiper d-none d-lg-block">
+<div thumbsSlider="" class="swiper gallerySwiper">
 	<div class="swiper-wrapper mb-5">
 		<?
 		// Инициализируем переменную для подсчета слайдов
@@ -71,7 +79,6 @@ foreach ($arResult['ITEMS'] as $arItem) {
 			$slideCount++; // Увеличиваем счетчик слайдов
 		?>
 			<div class="swiper-slide">
-
 				<picture>
 					<source srcset="<?= $arItem["WEBP"] ?>" type="image/webp"><img class="rounded-2 w-100 h-auto" src="<?= $arItem["PNG"] ?>" />
 				</picture>

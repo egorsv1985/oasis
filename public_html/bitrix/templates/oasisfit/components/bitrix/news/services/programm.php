@@ -26,7 +26,7 @@ while($ob = $res->GetNext()) {
 
 $arSelect = array("ID", "NAME", "SECTION_PAGE_URL");
 $arFilter = array(
-	"IBLOCK_ID" => 3,
+	"IBLOCK_ID" => 9,
 	"ACTIVE" => "Y",
 	'CODE' => $arResult['VARIABLES']['PROGRAMM_SECTION']
 );
@@ -45,5 +45,5 @@ print_r($arParams);
 */
 $arResult['VARIABLES']['ELEMENT_CODE'] = $arResult['VARIABLES']['PROGRAMM_CODE'];
 $arResult['VARIABLES']['SECTION_CODE'] = $arResult['VARIABLES']['PROGRAMM_SECTION'];
-$arParams['IBLOCK_ID'] = 3;
+$arParams['IBLOCK_ID'] = 9;
 require_once 'detail.php';

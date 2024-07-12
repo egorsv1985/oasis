@@ -39,7 +39,7 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 						'ID' => $arResult['PROPERTIES']['GALLERY']['VALUE']
 					);
 				?>
-					<div class="col-12 col-md-11 order-1 order-lg-0">
+					<div class="col-12 col-md-11 order-1 order-lg-0 d-none d-lg-block">
 
 						<? $APPLICATION->IncludeComponent(
 							"bitrix:news.list",
@@ -157,7 +157,7 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 						<? $APPLICATION->ShowTitle(true); ?>
 					</h2>
 					<a href="/meropriyatiya/" target="_blank" class="d-lg-none services-item__box-content d-block">
-						<div class="fs-20 text-info">Мероприятия</div>
+						<div class="fs-20">Мероприятия</div>
 					</a>
 				</div>
 				<div class="d-none d-lg-block col-2">
@@ -170,7 +170,7 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 				</div>
 				<div class="d-none d-lg-block col-12 col-lg-3">
 					<a href="/meropriyatiya/" target="_blank" class="services-item__box-content d-block">
-						<div class="fs-20 text-info">Мероприятия</div>
+						<div class="fs-20">Мероприятия</div>
 					</a>
 				</div>
 				<div class="col-12 col-lg-8 offset-lg-1 order-1 order-lg-0">
@@ -186,8 +186,11 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 			<div class="line1 position-absolute"></div>
 			<div class="line2 position-absolute"></div>
 			<div class="container position-relative">
+				<div class="fs-36 fw-700 lh-12 text-white mb-4">
+					Зоны/Направления<!-- тренажерного зала-->
+				</div>
 				<div class="row gy-5 mb-5">
-					<div class="col-12 col-md-4">
+					<div class="col-12">
 						<?
 						$arFilter = array(
 							'IBLOCK_ID' => 9,
@@ -201,20 +204,20 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 							$SECTIONS[] = $arSection;
 						endwhile;
 						?>
-
-						<ul class="nav nav-tabs flex-sm-column" id="directionsTab" role="tablist">
-							<? foreach ($SECTIONS as $i => $arSection) : ?>
+						<?if (count($SECTIONS) > 1):?>
+						<ul class="nav nav-tabs " id="directionsTab" role="tablist">
+							<? foreach ($SECTIONS as $i => $arSection) :
+								
+								$arSection['NAME'] = str_replace('в детском клубе', '', $arSection['NAME']);
+								?>
 								<li class="nav-item" role="presentation">
-									<button class="text-start nav-link<?= ($i++ ? '' : ' active'); ?>" id="tab-<?= $arSection['ID']; ?>-tab" data-bs-toggle="pill" data-bs-target="#tab-<?= $arSection['ID']; ?>" type="button" role="tab" aria-controls="tab-<?= $arSection['ID']; ?>" aria-selected="true"><?= $arSection['NAME']; ?></button>
+									<button class="text-start fs-20 nav-link<?= ($i++ ? '' : ' active'); ?>" id="tab-<?= $arSection['ID']; ?>-tab" data-bs-toggle="pill" data-bs-target="#tab-<?= $arSection['ID']; ?>" type="button" role="tab" aria-controls="tab-<?= $arSection['ID']; ?>" aria-selected="true">
+										<span><?= $arSection['NAME']; ?></span>
+									</button>
 								</li>
 							<? endforeach; ?>
 						</ul>
-
-					</div>
-					<div class="col-lg-4 col-md-7 col-12 offset-lg-1">
-						<div class="fs-36 fw-700 lh-12 text-white">
-							Зоны/Направления<!-- тренажерного зала-->
-						</div>
+						<?endif;?>
 					</div>
 				</div>
 				<div class="tab-content my-5" id="directionsTabContent">
@@ -443,7 +446,7 @@ $DETAIL_TEXT = explode('<hr>', $arResult["DETAIL_TEXT"]);
 	</section>
 	<section class="abonements py-5" id="abonements">
 		<div class="container">
-			<h2 class="fs-36 fw-700 lh-12 mb-4">Абонементы</h2>
+			<h2 class="fs-36 fw-700 lh-12 mb-4"><?=($arResult['PROPERTIES']['SUBSCRIPTION_TITLE']['~VALUE'] ? $arResult['PROPERTIES']['SUBSCRIPTION_TITLE']['~VALUE'] : 'Абонементы')?></h2>
 			<div class="table-responsive">
 				<?= str_replace('<table', '<table class="table align-middle"', $arResult['PROPERTIES']['SUBSCRIPTION']['~VALUE']['TEXT']); ?>
 			</div>

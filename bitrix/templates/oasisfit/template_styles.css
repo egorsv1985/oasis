@@ -1442,6 +1442,18 @@ body.modal-show::after {
 .community {
 	padding-block: 120px;
 }
+.community__overflow{
+	overflow-y: auto;
+	max-height: 142px;
+}
+.community__photo{
+	width:100px;
+	height:100px;
+	
+	background: url('img/icons/streaming.svg') no-repeat center;
+}
+
+
 @media only screen and (min-width: 991px) {
 	.community {
 		background: url('img/comunity_fon.png') no-repeat center 22%/45% auto;
@@ -2580,3 +2592,12 @@ img { pointer-events: none; }
 .header__services::-webkit-scrollbar-thumb { cursor: pointer; border: none; background-color: #cfc8be; border-radius: 20px; }
 .header__menu-top::-webkit-scrollbar-thumb:hover,
 .header__services::-webkit-scrollbar-thumb:hover { background: #7d6858; }
+.gallery-breadcrumb__box {
+    height: 100px;
+    
+}
+.gallery-breadcrumb__nav {
+   
+    width: 170px;
+    
+}

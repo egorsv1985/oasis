@@ -11,7 +11,7 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-print_r($arResult);
+// print_r($arResult);
 ?>
 <div class="swiper gallerySwiper2">
 	<div class="swiper-wrapper">

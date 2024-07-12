@@ -13,8 +13,8 @@ $asset->addCss('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=
 $asset->addJs('https://code.jquery.com/jquery-3.6.0.min.js');
 $asset->addJs('https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js');
 
-$asset->addCss('https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css');
-$asset->addJs('https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js');
+$asset->addCss('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
+$asset->addJs('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js');
 
 
 $asset->addCss('https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css');
@@ -31,6 +31,9 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 <html lang="ru">
 
 <head>
+
+	<meta name="yandex-verification" content="2b9b6b06def27c8a" />
+
 	<? if (strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome-Lighthouse') === false) : ?>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 	<? else : ?>
@@ -55,7 +58,13 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 	</div>
 
 	<body class="<?= PAGE === "MAIN" ? 'main' : '' ?>">
-
+		<? if (strpos($APPLICATION->GetCurPage(), 'o-nas') !== false) : ?>
+			<style>
+				.modal-backdrop {
+					opacity: 0;
+				}
+			</style>
+		<? endif; ?>
 		<div class="wrapper">
 			<header class="header py-3 fixed-top w-100">
 				<div class="container">
@@ -95,7 +104,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 							<a href="tel:+73462949090" class="d-flex gap-2 justify-content-end align-items-center" title="+73462949090">
 								<div class="header__link header__link--phone rounded-circle"></div>
 								<div class="d-none d-xl-block fs-20 fw-700 text-end">
-									<span class="d-block text-nowrap">+7 346 294 90 90</span>
+									<span class="d-block text-nowrap">+7 (3462) 94 90 90</span>
 								</div>
 							</a>
 						</div>
@@ -125,6 +134,11 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 										<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="header__btn-shedule btn btn-primary py-3 fw-600 fs-16 px-5"><span>Расписание</span></button>
 										<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="btn btn-light py-3 d-block fw-600 fs-16 col-12 col-lg-6"><span>Гостевой визит</span></button>
 										<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="btn btn-transparent header__btn btn--pseudo position-relative py-3 d-block fw-600 fs-16 col-12 col-lg-6 text-start text-md-center"><span>Заморозить карту</span></button>
+									</div>
+									<div class="header__icons">
+										<div class="chevron"></div>
+										<div class="chevron"></div>
+										<div class="chevron"></div>
 									</div>
 								</div>
 

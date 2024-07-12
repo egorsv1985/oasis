@@ -34,7 +34,7 @@ $this->setFrameMode(true);
 		<div class="col-12 col-lg-6 col-xl-4">
 			<div class="cards__box-images mb-3 rounded-2">
 				<picture>
-					<source srcset="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" type="image/webp"><img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["NAME"] ?>" title="<?= $arItem["NAME"] ?>" class="w-100 h-auto" width="255" height="150" />
+					<source class="rounded-2" srcset="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" type="image/webp"><img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["NAME"] ?>" title="<?= $arItem["NAME"] ?>" class="w-100 h-auto rounded-2" width="255" height="150" />
 				</picture>
 			</div>
 			<div class="fs-14 lh-12 text-center text-info mb-4">
