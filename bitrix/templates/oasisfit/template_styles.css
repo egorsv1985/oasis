@@ -728,7 +728,7 @@ body.modal-show::after {
   visibility: hidden;
   pointer-events: none;
 } */
-.modal__form {
+.modal__form { margin: auto;
 	max-width: 255px;
 }
 
@@ -1472,6 +1472,7 @@ body.modal-show::after {
 }
 
 @media only screen and (min-width: 991px) {
+	/*
 	.community .container::before {
 		content: '';
 		display: block;
@@ -1483,6 +1484,7 @@ body.modal-show::after {
 		width: 36%;
 		height: 100%;
 	}
+	*/
 }
 .community__box-fon {
 	position: relative;
@@ -2107,6 +2109,9 @@ body.modal-show::after {
 	transform-origin: left top;
 	z-index: 1;
 }
+.form-group{
+	z-index: 1;
+}
 .form-file {
 	cursor: pointer;
 	column-gap: 16px;
@@ -2600,4 +2605,27 @@ img { pointer-events: none; }
    
     width: 170px;
     
+}
+
+.phones-contaner { position: relative; background: url('img/phone3.png') 50% 50% no-repeat; background-size: contain; padding-top: 201%; }
+.phones-contaner .community-slider { position: absolute; top: 18%; left: 9%; right: 9%; bottom: 12%; }
+.phones-contaner .communitySwiper { height: 100%; }
+.phones-contaner .swiper-slide { overflow: auto; }
+.phones-contaner .swiper-slide img { width: 80% !important; height: auto !important; }
+
+.phones-contaner .swiper-slide::-webkit-scrollbar {
+	width: 8px;
+  }
+  .phones-contaner .swiper-slide::-webkit-scrollbar-track {
+	background: none;
+  }
+  .phones-contaner .swiper-slide::-webkit-scrollbar-thumb { transition: all 0.2s ease;
+	opacity: 0.5;
+	background-color:rgba(125, 105, 89, 0.3);
+	border-radius: 20px;
+	border: none; 
+  }
+
+.phones-contaner .swiper-slide:hover::-webkit-scrollbar-thumb {  transition: all 0.2s ease;
+	background-color: #7d6858;
 }

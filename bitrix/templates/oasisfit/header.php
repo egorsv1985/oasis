@@ -77,8 +77,8 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 									</span>
 									<span class="fs-16 fw-700 text-uppercase">МЕНЮ</span>
 								</button>
+								<a href="/raspisanie/" class="header__btn-shedule btn btn-primary py-3 fw-600 fs-16 px-5"><span>Расписание</span></a>
 
-								<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="header__btn-shedule btn btn-primary py-3 fw-600 fs-16 px-5"><span>Расписание</span></button>
 								<div class="header__box-work">
 									<div class="d-flex gap-2 align-items-center">
 										<div class="header__link header__link--work"></div>
@@ -133,7 +133,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 									<div class="header__btns row mt-5 gy-3 px-3 px-lg-0">
 										<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="header__btn-shedule btn btn-primary py-3 fw-600 fs-16 px-5"><span>Расписание</span></button>
 										<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="btn btn-light py-3 d-block fw-600 fs-16 col-12 col-lg-6"><span>Гостевой визит</span></button>
-										<button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="btn btn-transparent header__btn btn--pseudo position-relative py-3 d-block fw-600 fs-16 col-12 col-lg-6 text-start text-md-center"><span>Заморозить карту</span></button>
+										<button type="button" data-bs-toggle="modal" data-bs-target="#freeze" class="btn btn-transparent header__btn btn--pseudo position-relative py-3 d-block fw-600 fs-16 col-12 col-lg-6 text-start text-md-center"><span>Заморозить карту</span></button>
 									</div>
 									<div class="header__icons">
 										<div class="chevron"></div>
